@@ -56,5 +56,34 @@
       "https://du2pm6als1feycap.public.blob.vercel-storage.com/previews/reel-20261109-185031-t1ySgkwb9UMkIopArGQivGuVLuVYI5.mp4",
       "https://du2pm6als1feycap.public.blob.vercel-storage.com/previews/repost-reel-20261109-185031-SXI03oTceOvjK2LgvHFeS38nsqsG7Z.jpg"
     ]
+  },
+  {
+    "time": "2026-11-09T21:12+02:00",
+    "type": "reel",
+    "mode": "now",
+    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42680726699",
+    "topic": "an AI assistant answering website visitors 24/7 (before vs after)",
+    "pillar": "an AI assistant answering website visitors 24/7 (before vs after)",
+    "hook": "Your website is silent when customers buy.",
+    "caption": "Most business websites act like a locked door outside of standard office hours. When a buyer finally has time to look at your services at night, they want answers immediately, not tomorrow morning.\n\nWaiting until morning means losing high-intent buyers to competitors who respond instantly. Speed wins business every single time.\n\nInstalling a smart assistant changes this dynamic by handling every inquiry instantly, day or night.\n\nHow many website visitors do you think you miss after hours?\n\n#businessgrowth #automation #smallbusiness #leadgeneration #ai",
+    "plan": {
+      "hook": "macro_pull",
+      "problem": "screen_push",
+      "solution": "side_track",
+      "result": "duo_front",
+      "cta": "duo_cta",
+      "bg": "grid",
+      "type": "caption",
+      "transition": "flash",
+      "finish_phone": "blue",
+      "finish_laptop": "silver",
+      "palette": "aurora"
+    },
+    "ig_id": "17977988487160971",
+    "permalink": "https://www.instagram.com/reel/DfiF0VNil9U/",
+    "fb_id": "2262384711212122",
+    "fb_link": "https://www.facebook.com/reel/2262384711212122",
+    "status": "posted",
+    "repost": "ok"
   }
 ]
