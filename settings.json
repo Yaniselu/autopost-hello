@@ -45,7 +45,7 @@
   "post_to_facebook": true,
   "comments": {
     "enabled": true,
-    "every_hours": 1,
+    "every_hours": 2,
     "max_per_run": 20,
     "instructions": "Raspunde in engleza, trimite la dm sau pe velosyntech.com"
   },
