@@ -14,5 +14,19 @@
     "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42656962712",
     "status": "error",
     "error": "RuntimeError: Could not generate content: 404 Client Error: Not Found for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***"
+  },
+  {
+    "time": "2026-11-09T19:36+02:00",
+    "type": "reel",
+    "mode": "test",
+    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42666102232",
+    "topic": "practical AI tips that save time at work",
+    "pillar": "practical AI tips that save time at work",
+    "hook": "Stop wasting hours on busywork.",
+    "caption": "Most professionals use AI like a toy instead of an operating system.\n\nThe secret isn't writing complex prompts for everything. It is identifying the three most repetitive tasks in your workflow and building simple, repeatable guardrails around them.\n\nStart small. Pick one bottleneck today, test an automated fix, and measure the time saved.\n\nWhat is your biggest daily time sink? Let's discuss below. 🤖\n\n#ArtificialIntelligence #ProductivityHacks #WorkflowAutomation #TechTips #Velosyntech",
+    "status": "test",
+    "previews": [
+      "https://du2pm6als1feycap.public.blob.vercel-storage.com/previews/reel-20261109-173618-XT9gLLzMxZQRY9f8GP7geX1szpSfOF.mp4"
+    ]
   }
 ]
