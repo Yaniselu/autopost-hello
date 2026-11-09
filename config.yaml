@@ -1,0 +1,77 @@
+# ============================================================
+#  Velosyntech Auto-Poster — configurare
+#  Editează liber valorile de aici. Cheile secrete NU se pun aici
+#  (ele merg în GitHub Secrets sau în fișierul .env local).
+# ============================================================
+
+brand:
+  name: "Velosyntech"
+  handle: "@velosyntech"
+  # Descrie pe scurt firma — AI-ul folosește asta ca să scrie pe tonul potrivit.
+  description: >
+    Velosyntech is a technology company building modern software, automation
+    and AI solutions for businesses.
+  audience: "founders, developers, tech enthusiasts and small business owners"
+  tone: "confident, smart, concise, slightly bold — never cringe, no emojis spam"
+  call_to_action: "Follow @velosyntech for more"
+
+# Temele postărilor. Programul le ia pe rând (rotație), ca să fie variat.
+content_pillars:
+  - "practical AI tips that save time at work"
+  - "little-known tech facts that surprise people"
+  - "automation ideas for small businesses"
+  - "software development best practices and developer tips"
+  - "future of technology: short bold predictions"
+  - "cybersecurity tips everyone should know"
+  - "productivity tools and workflows for tech teams"
+  - "myths vs facts about AI and software"
+
+language: "English"
+hashtags_count: 8        # câte hashtag-uri sub caption
+
+# ---------- AI pentru text (gratuit: Google Gemini) ----------
+llm:
+  provider: "gemini"     # "gemini" sau "groq"
+  gemini_model: "gemini-2.5-flash"
+  groq_model: "llama-3.3-70b-versatile"
+  temperature: 1.0
+
+# ---------- Program (orele la care postează, ora calculatorului tău) ----------
+schedule:
+  times: ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00", "20:00", "22:00"]
+  grace_minutes: 45      # dacă PC-ul a fost oprit, mai postează dacă a întârziat max. 45 min
+  retries: 3             # câte încercări dacă ceva pică (net, API)
+  keep_videos: 30        # câte video-uri vechi păstrează în output/
+
+# ---------- Video ----------
+video:
+  style: "liquid_glass"  # "liquid_glass" (sticlă, bule, refracții) sau "classic"
+  palette: "random"      # random | aurora | sunset | ocean | neon | mint
+  width: 1080
+  height: 1920
+  fps: 30
+  hook_seconds: 2.6      # cât stă primul ecran (hook-ul)
+  slide_seconds: 3.0     # cât stă fiecare ecran de text
+  cta_seconds: 2.4       # ecranul final
+  background: "liquid"   # "liquid" (fundal colorat animat), "pexels" (clipuri stock) sau "gradient"
+  background_darken: 0.55   # 0 = deloc, 1 = complet negru (pt. lizibilitate)
+  colors:
+    text: "#FFFFFF"
+    accent: "#00E5FF"     # culoarea cuvintelor evidențiate
+    accent2: "#7C4DFF"
+    bg_top: "#05060F"     # pentru fundalul gradient
+    bg_bottom: "#16123A"
+
+# ---------- Audio ----------
+audio:
+  # Pune fișiere .mp3/.wav fără drepturi de autor în assets/music/
+  # (ex. de pe pixabay.com/music sau YouTube Audio Library).
+  # Dacă folderul e gol, programul compune singur o muzică electronică.
+  music_volume: 0.55
+  sfx_volume: 0.9
+  sfx: true              # whoosh / pop / impact la tranziții
+
+# ---------- Instagram ----------
+instagram:
+  graph_version: "v23.0"
+  share_to_feed: true    # Reel-ul apare și în grid-ul profilului

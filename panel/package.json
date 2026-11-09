@@ -1,0 +1,9 @@
+{
+  "name": "velosyntech-panel",
+  "private": true,
+  "description": "Password-protected control panel for the Velosyntech Instagram auto-poster",
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "libsodium-wrappers": "^0.7.15"
+  }
+}

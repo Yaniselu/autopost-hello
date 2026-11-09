@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Velosyntech · Auto-Poster</title>
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<style>
+:root{
+  --text:#f4f6ff; --muted:rgba(235,240,255,.62); --accent:#78f0ff; --accent2:#be8cff;
+  --ok:#5ff5b0; --warn:#ffd36e; --bad:#ff7a9a;
+  --glass:rgba(255,255,255,.08); --glass2:rgba(255,255,255,.14); --stroke:rgba(255,255,255,.22);
+  --radius:28px;
+}
+*{box-sizing:border-box}
+html{background:#07061a}
+html,body{margin:0;min-height:100%;color:var(--text);
+  font-family:"Inter var",Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+body{min-height:100vh;overflow-x:hidden}
+/* ---------- liquid background ---------- */
+.bg{position:fixed;inset:0;z-index:-2;overflow:hidden;background:radial-gradient(120% 80% at 50% 0%,#14113a 0%,#07061a 60%)}
+.blob{position:absolute;width:55vmax;height:55vmax;border-radius:50%;filter:blur(70px);opacity:.75;mix-blend-mode:screen;
+  animation:float 26s ease-in-out infinite alternate}
+.b1{background:#00d2ff;left:-15vmax;top:-10vmax}
+.b2{background:#7c4dff;right:-18vmax;top:10vmax;animation-duration:32s;animation-delay:-8s}
+.b3{background:#ff40aa;left:10vmax;bottom:-25vmax;animation-duration:38s;animation-delay:-14s;opacity:.55}
+.b4{background:#00ffbe;right:5vmax;bottom:-20vmax;width:35vmax;height:35vmax;animation-duration:29s;opacity:.4}
+@keyframes float{0%{transform:translate(0,0) scale(1)}50%{transform:translate(8vmax,6vmax) scale(1.15)}100%{transform:translate(-6vmax,10vmax) scale(.9)}}
+.bubble{position:fixed;z-index:-1;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.75) 0 6%,rgba(255,255,255,.08) 18%,rgba(255,255,255,.02) 60%,rgba(255,255,255,.18) 100%);
+  box-shadow:inset 0 0 18px rgba(255,255,255,.25),inset -6px -10px 24px rgba(120,240,255,.18);
+  backdrop-filter:blur(2px) saturate(160%);-webkit-backdrop-filter:blur(2px) saturate(160%);
+  animation:rise linear infinite}
+@keyframes rise{from{transform:translateY(110vh)}to{transform:translateY(-30vh)}}
+/* ---------- glass ---------- */
+.glass{position:relative;background:linear-gradient(160deg,rgba(255,255,255,.16),rgba(255,255,255,.05) 45%,rgba(255,255,255,.08));
+  border-radius:var(--radius);border:1px solid var(--stroke);
+  backdrop-filter:blur(28px) saturate(170%);-webkit-backdrop-filter:blur(28px) saturate(170%);
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.45),inset 0 -1px 0 rgba(255,255,255,.08),inset 0 0 40px rgba(255,255,255,.04);
+  overflow:hidden}
+.glass::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.14) 45%,transparent 60%);
+  transform:translateX(-120%);animation:sheen 9s ease-in-out infinite}
+@keyframes sheen{0%,60%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+.wrap{max-width:1100px;margin:0 auto;padding:28px 18px 80px}
+header{display:flex;align-items:center;gap:14px;padding:14px 18px;margin-bottom:22px;border-radius:999px}
+.logo{font-weight:800;letter-spacing:.18em;font-size:15px}
+.logo b{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+header .sp{flex:1}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.card{padding:24px}
+.c12{grid-column:span 12}.c7{grid-column:span 7}.c5{grid-column:span 5}.c6{grid-column:span 6}
+@media(max-width:860px){.c7,.c5,.c6{grid-column:span 12}}
+h2{margin:0 0 4px;font-size:20px;letter-spacing:-.01em}
+.sub{color:var(--muted);font-size:14px;margin:0 0 18px;line-height:1.5}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;font-size:13px;font-weight:600;
+  background:var(--glass);border:1px solid var(--stroke);white-space:nowrap}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--muted);box-shadow:0 0 12px currentColor}
+.ok .dot{background:var(--ok);color:var(--ok)}.warn .dot{background:var(--warn);color:var(--warn)}.bad .dot{background:var(--bad);color:var(--bad)}
+.run .dot{background:var(--accent);color:var(--accent);animation:pulse 1.2s infinite}
+@keyframes pulse{50%{opacity:.3}}
+/* ---------- buttons & inputs ---------- */
+button,.btn{appearance:none;border:1px solid rgba(255,255,255,.3);color:var(--text);font:600 15px/1 inherit;font-family:inherit;
+  padding:14px 20px;border-radius:999px;cursor:pointer;position:relative;transition:transform .15s,box-shadow .2s,background .2s;
+  background:linear-gradient(160deg,rgba(255,255,255,.22),rgba(255,255,255,.06));
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 10px 25px -10px rgba(0,0,0,.5);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+button:hover{transform:translateY(-1px) scale(1.02)}button:active{transform:scale(.97)}
+button:disabled{opacity:.5;cursor:wait;transform:none}
+.primary{background:linear-gradient(120deg,rgba(120,240,255,.75),rgba(190,140,255,.75));border-color:rgba(255,255,255,.5);color:#0b0a1f}
+.danger{background:linear-gradient(120deg,rgba(255,122,154,.45),rgba(255,122,154,.18))}
+.small{padding:9px 14px;font-size:13px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+label{display:block;font-size:13px;color:var(--muted);margin:14px 0 6px;font-weight:600}
+input,textarea,select{width:100%;font:15px/1.4 inherit;font-family:inherit;color:var(--text);padding:13px 16px;border-radius:16px;
+  background:rgba(10,10,30,.35);border:1px solid rgba(255,255,255,.18);outline:none;
+  box-shadow:inset 0 2px 8px rgba(0,0,0,.25);transition:border .2s,box-shadow .2s}
+textarea{min-height:110px;resize:vertical}
+input:focus,textarea:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(120,240,255,.15)}
+select option{background:#14113a}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}@media(max-width:600px){.two{grid-template-columns:1fr}}
+/* ---------- misc ---------- */
+.big{font-size:34px;font-weight:800;letter-spacing:-.02em;margin:6px 0 2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:8px 8px 8px 14px;border-radius:999px;background:var(--glass2);border:1px solid var(--stroke);font-weight:600}
+.chip button{padding:4px 8px;font-size:12px;border-radius:999px}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.steps li{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;border-radius:20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
+.steps .n{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:14px;background:var(--glass2);border:1px solid var(--stroke)}
+.steps .done .n{background:linear-gradient(120deg,var(--ok),#78f0ff);color:#062016;border:none}
+.steps .t{font-weight:700}.steps p{margin:4px 0 0;color:var(--muted);font-size:14px;line-height:1.5}
+.steps code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;background:rgba(0,0,0,.3);padding:2px 7px;border-radius:7px}
+a{color:var(--accent)}
+.list{display:grid;gap:10px;max-height:560px;overflow:auto;padding-right:4px}
+.item{padding:14px 16px;border-radius:20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
+.item .top{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.item .hook{font-weight:700;margin:8px 0 2px}.item .meta{color:var(--muted);font-size:13px}
+.item details{margin-top:8px;color:var(--muted);font-size:14px;white-space:pre-wrap}
+.item .err{color:var(--bad);font-size:13px;margin-top:6px;word-break:break-word}
+.empty{color:var(--muted);text-align:center;padding:30px 10px}
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(150%);padding:14px 22px;border-radius:999px;z-index:20;
+  font-weight:600;transition:transform .35s cubic-bezier(.2,1.4,.4,1);max-width:92vw}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.login{min-height:92vh;display:grid;place-items:center}
+.login .card{width:min(420px,92vw);padding:38px 30px;text-align:center}
+.login h1{font-size:28px;margin:10px 0 6px;letter-spacing:-.02em}
+.hidden{display:none!important}
+.pal{display:inline-block;width:14px;height:14px;border-radius:50%;margin-right:4px;vertical-align:middle}
+</style>
+</head>
+<body>
+<div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div></div>
+<div id="bubbles"></div>
+
+<!-- ======================= LOGIN ======================= -->
+<section id="login" class="login hidden">
+  <form class="card glass" id="loginForm">
+    <div class="logo">VELO<b>SYNTECH</b></div>
+    <h1>Auto-Poster</h1>
+    <p class="sub" id="loginHint">Introdu parola ca să intri în panou.</p>
+    <input type="password" id="pw" placeholder="Parola" autocomplete="current-password" required>
+    <div style="height:14px"></div>
+    <button class="primary" style="width:100%;justify-content:center" id="loginBtn">Intră</button>
+  </form>
+</section>
+
+<!-- ======================= APP ======================= -->
+<main id="app" class="wrap hidden">
+  <header class="glass">
+    <div class="logo">VELO<b>SYNTECH</b> <span style="color:var(--muted);letter-spacing:.05em;font-weight:600">· Auto-Poster</span></div>
+    <div class="sp"></div>
+    <span class="pill" id="igPill"><span class="dot"></span><span>—</span></span>
+    <button class="small" id="logoutBtn">Ieși</button>
+  </header>
+
+  <div class="grid">
+    <!-- setup -->
+    <section class="card glass c12" id="setupCard">
+      <h2>Configurare</h2>
+      <p class="sub">Pașii de mai jos se fac o singură dată. Când toți sunt bifați, programul postează singur, chiar dacă PC-ul tău e închis.</p>
+      <ul class="steps" id="steps"></ul>
+    </section>
+
+    <!-- control -->
+    <section class="card glass c7" id="controlCard">
+      <h2>Control</h2>
+      <p class="sub" id="statusLine">—</p>
+      <div class="big" id="nextPost">—</div>
+      <p class="sub" id="nextSub" style="margin-bottom:20px">—</p>
+      <div class="row">
+        <button class="primary" id="postNow">🚀 Postează acum</button>
+        <button id="testVideo">🎬 Video de test</button>
+        <button id="pauseBtn">⏸ Pauză</button>
+      </div>
+    </section>
+
+    <section class="card glass c5">
+      <h2>Ce rulează acum</h2>
+      <p class="sub">Ultimele rulări pe GitHub (fiecare durează 3–6 minute).</p>
+      <div class="list" id="runs" style="max-height:260px"></div>
+    </section>
+
+    <!-- history -->
+    <section class="card glass c7">
+      <h2>Istoric postări</h2>
+      <p class="sub">Tot ce a postat programul, cu link direct pe Instagram.</p>
+      <div class="list" id="history"></div>
+    </section>
+
+    <!-- keys -->
+    <section class="card glass c5" id="keysCard">
+      <h2>Cont & chei</h2>
+      <p class="sub">Cheile se salvează criptat în GitHub (Secrets). Nici panoul nu le mai poate citi după salvare.</p>
+
+      <label>Cheia Google Gemini <span id="geminiState"></span></label>
+      <div class="row" style="flex-wrap:nowrap">
+        <input type="password" id="geminiKey" placeholder="AIza…">
+        <button class="small" id="geminiSave">Salvează</button>
+      </div>
+      <p class="sub" style="margin:6px 0 0">Gratuită: <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a></p>
+
+      <div style="height:10px"></div>
+      <label>Instagram <span id="igState"></span></label>
+      <div class="two">
+        <div><label>App ID</label><input id="appId" placeholder="1234567890"></div>
+        <div><label>App Secret</label><input type="password" id="appSecret" placeholder="••••••"></div>
+      </div>
+      <label>Token din Graph API Explorer</label>
+      <input type="password" id="fbToken" placeholder="EAAG…">
+      <p class="sub" style="margin:6px 0 10px">Deschide <a href="https://developers.facebook.com/tools/explorer/" target="_blank" rel="noopener">Graph API Explorer</a>, alege aplicația ta, bifează
+        <span class="mono">instagram_basic</span> <span class="mono">instagram_content_publish</span> <span class="mono">pages_show_list</span>
+        <span class="mono">pages_read_engagement</span> <span class="mono">business_management</span>, apasă „Generate Access Token” și copiază-l aici.
+        Panoul îl transformă într-unul care nu expiră.</p>
+      <div id="igChoose"></div>
+      <button class="primary small" id="igConnect">Conectează Instagram</button>
+
+      <div id="pexelsBox" class="hidden">
+        <div style="height:10px"></div>
+        <label>Cheia Pexels <span id="pexelsState"></span></label>
+        <div class="row" style="flex-wrap:nowrap">
+          <input type="password" id="pexelsKey" placeholder="cheie Pexels">
+          <button class="small" id="pexelsSave">Salvează</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- settings -->
+    <section class="card glass c12" id="settingsCard">
+      <h2>Setări</h2>
+      <p class="sub">Schimbă orele, temele și stilul. Se aplică de la următoarea postare.</p>
+      <div class="grid">
+        <div class="c6">
+          <label>Orele de postare (ora României / fusul ales)</label>
+          <div class="chips" id="times"></div>
+          <div class="row" style="margin-top:10px;flex-wrap:nowrap">
+            <input type="time" id="newTime" style="max-width:160px">
+            <button class="small" id="addTime">+ Adaugă oră</button>
+          </div>
+          <div class="two">
+            <div><label>Fus orar</label><input id="timezone" list="tzlist"></div>
+            <div><label>Limba postărilor</label><input id="language"></div>
+          </div>
+          <datalist id="tzlist"><option>Europe/Bucharest</option><option>Europe/London</option><option>Europe/Berlin</option><option>America/New_York</option><option>UTC</option></datalist>
+          <div class="two">
+            <div><label>Stil video</label>
+              <select id="style"><option value="liquid_glass">Liquid Glass (sticlă, bule)</option><option value="classic">Clasic (text simplu)</option></select></div>
+            <div><label>Culori</label>
+              <select id="palette">
+                <option value="random">🎲 Diferite la fiecare video</option><option value="aurora">Aurora (cyan, mov, roz)</option>
+                <option value="sunset">Sunset (portocaliu, roz)</option><option value="ocean">Ocean (albastru, turcoaz)</option>
+                <option value="neon">Neon (magenta, cyan)</option><option value="mint">Mint (verde, albastru)</option></select></div>
+          </div>
+          <div class="two">
+            <div><label>Fundal</label>
+              <select id="background"><option value="liquid">Fundal lichid animat</option><option value="pexels">Clipuri video Pexels</option></select></div>
+            <div><label>Câte hashtag-uri</label><input type="number" id="hashtags" min="0" max="30"></div>
+          </div>
+        </div>
+        <div class="c6">
+          <div class="two">
+            <div><label>Nume brand</label><input id="bName"></div>
+            <div><label>Handle Instagram</label><input id="bHandle"></div>
+          </div>
+          <label>Despre firmă (AI-ul scrie pe baza asta)</label>
+          <textarea id="bDesc" style="min-height:80px"></textarea>
+          <div class="two">
+            <div><label>Public țintă</label><input id="bAudience"></div>
+            <div><label>Ton</label><input id="bTone"></div>
+          </div>
+          <label>Îndemn final (în video)</label><input id="bCta">
+          <label>Teme de postare (una pe rând, se iau pe rând)</label>
+          <textarea id="pillars" style="min-height:150px"></textarea>
+        </div>
+      </div>
+      <div style="height:18px"></div>
+      <button class="primary" id="saveSettings">💾 Salvează setările</button>
+    </section>
+  </div>
+</main>
+
+<div class="toast glass" id="toast"></div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+let S = null;          // last state from the server
+let draftTimes = [];
+
+// ---------- decorative bubbles ----------
+for (let i = 0; i < 9; i++) {
+  const b = document.createElement("div");
+  const s = 30 + Math.random() * 110;
+  Object.assign(b.style, { width: s + "px", height: s + "px", left: Math.random() * 100 + "vw",
+    animationDuration: 28 + Math.random() * 30 + "s", animationDelay: -Math.random() * 50 + "s" });
+  b.className = "bubble"; $("bubbles").appendChild(b);
+}
+
+// ---------- helpers ----------
+function toast(msg, bad) {
+  const t = $("toast"); t.textContent = msg; t.style.color = bad ? "var(--bad)" : "var(--text)";
+  t.classList.add("show"); clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove("show"), bad ? 7000 : 3500);
+}
+async function api(route, body) {
+  const r = await fetch("/api/" + route, body === undefined ? { credentials: "same-origin" } : {
+    method: "POST", credentials: "same-origin", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+  const data = await r.json().catch(() => ({ error: "Răspuns invalid de la server" }));
+  if (r.status === 401 && data.error === "login") { showLogin(data.passwordConfigured); throw new Error("login"); }
+  if (!r.ok) throw new Error(data.error || ("Eroare " + r.status));
+  return data;
+}
+async function withBtn(btn, fn) {
+  btn.disabled = true;
+  try { await fn(); } catch (e) { if (e.message !== "login") toast(e.message, true); }
+  finally { btn.disabled = false; }
+}
+function el(tag, attrs = {}, ...kids) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) { if (k === "class") e.className = v; else if (k.startsWith("on")) e[k] = v; else e.setAttribute(k, v); }
+  for (const k of kids) if (k != null) e.append(k.nodeType ? k : document.createTextNode(String(k)));
+  return e;
+}
+function setPill(node, cls, text) { node.className = "pill " + cls; node.replaceChildren(el("span", { class: "dot" }), el("span", {}, text)); }
+const fmtDate = (iso) => { try { return new Date(iso).toLocaleString("ro-RO", { dateStyle: "medium", timeStyle: "short" }); } catch { return iso; } };
+
+function nowIn(tz) {
+  const p = Object.fromEntries(new Intl.DateTimeFormat("en-US", { timeZone: tz, hourCycle: "h23",
+    year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" }).formatToParts(new Date()).map(x => [x.type, x.value]));
+  return { min: (+p.hour % 24) * 60 + +p.minute };
+}
+function nextSlot(times, tz) {
+  if (!times.length) return null;
+  const { min } = nowIn(tz);
+  const mins = times.map(t => { const [h, m] = t.split(":").map(Number); return { t, v: h * 60 + m }; }).sort((a, b) => a.v - b.v);
+  const today = mins.find(x => x.v > min);
+  return today ? { t: today.t, day: "azi" } : { t: mins[0].t, day: "mâine" };
+}
+
+// ---------- screens ----------
+function showLogin(configured) {
+  $("app").classList.add("hidden"); $("login").classList.remove("hidden");
+  $("loginHint").textContent = configured === false
+    ? "Parola nu e setată încă. Pune PANEL_PASSWORD (minim 8 caractere) în Vercel → Settings → Environment Variables, apoi Redeploy."
+    : "Introdu parola ca să intri în panou.";
+  setTimeout(() => $("pw").focus(), 50);
+}
+$("loginForm").onsubmit = (e) => {
+  e.preventDefault();
+  withBtn($("loginBtn"), async () => { await api("login", { password: $("pw").value }); $("pw").value = ""; await load(); });
+};
+$("logoutBtn").onclick = async () => { await api("logout", {}).catch(() => {}); showLogin(true); };
+
+async function load(silent) {
+  let st;
+  try { st = await api("state"); } catch (e) { if (e.message !== "login" && !silent) toast(e.message, true); return; }
+  S = st;
+  $("login").classList.add("hidden"); $("app").classList.remove("hidden");
+  render();
+}
+
+function render() {
+  const st = S, s = st.settings || null;
+  const sec = new Set(st.secrets || []);
+  const hasGemini = sec.has("GEMINI_API_KEY"), hasIg = sec.has("IG_USER_ID") && sec.has("IG_ACCESS_TOKEN");
+  const hasTest = (st.runs || []).some(r => r.conclusion === "success");
+  const envOk = !st.missingEnv, repoOk = envOk && !st.repoMissing;
+
+  // ----- setup steps
+  const steps = [
+    { done: envOk && repoOk, t: "Leagă panoul de GitHub",
+      p: !envOk ? `Lipsesc în Vercel: ${st.missingEnv.join(", ")}. Pune-le în Vercel → Settings → Environment Variables, apoi Redeploy.`
+        : !repoOk ? `Nu găsesc repo-ul „${st.repoMissing}”. Verifică GITHUB_REPO (format: utilizator/nume) și că token-ul are acces la el.`
+        : `Conectat la ${st.repo}.` },
+    { done: repoOk && st.codeUploaded, t: "Urcă programul în repo",
+      p: "În repo-ul GitHub: Add file → Upload files → trage toate fișierele din folderul dezarhivat → Commit." },
+    { done: repoOk && st.installed, t: "Instalează programarea automată",
+      p: "Creează setările și programul de postare în repo.", btn: repoOk && st.codeUploaded && !st.installed ? ["Instalează", installNow] : null },
+    { done: hasGemini, t: "Cheia Gemini (scrie textele)", p: "Lipește cheia în cardul „Cont & chei”." },
+    { done: hasIg, t: "Conectează Instagram", p: "Completează App ID, App Secret și token-ul în cardul „Cont & chei”." },
+    { done: hasTest, t: "Fă un video de test", p: "Apasă „🎬 Video de test”. După ~5 minute îl găsești în „Ce rulează acum” → link → Artifacts.",
+      btn: st.installed && hasGemini && !hasTest ? ["Video de test", () => runMode("test", $("testVideo"))] : null },
+  ];
+  const all = steps.every(x => x.done);
+  $("steps").replaceChildren(...steps.map((x, i) => {
+    const li = el("li", { class: x.done ? "done" : "" }, el("div", { class: "n" }, x.done ? "✓" : i + 1),
+      el("div", {}, el("div", { class: "t" }, x.t), el("p", {}, x.p)));
+    if (x.btn) { const b = el("button", { class: "small primary", style: "margin-left:auto" }, x.btn[0]); b.onclick = () => withBtn(b, x.btn[1]); li.append(b); }
+    return li;
+  }));
+  $("setupCard").classList.toggle("hidden", all);
+  for (const id of ["controlCard", "settingsCard", "keysCard"]) $(id).style.opacity = repoOk && st.installed ? 1 : .55;
+
+  // ----- instagram pill
+  if (hasIg && s && s.instagram_username) setPill($("igPill"), "ok", "@" + s.instagram_username);
+  else setPill($("igPill"), "warn", "Instagram neconectat");
+  $("geminiState").textContent = hasGemini ? "· ✓ salvată" : "· lipsește";
+  $("igState").textContent = hasIg ? `· ✓ conectat${s && s.instagram_username ? " ca @" + s.instagram_username : ""}` : "· neconectat";
+  $("pexelsState").textContent = sec.has("PEXELS_API_KEY") ? "· ✓ salvată" : "· lipsește";
+
+  // ----- control
+  if (s) {
+    const running = (st.runs || []).some(r => r.status !== "completed");
+    const nx = nextSlot(s.times, s.timezone);
+    $("pauseBtn").textContent = s.paused ? "▶ Pornește" : "⏸ Pauză";
+    $("pauseBtn").className = s.paused ? "primary" : "";
+    if (!all) { $("statusLine").textContent = "Termină configurarea ca să pornească postarea automată."; }
+    else if (s.paused) $("statusLine").textContent = "⏸ Postarea automată e pe pauză.";
+    else $("statusLine").textContent = running ? "⚙️ Se face un video chiar acum…" : "✅ Postarea automată e pornită.";
+    $("nextPost").textContent = s.paused || !nx ? "—" : `${nx.day} la ${nx.t}`;
+    $("nextSub").textContent = `${s.times.length} postări pe zi · fus orar ${s.timezone}`;
+    fillSettings(s);
+  }
+
+  // ----- runs
+  const runs = st.runs || [];
+  $("runs").replaceChildren(...(runs.length ? runs.map(r => {
+    const cls = r.status !== "completed" ? "run" : r.conclusion === "success" ? "ok" : r.conclusion === "skipped" || r.conclusion === "cancelled" ? "" : "bad";
+    const label = r.status !== "completed" ? "în lucru…" : r.conclusion === "success" ? "gata" : r.conclusion || "—";
+    const pill = el("span", {}); setPill(pill, cls, label);
+    return el("div", { class: "item" }, el("div", { class: "top" },
+      el("div", {}, el("div", { class: "hook", style: "margin:0" }, r.title || r.event), el("div", { class: "meta" }, fmtDate(r.created_at))),
+      el("div", { class: "row" }, pill, el("a", { href: r.url, target: "_blank", rel: "noopener", class: "small" }, "detalii ↗"))));
+  }) : [el("div", { class: "empty" }, "Nicio rulare încă.")]));
+
+  // ----- history
+  const h = st.history || [];
+  $("history").replaceChildren(...(h.length ? h.map(x => {
+    const pill = el("span", {});
+    setPill(pill, x.status === "posted" ? "ok" : x.status === "test" ? "" : "bad",
+      x.status === "posted" ? "postat" : x.status === "test" ? "test" : "eroare");
+    const links = el("div", { class: "row" });
+    if (x.permalink) links.append(el("a", { href: x.permalink, target: "_blank", rel: "noopener" }, "Vezi pe Instagram ↗"));
+    if (x.run_url) links.append(el("a", { href: x.run_url, target: "_blank", rel: "noopener" }, x.status === "test" ? "Descarcă video-ul ↗" : "rulare ↗"));
+    return el("div", { class: "item" },
+      el("div", { class: "top" }, el("span", { class: "meta" }, fmtDate(x.time)), pill),
+      x.hook ? el("div", { class: "hook" }, String(x.hook).replace(/\*/g, "")) : null,
+      x.topic ? el("div", { class: "meta" }, x.topic) : null,
+      x.error ? el("div", { class: "err" }, x.error) : null,
+      x.caption ? el("details", {}, el("summary", {}, "caption"), x.caption) : null,
+      links);
+  }) : [el("div", { class: "empty" }, "Încă nicio postare. Prima apare la ora programată sau când apeși „Postează acum”.")]));
+
+  clearTimeout(window._poll);
+  window._poll = setTimeout(() => load(true), runs.some(r => r.status !== "completed") ? 15000 : 60000);
+}
+
+// ---------- settings form ----------
+let filled = false;
+function fillSettings(s) {
+  if (filled) return; filled = true;
+  draftTimes = [...s.times]; drawTimes();
+  $("timezone").value = s.timezone; $("language").value = s.language; $("hashtags").value = s.hashtags_count;
+  $("style").value = s.video.style; $("palette").value = s.video.palette; $("background").value = s.video.background;
+  $("bName").value = s.brand.name; $("bHandle").value = s.brand.handle; $("bDesc").value = s.brand.description;
+  $("bAudience").value = s.brand.audience; $("bTone").value = s.brand.tone; $("bCta").value = s.brand.call_to_action;
+  $("pillars").value = s.content_pillars.join("\n");
+  $("pexelsBox").classList.toggle("hidden", s.video.background !== "pexels");
+}
+$("background").onchange = () => $("pexelsBox").classList.toggle("hidden", $("background").value !== "pexels");
+function drawTimes() {
+  draftTimes.sort();
+  $("times").replaceChildren(...draftTimes.map(t => {
+    const x = el("button", { title: "Șterge" }, "✕"); x.onclick = () => { draftTimes = draftTimes.filter(y => y !== t); drawTimes(); };
+    return el("span", { class: "chip" }, t, x);
+  }));
+  if (!draftTimes.length) $("times").append(el("span", { class: "meta" }, "Nicio oră — nu va posta automat."));
+}
+$("addTime").onclick = () => { const v = $("newTime").value; if (v && !draftTimes.includes(v)) { draftTimes.push(v); drawTimes(); } $("newTime").value = ""; };
+$("saveSettings").onclick = (e) => withBtn(e.currentTarget, async () => {
+  const settings = {
+    times: draftTimes, timezone: $("timezone").value, language: $("language").value, hashtags_count: $("hashtags").value,
+    video: { style: $("style").value, palette: $("palette").value, background: $("background").value },
+    brand: { name: $("bName").value, handle: $("bHandle").value, description: $("bDesc").value,
+      audience: $("bAudience").value, tone: $("bTone").value, call_to_action: $("bCta").value },
+    content_pillars: $("pillars").value.split("\n").map(x => x.trim()).filter(Boolean),
+  };
+  await api("settings", { settings }); toast("✓ Setări salvate"); filled = false; await load(true);
+});
+
+// ---------- actions ----------
+async function installNow() { await api("install", {}); toast("✓ Instalat! Programarea automată e activă."); await load(true); }
+async function runMode(mode, btn) {
+  if (mode === "now" && !confirm("Fac un video nou și îl postez pe Instagram acum?")) return;
+  await withBtn(btn, async () => {
+    await api("run", { mode });
+    toast(mode === "now" ? "🚀 Pornit! Postarea apare în ~5 minute." : "🎬 Pornit! Video-ul de test e gata în ~5 minute.");
+    setTimeout(() => load(true), 4000);
+  });
+}
+$("postNow").onclick = (e) => runMode("now", e.currentTarget);
+$("testVideo").onclick = (e) => runMode("test", e.currentTarget);
+$("pauseBtn").onclick = (e) => withBtn(e.currentTarget, async () => {
+  const r = await api("pause", { paused: !S.settings.paused }); toast(r.paused ? "⏸ Pus pe pauză" : "▶ Pornit"); await load(true);
+});
+$("geminiSave").onclick = (e) => withBtn(e.currentTarget, async () => {
+  await api("gemini", { key: $("geminiKey").value }); $("geminiKey").value = ""; toast("✓ Cheia Gemini funcționează și e salvată"); await load(true);
+});
+$("pexelsSave").onclick = (e) => withBtn(e.currentTarget, async () => {
+  await api("pexels", { key: $("pexelsKey").value }); $("pexelsKey").value = ""; toast("✓ Cheia Pexels salvată"); await load(true);
+});
+$("igConnect").onclick = (e) => withBtn(e.currentTarget, async () => {
+  const chosen = document.querySelector('input[name="igacc"]:checked');
+  const r = await api("instagram", { appId: $("appId").value, appSecret: $("appSecret").value, token: $("fbToken").value,
+    igId: chosen ? chosen.value : "" });
+  if (r.choose) {
+    $("igChoose").replaceChildren(el("label", {}, "Pe ce cont să posteze?"), ...r.choose.map((a, i) =>
+      el("label", { style: "display:flex;gap:10px;align-items:center;color:var(--text)" },
+        el("input", { type: "radio", name: "igacc", value: a.id, style: "width:auto", ...(i === 0 ? { checked: "" } : {}) }),
+        `@${a.username} (pagina ${a.page})`)));
+    toast("Alege contul și apasă din nou „Conectează”");
+    return;
+  }
+  $("igChoose").replaceChildren(); $("fbToken").value = ""; $("appSecret").value = "";
+  toast(`✓ Conectat la @${r.connected}`); await load(true);
+});
+
+load();
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "paused": false,
+  "timezone": "Europe/Bucharest",
+  "times": [
+    "08:00",
+    "10:00",
+    "12:00",
+    "14:00",
+    "16:00",
+    "18:00",
+    "20:00",
+    "22:00"
+  ],
+  "language": "English",
+  "hashtags_count": 8,
+  "brand": {
+    "name": "Velosyntech",
+    "handle": "@velosyntech",
+    "description": "Velosyntech is a technology company building modern software, automation and AI solutions for businesses.",
+    "audience": "founders, developers, tech enthusiasts and small business owners",
+    "tone": "confident, smart, concise, slightly bold — never cringe, no emojis spam",
+    "call_to_action": "Follow @velosyntech for more"
+  },
+  "content_pillars": [
+    "practical AI tips that save time at work",
+    "little-known tech facts that surprise people",
+    "automation ideas for small businesses",
+    "software development best practices and developer tips",
+    "future of technology: short bold predictions",
+    "cybersecurity tips everyone should know",
+    "productivity tools and workflows for tech teams",
+    "myths vs facts about AI and software"
+  ],
+  "video": {
+    "style": "liquid_glass",
+    "palette": "random",
+    "background": "liquid"
+  },
+  "instagram_username": ""
+}
