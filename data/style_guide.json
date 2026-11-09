@@ -1,0 +1,38 @@
+{
+ "time": "2026-11-09T18:50:28.696831+00:00",
+ "media_count": 30,
+ "guide": {
+  "what_they_sell": "AI agents and automated workflows for websites to respond to customers 24/7 and eliminate manual busywork.",
+  "audience": "Business owners, founders, and team leads dealing with repetitive tasks, manual data entry, and missed after-hours leads.",
+  "language": "English (with occasional Romanian for local events)",
+  "tone": "Direct, professional, pragmatic, punchy, and problem-focused",
+  "recurring_topics": [
+   "manual work vs automation",
+   "lost leads outside business hours",
+   "stop hiring to fix process problems",
+   "hackathon events and live updates"
+  ],
+  "best_performing_patterns": [
+   "High engagement on local event coverage (Craiova Hackathon)",
+   "Strong engagement on provocative text-heavy hooks addressing business pain points (hiring vs process, manual copy-pasting costs)"
+  ],
+  "hook_examples": [
+   "Stop hiring to fix a process problem.",
+   "Lost a lead while you slept?",
+   "Still doing it manually?",
+   "Your team is losing 10+ hours a week to copy-paste."
+  ],
+  "cta_style": "Subtle or direct directional links to velosyntech.com and contact emails, or inviting demo requests.",
+  "visual_notes": "Clean dark or light abstract minimalist background with floating 3D spheres/balloons, bold sans-serif white typography, and clean UI card overlays.",
+  "do": [
+   "Focus on concrete business pains (wasted time, lost money, manual errors)",
+   "Use bold, punchy typography on reels and carousels",
+   "Highlight specific metrics like hours lost or missed night leads"
+  ],
+  "dont": [
+   "Use overly complex corporate jargon",
+   "Bury the hook at the end of the caption",
+   "Post cluttered or low-contrast visuals"
+  ]
+ }
+}

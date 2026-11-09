@@ -28,5 +28,33 @@
     "previews": [
       "https://du2pm6als1feycap.public.blob.vercel-storage.com/previews/reel-20261109-173618-XT9gLLzMxZQRY9f8GP7geX1szpSfOF.mp4"
     ]
+  },
+  {
+    "time": "2026-11-09T20:50+02:00",
+    "type": "reel",
+    "mode": "test",
+    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42677432964",
+    "topic": "an AI assistant answering website visitors 24/7 (before vs after)",
+    "pillar": "an AI assistant answering website visitors 24/7 (before vs after)",
+    "hook": "Your website is *ignoring* your next customer.",
+    "caption": "Most businesses treat their website like a digital brochure that goes to sleep at 5 PM. Meanwhile, your visitors are shopping, researching, and making buying decisions late at night or over the weekend.\n\nWhen they cannot get an immediate answer to a simple question about your pricing or availability, they do not wait. They click away to your competitor who replies instantly.\n\nAdding an AI assistant changes that dynamic completely. It handles the midnight questions in any language, qualifies the buyer, and secures the booking before you even open your eyes.\n\nHow many inquiries do you think you miss outside of normal working hours?\n\n#businessgrowth #automation #leadgeneration #smallbusiness #ai",
+    "plan": {
+      "hook": "lid_open",
+      "problem": "orbit_left",
+      "solution": "side_track",
+      "result": "duo_front",
+      "cta": "phone_spin",
+      "bg": "bokeh",
+      "type": "kinetic",
+      "transition": "glitch",
+      "finish_phone": "natural",
+      "finish_laptop": "spaceblack",
+      "palette": "sunset"
+    },
+    "status": "test",
+    "previews": [
+      "https://du2pm6als1feycap.public.blob.vercel-storage.com/previews/reel-20261109-185031-t1ySgkwb9UMkIopArGQivGuVLuVYI5.mp4",
+      "https://du2pm6als1feycap.public.blob.vercel-storage.com/previews/repost-reel-20261109-185031-SXI03oTceOvjK2LgvHFeS38nsqsG7Z.jpg"
+    ]
   }
 ]
