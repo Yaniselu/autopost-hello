@@ -43,7 +43,7 @@ async function setup(job) {
   const canvas = $("gl"); canvas.width = RW; canvas.height = RH;
   renderer = new THREE.WebGLRenderer({ canvas, antialias: false, preserveDrawingBuffer: true, powerPreference: "high-performance" });
   renderer.setPixelRatio(1); renderer.setSize(RW, RH, false);
-  renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 0.98;
   renderer.outputColorSpace = THREE.SRGBColorSpace;
 
   scene = new THREE.Scene();
@@ -153,7 +153,7 @@ function buildWorld(pal, variant) {
   shadowP = new THREE.Mesh(new THREE.PlaneGeometry(1.4, 0.8), new THREE.MeshBasicMaterial({ map: sh, transparent: true, depthWrite: false }));
   shadowP.rotation.x = -Math.PI / 2; shadowP.position.y = 0.006; scene.add(shadowP);
 
-  const key = new THREE.SpotLight(0xffffff, 140, 0, 0.42, 0.9, 2); key.position.set(-3, 9, 7); key.target.position.set(0, 0.8, 0); scene.add(key, key.target);
+  const key = new THREE.SpotLight(0xffffff, 95, 0, 0.42, 0.9, 2); key.position.set(-3, 9, 7); key.target.position.set(0, 0.8, 0); scene.add(key, key.target);
   const rim1 = new THREE.PointLight(new THREE.Color(pal.accent), 60, 0, 2); rim1.position.set(-4, 3, -3); scene.add(rim1);
   const rim2 = new THREE.PointLight(new THREE.Color(pal.accent2), 60, 0, 2); rim2.position.set(4.5, 2.5, -2.5); scene.add(rim2);
   scene.add(new THREE.AmbientLight(0xffffff, 0.05));
@@ -161,13 +161,13 @@ function buildWorld(pal, variant) {
 
 // Apple-like colourways (no logos): phone = titanium tones, laptop = space black / silver
 const FINISH = {
-  natural: { body: 0xa9a49b, back: 0xc9c4ba, plate: 0xb7b2a8 },
+  natural: { body: 0x9c978e, back: 0x9f9a91, plate: 0xa8a399 },
   black: { body: 0x3a3a3c, back: 0x2b2b2d, plate: 0x333336 },
-  white: { body: 0xd9d7d2, back: 0xeceae6, plate: 0xe0ded9 },
-  desert: { body: 0xb79a7c, back: 0xd2b99d, plate: 0xc4a88b },
+  white: { body: 0xc4c2bd, back: 0xbab8b3, plate: 0xc9c7c2 },
+  desert: { body: 0xa98f74, back: 0xa88f78, plate: 0xb49a80 },
   blue: { body: 0x47566a, back: 0x5a6a80, plate: 0x4f5e72 },
   graphite: { body: 0x4a4e55, back: 0x2a2c31, plate: 0x23252a },
-  silver: { body: 0xa8acb2, back: 0xdcdde0, plate: 0xcfd0d3 },
+  silver: { body: 0xa8acb2, back: 0xb4b6ba, plate: 0xbfc1c4 },
   spaceblack: { body: 0x2f3033, back: 0x2f3033, plate: 0x2f3033 },
 };
 function fin(name) { return FINISH[name] || FINISH.silver; }
@@ -228,36 +228,85 @@ function buildLaptop(finish) {
   return { group: g, lidPivot };
 }
 
+function extrudedRoundRect(w, h, r, depth, bevel = 0.008, seg = 24) {
+  const x = -w / 2, y = -h / 2, s = new THREE.Shape();
+  s.moveTo(x + r, y); s.lineTo(x + w - r, y); s.absarc(x + w - r, y + r, r, -Math.PI / 2, 0, false);
+  s.lineTo(x + w, y + h - r); s.absarc(x + w - r, y + h - r, r, 0, Math.PI / 2, false);
+  s.lineTo(x + r, y + h); s.absarc(x + r, y + h - r, r, Math.PI / 2, Math.PI, false);
+  s.lineTo(x, y + r); s.absarc(x + r, y + r, r, Math.PI, Math.PI * 1.5, false);
+  const geo = new THREE.ExtrudeGeometry(s, { depth: Math.max(0.001, depth - 2 * bevel), bevelEnabled: true, bevelThickness: bevel,
+    bevelSize: bevel, bevelSegments: 4, curveSegments: seg });
+  geo.translate(0, 0, -(depth - 2 * bevel) / 2);
+  return geo;
+}
+
+function lensTexture() {
+  // sapphire lens with inner elements and the purple/green anti-reflective coating sheen
+  const c = document.createElement("canvas"); c.width = c.height = 256; const x = c.getContext("2d");
+  const g = x.createRadialGradient(128, 128, 4, 128, 128, 128);
+  g.addColorStop(0, "#02030a"); g.addColorStop(0.55, "#0a0f22"); g.addColorStop(0.85, "#141a33"); g.addColorStop(1, "#05060c");
+  x.fillStyle = g; x.beginPath(); x.arc(128, 128, 128, 0, 7); x.fill();
+  for (const [r, a] of [[104, 0.35], [80, 0.25], [56, 0.3], [34, 0.4]]) { x.strokeStyle = `rgba(120,140,220,${a})`; x.lineWidth = 2; x.beginPath(); x.arc(128, 128, r, 0, 7); x.stroke(); }
+  const coat = x.createLinearGradient(40, 40, 210, 210);
+  coat.addColorStop(0, "rgba(160,90,255,.55)"); coat.addColorStop(0.5, "rgba(60,200,170,.25)"); coat.addColorStop(1, "rgba(80,90,255,0)");
+  x.fillStyle = coat; x.beginPath(); x.ellipse(110, 100, 70, 44, -0.7, 0, 7); x.fill();
+  x.fillStyle = "rgba(255,255,255,.75)"; x.beginPath(); x.ellipse(92, 86, 16, 9, -0.7, 0, 7); x.fill();
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+
 function buildPhone(finish) {
-  const g = new THREE.Group(), frame = metal(finish);
-  frame.roughness = 0.24;
-  const glassBlack = new THREE.MeshStandardMaterial({ color: 0x020203, roughness: 0.05, metalness: 0.6 });
-  const body = new THREE.Mesh(new RoundedBoxGeometry(0.76, 1.56, 0.085, 6, 0.1), frame); g.add(body);
-  const front = new THREE.Mesh(roundedRect(0.735, 1.535, 0.1), glassBlack); front.position.z = 0.0428; g.add(front);
+  // proportions of a 6.1" Pro phone: 71.5 x 147.6 x 8.25 mm (scaled), large continuous corners
+  const W = 0.76, H = 1.57, D = 0.085, R = 0.122;
+  const g = new THREE.Group();
+  const band = metal(finish, 0.26);
+  const glassBlack = new THREE.MeshStandardMaterial({ color: 0x010102, roughness: 0.04, metalness: 0.7 });
+  const backMat = new THREE.MeshStandardMaterial({ color: fin(finish).back, roughness: 0.55, metalness: 0.2 }); // frosted glass
+  const body = new THREE.Mesh(extrudedRoundRect(W, H, R, D, 0.012), band); g.add(body);
+  const front = new THREE.Mesh(roundedRect(W - 0.018, H - 0.018, R - 0.009), glassBlack); front.position.z = D / 2 + 0.0006; g.add(front);
   phoneCanvas = document.createElement("canvas"); phoneCanvas.width = 480; phoneCanvas.height = 1029;
   phoneTex = new THREE.CanvasTexture(phoneCanvas); phoneTex.colorSpace = THREE.SRGBColorSpace; phoneTex.generateMipmaps = false; phoneTex.minFilter = THREE.LinearFilter;
-  const screen = new THREE.Mesh(new THREE.PlaneGeometry(0.705, 1.51), new THREE.MeshBasicMaterial({ map: phoneTex, toneMapped: false }));
-  screen.position.z = 0.0432; g.add(screen);
-  const backGlass = new THREE.Mesh(roundedRect(0.735, 1.535, 0.1), new THREE.MeshStandardMaterial({ color: fin(finish).back, roughness: 0.42, metalness: 0.25 }));
-  backGlass.position.z = -0.0428; backGlass.rotation.y = Math.PI; g.add(backGlass);
-  const pem = emblem(0.26, finish); if (pem) { pem.position.set(0, -0.02, -0.0432); pem.rotation.y = Math.PI; g.add(pem); }
-  const bump = new THREE.Mesh(new RoundedBoxGeometry(0.36, 0.36, 0.03, 3, 0.08), new THREE.MeshStandardMaterial({ color: fin(finish).plate, roughness: 0.12, metalness: 0.55 }));
-  bump.position.set(0.165, 0.555, -0.055); g.add(bump);
-  const flash = new THREE.Mesh(new THREE.CylinderGeometry(0.022, 0.022, 0.034, 20), new THREE.MeshStandardMaterial({ color: 0xfff4dc, emissive: 0x3a3428, roughness: 0.3 }));
-  flash.rotation.x = Math.PI / 2; flash.position.set(0.255, 0.66, -0.07); g.add(flash);
-  const lidar = new THREE.Mesh(new THREE.CylinderGeometry(0.018, 0.018, 0.034, 16), new THREE.MeshStandardMaterial({ color: 0x050507, roughness: 0.2 }));
-  lidar.rotation.x = Math.PI / 2; lidar.position.set(0.255, 0.45, -0.07); g.add(lidar);
-  const lensMat = new THREE.MeshStandardMaterial({ color: 0x05060a, roughness: 0.02, metalness: 0.9 });
-  const ringMat = frame;
-  [[0.083, 0.645], [0.083, 0.465], [0.235, 0.555]].forEach(([x, y]) => {
-    const ring = new THREE.Mesh(new THREE.CylinderGeometry(0.068, 0.068, 0.04, 32), ringMat); ring.rotation.x = Math.PI / 2; ring.position.set(x, y, -0.072); g.add(ring);
-    const lens = new THREE.Mesh(new THREE.CylinderGeometry(0.052, 0.052, 0.042, 32), lensMat); lens.rotation.x = Math.PI / 2; lens.position.set(x, y, -0.073); g.add(lens);
-    const glint = new THREE.Mesh(new THREE.CircleGeometry(0.02, 16), new THREE.MeshBasicMaterial({ color: 0x3a4a8a, transparent: true, opacity: 0.6 }));
-    glint.position.set(x - 0.012, y + 0.012, -0.0945); glint.rotation.y = Math.PI; g.add(glint);
+  const screen = new THREE.Mesh(new THREE.PlaneGeometry(W - 0.044, H - 0.044), new THREE.MeshBasicMaterial({ map: phoneTex, toneMapped: false }));
+  screen.position.z = D / 2 + 0.0011; g.add(screen);
+  const glare = new THREE.Mesh(roundedRect(W - 0.018, H - 0.018, R - 0.009), new THREE.MeshStandardMaterial({ color: 0x000000, roughness: 0.03, metalness: 1, transparent: true, opacity: 0.16 }));
+  glare.position.z = D / 2 + 0.0016; g.add(glare);
+  const back = new THREE.Mesh(roundedRect(W - 0.018, H - 0.018, R - 0.009), backMat); back.position.z = -D / 2 - 0.0006; back.rotation.y = Math.PI; g.add(back);
+  const pem = emblem(0.26, finish); if (pem) { pem.position.set(0, -0.02, -D / 2 - 0.0012); pem.rotation.y = Math.PI; g.add(pem); }
+
+  // camera plateau (top-left when looking at the back -> +x in model space)
+  const P = 0.405, px = W / 2 - 0.028 - P / 2, py = H / 2 - 0.028 - P / 2;
+  const plate = new THREE.Mesh(extrudedRoundRect(P, P, 0.092, 0.014, 0.004, 16),
+    new THREE.MeshStandardMaterial({ color: fin(finish).plate, roughness: 0.12, metalness: 0.45 }));
+  plate.position.set(px, py, -D / 2 - 0.007); g.add(plate);
+  const zc = -D / 2 - 0.014;
+  const ltex = lensTexture();
+  const ringMat = metal(finish, 0.18);
+  [[0.093, 0.094], [0.093, -0.094], [-0.094, 0]].forEach(([dx, dy]) => {
+    const x = px + dx, y = py + dy;
+    const housing = new THREE.Mesh(new THREE.CylinderGeometry(0.084, 0.09, 0.03, 48), ringMat);
+    housing.rotation.x = Math.PI / 2; housing.position.set(x, y, zc - 0.012); g.add(housing);
+    const rim = new THREE.Mesh(new THREE.TorusGeometry(0.081, 0.006, 12, 48), ringMat); rim.position.set(x, y, zc - 0.027); g.add(rim);
+    const glass = new THREE.Mesh(new THREE.CylinderGeometry(0.074, 0.074, 0.031, 48), glassBlack);
+    glass.rotation.x = Math.PI / 2; glass.position.set(x, y, zc - 0.0125); g.add(glass);
+    const lens = new THREE.Mesh(new THREE.CircleGeometry(0.062, 48), new THREE.MeshStandardMaterial({ map: ltex, roughness: 0.04, metalness: 0.5 }));
+    lens.position.set(x, y, zc - 0.0285); lens.rotation.y = Math.PI; g.add(lens);
   });
-  [[0.39, 0.35, 0.18], [-0.39, 0.42, 0.1], [-0.39, 0.25, 0.14]].forEach(([x, y, h]) => {
-    const b = new THREE.Mesh(new RoundedBoxGeometry(0.02, h, 0.035, 2, 0.008), frame); b.position.set(x, y, 0); g.add(b);
-  });
+  const flash = new THREE.Mesh(new THREE.CircleGeometry(0.03, 32), new THREE.MeshStandardMaterial({ color: 0xd8d0bc, emissive: 0x100e0b, roughness: 0.7 }));
+  flash.position.set(px - 0.098, py + 0.118, zc - 0.0005); flash.rotation.y = Math.PI; g.add(flash);
+  const lidar = new THREE.Mesh(new THREE.CircleGeometry(0.026, 32), new THREE.MeshStandardMaterial({ color: 0x050508, roughness: 0.1, metalness: 0.6 }));
+  lidar.position.set(px - 0.098, py - 0.118, zc - 0.0005); lidar.rotation.y = Math.PI; g.add(lidar);
+  const mic = new THREE.Mesh(new THREE.CircleGeometry(0.008, 16), new THREE.MeshBasicMaterial({ color: 0x0a0a0c }));
+  mic.position.set(px - 0.03, py + 0.165, zc - 0.0005); mic.rotation.y = Math.PI; g.add(mic);
+
+  // buttons: action + volume (left), side button (right)
+  const btn = (x, y, h) => { const b = new THREE.Mesh(new RoundedBoxGeometry(0.014, h, 0.03, 2, 0.006), band); b.position.set(x, y, 0); g.add(b); };
+  btn(-W / 2 - 0.004, 0.47, 0.065); btn(-W / 2 - 0.004, 0.33, 0.115); btn(-W / 2 - 0.004, 0.19, 0.115); btn(W / 2 + 0.004, 0.27, 0.2);
+  // bottom: USB-C port + speaker / mic holes
+  const port = new THREE.Mesh(new RoundedBoxGeometry(0.11, 0.012, 0.03, 2, 0.006), new THREE.MeshBasicMaterial({ color: 0x050506 }));
+  port.position.set(0, -H / 2 - 0.001, 0); g.add(port);
+  for (let k = 0; k < 6; k++) for (const sgn of [-1, 1]) {
+    const h = new THREE.Mesh(new THREE.CylinderGeometry(0.006, 0.006, 0.004, 10), new THREE.MeshBasicMaterial({ color: 0x050506 }));
+    h.position.set(sgn * (0.1 + k * 0.02), -H / 2 - 0.001, 0); g.add(h);
+  }
   return { group: g };
 }
 
@@ -300,7 +349,7 @@ function animateWorld(t) {
 
 function screens(lapState, phoneState, lt) {
   if (window.__noScreens) return;
-  const base = { pal: J.palette, brand: J.brand, account: J.account || {}, img: J._img || {} };
+  const base = { pal: J.palette, brand: J.brand, account: J.account || {}, img: J._img || {}, wall: (J.seed || 0) % 9 };
   // screens are drawn in a fixed design space (1280x800 / 600x1286) and scaled to the canvas
   if (lapState) { const c = lapCanvas.getContext("2d"); c.setTransform(lapCanvas.width / 1280, 0, 0, lapCanvas.height / 800, 0, 0); drawLaptop(c, 1280, 800, { ...base, ...lapState }, lapState.t ?? lt); lapTex.needsUpdate = true; }
   if (phoneState) { const c = phoneCanvas.getContext("2d"); c.setTransform(phoneCanvas.width / 600, 0, 0, phoneCanvas.height / 1286, 0, 0); drawPhone(c, 600, 1286, { ...base, ...phoneState }, phoneState.t ?? lt); phoneTex.needsUpdate = true; }

@@ -147,21 +147,37 @@ export function drawPhone(ctx, W, H, st, t) {
   const { mode, data, pal, brand } = st;
   ctx.save();
   ctx.fillStyle = "#000"; ctx.fillRect(0, 0, W, H);
-  ctx.save(); rr(ctx, 6, 6, W - 12, H - 12, 58); ctx.clip();
-  const g = ctx.createLinearGradient(0, 0, W, H);
-  if (mode === "lock") { g.addColorStop(0, pal.bg[1]); g.addColorStop(1, pal.bg[0]); }
-  else if (mode === "result") { g.addColorStop(0, "#06221c"); g.addColorStop(1, "#0b1530"); }
-  else { g.addColorStop(0, "#0d0f1c"); g.addColorStop(1, "#171332"); }
-  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-  // wallpaper blobs
-  [[0.2, 0.25, pal.accent], [0.85, 0.6, pal.accent2], [0.3, 0.9, pal.glow[2] || pal.accent]].forEach(([x, y, c], i) => {
-    const rg = ctx.createRadialGradient(W * x, H * (y + 0.03 * Math.sin(t + i)), 0, W * x, H * y, W * 0.7);
-    rg.addColorStop(0, hexA(c, mode === "lock" ? .55 : .25)); rg.addColorStop(1, hexA(c, 0));
-    ctx.fillStyle = rg; ctx.fillRect(0, 0, W, H);
-  });
+  ctx.save(); rr(ctx, 3, 3, W - 6, H - 6, 86); ctx.clip();
+  // wallpaper: a real image from the account when available, otherwise a gradient
+  const pics = (st.img && st.img.grid) || [];
+  const wp = pics.length ? pics[(st.wall || 0) % pics.length] : null;
+  if (wp) {
+    ctx.save();
+    ctx.filter = mode === "lock" ? "brightness(.72) saturate(1.15)" : "blur(16px) brightness(.42) saturate(1.3)";
+    const sc = Math.max(W / wp.width, H / wp.height), dw = wp.width * sc, dh = wp.height * sc;
+    ctx.drawImage(wp, (W - dw) / 2, (H - dh) / 2, dw, dh);
+    ctx.restore();
+    const shade = ctx.createLinearGradient(0, 0, 0, H);
+    shade.addColorStop(0, "rgba(0,0,0,.25)"); shade.addColorStop(0.5, "rgba(0,0,0,0)"); shade.addColorStop(1, "rgba(0,0,0,.45)");
+    ctx.fillStyle = shade; ctx.fillRect(0, 0, W, H);
+  } else {
+    const g = ctx.createLinearGradient(0, 0, W, H);
+    if (mode === "lock") { g.addColorStop(0, pal.bg[1]); g.addColorStop(1, pal.bg[0]); }
+    else if (mode === "result") { g.addColorStop(0, "#06221c"); g.addColorStop(1, "#0b1530"); }
+    else { g.addColorStop(0, "#0d0f1c"); g.addColorStop(1, "#171332"); }
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    // wallpaper blobs
+    [[0.2, 0.25, pal.accent], [0.85, 0.6, pal.accent2], [0.3, 0.9, pal.glow[2] || pal.accent]].forEach(([x, y, c], i) => {
+      const rg = ctx.createRadialGradient(W * x, H * (y + 0.03 * Math.sin(t + i)), 0, W * x, H * y, W * 0.7);
+      rg.addColorStop(0, hexA(c, mode === "lock" ? .55 : .25)); rg.addColorStop(1, hexA(c, 0));
+      ctx.fillStyle = rg; ctx.fillRect(0, 0, W, H);
+    });
+  }
   // status bar + island
-  ctx.fillStyle = "#fff"; ctx.font = "700 22px Inter"; ctx.fillText("9:41", 48, 58);
-  rr(ctx, W / 2 - 62, 26, 124, 36, 18); ctx.fillStyle = "#000"; ctx.fill();
+  ctx.fillStyle = "#fff"; ctx.font = "700 24px Inter"; ctx.fillText("9:41", 62, 62);
+  rr(ctx, W / 2 - 96, 24, 192, 56, 28); ctx.fillStyle = "#000"; ctx.fill();  // Dynamic Island
+  ctx.beginPath(); ctx.arc(W / 2 + 62, 52, 10, 0, 7); ctx.fillStyle = "#0b0e1c"; ctx.fill();
+  ctx.beginPath(); ctx.arc(W / 2 + 59, 49, 3, 0, 7); ctx.fillStyle = "rgba(90,110,200,.55)"; ctx.fill();
 
   if (mode === "lock") {
     ctx.textAlign = "center"; ctx.fillStyle = "rgba(255,255,255,.9)"; ctx.font = "600 26px Inter";
