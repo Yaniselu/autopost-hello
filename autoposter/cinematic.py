@@ -59,6 +59,40 @@ def date_label(cfg) -> str:
     return now.strftime("%A, %-d %B")
 
 
+# ====================================================================== director
+# camera/staging variants per section (must match renderer/scene/scene.js SHOTS) and
+# where the headline goes so it never covers the devices.
+SHOTS = {
+    "hook": {"drop_spin": "top", "rise_turn": "top", "lid_open": "bottom", "macro_pull": "top"},
+    "problem": {"orbit_left": "top", "high_angle": "bottom", "screen_push": "bottom"},
+    "solution": {"orbit_right": "top", "phone_focus": "top", "side_track": "top"},
+    "result": {"duo_front": "top", "low_hero": "top", "phone_result": "top"},
+    "cta": {"phone_spin": "top", "duo_cta": "top"},
+}
+BACKGROUNDS = ["bokeh", "grid", "spot"]
+TYPE_STYLES = ["kinetic", "caption", "typewriter"]
+TRANSITIONS = ["whip", "zoom", "glitch", "flash"]
+PHONE_FINISHES = ["natural", "black", "white", "desert", "blue"]
+LAPTOP_FINISHES = ["spaceblack", "silver"]
+
+
+def make_plan(rng: random.Random, previous: dict | None = None) -> dict:
+    """A different look for every video; avoids repeating the previous video's main choices."""
+    best = None
+    for _ in range(8):
+        plan = {sec: rng.choice(list(opts)) for sec, opts in SHOTS.items()}
+        plan.update(bg=rng.choice(BACKGROUNDS), type=rng.choice(TYPE_STYLES), transition=rng.choice(TRANSITIONS),
+                    finish_phone=rng.choice(PHONE_FINISHES), finish_laptop=rng.choice(LAPTOP_FINISHES))
+        if not previous:
+            return plan
+        same = sum(plan.get(k) == previous.get(k) for k in ("hook", "problem", "solution", "bg", "type", "transition"))
+        if best is None or same < best[0]:
+            best = (same, plan)
+        if same <= 1:
+            break
+    return best[1]
+
+
 # ====================================================================== overlay
 def _ease_in_out(x):
     x = min(1.0, max(0.0, x))
@@ -68,8 +102,11 @@ def _ease_in_out(x):
 class Overlay:
     """Everything drawn on top of the 3D frames. Built once per worker process."""
 
-    def __init__(self, post: dict, cfg: dict, tl: dict, pal: dict, fps: int):
+    def __init__(self, post: dict, cfg: dict, tl: dict, pal: dict, fps: int, plan: dict | None = None):
         self.post, self.tl, self.fps = post, tl, fps
+        self.plan = plan or {}
+        self.type_style = self.plan.get("type", "kinetic")
+        self.transition = self.plan.get("transition", "whip")
         rgb = pal["_rgb"]
         self.accent, self.accent2 = tuple(rgb["accent"]), tuple(rgb["accent2"])
         white = (255, 255, 255)
@@ -81,6 +118,40 @@ class Overlay:
         for sec, text, size, center in (("hook", post["hook"], 112, True), ("problem", post["problem"]["text"], 84, False),
                                         ("result", post["result"], 88, False)):
             self.heads[sec] = self._layout_words(text, size, center, white)
+        # caption style: 1-3 word chunks, big, centred (CapCut-like)
+        self.chunks = {}
+        cap_font = ImageFont.truetype(str(FONT_BOLD), 104)
+        for sec, text in (("hook", post["hook"]), ("problem", post["problem"]["text"]), ("result", post["result"])):
+            words = parse_rich(text)
+            n = max(1, math.ceil(len(words) / 3))
+            per = len(words) / n
+            groups = [words[round(k * per):round((k + 1) * per)] for k in range(n)]
+            groups = [g for g in groups if g]
+            imgs = []
+            for g in groups:
+                im = render_line(g, cap_font, white, self.accent)
+                while im.width > W - 60 and cap_font.size > 60:
+                    im = render_line(g, ImageFont.truetype(str(FONT_BOLD), int(cap_font.size * 0.85)), white, self.accent)
+                    break
+                imgs.append(im)
+            self.chunks[sec] = imgs
+        # typewriter style: whole lines, revealed left to right
+        self.lines_img = {}
+        for sec, head in self.heads.items():
+            rows = {}
+            for wimg, x, y in head["words"]:
+                rows.setdefault(y, []).append((wimg, x))
+            out = []
+            for y in sorted(rows):
+                xs = rows[y]
+                x0 = min(x for _, x in xs)
+                x1 = max(x + im.width for im, x in xs)
+                hh = max(im.height for im, _ in xs)
+                line = Image.new("RGBA", (x1 - x0, hh), (0, 0, 0, 0))
+                for im, x in xs:
+                    line.alpha_composite(im, (x - x0, 0))
+                out.append((line, x0, y))
+            self.lines_img[sec] = out
 
         # ---------- label chips
         chip_font = ImageFont.truetype(str(FONT_SEMI), 32)
@@ -220,15 +291,37 @@ class Overlay:
         img = Image.open(frame_path).transpose(Image.FLIP_TOP_BOTTOM)
         if img.size != (W, H):
             img = img.resize((W, H), Image.LANCZOS)
-        # whip transition: blur + flash around section cuts
-        blur = flash = 0.0
+        # transition around section cuts (style chosen per video)
+        tk = 0.0
         for k, s in self.S.items():
             if s["start"] == 0:
                 continue
             d = abs(t - s["start"])
-            if d < 0.2:
-                blur = max(blur, (1 - d / 0.2) * 18)
-                flash = max(flash, (1 - d / 0.12) * 0.22)
+            if d < 0.22:
+                tk = max(tk, 1 - d / 0.22)
+        blur = flash = 0.0
+        mode = self.transition
+        if tk > 0:
+            if mode == "whip":
+                blur, flash = tk * 18, max(0.0, tk - 0.45) * 0.4
+            elif mode == "zoom":
+                z = 1 + 0.22 * tk
+                cw_, ch_ = int(W / z), int(H / z)
+                img = img.crop(((W - cw_) // 2, (H - ch_) // 2, (W + cw_) // 2, (H + ch_) // 2)).resize((W, H), Image.BILINEAR)
+                blur = tk * 8
+            elif mode == "flash":
+                flash = tk ** 1.5 * 0.65
+            else:  # glitch: RGB split + sliced offsets
+                a = np.asarray(img).copy()
+                sh = int(26 * tk)
+                a[..., 0] = np.roll(a[..., 0], sh, axis=1)
+                a[..., 2] = np.roll(a[..., 2], -sh, axis=1)
+                rng = np.random.default_rng(i)
+                for _ in range(int(8 * tk)):
+                    y0 = int(rng.integers(0, H - 80)); hgt = int(rng.integers(12, 80))
+                    a[y0:y0 + hgt] = np.roll(a[y0:y0 + hgt], int(rng.integers(-60, 60)), axis=1)
+                img = Image.fromarray(a)
+                flash = tk * 0.12
         if blur > 0.5:
             small = img.resize((W // 4, H // 4), Image.BILINEAR).filter(ImageFilter.GaussianBlur(blur / 4))
             img = Image.blend(img, small.resize((W, H), Image.BILINEAR), min(1.0, blur / 10))
@@ -265,10 +358,49 @@ class Overlay:
             a = min(1.0, max(0.0, k)) * (1 - out)
             glass.draw(f, 70 - int((1 - k) * 60), 160, a, t, extra=chip)
 
-        # kinetic headline
-        if sec in self.heads:
+        # headline (style chosen per video)
+        zone = SHOTS.get(sec, {}).get(self.plan.get(sec), "top")
+        if sec in self.heads and self.type_style == "caption":
+            chunks = self.chunks[sec]
+            span = max(0.4, (dur - 0.35) / len(chunks))
+            j = min(len(chunks) - 1, int(max(0.0, lt - 0.15) / span))
+            im = chunks[j]
+            lk = (lt - 0.15 - j * span) / 0.22
+            k = ease_out_back(lk)
+            out = min(1.0, max(0.0, (lt - (dur - 0.2)) / 0.2))
+            a = min(1.0, max(0.0, k)) * (1 - out)
+            if a > 0.01:
+                s_ = 0.75 + 0.25 * min(1.0, max(0.0, k))
+                im2 = im.resize((max(1, int(im.width * s_)), max(1, int(im.height * s_))), Image.BICUBIC) if s_ < 0.995 else im
+                cy = 470 if zone == "top" else H - 640
+                pw, ph = im2.width - 20, im2.height - 40
+                pill = np.zeros((ph, pw, 4), np.float32)
+                pill[..., :3] = 0; pill[..., 3] = 0.5
+                mask = Image.new("L", (pw, ph), 0)
+                ImageDraw.Draw(mask).rounded_rectangle((0, 0, pw - 1, ph - 1), radius=ph // 2, fill=255)
+                pa = np.asarray(mask, np.float32) / 255 * 0.5 * a
+                _blend(f, (W - pw) // 2, cy - ph // 2, np.zeros(3, np.float32), pa)
+                _paste_rgba(f, im2, (W - im2.width) // 2, cy - im2.height // 2, a)
+        elif sec in self.heads and self.type_style == "typewriter":
+            rows = self.lines_img[sec]
+            top = 280 if zone == "top" else H - 420 - self.heads[sec]["height"]
+            out = min(1.0, max(0.0, (lt - (dur - 0.25)) / 0.25))
+            total_w = sum(im.width for im, _, _ in rows) or 1
+            revealed = max(0.0, (lt - 0.15)) * 1500  # px per second
+            for im, x0, y in rows:
+                wpx = int(min(im.width, max(0.0, revealed)))
+                revealed -= im.width
+                if wpx <= 0:
+                    continue
+                _paste_rgba(f, im.crop((0, 0, wpx, im.height)), x0, top + y, 1 - out)
+                if wpx < im.width or revealed < 0 or (revealed < 400 and int(lt * 3) % 2 == 0):
+                    cx = x0 + wpx - 22
+                    cur = _gradient_fill(10, int(im.height * 0.55), self.accent, self.accent2, 1.0)
+                    if wpx < im.width or (im is rows[-1][0]):
+                        _blend(f, cx, top + y + int(im.height * 0.22), cur[..., :3], cur[..., 3] * (1 - out))
+        elif sec in self.heads:
             head = self.heads[sec]
-            top = 270 if sec == "hook" else 280
+            top = (270 if sec == "hook" else 280) if zone == "top" else H - 420 - head["height"]
             out = min(1.0, max(0.0, (lt - (dur - 0.28)) / 0.28))
             for j, (wimg, x, y) in enumerate(head["words"]):
                 k = ease_out_cubic((lt - 0.2 - j * 0.055) / 0.42)
@@ -319,9 +451,9 @@ class Overlay:
 _OV = None
 
 
-def _init(post, cfg, tl, pal, fps):
+def _init(post, cfg, tl, pal, fps, plan):
     global _OV
-    _OV = Overlay(post, cfg, tl, pal, fps)
+    _OV = Overlay(post, cfg, tl, pal, fps, plan)
 
 
 def _work(args):
@@ -329,13 +461,17 @@ def _work(args):
     return _OV.compose(Path(path), i)
 
 
-def render_cinematic_reel(post: dict, cfg: dict, out: Path, work: Path, seed: int) -> Path:
+def render_cinematic_reel(post: dict, cfg: dict, out: Path, work: Path, seed: int,
+                          previous_plan: dict | None = None) -> Path:
     rng = random.Random(seed)
+    plan = make_plan(rng, previous_plan)
+    post["_plan"] = plan
     fps = int(cfg["video"].get("fps_cinematic", 24))
     pal_name, pal = pick_palette(cfg, rng)
     job = {
         "mode": "reel", "width": W, "height": H, "fps": fps, "seed": seed,
-        "finish": rng.choice(["graphite", "silver"]), "date_label": date_label(cfg),
+        "finish": plan["finish_phone"], "finish_phone": plan["finish_phone"], "finish_laptop": plan["finish_laptop"],
+        "plan": plan, "date_label": date_label(cfg),
         "brand": {"name": cfg["brand"]["name"], "handle": cfg["brand"]["handle"]},
         "palette": {k: v for k, v in pal.items() if not k.startswith("_")},
         "render_scale": cfg["video"].get("render_scale", 0.6667),
@@ -343,7 +479,8 @@ def render_cinematic_reel(post: dict, cfg: dict, out: Path, work: Path, seed: in
                  "problem": post["problem"], "solution": post["solution"], "result": post["result"],
                  "cta": post.get("cta", "")},
     }
-    print(f"[cinematic] palette {pal_name}, finish {job['finish']}")
+    plan["palette"] = pal_name
+    print(f"[cinematic] palette {pal_name}, plan {json.dumps(plan)}")
     rdir = work / "3d"
     run_renderer(job, rdir)
     tl = json.loads((rdir / "timeline.json").read_text())
@@ -360,7 +497,7 @@ def render_cinematic_reel(post: dict, cfg: dict, out: Path, work: Path, seed: in
     procs = max(1, min(os.cpu_count() or 2, 6))
     pal_clean = dict(pal)
     try:
-        with get_context("fork").Pool(procs, initializer=_init, initargs=(post, cfg, tl, pal_clean, fps)) as pool:
+        with get_context("fork").Pool(procs, initializer=_init, initargs=(post, cfg, tl, pal_clean, fps, plan)) as pool:
             for n, buf in enumerate(pool.imap(_work, [(str(p), i) for i, p in enumerate(frames)], chunksize=4)):
                 proc.stdin.write(buf)
                 if n % 120 == 0:

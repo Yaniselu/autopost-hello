@@ -70,6 +70,17 @@ async function main() {
       await page.close();
       fs.writeFileSync(path.join(outDir, "timeline.json"), JSON.stringify(tl, null, 1));
       const frames = Math.ceil(tl.total * job.fps);
+      if (job.only_times) { // quick previews: just a few moments
+        const dir = path.join(outDir, "frames"); fs.mkdirSync(dir, { recursive: true });
+        const { page } = await openPage(browser, job);
+        for (const tt of job.only_times) {
+          const f = Math.min(frames - 1, Math.round(tt * job.fps));
+          const url = await page.evaluate((x) => window.renderFrame(x), f / job.fps);
+          fs.writeFileSync(path.join(dir, String(f).padStart(5, "0") + ".jpg"), Buffer.from(url.slice(url.indexOf(",") + 1), "base64"));
+        }
+        await page.close();
+        return;
+      }
       const workers = Math.max(1, Math.min(job.workers || os.cpus().length, 6));
       const dir = path.join(outDir, "frames"); fs.mkdirSync(dir, { recursive: true });
       const per = Math.ceil(frames / workers);

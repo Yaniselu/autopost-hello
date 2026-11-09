@@ -30,6 +30,11 @@ function hexA(hex, a) {
 
 // ------------------------------------------------------------------ laptop
 export function drawLaptop(ctx, W, H, st, t) {
+  drawLaptopUI(ctx, W, H, st, t);
+  displayFrame(ctx, W, H);
+}
+
+function drawLaptopUI(ctx, W, H, st, t) {
   const { mode, data, pal } = st;
   ctx.save();
   // wallpaper
@@ -39,7 +44,7 @@ export function drawLaptop(ctx, W, H, st, t) {
   ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
 
   // menu bar
-  ctx.fillStyle = "rgba(255,255,255,.06)"; ctx.fillRect(0, 0, W, 26);
+  ctx.fillStyle = "rgba(255,255,255,.06)"; ctx.fillRect(0, 0, W, 30);
   ctx.fillStyle = "rgba(255,255,255,.75)"; ctx.font = "600 13px Inter";
   ctx.fillText(data.app_name || "Workspace", 16, 18);
   ctx.textAlign = "right"; ctx.fillText("9:41", W - 16, 18); ctx.textAlign = "left";
@@ -125,6 +130,18 @@ export function drawLaptop(ctx, W, H, st, t) {
   ctx.restore();
 }
 
+function displayFrame(ctx, W, H) {
+  // rounded display corners + camera notch, like modern laptop displays
+  ctx.save(); ctx.fillStyle = "#000";
+  const r = 22;
+  for (const [x, y, sx, sy] of [[0, 0, 1, 1], [W, 0, -1, 1]]) {
+    ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + sx * r, y); ctx.quadraticCurveTo(x, y, x, y + sy * r); ctx.closePath(); ctx.fill();
+  }
+  rr(ctx, W / 2 - 92, -20, 184, 52, 14); ctx.fill();
+  ctx.beginPath(); ctx.arc(W / 2, 14, 5, 0, 7); ctx.fillStyle = "#14161c"; ctx.fill();
+  ctx.restore();
+}
+
 // ------------------------------------------------------------------ phone
 export function drawPhone(ctx, W, H, st, t) {
   const { mode, data, pal, brand } = st;
@@ -175,6 +192,29 @@ export function drawPhone(ctx, W, H, st, t) {
     ctx.font = "800 40px Inter"; const lines = wrap(ctx, data.result || "Done.", W - 120);
     lines.slice(0, 4).forEach((l, i) => ctx.fillText(l, 0, 0 + i * 50));
     ctx.restore(); ctx.textAlign = "left";
+  } else if (mode === "steps" || mode === "app") {
+    ctx.fillStyle = "#fff"; ctx.font = "800 44px Inter"; ctx.fillText(data.app_name || "Today", 44, 150);
+    ctx.fillStyle = hexA(pal.accent, .9); ctx.font = "700 24px Inter";
+    const steps = data.steps || [], shown = st.stepsShown ?? steps.length;
+    ctx.fillText(shown >= steps.length - 0.01 ? "All done ✓" : `${Math.floor(shown)}/${steps.length} automated`, 44, 192);
+    steps.forEach((s, i) => {
+      const k = clamp(shown - i), y = 240 + i * 150;
+      ctx.save(); ctx.globalAlpha = 0.45 + 0.55 * k;
+      rr(ctx, 30, y, W - 60, 128, 30); ctx.fillStyle = k > 0 ? hexA(pal.accent, .12 + .1 * k) : "rgba(255,255,255,.06)"; ctx.fill();
+      ctx.strokeStyle = hexA(pal.accent, .5 * k); ctx.lineWidth = 2; ctx.stroke();
+      ctx.beginPath(); ctx.arc(88, y + 64, 28, 0, 7); ctx.fillStyle = k > 0.5 ? pal.accent : "rgba(255,255,255,.14)"; ctx.fill();
+      if (k > 0.5) { ctx.strokeStyle = "#071018"; ctx.lineWidth = 6; ctx.lineCap = "round"; ctx.beginPath(); ctx.moveTo(74, y + 64); ctx.lineTo(84, y + 75); ctx.lineTo(103, y + 52); ctx.stroke(); }
+      ctx.fillStyle = "#fff"; fitText(ctx, s.title, W - 200, 30, 800); ctx.fillText(s.title, 136, y + 56);
+      ctx.fillStyle = "rgba(255,255,255,.6)"; fitText(ctx, s.text, W - 200, 21, 500); ctx.fillText(s.text, 136, y + 92);
+      ctx.restore();
+    });
+    // bar chart growing at the bottom
+    const by = H - 300;
+    for (let i = 0; i < 7; i++) {
+      const v = (0.25 + 0.1 * i) * (0.3 + 0.7 * clamp(shown / Math.max(1, steps.length)));
+      rr(ctx, 50 + i * 72, by + 200 - 200 * v, 44, 200 * v, 12);
+      ctx.fillStyle = i === 6 ? pal.accent : hexA(pal.accent2, .55); ctx.fill();
+    }
   } else if (mode === "profile") {
     const k = ease(t / 0.6);
     ctx.globalAlpha = k;

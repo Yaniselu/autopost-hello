@@ -1,7 +1,10 @@
 # Velosyntech Auto-Poster
 
 Postează singur, fără să-ți ții calculatorul pornit, pe **Instagram și pe pagina de Facebook**:
-- **Reels cinematice 3D**: laptop și telefon animate, structura HOOK → PROBLEMA → SOLUȚIA (3 pași) → REZULTATUL → CTA, cu text Liquid Glass, muzică cinematică și efecte sonore
+- **Fiecare reel arată altfel**: un „regizor” automat alege la fiecare video alte unghiuri de cameră (14 variante), alt fundal
+  (bokeh, grilă tech, spot de lumină), alt stil de text (cinetic, subtitrări tip CapCut, mașină de scris), alte tranziții
+  (whip, zoom, glitch, flash), alte culori, altă muzică și alte finisaje de iPhone/Mac. Nu repetă combinația videoclipului anterior.
+- **Reels cinematice 3D**: mockup-uri tip MacBook (notch, difuzoare, Space Black/Silver) și iPhone Pro (titan natural/negru/alb/deșert/albastru, 3 camere), animate, structura HOOK → PROBLEMA → SOLUȚIA (3 pași) → REZULTATUL → CTA, cu text Liquid Glass, muzică cinematică și efecte sonore
 - **Carusel** (1 pe zi în mod implicit): copertă 3D, 5 slide-uri cu idei, slide final cu Follow
 - **Stories** (sfat, întrebare, fapt), cu imagini 3D
 - **Răspunsuri automate la comentarii**, pe Instagram și Facebook

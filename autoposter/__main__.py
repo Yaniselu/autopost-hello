@@ -47,11 +47,11 @@ def _reel_as_slides(post: dict) -> dict:
     return p
 
 
-def render_reel(post: dict, cfg: dict, out: Path, work: Path, seed: int) -> Path:
+def render_reel(post: dict, cfg: dict, out: Path, work: Path, seed: int, previous_plan: dict | None = None) -> Path:
     style = cfg["video"].get("style", "cinematic")
     if style == "cinematic":
         from .cinematic import render_cinematic_reel
-        return render_cinematic_reel(post, cfg, out, work, seed)
+        return render_cinematic_reel(post, cfg, out, work, seed, previous_plan)
     if style == "liquid_glass":
         from .glass import render_glass_video
         return render_glass_video(_reel_as_slides(post), cfg, None, out, work, seed=seed)
@@ -89,7 +89,10 @@ def run_job(cfg: dict, kind: str, mode: str) -> dict:
             post = generate_reel(cfg, history)
             caption = build_caption(post)
             entry.update(topic=post["topic"], pillar=post.get("pillar"), hook=post["hook"], caption=caption)
-            video = render_reel(post, cfg, OUTPUT / f"reel-{stamp}.mp4", work, seed)
+            prev = next((h.get("plan") for h in reversed(history) if h.get("plan")), None)
+            video = render_reel(post, cfg, OUTPUT / f"reel-{stamp}.mp4", work, seed, prev)
+            if post.get("_plan"):
+                entry["plan"] = post["_plan"]
             if mode == "test":
                 entry.update(status="test", previews=_upload_previews([video]))
             else:

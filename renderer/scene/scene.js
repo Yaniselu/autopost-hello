@@ -47,15 +47,15 @@ async function setup(job) {
   scene.environment = pm.fromScene(new RoomEnvironment(), 0.04).texture;
   camera = new THREE.PerspectiveCamera(30, W / H, 0.1, 200);
 
-  buildWorld(job.palette);
-  laptop = buildLaptop(job.finish);
-  phone = buildPhone(job.finish);
+  buildWorld(job.palette, (job.plan && job.plan.bg) || "bokeh");
+  laptop = buildLaptop(job.finish_laptop || job.finish);
+  phone = buildPhone(job.finish_phone || job.finish);
   scene.add(laptop.group, phone.group);
 
   const rt = new THREE.WebGLRenderTarget(RW, RH, { type: THREE.HalfFloatType, samples: job.msaa ?? 2 });
   composer = new EffectComposer(renderer, rt);
   composer.addPass(new RenderPass(scene, camera));
-  bloom = new UnrealBloomPass(new THREE.Vector2(RW / 2, RH / 2), 0.5, 0.55, 0.9);
+  bloom = new UnrealBloomPass(new THREE.Vector2(RW / 2, RH / 2), 0.42, 0.5, 0.94);
   composer.addPass(bloom);
   composer.addPass(new OutputPass());
 
@@ -81,7 +81,7 @@ function radialTexture(inner = "rgba(255,255,255,1)", outer = "rgba(255,255,255,
   const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
 }
 
-function buildWorld(pal) {
+function buildWorld(pal, variant) {
   const bg = new THREE.Mesh(new THREE.SphereGeometry(80, 32, 16), new THREE.ShaderMaterial({
     side: THREE.BackSide, depthWrite: false,
     uniforms: { top: { value: new THREE.Color(pal.bg[1]) }, bottom: { value: new THREE.Color(pal.bg[0]) } },
@@ -92,7 +92,8 @@ function buildWorld(pal) {
 
   const tex = radialTexture();
   const glows = pal.glow.length ? pal.glow : [pal.accent, pal.accent2];
-  for (let i = 0; i < 16; i++) {
+  const nBokeh = variant === "bokeh" ? 16 : variant === "grid" ? 7 : 4;
+  for (let i = 0; i < nBokeh; i++) {
     const m = new THREE.SpriteMaterial({ map: tex, color: new THREE.Color(glows[i % glows.length]), blending: THREE.AdditiveBlending,
       transparent: true, depthWrite: false, opacity: 0.18 + rnd() * 0.3 });
     const s = new THREE.Sprite(m);
@@ -116,10 +117,32 @@ function buildWorld(pal) {
   const fg = fx.createRadialGradient(256, 256, 0, 256, 256, 256);
   fg.addColorStop(0, `#${glowc.clone().multiplyScalar(0.28).getHexString()}`); fg.addColorStop(0.45, `#${glowc.clone().multiplyScalar(0.09).getHexString()}`);
   fg.addColorStop(1, `#${bgc.getHexString()}`); fx.fillStyle = fg; fx.fillRect(0, 0, 512, 512);
+  if (variant === "grid") { // glowing tech grid fading out with distance
+    fx.strokeStyle = pal.accent; fx.lineWidth = 1.2;
+    for (let i = 0; i <= 512; i += 16) {
+      const a = Math.max(0, 1 - Math.abs(i - 256) / 256) * 0.3;
+      fx.globalAlpha = a; fx.beginPath(); fx.moveTo(i, 0); fx.lineTo(i, 512); fx.stroke(); fx.beginPath(); fx.moveTo(0, i); fx.lineTo(512, i); fx.stroke();
+    }
+    fx.globalAlpha = 1;
+  }
   const ftex = new THREE.CanvasTexture(fc); ftex.colorSpace = THREE.SRGBColorSpace;
   const floor = new THREE.Mesh(new THREE.PlaneGeometry(60, 60), new THREE.MeshBasicMaterial({ map: ftex }));
   floor.rotation.x = -Math.PI / 2; scene.add(floor);
 
+  if (variant === "spot") { // volumetric light cone from above
+    const cc = document.createElement("canvas"); cc.width = 256; cc.height = 512; const cx = cc.getContext("2d");
+    const lg = cx.createLinearGradient(0, 0, 0, 512); lg.addColorStop(0, "rgba(255,255,255,.55)"); lg.addColorStop(1, "rgba(255,255,255,0)");
+    cx.fillStyle = lg; cx.beginPath(); cx.moveTo(110, 0); cx.lineTo(146, 0); cx.lineTo(256, 512); cx.lineTo(0, 512); cx.closePath(); cx.fill();
+    const ct = new THREE.CanvasTexture(cc);
+    const cone = new THREE.Mesh(new THREE.PlaneGeometry(9, 14), new THREE.MeshBasicMaterial({ map: ct, transparent: true, depthWrite: false,
+      blending: THREE.AdditiveBlending, color: new THREE.Color(pal.accent).lerp(new THREE.Color(0xffffff), 0.6), opacity: 0.35 }));
+    cone.position.set(0, 6.5, -3.5); scene.add(cone);
+  }
+  if (variant === "grid") { // horizon glow line
+    const hz = new THREE.Mesh(new THREE.PlaneGeometry(60, 0.6), new THREE.MeshBasicMaterial({ map: radialTexture(pal.accent, "rgba(0,0,0,0)"), transparent: true,
+      blending: THREE.AdditiveBlending, depthWrite: false, opacity: 0.8 }));
+    hz.position.set(0, 0.2, -25); scene.add(hz);
+  }
   const sh = radialTexture("rgba(0,0,0,.85)", "rgba(0,0,0,0)");
   shadowL = new THREE.Mesh(new THREE.PlaneGeometry(4.6, 3.4), new THREE.MeshBasicMaterial({ map: sh, transparent: true, depthWrite: false }));
   shadowL.rotation.x = -Math.PI / 2; shadowL.position.y = 0.005; scene.add(shadowL);
@@ -132,8 +155,20 @@ function buildWorld(pal) {
   scene.add(new THREE.AmbientLight(0xffffff, 0.05));
 }
 
-function metal(finish) {
-  return new THREE.MeshStandardMaterial({ color: finish === "graphite" ? 0x4a4e55 : 0xb9bdc3, metalness: 1, roughness: 0.34, envMapIntensity: 0.95 });
+// Apple-like colourways (no logos): phone = titanium tones, laptop = space black / silver
+const FINISH = {
+  natural: { body: 0xa9a49b, back: 0xc9c4ba, plate: 0xb7b2a8 },
+  black: { body: 0x3a3a3c, back: 0x2b2b2d, plate: 0x333336 },
+  white: { body: 0xd9d7d2, back: 0xeceae6, plate: 0xe0ded9 },
+  desert: { body: 0xb79a7c, back: 0xd2b99d, plate: 0xc4a88b },
+  blue: { body: 0x47566a, back: 0x5a6a80, plate: 0x4f5e72 },
+  graphite: { body: 0x4a4e55, back: 0x2a2c31, plate: 0x23252a },
+  silver: { body: 0xa8acb2, back: 0xdcdde0, plate: 0xcfd0d3 },
+  spaceblack: { body: 0x2f3033, back: 0x2f3033, plate: 0x2f3033 },
+};
+function fin(name) { return FINISH[name] || FINISH.silver; }
+function metal(finish, rough = 0.34) {
+  return new THREE.MeshStandardMaterial({ color: fin(finish).body, metalness: 1, roughness: rough, envMapIntensity: 0.95 });
 }
 
 function roundedRect(w, h, r) {
@@ -149,14 +184,22 @@ function buildLaptop(finish) {
   const g = new THREE.Group(), alu = metal(finish);
   const dark = new THREE.MeshStandardMaterial({ color: 0x0c0c0f, roughness: 0.6, metalness: 0.2 });
   const glassBlack = new THREE.MeshStandardMaterial({ color: 0x030304, roughness: 0.06, metalness: 0.6 });
-  const base = new THREE.Mesh(new RoundedBoxGeometry(3.0, 0.09, 2.1, 4, 0.045), alu); base.position.y = 0.045; g.add(base);
+  const base = new THREE.Mesh(new RoundedBoxGeometry(3.0, 0.09, 2.1, 4, 0.04), alu); base.position.y = 0.045; g.add(base);
   const well = new THREE.Mesh(new THREE.PlaneGeometry(2.62, 0.98), dark); well.rotation.x = -Math.PI / 2; well.position.set(0, 0.0905, -0.42); g.add(well);
-  const keys = new THREE.InstancedMesh(new THREE.BoxGeometry(0.165, 0.014, 0.15), new THREE.MeshStandardMaterial({ color: 0x141418, roughness: 0.5 }), 13 * 5);
+  const keys = new THREE.InstancedMesh(new RoundedBoxGeometry(0.165, 0.016, 0.15, 1, 0.02), new THREE.MeshStandardMaterial({ color: 0x0d0d10, roughness: 0.55 }), 13 * 5);
   const m = new THREE.Matrix4(); let k = 0;
   for (let r = 0; r < 5; r++) for (let c = 0; c < 13; c++) { m.makeTranslation(-1.2 + c * 0.2, 0.097, -0.82 + r * 0.19); keys.setMatrixAt(k++, m); }
   g.add(keys);
-  const pad = new THREE.Mesh(new RoundedBoxGeometry(1.1, 0.006, 0.68, 2, 0.003), new THREE.MeshStandardMaterial({ color: finish === "graphite" ? 0x3e4248 : 0xc4c7cc, metalness: 1, roughness: 0.18 }));
+  const pad = new THREE.Mesh(new RoundedBoxGeometry(1.25, 0.006, 0.74, 2, 0.003), new THREE.MeshStandardMaterial({ color: fin(finish).body, metalness: 1, roughness: 0.16 }));
   pad.position.set(0, 0.09, 0.56); g.add(pad);
+  // speaker grilles (dotted strips either side of the keyboard)
+  const gc = document.createElement("canvas"); gc.width = 64; gc.height = 512; const gx = gc.getContext("2d");
+  gx.fillStyle = "#000"; for (let y = 4; y < 512; y += 9) for (let x = 6; x < 64; x += 11) { gx.beginPath(); gx.arc(x + (y % 18 ? 5 : 0), y, 1.8, 0, 7); gx.fill(); }
+  const gt = new THREE.CanvasTexture(gc);
+  [-1.37, 1.37].forEach((x) => { const sp = new THREE.Mesh(new THREE.PlaneGeometry(0.16, 0.95), new THREE.MeshBasicMaterial({ map: gt, transparent: true, opacity: 0.55 }));
+    sp.rotation.x = -Math.PI / 2; sp.position.set(x, 0.0906, -0.42); g.add(sp); });
+  const hinge = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, 2.5, 16), new THREE.MeshStandardMaterial({ color: 0x111114, roughness: 0.4, metalness: 0.6 }));
+  hinge.rotation.z = Math.PI / 2; hinge.position.set(0, 0.09, -1.03); g.add(hinge);
 
   const lidPivot = new THREE.Group(); lidPivot.position.set(0, 0.09, -1.03); g.add(lidPivot);
   const lid = new THREE.Mesh(new RoundedBoxGeometry(3.0, 2.02, 0.05, 4, 0.024), alu); lid.position.set(0, 1.01, 0); lidPivot.add(lid);
@@ -181,15 +224,21 @@ function buildPhone(finish) {
   phoneTex = new THREE.CanvasTexture(phoneCanvas); phoneTex.colorSpace = THREE.SRGBColorSpace; phoneTex.generateMipmaps = false; phoneTex.minFilter = THREE.LinearFilter;
   const screen = new THREE.Mesh(new THREE.PlaneGeometry(0.705, 1.51), new THREE.MeshBasicMaterial({ map: phoneTex, toneMapped: false }));
   screen.position.z = 0.0432; g.add(screen);
-  const backGlass = new THREE.Mesh(roundedRect(0.735, 1.535, 0.1), new THREE.MeshStandardMaterial({ color: finish === "graphite" ? 0x2a2c31 : 0xe4e5e8, roughness: 0.35, metalness: 0.3 }));
+  const backGlass = new THREE.Mesh(roundedRect(0.735, 1.535, 0.1), new THREE.MeshStandardMaterial({ color: fin(finish).back, roughness: 0.42, metalness: 0.25 }));
   backGlass.position.z = -0.0428; backGlass.rotation.y = Math.PI; g.add(backGlass);
-  const bump = new THREE.Mesh(new RoundedBoxGeometry(0.33, 0.33, 0.03, 3, 0.07), new THREE.MeshStandardMaterial({ color: finish === "graphite" ? 0x23252a : 0xd9dadd, roughness: 0.15, metalness: 0.5 }));
-  bump.position.set(0.17, 0.56, -0.055); g.add(bump);
+  const bump = new THREE.Mesh(new RoundedBoxGeometry(0.36, 0.36, 0.03, 3, 0.08), new THREE.MeshStandardMaterial({ color: fin(finish).plate, roughness: 0.12, metalness: 0.55 }));
+  bump.position.set(0.165, 0.555, -0.055); g.add(bump);
+  const flash = new THREE.Mesh(new THREE.CylinderGeometry(0.022, 0.022, 0.034, 20), new THREE.MeshStandardMaterial({ color: 0xfff4dc, emissive: 0x3a3428, roughness: 0.3 }));
+  flash.rotation.x = Math.PI / 2; flash.position.set(0.255, 0.66, -0.07); g.add(flash);
+  const lidar = new THREE.Mesh(new THREE.CylinderGeometry(0.018, 0.018, 0.034, 16), new THREE.MeshStandardMaterial({ color: 0x050507, roughness: 0.2 }));
+  lidar.rotation.x = Math.PI / 2; lidar.position.set(0.255, 0.45, -0.07); g.add(lidar);
   const lensMat = new THREE.MeshStandardMaterial({ color: 0x05060a, roughness: 0.02, metalness: 0.9 });
   const ringMat = frame;
-  [[0.1, 0.63], [0.1, 0.49], [0.235, 0.56]].forEach(([x, y]) => {
-    const ring = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 0.035, 32), ringMat); ring.rotation.x = Math.PI / 2; ring.position.set(x, y, -0.07); g.add(ring);
-    const lens = new THREE.Mesh(new THREE.CylinderGeometry(0.045, 0.045, 0.037, 32), lensMat); lens.rotation.x = Math.PI / 2; lens.position.set(x, y, -0.071); g.add(lens);
+  [[0.083, 0.645], [0.083, 0.465], [0.235, 0.555]].forEach(([x, y]) => {
+    const ring = new THREE.Mesh(new THREE.CylinderGeometry(0.068, 0.068, 0.04, 32), ringMat); ring.rotation.x = Math.PI / 2; ring.position.set(x, y, -0.072); g.add(ring);
+    const lens = new THREE.Mesh(new THREE.CylinderGeometry(0.052, 0.052, 0.042, 32), lensMat); lens.rotation.x = Math.PI / 2; lens.position.set(x, y, -0.073); g.add(lens);
+    const glint = new THREE.Mesh(new THREE.CircleGeometry(0.02, 16), new THREE.MeshBasicMaterial({ color: 0x3a4a8a, transparent: true, opacity: 0.6 }));
+    glint.position.set(x - 0.012, y + 0.012, -0.0945); glint.rotation.y = Math.PI; g.add(glint);
   });
   [[0.39, 0.35, 0.18], [-0.39, 0.42, 0.1], [-0.39, 0.25, 0.14]].forEach(([x, y, h]) => {
     const b = new THREE.Mesh(new RoundedBoxGeometry(0.02, h, 0.035, 2, 0.008), frame); b.position.set(x, y, 0); g.add(b);
@@ -242,59 +291,162 @@ function screens(lapState, phoneState, lt) {
   if (phoneState) { const c = phoneCanvas.getContext("2d"); c.setTransform(phoneCanvas.width / 600, 0, 0, phoneCanvas.height / 1286, 0, 0); drawPhone(c, 600, 1286, { ...base, ...phoneState }, phoneState.t ?? lt); phoneTex.needsUpdate = true; }
 }
 
+// Every section has several camera/staging variants; Python's "director" picks one per video.
+const SHOTS = {
+  hook: {
+    drop_spin(lt, dur, t, d) {
+      const k = back(lt / 0.95);
+      show(false, true);
+      place(phone.group, 0, lerp(3.2, 1.0, k) + Math.sin(t * 1.6) * 0.03, 0, lerp(0.6, 0.06, ease(lt / 1.0)), lerp(-2.8, -0.22, ease(lt / 1.1)) + Math.sin(t * 0.8) * 0.04);
+      shadowP.position.set(0, 0.006, 0.1); shadowP.scale.setScalar(0.6 + 0.4 * k);
+      lookFrom(0, 1.25, lerp(5.6, 5.0, inOut(lt / dur)), 0, 1.3, 0, t);
+      screens(null, { mode: "lock", data: d }, lt);
+    },
+    rise_turn(lt, dur, t, d) { // phone rises showing its back, turns to reveal the screen
+      show(false, true);
+      const k = inOut(lt / 1.3);
+      place(phone.group, 0, lerp(-0.6, 0.95, ease(lt / 1.0)), 0, 0.05, lerp(Math.PI, -0.18, k));
+      shadowP.position.set(0, 0.006, 0.05); shadowP.scale.setScalar(clamp(lt / 0.8));
+      lookFrom(-0.25, 0.9, lerp(4.6, 5.2, inOut(lt / dur)), 0, 1.25, 0, t);
+      screens(null, { mode: "lock", data: d }, lt);
+    },
+    lid_open(lt, dur, t, d) { // laptop opens towards the camera
+      show(true, false);
+      laptop.lidPivot.rotation.x = lerp(1.5, -0.3, inOut(lt / 1.4));
+      place(laptop.group, 0, 0, 0, 0, 0);
+      shadowL.position.set(0, 0.005, -0.1);
+      lookFrom(0, lerp(4.2, 2.9, inOut(lt / dur)), lerp(9.5, 8.6, inOut(lt / dur)), 0, 0.15, -0.5, t);
+      screens({ mode: "problem", data: d, t: lt }, null, lt);
+    },
+    macro_pull(lt, dur, t, d) { // starts on the phone screen, pulls back to reveal the device
+      show(false, true);
+      place(phone.group, 0, 1.0, 0, 0.02, -0.1 + Math.sin(t * 0.8) * 0.03);
+      shadowP.position.set(0, 0.006, 0.05);
+      lookFrom(0.05, 1.1, lerp(1.6, 5.3, inOut(lt / (dur * 0.9))), 0, lerp(1.05, 1.32, inOut(lt / dur)), 0, t, 0.5);
+      screens(null, { mode: "lock", data: d }, lt);
+    },
+  },
+  problem: {
+    orbit_left(lt, dur, t, d) {
+      show(true, true);
+      laptop.lidPivot.rotation.x = lerp(1.45, -0.3, inOut(lt / 0.9));
+      place(laptop.group, 0, 0, 0, 0, 0.08); place(phone.group, 2.05, 0.78, -0.7, 0, -0.55);
+      shadowL.position.set(0, 0.005, -0.1); shadowP.position.set(2.05, 0.006, -0.68); shadowP.scale.setScalar(1);
+      const a = lerp(-0.5, -0.12, inOut(lt / dur)), r0 = lerp(12.5, 10.2, inOut(lt / dur));
+      lookFrom(Math.sin(a) * r0, 2.4, Math.cos(a) * r0, 0.15, 1.55, -0.6, t);
+      screens({ mode: "problem", data: d, t: lt }, { mode: "lock", data: d, t: lt + 2 }, lt);
+    },
+    high_angle(lt, dur, t, d) { // looking down on a desk: laptop + phone lying flat
+      show(true, true);
+      laptop.lidPivot.rotation.x = -0.35;
+      place(laptop.group, -0.2, 0, 0, 0, 0.12); place(phone.group, 1.85, 0.045, 0.75, -Math.PI / 2, 0, 0.35);
+      shadowL.position.set(-0.2, 0.005, -0.1); shadowP.position.set(1.85, 0.006, 0.75);
+      const r0 = lerp(15.5, 13.5, inOut(lt / dur));
+      lookFrom(lerp(1.4, 0.4, inOut(lt / dur)), r0 * 0.72, r0 * 0.7, 0.3, 0.1, -0.2, t, 0.6);
+      screens({ mode: "problem", data: d, t: lt }, { mode: "lock", data: d, t: lt + 2 }, lt);
+    },
+    screen_push(lt, dur, t, d) { // slow push into the laptop screen
+      show(true, false);
+      laptop.lidPivot.rotation.x = -0.3;
+      place(laptop.group, 0, 0, 0, 0, 0);
+      shadowL.position.set(0, 0.005, -0.1);
+      lookFrom(lerp(0.6, 0.1, inOut(lt / dur)), lerp(2.2, 1.7, inOut(lt / dur)), lerp(10.5, 7.2, inOut(lt / dur)), 0, lerp(1.3, 1.2, inOut(lt / dur)), -1.2, t);
+      screens({ mode: "problem", data: d, t: lt }, null, lt);
+    },
+  },
+  solution: {
+    orbit_right(lt, dur, t, d) {
+      show(true, true);
+      laptop.lidPivot.rotation.x = -0.3;
+      place(laptop.group, 0, 0, 0, 0, -0.12); place(phone.group, -2.1, 0.78, -0.8, 0, 0.5);
+      shadowL.position.set(0, 0.005, -0.1); shadowP.position.set(-2.1, 0.006, -0.78);
+      const a = lerp(0.42, 0.12, inOut(lt / dur));
+      lookFrom(Math.sin(a) * 11.2, 3.0, Math.cos(a) * 11.2, 0, 0.1, -0.4, t);
+      const sh = stepsShown(t);
+      screens({ mode: "solution", data: d, stepsShown: sh, stepProgress: sh / Math.max(1, TL.steps.length) }, { mode: "steps", data: d, stepsShown: sh }, lt);
+    },
+    phone_focus(lt, dur, t, d) { // phone in front showing the checklist, laptop behind
+      show(true, true);
+      laptop.lidPivot.rotation.x = -0.3;
+      place(laptop.group, 0.6, 0, -2.2, 0, -0.25); place(phone.group, -0.25, 0.79, 0.6, 0, lerp(0.35, 0.12, inOut(lt / dur)));
+      shadowL.position.set(0.6, 0.005, -2.3); shadowP.position.set(-0.25, 0.006, 0.62);
+      lookFrom(lerp(-0.9, -0.3, inOut(lt / dur)), 1.6, 6.9, -0.2, 0.15, 0, t, 0.7);
+      const sh = stepsShown(t);
+      screens({ mode: "solution", data: d, stepsShown: sh, stepProgress: sh / Math.max(1, TL.steps.length) }, { mode: "steps", data: d, stepsShown: sh }, lt);
+    },
+    side_track(lt, dur, t, d) { // camera tracks sideways past the laptop
+      show(true, true);
+      laptop.lidPivot.rotation.x = -0.3;
+      place(laptop.group, 0, 0, 0, 0, 0.35); place(phone.group, 2.2, 0.78, 0.3, 0, -0.6);
+      shadowL.position.set(0, 0.005, -0.1); shadowP.position.set(2.2, 0.006, 0.32);
+      lookFrom(lerp(-3.2, 3.0, inOut(lt / dur)), 2.6, 10.5, lerp(-0.6, 0.6, inOut(lt / dur)), 0.15, -0.3, t, 0.5);
+      const sh = stepsShown(t);
+      screens({ mode: "solution", data: d, stepsShown: sh, stepProgress: sh / Math.max(1, TL.steps.length) }, { mode: "steps", data: d, stepsShown: sh }, lt);
+    },
+  },
+  result: {
+    duo_front(lt, dur, t, d) {
+      show(true, true);
+      laptop.lidPivot.rotation.x = -0.3;
+      place(laptop.group, -0.55, 0, 0, 0, 0.18); place(phone.group, 1.75, 0.78, 0.9, 0, -0.38);
+      shadowL.position.set(-0.55, 0.005, -0.1); shadowP.position.set(1.75, 0.006, 0.92);
+      lookFrom(0.3, lerp(2.2, 2.7, inOut(lt / dur)), lerp(11.5, 13, inOut(lt / dur)), 0.4, 0.55, 0, t);
+      screens({ mode: "solution", data: d, stepsShown: 9, stepProgress: 1 }, { mode: "result", data: d, t: lt }, lt);
+    },
+    low_hero(lt, dur, t, d) { // low, heroic angle slowly rising
+      show(true, true);
+      laptop.lidPivot.rotation.x = -0.3;
+      place(laptop.group, 0, 0, 0, 0, -0.2); place(phone.group, -1.9, 0.78, 0.8, 0, 0.45);
+      shadowL.position.set(0, 0.005, -0.1); shadowP.position.set(-1.9, 0.006, 0.82);
+      lookFrom(lerp(1.4, 0.6, inOut(lt / dur)), lerp(0.35, 0.9, inOut(lt / dur)), 11.8, 0, 1.6, -0.3, t, 0.6);
+      screens({ mode: "solution", data: d, stepsShown: 9, stepProgress: 1 }, { mode: "result", data: d, t: lt }, lt);
+    },
+    phone_result(lt, dur, t, d) { // phone close-up with the success screen
+      show(false, true);
+      place(phone.group, 0, 1.0, 0, 0.03, lerp(-0.45, -0.1, inOut(lt / dur)));
+      shadowP.position.set(0, 0.006, 0.05);
+      lookFrom(0.4, 1.05, lerp(5.4, 4.8, inOut(lt / dur)), 0, 1.35, 0, t);
+      screens(null, { mode: "result", data: d, t: lt }, lt);
+    },
+  },
+  cta: {
+    phone_spin(lt, dur, t, d) {
+      show(false, true);
+      const k = back(lt / 0.8);
+      place(phone.group, 0, 1.0 + Math.sin(t * 1.4) * 0.025, 0, 0.04, lerp(0.9, 0, ease(lt / 1.2)) + Math.sin(t * 0.7) * 0.03);
+      phone.group.scale.setScalar(0.85 + 0.15 * k);
+      shadowP.position.set(0, 0.006, 0.1); shadowP.scale.setScalar(1);
+      lookFrom(0, 1.15, lerp(6.2, 5.3, inOut(lt / dur)), 0, 1.12, 0, t, 0.6);
+      screens(null, { mode: "profile", data: d, t: lt }, lt);
+    },
+    duo_cta(lt, dur, t, d) { // phone in front of the open laptop
+      show(true, true);
+      laptop.lidPivot.rotation.x = -0.3;
+      place(laptop.group, 0, 0, -1.6, 0, 0); place(phone.group, 0, 0.82 + Math.sin(t * 1.4) * 0.02, 0.9, 0.04, lerp(-0.6, 0, ease(lt / 1.0)));
+      shadowL.position.set(0, 0.005, -1.7); shadowP.position.set(0, 0.006, 0.95);
+      lookFrom(0, 1.5, lerp(8.6, 7.6, inOut(lt / dur)), 0, 1.0, 0, t, 0.6);
+      screens({ mode: "solution", data: d, stepsShown: 9, stepProgress: 1 }, { mode: "profile", data: d, t: lt }, lt);
+    },
+  },
+};
+
+function show(lap, ph) { laptop.group.visible = lap; shadowL.visible = lap; phone.group.visible = ph; shadowP.visible = ph; }
+function stepsShown(t) {
+  if (t < TL.steps[0].start) return 0;
+  let shown = 0;
+  TL.steps.forEach((s, i) => { shown = Math.max(shown, i + clamp((t - s.start - 0.2) / 0.4)); });
+  return shown;
+}
+
 function renderFrame(t) {
-  const S = TL.sections, r = J.reel;
+  const S = TL.sections, r = J.reel, plan = J.plan || {};
   const sec = Object.keys(S).find((k) => t >= S[k].start && t < S[k].start + S[k].dur) || "cta";
   const lt = t - S[sec].start, dur = S[sec].dur;
   animateWorld(t);
   const data = { app_name: r.app_name, alerts: r.problem.alerts, steps: r.solution.steps, result: r.result, date_label: J.date_label };
-
-  laptop.group.visible = sec !== "hook" && sec !== "cta";
-  phone.group.visible = true;
-  shadowL.visible = laptop.group.visible;
-
-  if (sec === "hook") {
-    const k = back(lt / 0.95);
-    place(phone.group, 0, lerp(3.2, 1.0, k) + Math.sin(t * 1.6) * 0.03, 0, lerp(0.6, 0.06, ease(lt / 1.0)), lerp(-2.8, -0.22, ease(lt / 1.1)) + Math.sin(t * 0.8) * 0.04);
-    shadowP.position.set(0, 0.006, 0.1); shadowP.scale.setScalar(0.6 + 0.4 * k);
-    lookFrom(0, 1.25, lerp(5.6, 5.0, inOut(lt / dur)), 0, 1.3, 0, t);
-    screens(null, { mode: "lock", data }, lt);
-  } else if (sec === "problem") {
-    laptop.lidPivot.rotation.x = lerp(1.45, -0.3, inOut(lt / 0.9));
-    place(laptop.group, 0, 0, 0, 0, 0.08);
-    place(phone.group, 2.05, 0.78, -0.7, 0, -0.55);
-    shadowL.position.set(0, 0.005, -0.1); shadowP.position.set(2.05, 0.006, -0.68); shadowP.scale.setScalar(1);
-    const a = lerp(-0.5, -0.12, inOut(lt / dur)), r0 = lerp(12.5, 10.2, inOut(lt / dur));
-    lookFrom(Math.sin(a) * r0, 2.4, Math.cos(a) * r0, 0.15, 1.55, -0.6, t);
-    screens({ mode: "problem", data, t: lt }, { mode: "lock", data, t: lt + 2 }, lt);
-  } else if (sec === "solution") {
-    laptop.lidPivot.rotation.x = -0.3;
-    place(laptop.group, 0, 0, 0, 0, -0.12);
-    place(phone.group, -2.1, 0.78, -0.8, 0, 0.5);
-    shadowL.position.set(0, 0.005, -0.1); shadowP.position.set(-2.1, 0.006, -0.78);
-    const a = lerp(0.42, 0.12, inOut(lt / dur));
-    lookFrom(Math.sin(a) * 11.2, 3.0, Math.cos(a) * 11.2, 0, 0.1, -0.4, t);
-    let shown = 0;
-    TL.steps.forEach((s, i) => { shown = Math.max(shown, i + clamp((t - s.start - 0.2) / 0.4)); });
-    if (t < TL.steps[0].start) shown = 0;
-    screens({ mode: "solution", data, stepsShown: shown, stepProgress: shown / Math.max(1, TL.steps.length) }, { mode: "app", data }, lt);
-  } else if (sec === "result") {
-    laptop.lidPivot.rotation.x = -0.3;
-    place(laptop.group, -0.55, 0, 0, 0, 0.18);
-    place(phone.group, 1.75, 0.78, 0.9, 0, -0.38);
-    shadowL.position.set(-0.55, 0.005, -0.1); shadowP.position.set(1.75, 0.006, 0.92);
-    lookFrom(0.3, lerp(2.2, 2.7, inOut(lt / dur)), lerp(11.5, 13, inOut(lt / dur)), 0.4, 0.55, 0, t);
-    screens({ mode: "solution", data, stepsShown: 9, stepProgress: 1 }, { mode: "result", data, t: lt }, lt);
-  } else {
-    const k = back(lt / 0.8);
-    place(phone.group, 0, 1.0 + Math.sin(t * 1.4) * 0.025, 0, 0.04, lerp(0.9, 0, ease(lt / 1.2)) + Math.sin(t * 0.7) * 0.03);
-    shadowP.position.set(0, 0.006, 0.1); shadowP.scale.setScalar(1);
-    lookFrom(0, 1.15, lerp(6.2, 5.3, inOut(lt / dur)), 0, 1.12, 0, t, 0.6);
-    screens(null, { mode: "profile", data, t: lt }, lt);
-    phone.group.scale.setScalar(0.85 + 0.15 * k);
-  }
-  if (sec !== "cta") phone.group.scale.setScalar(1);
-
+  phone.group.scale.setScalar(1); shadowP.scale.setScalar(1);
+  const lib = SHOTS[sec], shot = lib[plan[sec]] || Object.values(lib)[0];
+  shot(lt, dur, t, data);
   composer.render();
   return grab();
 }
