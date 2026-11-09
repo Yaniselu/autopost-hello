@@ -7,6 +7,9 @@ Postează singur, fără să-ți ții calculatorul pornit, pe **Instagram și pe
 - **Reels cinematice 3D**: mockup-uri tip MacBook (notch, difuzoare, Space Black/Silver) și iPhone Pro (titan natural/negru/alb/deșert/albastru, 3 camere), animate, structura HOOK → PROBLEMA → SOLUȚIA (3 pași) → REZULTATUL → CTA, cu text Liquid Glass, muzică cinematică și efecte sonore
 - **Carusel** (1 pe zi în mod implicit): copertă 3D, 5 slide-uri cu idei, slide final cu Follow
 - **Stories** (sfat, întrebare, fapt), cu imagini 3D
+- **Folosește contul real**: înainte de fiecare postare citește profilul (logo, urmăritori, ultimele postări) și analizează
+  reel-urile/caruselurile existente (texte, like-uri, comentarii, imagini) ca să scrie în stilul care merge la voi.
+  Logo-ul apare în video, iar la final telefonul arată profilul real cu grid-ul real și un tap pe „Follow” → „Following ✓”.
 - **Răspunsuri automate la comentarii**, pe Instagram și Facebook
 - Textele le scrie Google Gemini (gratuit). Modelul se alege automat, iar răspunsurile la comentarii folosesc modelul mai ieftin.
 

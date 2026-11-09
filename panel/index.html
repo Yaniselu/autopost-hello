@@ -211,6 +211,13 @@ a{color:var(--accent)}
       </div>
     </section>
 
+    <!-- style learned from the account -->
+    <section class="card glass c12">
+      <h2>Ce a învățat din contul tău</h2>
+      <p class="sub">Înainte de fiecare postare analizează reel-urile și caruselurile de pe @cont (texte, like-uri, comentarii, imagini) și se ghidează după ce merge. Se actualizează la ~3 zile.</p>
+      <div id="styleGuide" class="list" style="max-height:340px"></div>
+    </section>
+
     <!-- comments -->
     <section class="card glass c12">
       <h2>Răspunsuri la comentarii</h2>
@@ -460,6 +467,17 @@ function render() {
       links);
   }) : [el("div", { class: "empty" }, "Încă nicio postare. Prima apare la ora programată sau când apeși „Postează acum”.")]));
 
+  const sg = st.styleGuide;
+  if (!sg || !sg.guide) $("styleGuide").replaceChildren(el("div", { class: "empty" }, "Încă nu a analizat contul — se face automat la prima postare sau previzualizare."));
+  else {
+    const g = sg.guide, rows = [];
+    const add = (label, v) => { if (!v || (Array.isArray(v) && !v.length)) return; rows.push(el("div", { class: "item" }, el("div", { class: "meta" }, label), el("div", { style: "margin-top:4px" }, Array.isArray(v) ? v.join(" · ") : String(v)))); };
+    add("Ce vinzi", g.what_they_sell); add("Public", g.audience); add("Ton", g.tone); add("Teme recurente", g.recurring_topics);
+    add("Ce au în comun postările de succes", g.best_performing_patterns); add("Exemple de hook-uri", g.hook_examples);
+    add("Vizual", g.visual_notes); add("Da", g.do); add("Nu", g.dont);
+    rows.push(el("div", { class: "meta" }, "Actualizat: " + fmtDate(sg.time)));
+    $("styleGuide").replaceChildren(...rows);
+  }
   const cl = st.comments || [];
   $("commentLog").replaceChildren(...(cl.length ? cl.map(c => el("div", { class: "item" },
     el("div", { class: "top" }, el("span", { class: "meta" }, `${c.platform === "facebook" ? "Facebook" : "Instagram"} · ${c.user || ""} · ${fmtDate(c.time)}`)),

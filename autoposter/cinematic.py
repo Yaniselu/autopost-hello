@@ -42,6 +42,11 @@ def pick_palette(cfg: dict, rng: random.Random) -> tuple[str, dict]:
                   "glow": [_hex(c) for c in p["blobs"]], "_rgb": p}
 
 
+def account_for_job(cfg: dict) -> dict:
+    a = (cfg.get("_account") or {}).get("assets") or {}
+    return {k: a.get(k) for k in ("username", "name", "followers", "posts", "avatar", "grid") if a.get(k) is not None}
+
+
 def run_renderer(job: dict, out_dir: Path) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     job_file = out_dir / "job.json"
@@ -220,13 +225,31 @@ class Overlay:
         # ---------- persistent UI
         self.bar = Glass(W - 140, 18, 9, bevel=8, strength=5, blur=6, shadow=0.15, sheen=False)
         self.handle_img = _text_img(cfg["brand"]["handle"], ImageFont.truetype(str(FONT_MED), 36), (255, 255, 255, 235))
-        self.handle_pill = Glass(self.handle_img.width + 50, 76, 38, bevel=18, strength=12, shadow=0.2)
+        av = ((cfg.get("_account") or {}).get("assets") or {}).get("avatar_bytes")
+        self.logo = self.logo_small = None
+        if av:
+            from .account import logo_png
+            self.logo = logo_png(av, 170)
+            self.logo_small = logo_png(av, 52)
+        self.handle_pill = Glass(self.handle_img.width + 50 + (62 if self.logo_small else 0), 76, 38, bevel=18,
+                                 strength=12, shadow=0.2)
+        # "FOLLOWING ✓" version of the CTA button (shown after the tap)
+        b2 = Image.new("RGBA", (bw, bh), (0, 0, 0, 0))
+        ImageDraw.Draw(b2).text(((bw - bf.getlength("FOLLOWING ✓")) / 2, 32), "FOLLOWING ✓", font=bf, fill=(255, 255, 255, 255))
+        f2 = np.zeros((bh, bw, 4), np.float32)
+        a2 = np.asarray(b2, np.float32)
+        f2[..., :3], f2[..., 3] = a2[..., :3], a2[..., 3] / 255
+        f2[..., 3] = np.maximum(f2[..., 3], 0.12)
+        self.btn_fill_done = f2
+        self.alert_times = [c[0] for c in tl.get("cues", []) if c[1] == "alert"]
 
         # ---------- film look
         yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
         r = np.sqrt(((xx - W / 2) / (W * 0.62)) ** 2 + ((yy - H * 0.46) / (H * 0.6)) ** 2)
         self.vignette = (1 - 0.5 * np.clip(r - 0.55, 0, 1) ** 1.3).astype(np.float32)[..., None]
         self.grain = np.random.default_rng(3).normal(0, 3.5, (H + 64, W, 1)).astype(np.float32)
+        edge = np.clip((r - 0.45) * 1.6, 0, 1)
+        self.edge = edge.astype(np.float32)[..., None]
 
     # ------------------------------------------------------------------ helpers
     @staticmethod
@@ -289,8 +312,20 @@ class Overlay:
     def compose(self, frame_path: Path, i: int) -> bytes:
         t = i / self.fps
         img = Image.open(frame_path).transpose(Image.FLIP_TOP_BOTTOM)
+        sec0 = self.section(t)
+        lt0 = t - self.S[sec0]["start"]
+        z = 1 + 0.075 * (1 - ease_out_cubic(lt0 / 0.4)) if lt0 < 0.4 else 1.0  # impact punch-in
+        if z > 1.001:
+            iw, ih = img.size
+            cw_, ch_ = int(iw / z), int(ih / z)
+            img = img.crop(((iw - cw_) // 2, (ih - ch_) // 2, (iw + cw_) // 2, (ih + ch_) // 2))
         if img.size != (W, H):
             img = img.resize((W, H), Image.LANCZOS)
+        if t < 0.3:  # camera shake on the opening hit
+            rng0 = np.random.default_rng(i + 7)
+            amp = int(18 * (1 - t / 0.3))
+            if amp:
+                img = Image.fromarray(np.roll(np.asarray(img), (int(rng0.integers(-amp, amp + 1)), int(rng0.integers(-amp, amp + 1))), axis=(0, 1)))
         # transition around section cuts (style chosen per video)
         tk = 0.0
         for k, s in self.S.items():
@@ -329,6 +364,10 @@ class Overlay:
         f = f * self.vignette
         if flash > 0:
             f = f + (255 - f) * flash
+        for ta in self.alert_times:  # red danger pulse on each alert
+            q = (t - ta) / 0.4
+            if 0 <= q < 1:
+                f = f + (np.array([255, 40, 70], np.float32) - f) * self.edge * (0.55 * (1 - q))
         off = (i * 13) % 64
         f = np.clip(f + self.grain[off:off + H], 0, 255).astype(np.uint8)
         f = np.ascontiguousarray(f)
@@ -343,12 +382,17 @@ class Overlay:
         fw = int(self.bar.w * p)
         if fw > 0:
             fill[:, :fw] = _gradient_fill(fw, 18, self.accent, self.accent2, 0.95)
-        self.bar.draw(f, 70, 92, 1.0, t, extra=fill)
+        if sec != "cta":
+            self.bar.draw(f, 70, 92, 1.0, t, extra=fill)
         if sec != "cta":
             hp = self.handle_pill
             hx, hy = (W - hp.w) // 2, H - 200
             hp.draw(f, hx, hy, 1.0, t)
-            _paste_rgba(f, self.handle_img, hx + 25, hy + 10)
+            if self.logo_small:
+                _paste_rgba(f, self.logo_small, hx + 14, hy + 12)
+                _paste_rgba(f, self.handle_img, hx + 72, hy + 10)
+            else:
+                _paste_rgba(f, self.handle_img, hx + 25, hy + 10)
 
         # label chip
         if sec in self.labels:
@@ -423,17 +467,38 @@ class Overlay:
                     continue
                 active = t >= st and (j == len(steps) - 1 or t < steps[j + 1]["start"])
                 a = min(1.0, k) * (1.0 if active else 0.62) * (1 - out)
-                glass.draw(f, 60 + int((1 - k) * 180), base_y + j * (chh + 22), a, t, extra=fill_)
+                cx0, cy0 = 60 + int((1 - k) * 180), base_y + j * (chh + 22)
+                glass.draw(f, cx0, cy0, a, t, extra=fill_)
+                q = (t - st - 0.15) / 0.6
+                if 0 <= q < 1:  # light ring bursting from the step number
+                    rad = int(42 + 150 * ease_out_cubic(q))
+                    ring = Image.new("RGBA", (rad * 2 + 20, rad * 2 + 20), (0, 0, 0, 0))
+                    ImageDraw.Draw(ring).ellipse((10, 10, rad * 2 + 10, rad * 2 + 10), outline=self.accent + (int(230 * (1 - q)),),
+                                                 width=max(2, int(9 * (1 - q))))
+                    _paste_rgba(f, ring, cx0 + 76 - rad - 10, cy0 + chh // 2 - rad - 10)
 
         # CTA
         if sec == "cta":
+            top = 60
+            if self.logo:
+                lk = ease_out_back((lt - 0.05) / 0.55)
+                if lk > 0:
+                    pr = 1 + 0.04 * math.sin(lt * 6)
+                    sz = max(1, int(170 * (0.5 + 0.5 * lk) * pr))
+                    lg = self.logo.resize((sz, sz), Image.LANCZOS)
+                    glow = Image.new("RGBA", (sz + 120, sz + 120), (0, 0, 0, 0))
+                    ImageDraw.Draw(glow).ellipse((40, 40, sz + 80, sz + 80), fill=self.accent + (150,))
+                    glow = glow.filter(ImageFilter.GaussianBlur(22))
+                    _paste_rgba(f, glow, (W - glow.width) // 2, top + 85 - glow.height // 2, min(1.0, lk))
+                    _paste_rgba(f, lg, (W - sz) // 2, top + 85 - sz // 2, min(1.0, lk))
+                top = 200
             k = ease_out_back((lt - 0.15) / 0.6)
             if k > 0:
                 bi = self.brand_img
-                s = 0.8 + 0.2 * k
+                s = (0.8 + 0.2 * k) * (0.82 if self.logo else 1.0)
                 im = bi.resize((max(1, int(bi.width * s)), max(1, int(bi.height * s))), Image.BICUBIC)
-                _paste_rgba(f, im, (W - im.width) // 2, 230 - im.height // 2 + 40, min(1.0, k))
-            y = 330
+                _paste_rgba(f, im, (W - im.width) // 2, top + 30 + (40 if not self.logo else 0) - im.height // 2 + 40, min(1.0, k))
+            y = top + 110 if self.logo else 330
             for j, li in enumerate(self.cta_lines):
                 k2 = ease_out_cubic((lt - 0.4 - j * 0.08) / 0.5)
                 if k2 > 0:
@@ -441,9 +506,22 @@ class Overlay:
                 y += li.height - 50
             bk = ease_out_back((lt - 0.7) / 0.5)
             if bk > 0:
-                fill2 = self.btn_fill.copy()
-                fill2[..., 3] = np.clip(fill2[..., 3] * (0.85 + 0.25 * (0.5 + 0.5 * math.sin(lt * 7))), 0, 1)
-                self.btn.draw(f, (W - self.btn.w) // 2, H - 360 + int((1 - bk) * 60), min(1.0, bk), t * 2.5, extra=fill2)
+                tapped = lt > 1.85
+                fill2 = (self.btn_fill_done if tapped else self.btn_fill).copy()
+                if not tapped:
+                    fill2[..., 3] = np.clip(fill2[..., 3] * (0.85 + 0.25 * (0.5 + 0.5 * math.sin(lt * 7))), 0, 1)
+                bx, by = (W - self.btn.w) // 2, H - 360 + int((1 - bk) * 60)
+                if 1.65 < lt < 1.9:  # pressed
+                    by += 6
+                self.btn.draw(f, bx, by, min(1.0, bk), t * 2.5, extra=fill2)
+                q = (lt - 1.65) / 0.7
+                if 0 <= q < 1:  # finger tap ripple
+                    rad = int(26 + 120 * ease_out_cubic(q))
+                    rp = Image.new("RGBA", (rad * 2 + 20, rad * 2 + 20), (0, 0, 0, 0))
+                    d = ImageDraw.Draw(rp)
+                    d.ellipse((10, 10, rad * 2 + 10, rad * 2 + 10), outline=(255, 255, 255, int(220 * (1 - q))), width=6)
+                    d.ellipse((rad - 16, rad - 16, rad + 36, rad + 36), fill=(255, 255, 255, int(160 * (1 - q))))
+                    _paste_rgba(f, rp, bx + self.btn.w // 2 + 90 - rad - 10, by + self.btn.h // 2 - rad - 10)
         return f.tobytes()
 
 
@@ -473,6 +551,7 @@ def render_cinematic_reel(post: dict, cfg: dict, out: Path, work: Path, seed: in
         "finish": plan["finish_phone"], "finish_phone": plan["finish_phone"], "finish_laptop": plan["finish_laptop"],
         "plan": plan, "date_label": date_label(cfg),
         "brand": {"name": cfg["brand"]["name"], "handle": cfg["brand"]["handle"]},
+        "account": account_for_job(cfg),
         "palette": {k: v for k, v in pal.items() if not k.startswith("_")},
         "render_scale": cfg["video"].get("render_scale", 0.6667),
         "reel": {"hook": post["hook"], "app_name": post.get("app_name", "Workspace"),

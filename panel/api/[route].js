@@ -222,6 +222,7 @@ async function state() {
     gh.listSecretNames().catch(() => []),
     gh.readJson("data/comments.json", { log: [] }),
   ]);
+  const style = await gh.readJson("data/style_guide.json", null).catch(() => ({ data: null }));
   // media storage key lives on Vercel; copy it to GitHub once so the worker can upload images
   if (process.env.BLOB_READ_WRITE_TOKEN && !secrets.includes("BLOB_READ_WRITE_TOKEN")) {
     try { await gh.setSecret("BLOB_READ_WRITE_TOKEN", process.env.BLOB_READ_WRITE_TOKEN); secrets.push("BLOB_READ_WRITE_TOKEN"); } catch {}
@@ -235,6 +236,7 @@ async function state() {
     settings: settingsRes.settings,
     history: (Array.isArray(history.data) ? history.data : []).slice(-60).reverse(),
     comments: ((comments.data && comments.data.log) || []).slice(-30).reverse(),
+    styleGuide: style && style.data ? { time: style.data.time, guide: style.data.guide } : null,
     runs,
     secrets: SECRET_NAMES.filter((n) => secrets.includes(n)),
   };

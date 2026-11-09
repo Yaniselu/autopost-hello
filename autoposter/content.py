@@ -13,11 +13,20 @@ HISTORY_FILE = DATA / "history.json"
 
 BRAND = """You are the social media lead for {name} ({handle}).
 About the brand: {description}
+Instagram bio: {bio}
 Audience: {audience}
 Tone: {tone}
 Language: {language}. Content must be accurate and genuinely useful. Never invent statistics,
 studies, clients or quotes; use clearly illustrative wording ("e.g.", "up to", "hours") instead.
-Do not repeat or closely resemble these recent topics:
+
+STYLE GUIDE learned from this account's own reels and carousels (follow it, it is what works for them):
+{guide}
+
+Make it crystal clear for EVERYONE, not only tech people: simple everyday words, no jargon
+(if a tool name is needed, say what it does), one idea per line, a concrete benefit the viewer feels
+(time, money, customers, stress). High impact: bold contrast, curiosity, a real "aha".
+
+Do not repeat or closely resemble these recent topics (ours and already on the account):
 {recent}
 """
 
@@ -74,8 +83,13 @@ def _ctx(cfg: dict, history: list, kind: str) -> dict:
     done = [h for h in history if h.get("status") == "posted" and h.get("type", "reel") == kind]
     pillar = pillars[(len(done) + {"reel": 0, "carousel": 3, "story": 5}.get(kind, 0)) % len(pillars)]
     recent = [h["topic"] for h in history if h.get("topic") and h.get("status") != "error"][-30:]
+    acc = cfg.get("_account") or {}
+    recent += acc.get("ig_recent", [])[:15]
+    guide = acc.get("guide") or {}
     b = cfg["brand"]
     return {
+        "bio": acc.get("bio") or "(not available)",
+        "guide": json.dumps(guide, ensure_ascii=False)[:2500] if guide else "(no posts analysed yet - use the brand info)",
         "name": b["name"], "handle": b["handle"], "description": b["description"].strip(),
         "audience": b["audience"], "tone": b["tone"], "language": cfg.get("language", "English"),
         "recent": "\n".join(f"- {r}" for r in recent) or "- (none yet)", "pillar": pillar,

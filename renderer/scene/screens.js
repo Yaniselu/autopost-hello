@@ -216,24 +216,53 @@ export function drawPhone(ctx, W, H, st, t) {
       ctx.fillStyle = i === 6 ? pal.accent : hexA(pal.accent2, .55); ctx.fill();
     }
   } else if (mode === "profile") {
+    const acc = st.account || {}, img = st.img || {};
     const k = ease(t / 0.6);
     ctx.globalAlpha = k;
-    ctx.beginPath(); ctx.arc(W / 2, 300, 110, 0, 7);
-    const ag = ctx.createLinearGradient(W / 2 - 110, 190, W / 2 + 110, 410); ag.addColorStop(0, pal.accent); ag.addColorStop(1, pal.accent2);
-    ctx.fillStyle = ag; ctx.fill();
-    ctx.fillStyle = "#0b0a1f"; ctx.font = "900 120px Inter"; ctx.textAlign = "center";
-    ctx.fillText((brand.name || "V")[0].toUpperCase(), W / 2, 343);
-    ctx.fillStyle = "#fff"; ctx.font = "800 44px Inter"; ctx.fillText(brand.name, W / 2, 480);
-    ctx.fillStyle = "rgba(255,255,255,.6)"; ctx.font = "600 28px Inter"; ctx.fillText(brand.handle, W / 2, 525);
-    const pulse = 1 + 0.04 * Math.sin(t * 7);
-    ctx.save(); ctx.translate(W / 2, 640); ctx.scale(pulse, pulse);
-    rr(ctx, -170, -40, 340, 80, 40); ctx.fillStyle = "#0095f6"; ctx.fill();
-    ctx.fillStyle = "#fff"; ctx.font = "800 32px Inter"; ctx.fillText("Follow", 0, 12); ctx.restore();
+    // avatar (real logo when available) with gradient story ring
+    const ax = W / 2, ay = 280, ar = 112;
+    const ag = ctx.createLinearGradient(ax - ar, ay - ar, ax + ar, ay + ar); ag.addColorStop(0, pal.accent); ag.addColorStop(1, pal.accent2);
+    ctx.beginPath(); ctx.arc(ax, ay, ar + 12, 0, 7); ctx.fillStyle = ag; ctx.fill();
+    ctx.beginPath(); ctx.arc(ax, ay, ar + 5, 0, 7); ctx.fillStyle = "#0b0b12"; ctx.fill();
+    ctx.save(); ctx.beginPath(); ctx.arc(ax, ay, ar, 0, 7); ctx.clip();
+    if (img.avatar) ctx.drawImage(img.avatar, ax - ar, ay - ar, ar * 2, ar * 2);
+    else { ctx.fillStyle = ag; ctx.fillRect(ax - ar, ay - ar, ar * 2, ar * 2); ctx.fillStyle = "#0b0a1f"; ctx.font = "900 120px Inter"; ctx.textAlign = "center"; ctx.fillText((brand.name || "V")[0].toUpperCase(), ax, ay + 43); }
+    ctx.restore();
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#fff"; fitText(ctx, acc.name || brand.name, W - 80, 42, 800); ctx.fillText(acc.name || brand.name, W / 2, 460);
+    ctx.fillStyle = "rgba(255,255,255,.6)"; ctx.font = "600 26px Inter"; ctx.fillText(acc.username ? "@" + acc.username : brand.handle, W / 2, 500);
+    // stats
+    const fmt = (n) => n == null ? "—" : n >= 1e6 ? (n / 1e6).toFixed(1) + "M" : n >= 1e4 ? Math.round(n / 1e3) + "K" : n >= 1e3 ? (n / 1e3).toFixed(1) + "K" : String(n);
+    [[acc.posts, "posts"], [acc.followers, "followers"]].forEach(([n, l], i) => {
+      const x = W / 2 + (i ? 110 : -110);
+      ctx.fillStyle = "#fff"; ctx.font = "800 34px Inter"; ctx.fillText(fmt(n), x, 560);
+      ctx.fillStyle = "rgba(255,255,255,.55)"; ctx.font = "500 21px Inter"; ctx.fillText(l, x, 590);
+    });
+    // follow button: pulses, then gets "tapped" and turns into Following
+    const tapped = t > 1.75;
+    const pulse = tapped ? 1 : 1 + 0.04 * Math.sin(t * 7);
+    const press = t > 1.6 && t < 1.85 ? 0.92 : 1;
+    ctx.save(); ctx.translate(W / 2, 665); ctx.scale(pulse * press, pulse * press);
+    rr(ctx, -175, -40, 350, 80, 40); ctx.fillStyle = tapped ? "rgba(255,255,255,.16)" : "#0095f6"; ctx.fill();
+    ctx.fillStyle = "#fff"; ctx.font = "800 32px Inter"; ctx.fillText(tapped ? "Following ✓" : "Follow", 0, 12); ctx.restore();
+    if (t > 1.55 && t < 2.3) { // tap ripple
+      const q = (t - 1.55) / 0.75;
+      ctx.beginPath(); ctx.arc(W / 2 + 60, 670, 20 + 90 * q, 0, 7); ctx.strokeStyle = `rgba(255,255,255,${0.7 * (1 - q)})`; ctx.lineWidth = 6; ctx.stroke();
+      ctx.beginPath(); ctx.arc(W / 2 + 60, 670, 26, 0, 7); ctx.fillStyle = `rgba(255,255,255,${0.55 * (1 - q)})`; ctx.fill();
+    }
+    // grid: the account's real latest posts
+    const cw = (W - 48) / 3;
     for (let i = 0; i < 9; i++) {
-      const x = 24 + (i % 3) * ((W - 48) / 3), y = 740 + Math.floor(i / 3) * 150;
-      const tg = ctx.createLinearGradient(x, y, x + 150, y + 150);
-      tg.addColorStop(0, hexA(i % 2 ? pal.accent : pal.accent2, .5)); tg.addColorStop(1, "rgba(255,255,255,.05)");
-      ctx.fillStyle = tg; ctx.fillRect(x + 3, y + 3, (W - 48) / 3 - 6, 144);
+      const x = 24 + (i % 3) * cw, y = 750 + Math.floor(i / 3) * (cw + 4);
+      const g = img.grid && img.grid[i];
+      if (g) {
+        const s0 = Math.max(cw / g.width, cw / g.height), sw = cw / s0, sh = cw / s0;
+        ctx.drawImage(g, (g.width - sw) / 2, (g.height - sh) / 2, sw, sh, x + 2, y + 2, cw - 4, cw - 4);
+      } else {
+        const tg = ctx.createLinearGradient(x, y, x + cw, y + cw);
+        tg.addColorStop(0, hexA(i % 2 ? pal.accent : pal.accent2, .5)); tg.addColorStop(1, "rgba(255,255,255,.05)");
+        ctx.fillStyle = tg; ctx.fillRect(x + 2, y + 2, cw - 4, cw - 4);
+      }
     }
     ctx.textAlign = "left"; ctx.globalAlpha = 1;
   }

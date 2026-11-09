@@ -32,6 +32,10 @@ async function setup(job) {
   document.documentElement.style.setProperty("--accent", job.palette.accent);
   document.documentElement.style.setProperty("--accent2", job.palette.accent2);
   await Promise.all(["800 40px Inter", "700 40px Inter", "500 40px Inter"].map((f) => document.fonts.load(f)));
+  // real account images (logo + latest posts) for the profile screen
+  const loadImg = (src) => new Promise((res) => { if (!src) return res(null); const i = new Image(); i.onload = () => res(i); i.onerror = () => res(null); i.src = src; });
+  const acc = job.account || {};
+  J._img = { avatar: await loadImg(acc.avatar), grid: (await Promise.all((acc.grid || []).map(loadImg))).filter(Boolean) };
 
   // reels: render the 3D at reduced size (fast in software GL); text is composited later at full res
   const sc = job.mode === "reel" ? (job.render_scale || 0.6667) : 1;
@@ -285,7 +289,7 @@ function animateWorld(t) {
 
 function screens(lapState, phoneState, lt) {
   if (window.__noScreens) return;
-  const base = { pal: J.palette, brand: J.brand };
+  const base = { pal: J.palette, brand: J.brand, account: J.account || {}, img: J._img || {} };
   // screens are drawn in a fixed design space (1280x800 / 600x1286) and scaled to the canvas
   if (lapState) { const c = lapCanvas.getContext("2d"); c.setTransform(lapCanvas.width / 1280, 0, 0, lapCanvas.height / 800, 0, 0); drawLaptop(c, 1280, 800, { ...base, ...lapState }, lapState.t ?? lt); lapTex.needsUpdate = true; }
   if (phoneState) { const c = phoneCanvas.getContext("2d"); c.setTransform(phoneCanvas.width / 600, 0, 0, phoneCanvas.height / 1286, 0, 0); drawPhone(c, 600, 1286, { ...base, ...phoneState }, phoneState.t ?? lt); phoneTex.needsUpdate = true; }

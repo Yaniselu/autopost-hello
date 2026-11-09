@@ -76,8 +76,10 @@ def pick_model(kind: str, configured: str | None = None) -> str:
     return cands[0]
 
 
-def _gemini(prompt: str, model: str, temperature: float, as_json: bool) -> str:
-    body = {"contents": [{"parts": [{"text": prompt}]}],
+def _gemini(prompt: str, model: str, temperature: float, as_json: bool, images: list[bytes] | None = None) -> str:
+    import base64
+    parts = [{"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(b).decode()}} for b in (images or [])]
+    body = {"contents": [{"parts": parts + [{"text": prompt}]}],
             "generationConfig": {"temperature": temperature}}
     if as_json:
         body["generationConfig"]["responseMimeType"] = "application/json"
@@ -97,7 +99,7 @@ def _gemini(prompt: str, model: str, temperature: float, as_json: bool) -> str:
         raise LLMError(f"Gemini {model}: empty answer ({data.get('promptFeedback', '')})")
 
 
-def _groq(prompt: str, model: str, temperature: float, as_json: bool) -> str:
+def _groq(prompt: str, model: str, temperature: float, as_json: bool, images=None) -> str:
     body = {"model": model, "messages": [{"role": "user", "content": prompt}], "temperature": temperature}
     if as_json:
         body["response_format"] = {"type": "json_object"}
@@ -123,7 +125,7 @@ def parse_json(raw: str):
 
 
 def generate(prompt: str, cfg: dict, kind: str = "content", as_json: bool = True,
-             validate=None, attempts: int = 4):
+             validate=None, attempts: int = 4, images: list[bytes] | None = None):
     """Returns parsed JSON (or text). `validate(obj)` may raise to force a retry."""
     llm = cfg.get("llm", {})
     temperature = llm.get("temperature", 0.9) if kind == "content" else 0.6
@@ -139,7 +141,7 @@ def generate(prompt: str, cfg: dict, kind: str = "content", as_json: bool = True
     for i in range(attempts):
         fn, model = order[0] if (i % 2 == 0 or len(order) == 1) else order[1]
         try:
-            out = fn(prompt, model, temperature, as_json)
+            out = fn(prompt, model, temperature, as_json, images)
             obj = parse_json(out) if as_json else out
             if validate:
                 validate(obj)

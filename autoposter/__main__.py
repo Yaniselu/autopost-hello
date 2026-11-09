@@ -105,6 +105,12 @@ def run_job(cfg: dict, kind: str, mode: str) -> dict:
 
     history = load_history()
     seed = random.randint(0, 10 ** 9)
+    if kind != "comments":
+        # read the real account: logo, grid, bio, and the style learned from its own posts
+        from .account import fetch_account, recent_topics, render_assets, style_guide
+        acct = fetch_account(cfg)
+        cfg["_account"] = {"guide": style_guide(cfg, acct), "bio": (acct or {}).get("biography"),
+                           "ig_recent": recent_topics(acct), "assets": render_assets(acct)}
     OUTPUT.mkdir(exist_ok=True)
     stamp = dt.datetime.now().strftime("%Y%m%d-%H%M%S")
     work = Path(tempfile.mkdtemp(prefix=f"{kind}-"))

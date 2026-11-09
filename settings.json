@@ -11,21 +11,21 @@
   "hashtags_count": 5,
   "brand": {
     "name": "Velosyntech",
-    "handle": "@velosyntech",
-    "description": "Velosyntech is a technology company building modern software, automation and AI solutions for businesses.",
-    "audience": "founders, developers, tech enthusiasts and small business owners",
+    "handle": "@velosyntechcom",
+    "description": "Velosyntech builds AI assistants for business websites: they answer customers 24/7, in any language, capture leads and book demos automatically. Built on n8n automation. Call to action: request a demo.",
+    "audience": "small and medium business owners, shop owners, agencies and service companies who get questions from customers online",
     "tone": "confident, smart, concise, slightly bold — never cringe, no emojis spam",
-    "call_to_action": "Follow @velosyntech for more"
+    "call_to_action": "Follow @velosyntechcom for more"
   },
   "content_pillars": [
-    "practical AI tips that save time at work",
-    "little-known tech facts that surprise people",
-    "automation ideas for small businesses",
-    "software development best practices and developer tips",
-    "future of technology: short bold predictions",
-    "cybersecurity tips everyone should know",
-    "productivity tools and workflows for tech teams",
-    "myths vs facts about AI and software"
+    "an AI assistant answering website visitors 24/7 (before vs after)",
+    "losing customers because nobody replies fast enough",
+    "answering customers in any language automatically",
+    "turning website visitors into leads and booked demos",
+    "simple n8n automations that save hours every week",
+    "customer support questions an AI can handle for you",
+    "myths vs facts about AI chatbots for small businesses",
+    "what happens after hours when your website gets a question"
   ],
   "video": {
     "style": "cinematic",
