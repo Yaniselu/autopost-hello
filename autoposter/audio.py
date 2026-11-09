@@ -80,6 +80,38 @@ def sfx_riser(duration=1.0) -> np.ndarray:
     return (tone + noise) * p ** 2
 
 
+def sfx_alert() -> np.ndarray:
+    out = []
+    for f, d in ((988, 0.09), (0, 0.03), (740, 0.12)):
+        t = _t(d)
+        out.append(np.sign(np.sin(2 * np.pi * f * t)) * 0.18 * np.exp(-t * 18) if f else np.zeros(len(t)))
+    return _one_pole_lowpass(np.concatenate(out), 4000) * 1.6
+
+
+def sfx_glitch() -> np.ndarray:
+    rng = np.random.default_rng(5)
+    parts = []
+    for _ in range(7):
+        d = rng.uniform(0.02, 0.06)
+        t = _t(d)
+        if rng.random() < 0.5:
+            sig = np.sign(np.sin(2 * np.pi * rng.uniform(200, 1800) * t))
+        else:
+            sig = np.round(rng.uniform(-1, 1, len(t)) * 3) / 3
+        parts.append(sig * rng.uniform(0.15, 0.4))
+        parts.append(np.zeros(int(rng.uniform(0.005, 0.02) * SR)))
+    return np.concatenate(parts) * 0.8
+
+
+def sfx_chime() -> np.ndarray:
+    t = _t(1.4)
+    y = np.zeros(len(t))
+    for base in (1318.5, 1975.5):
+        for k, (ratio, amp, dec) in enumerate(((1, 1, 3), (2.76, 0.35, 5), (5.4, 0.15, 8))):
+            y += np.sin(2 * np.pi * base * ratio * t) * amp * np.exp(-t * dec)
+    return y * 0.16
+
+
 # ------------------------------------------------------------------ music
 PROGRESSIONS = [
     [0, -4, 3, -2],    # i - VI - III - VII  (Am F C G)
@@ -170,6 +202,58 @@ def compose_music(duration: float, seed: int | None = None) -> np.ndarray:
     return np.stack([left, right], axis=1)[: int(duration * SR)]
 
 
+def compose_cinematic(duration: float, seed: int | None = None, hits: list[float] | None = None) -> np.ndarray:
+    """Trailer-style bed: sub drone, slow pads, pulsing ostinato that builds, braams on the cuts."""
+    rng = random.Random(seed)
+    bpm = rng.choice([84, 90, 96, 100])
+    beat = 60 / bpm
+    key = rng.choice([45, 46, 47, 48, 50])  # A2..D3
+    prog = rng.choice([[0, -4, 3, -2], [0, -4, -2, 0], [0, 3, -4, -2]])
+    n = int(duration * SR) + SR
+    L, R = np.zeros(n), np.zeros(n)
+    intensity = np.clip(np.linspace(0.35, 1.0, n), 0, 1)
+
+    def add(sig, start, gain=1.0, pan=0.0):
+        i = int(start * SR)
+        if i >= n or i < 0:
+            return
+        sig = sig[: n - i] * gain
+        L[i:i + len(sig)] += sig * (1 - pan)
+        R[i:i + len(sig)] += sig * (1 + pan)
+
+    bar = beat * 4
+    minor = {0: True, 3: False, -4: False, -2: False}
+    for b in range(int(duration / bar) + 2):
+        deg = prog[b % len(prog)]
+        root = key + deg
+        chord = _chord(root + 12, minor.get(deg, False))
+        st = b * bar
+        env_len = bar + 0.6
+        tt = _t(env_len)
+        env = np.minimum(1, tt / 0.8) * np.minimum(1, (env_len - tt) / 0.6)
+        for m in chord:  # wide, dark pad
+            add(_note(_midi_hz(m), env_len, 4) * env, st, 0.05, -0.5)
+            add(_note(_midi_hz(m), env_len, 4, detune=0.005) * env, st, 0.05, 0.5)
+        add(np.sin(2 * np.pi * _midi_hz(root - 12) * tt) * env, st, 0.22)  # sub
+        for e in range(16):  # 16th ostinato, pluck
+            m = chord[[0, 2, 1, 2][e % 4]] + (12 if e % 8 >= 6 else 0)
+            add(_note(_midi_hz(m), beat * 0.3, 3, decay=22), st + e * beat / 4, 0.05, -0.3 if e % 2 else 0.3)
+
+    t_k = _t(0.9)  # low "taiko" hits on downbeats in the second half
+    taiko = np.sin(2 * np.pi * np.cumsum(90 * np.exp(-t_k * 9) + 42) / SR) * np.exp(-t_k * 5)
+    for q in range(int(duration / beat)):
+        if q * beat > duration * 0.35 and q % 2 == 0:
+            add(taiko, q * beat, 0.35)
+    for h in hits or []:  # braam on every cut
+        tb = _t(2.2)
+        braam = sum(_note(_midi_hz(key + o), 2.2, 9, detune=d) for o, d in ((-12, 0), (-12, 0.006), (-5, 0.003), (0, 0.004)))
+        braam = _one_pole_lowpass(braam * np.exp(-tb * 1.6) * np.minimum(1, tb / 0.03), 1400)
+        add(braam, h, 0.16)
+    L *= intensity
+    R *= intensity
+    return np.stack([L, R], axis=1)[: int(duration * SR)]
+
+
 def load_music_file(duration: float) -> np.ndarray | None:
     folder = ASSETS / "music"
     files = [p for p in folder.glob("*") if p.suffix.lower() in {".mp3", ".wav", ".m4a", ".ogg", ".flac"}]
@@ -192,14 +276,19 @@ def load_music_file(duration: float) -> np.ndarray | None:
 
 
 # ------------------------------------------------------------------ mixing
-def build_soundtrack(duration: float, cues: list[tuple[float, str]], cfg: dict, out: Path, seed=None) -> Path:
+def build_soundtrack(duration: float, cues: list[tuple[float, str]], cfg: dict, out: Path, seed=None,
+                     style: str = "classic") -> Path:
     """cues: list of (time_seconds, sfx_name)."""
     a = cfg["audio"]
     n = int(duration * SR)
     music = load_music_file(duration)
     if music is None:
         print("[audio] no files in assets/music -> composing original track")
-        music = compose_music(duration, seed)
+        if style == "cinematic":
+            hits = sorted({round(t, 2) for t, name in cues if name == "impact" or name == "whoosh"})
+            music = compose_cinematic(duration, seed, hits)
+        else:
+            music = compose_music(duration, seed)
     music = music[:n]
     if len(music) < n:
         music = np.pad(music, ((0, n - len(music)), (0, 0)))
@@ -208,7 +297,8 @@ def build_soundtrack(duration: float, cues: list[tuple[float, str]], cfg: dict, 
     sfx_track = np.zeros(n)
     if a.get("sfx", True):
         makers = {"whoosh": sfx_whoosh, "pop": sfx_pop, "tick": sfx_tick,
-                  "impact": sfx_impact, "riser": sfx_riser,
+                  "impact": sfx_impact, "riser": sfx_riser, "alert": sfx_alert, "glitch": sfx_glitch,
+                  "chime": sfx_chime,
                   "whoosh_out": lambda: sfx_whoosh(0.45, rising=False)}
         for when, name in cues:
             sig = makers[name]()

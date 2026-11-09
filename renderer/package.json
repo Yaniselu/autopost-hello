@@ -1,0 +1,10 @@
+{
+  "name": "velosyntech-renderer",
+  "private": true,
+  "type": "module",
+  "description": "Cinematic 3D renderer (three.js in headless Chromium) for reels, carousels and stories",
+  "dependencies": {
+    "playwright": "1.63.0",
+    "three": "0.187.0"
+  }
+}

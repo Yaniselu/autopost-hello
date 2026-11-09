@@ -1,47 +1,66 @@
-"""Generates the post idea, on-screen text and caption with a free LLM API."""
+"""Writes the posts with the LLM: cinematic reels, carousels and stories.
+
+Token budget: one short request per post (prompt ~600 tokens, answer ~500).
+8 reels + 1 carousel + 2 stories a day is ~11 requests/day, far below the
+Gemini free limits; comment replies use the cheaper Flash-Lite model.
+"""
 import json
-import re
-import time
 
-import requests
-
-from .config import DATA, env
+from .config import DATA
+from .llm import generate
 
 HISTORY_FILE = DATA / "history.json"
 
-PROMPT = """You are the social media lead for {name} ({handle}).
+BRAND = """You are the social media lead for {name} ({handle}).
 About the brand: {description}
 Audience: {audience}
 Tone: {tone}
-
-Create ONE Instagram Reel (text-only animated video, no voiceover) in {language}.
-Content pillar for this post: "{pillar}"
-
-Do NOT repeat or closely resemble these recent topics:
+Language: {language}. Content must be accurate and genuinely useful. Never invent statistics,
+studies, clients or quotes; use clearly illustrative wording ("e.g.", "up to", "hours") instead.
+Do not repeat or closely resemble these recent topics:
 {recent}
+"""
 
-Rules for on-screen text:
-- "hook": max 8 words, scroll-stopping, curiosity or bold claim.
-- "slides": 3 to 5 items, each max 14 words, one idea per slide, punchy.
-- Wrap 1-2 key words per hook/slide in *asterisks* to highlight them.
-- Content must be accurate and genuinely useful. No fake statistics.
-- "cta": short call to action, e.g. "{cta}".
+REEL = BRAND + """
+Create ONE cinematic Instagram Reel script about: "{pillar}".
+Story structure: HOOK -> THE PROBLEM -> THE FIX (exactly 3 steps) -> THE RESULT -> CTA.
+On-screen text rules (short, punchy; wrap 1-2 key words in *asterisks* to highlight):
+- hook: max 8 words, scroll-stopping.
+- problem.text: max 14 words, the pain the viewer recognises.
+- problem.alerts: 3 notification texts shown on a phone/laptop screen, max 4 words each (e.g. "Report overdue").
+- solution.steps: 3 items {{"title": max 4 words, "text": max 8 words}}.
+- result: max 10 words, the outcome.
+- app_name: 1-2 word generic tool name shown on the laptop screen (not a real brand).
+- cta: max 7 words (e.g. "{cta}").
+Caption: 3-5 short paragraphs, first line is a hook, add value beyond the video, end with a question.
+Max 2 emojis. hashtags: exactly {hashtags_count} relevant hashtags.
+Return ONLY JSON: {{"topic","hook","problem":{{"text","alerts"}},"solution":{{"steps"}},"result","app_name","cta","caption","hashtags"}}
+"""
 
-Rules for caption:
-- 2-4 short paragraphs, first line is a strong hook, add value beyond the video,
-  end with a question to drive comments. Max 2 emojis total.
-- "hashtags": exactly {hashtags_count} relevant hashtags, mix of broad and niche.
+CAROUSEL = BRAND + """
+Create ONE Instagram carousel (swipeable slides) about: "{pillar}".
+- title: max 7 words, the cover headline (wrap 1-2 words in *asterisks* to highlight).
+- subtitle: max 10 words.
+- slides: exactly 5 items {{"title": max 6 words, "body": max 26 words}} - one concrete, actionable idea each.
+- cta: max 7 words.
+Caption: 2-4 short paragraphs ending with a question. Max 2 emojis. hashtags: exactly {hashtags_count}.
+Return ONLY JSON: {{"topic","title","subtitle","slides","cta","caption","hashtags"}}
+"""
 
-"pexels_query": 2-4 English words describing an aesthetic vertical stock video
-background that fits (e.g. "dark server room", "abstract neon lines", "city night timelapse").
-
-Return ONLY valid JSON with keys: topic, hook, slides, cta, caption, hashtags, pexels_query.
+STORIES = BRAND + """
+Create {n} Instagram stories (single full-screen images with text) for today. Mix these kinds:
+"tip" (one quick actionable tip), "question" (a question to the audience), "fact" (a surprising but TRUE tech fact).
+Each: {{"kind", "title": max 6 words, "body": max 20 words}}.
+Return ONLY JSON: {{"stories": [...]}}
 """
 
 
 def load_history() -> list:
     if HISTORY_FILE.exists():
-        return json.loads(HISTORY_FILE.read_text(encoding="utf-8") or "[]")
+        try:
+            return json.loads(HISTORY_FILE.read_text(encoding="utf-8") or "[]")
+        except ValueError:
+            return []
     return []
 
 
@@ -50,80 +69,72 @@ def save_history(history: list, entry: dict) -> None:
     HISTORY_FILE.write_text(json.dumps(history[-300:], indent=2, ensure_ascii=False), encoding="utf-8")
 
 
-def _call_gemini(prompt: str, cfg: dict) -> str:
-    model = cfg["llm"]["gemini_model"]
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
-    body = {
-        "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {
-            "temperature": cfg["llm"].get("temperature", 1.0),
-            "responseMimeType": "application/json",
-        },
-    }
-    r = requests.post(url, params={"key": env("GEMINI_API_KEY")}, json=body, timeout=90)
-    r.raise_for_status()
-    return r.json()["candidates"][0]["content"]["parts"][0]["text"]
-
-
-def _call_groq(prompt: str, cfg: dict) -> str:
-    r = requests.post(
-        "https://api.groq.com/openai/v1/chat/completions",
-        headers={"Authorization": f"Bearer {env('GROQ_API_KEY')}"},
-        json={
-            "model": cfg["llm"]["groq_model"],
-            "messages": [{"role": "user", "content": prompt}],
-            "temperature": cfg["llm"].get("temperature", 1.0),
-            "response_format": {"type": "json_object"},
-        },
-        timeout=90,
-    )
-    r.raise_for_status()
-    return r.json()["choices"][0]["message"]["content"]
-
-
-def _parse(raw: str) -> dict:
-    raw = raw.strip()
-    raw = re.sub(r"^```(?:json)?|```$", "", raw, flags=re.M).strip()
-    data = json.loads(raw)
-    for key in ("topic", "hook", "slides", "caption", "hashtags"):
-        if not data.get(key):
-            raise ValueError(f"LLM response missing '{key}'")
-    data["slides"] = [str(s) for s in data["slides"]][:5]
-    data.setdefault("cta", "")
-    data.setdefault("pexels_query", "abstract technology")
-    return data
-
-
-def generate_post(cfg: dict, history: list) -> dict:
+def _ctx(cfg: dict, history: list, kind: str) -> dict:
     pillars = cfg["content_pillars"]
-    pillar = pillars[len([h for h in history if h.get("status", "posted") == "posted"]) % len(pillars)]
-    posted = [h for h in history if h.get("topic") and h.get("status", "posted") != "error"]
-    recent = "\n".join(f"- {h['topic']}" for h in posted[-40:]) or "- (none yet)"
+    done = [h for h in history if h.get("status") == "posted" and h.get("type", "reel") == kind]
+    pillar = pillars[(len(done) + {"reel": 0, "carousel": 3, "story": 5}.get(kind, 0)) % len(pillars)]
+    recent = [h["topic"] for h in history if h.get("topic") and h.get("status") != "error"][-30:]
     b = cfg["brand"]
-    prompt = PROMPT.format(
-        name=b["name"], handle=b["handle"], description=b["description"].strip(),
-        audience=b["audience"], tone=b["tone"], language=cfg.get("language", "English"),
-        pillar=pillar, recent=recent, cta=b["call_to_action"],
-        hashtags_count=cfg.get("hashtags_count", 8),
-    )
-    call = _call_groq if cfg["llm"]["provider"] == "groq" else _call_gemini
+    return {
+        "name": b["name"], "handle": b["handle"], "description": b["description"].strip(),
+        "audience": b["audience"], "tone": b["tone"], "language": cfg.get("language", "English"),
+        "recent": "\n".join(f"- {r}" for r in recent) or "- (none yet)", "pillar": pillar,
+        "cta": b["call_to_action"], "hashtags_count": cfg.get("hashtags_count", 8),
+    }
 
-    last_err = None
-    for attempt in range(4):
-        try:
-            data = _parse(call(prompt, cfg))
-            data["pillar"] = pillar
-            if not data["cta"]:
-                data["cta"] = b["call_to_action"]
-            return data
-        except Exception as e:  # rate limits / bad JSON -> retry
-            last_err = e
-            print(f"[content] attempt {attempt + 1} failed: {e}")
-            time.sleep(5 * (attempt + 1))
-    raise RuntimeError(f"Could not generate content: {last_err}")
+
+def _need(obj, *keys):
+    for k in keys:
+        if not obj.get(k):
+            raise ValueError(f"missing '{k}'")
+
+
+def generate_reel(cfg: dict, history: list) -> dict:
+    ctx = _ctx(cfg, history, "reel")
+
+    def check(o):
+        _need(o, "topic", "hook", "problem", "solution", "result", "caption", "hashtags")
+        steps = o["solution"].get("steps") or []
+        if len(steps) < 3 or not all(s.get("title") for s in steps):
+            raise ValueError("need 3 steps")
+        o["solution"]["steps"] = [{"title": str(s["title"]), "text": str(s.get("text", ""))} for s in steps[:3]]
+        o["problem"]["alerts"] = [str(a) for a in (o["problem"].get("alerts") or [])][:3]
+        o.setdefault("app_name", "Workspace")
+        o["cta"] = o.get("cta") or cfg["brand"]["call_to_action"]
+
+    post = generate(REEL.format(**ctx), cfg, validate=check)
+    post["pillar"] = ctx["pillar"]
+    return post
+
+
+def generate_carousel(cfg: dict, history: list) -> dict:
+    ctx = _ctx(cfg, history, "carousel")
+
+    def check(o):
+        _need(o, "topic", "title", "slides", "caption", "hashtags")
+        if len(o["slides"]) < 3:
+            raise ValueError("need slides")
+        o["slides"] = [{"title": str(s.get("title", "")), "body": str(s.get("body", ""))} for s in o["slides"][:7]]
+        o["cta"] = o.get("cta") or cfg["brand"]["call_to_action"]
+
+    post = generate(CAROUSEL.format(**ctx), cfg, validate=check)
+    post["pillar"] = ctx["pillar"]
+    return post
+
+
+def generate_stories(cfg: dict, history: list, n: int) -> list:
+    ctx = _ctx(cfg, history, "story")
+
+    def check(o):
+        if not isinstance(o.get("stories"), list) or not o["stories"]:
+            raise ValueError("no stories")
+
+    out = generate(STORIES.format(n=n, **ctx), cfg, validate=check)
+    return [{"kind": s.get("kind", "tip"), "title": str(s.get("title", "")), "body": str(s.get("body", ""))}
+            for s in out["stories"][:n]]
 
 
 def build_caption(post: dict) -> str:
-    tags = " ".join(t if t.startswith("#") else f"#{t}" for t in post["hashtags"])
-    caption = post["caption"].replace("*", "").strip()
-    return f"{caption}\n\n{tags}"[:2200]
+    tags = " ".join(t if str(t).startswith("#") else f"#{t}" for t in post.get("hashtags", []))
+    caption = str(post.get("caption", "")).replace("*", "").strip()
+    return f"{caption}\n\n{tags}".strip()[:2200]

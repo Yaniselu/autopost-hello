@@ -80,11 +80,11 @@ async function writeFile(path, content, message, sha) {
   });
 }
 
-async function dispatch(mode) {
+async function dispatch(mode, kind = "reel") {
   const r = await getRepo();
   return gh(`${repo()}/actions/workflows/post.yml/dispatches`, {
     method: "POST",
-    body: { ref: r.default_branch, inputs: { mode } },
+    body: { ref: r.default_branch, inputs: { mode, kind } },
   });
 }
 

@@ -150,8 +150,11 @@ a{color:var(--accent)}
       <div class="big" id="nextPost">—</div>
       <p class="sub" id="nextSub" style="margin-bottom:20px">—</p>
       <div class="row">
+        <select id="kind" style="width:auto;min-width:190px">
+          <option value="reel">🎬 Reel cinematic</option><option value="carousel">🗂 Carusel</option>
+          <option value="story">📱 Story</option><option value="comments">💬 Răspunde la comentarii</option></select>
         <button class="primary" id="postNow">🚀 Postează acum</button>
-        <button id="testVideo">🎬 Video de test</button>
+        <button id="testVideo">👁 Previzualizare</button>
         <button id="pauseBtn">⏸ Pauză</button>
       </div>
     </section>
@@ -191,7 +194,9 @@ a{color:var(--accent)}
       <input type="password" id="fbToken" placeholder="EAAG…">
       <p class="sub" style="margin:6px 0 10px">Deschide <a href="https://developers.facebook.com/tools/explorer/" target="_blank" rel="noopener">Graph API Explorer</a>, alege aplicația ta, bifează
         <span class="mono">instagram_basic</span> <span class="mono">instagram_content_publish</span> <span class="mono">pages_show_list</span>
-        <span class="mono">pages_read_engagement</span> <span class="mono">business_management</span>, apasă „Generate Access Token” și copiază-l aici.
+        <span class="mono">pages_read_engagement</span> <span class="mono">pages_manage_posts</span>
+        <span class="mono">pages_manage_engagement</span> <span class="mono">pages_read_user_content</span> <span class="mono">instagram_manage_comments</span>
+        <span class="mono">business_management</span>, apasă „Generate Access Token” și copiază-l aici.
         Panoul îl transformă într-unul care nu expiră.</p>
       <div id="igChoose"></div>
       <button class="primary small" id="igConnect">Conectează Instagram</button>
@@ -206,18 +211,39 @@ a{color:var(--accent)}
       </div>
     </section>
 
+    <!-- comments -->
+    <section class="card glass c12">
+      <h2>Răspunsuri la comentarii</h2>
+      <p class="sub">Ultimele comentarii la care a răspuns AI-ul (Instagram + Facebook).</p>
+      <div class="list" id="commentLog" style="max-height:320px"></div>
+    </section>
+
     <!-- settings -->
     <section class="card glass c12" id="settingsCard">
       <h2>Setări</h2>
       <p class="sub">Schimbă orele, temele și stilul. Se aplică de la următoarea postare.</p>
       <div class="grid">
         <div class="c6">
-          <label>Orele de postare (ora României / fusul ales)</label>
-          <div class="chips" id="times"></div>
-          <div class="row" style="margin-top:10px;flex-wrap:nowrap">
-            <input type="time" id="newTime" style="max-width:160px">
-            <button class="small" id="addTime">+ Adaugă oră</button>
+          <label>🎬 Reels: orele de postare</label>
+          <div class="chips" id="times-times"></div>
+          <div class="row" style="margin-top:8px;flex-wrap:nowrap"><input type="time" id="new-times" style="max-width:160px"><button class="small" data-add="times">+ Adaugă</button></div>
+          <label>🗂 Carusel: orele</label>
+          <div class="chips" id="times-carousel_times"></div>
+          <div class="row" style="margin-top:8px;flex-wrap:nowrap"><input type="time" id="new-carousel_times" style="max-width:160px"><button class="small" data-add="carousel_times">+ Adaugă</button></div>
+          <label>📱 Stories: orele</label>
+          <div class="chips" id="times-story_times"></div>
+          <div class="row" style="margin-top:8px;flex-wrap:nowrap"><input type="time" id="new-story_times" style="max-width:160px"><button class="small" data-add="story_times">+ Adaugă</button>
+            <span class="meta" style="margin-left:8px">câte</span><input type="number" id="storiesPer" min="1" max="5" style="max-width:80px"></div>
+          <div class="two">
+            <div><label>Postează și pe Facebook</label><select id="postFb"><option value="1">Da, pe pagina legată</option><option value="0">Nu, doar Instagram</option></select></div>
+            <div><label>Răspunde la comentarii</label><select id="cmEnabled"><option value="1">Da, automat</option><option value="0">Nu</option></select></div>
           </div>
+          <div class="two">
+            <div><label>Verifică comentariile la</label><select id="cmEvery"><option value="1">fiecare oră</option><option value="2">2 ore</option><option value="3">3 ore</option><option value="6">6 ore</option></select></div>
+            <div><label>Max răspunsuri / verificare</label><input type="number" id="cmMax" min="1" max="50"></div>
+          </div>
+          <label>Instrucțiuni pentru răspunsuri (opțional)</label>
+          <input id="cmInstr" placeholder="ex: răspunde în română, invită la DM pentru oferte">
           <div class="two">
             <div><label>Fus orar</label><input id="timezone" list="tzlist"></div>
             <div><label>Limba postărilor</label><input id="language"></div>
@@ -225,7 +251,7 @@ a{color:var(--accent)}
           <datalist id="tzlist"><option>Europe/Bucharest</option><option>Europe/London</option><option>Europe/Berlin</option><option>America/New_York</option><option>UTC</option></datalist>
           <div class="two">
             <div><label>Stil video</label>
-              <select id="style"><option value="liquid_glass">Liquid Glass (sticlă, bule)</option><option value="classic">Clasic (text simplu)</option></select></div>
+              <select id="style"><option value="cinematic">Cinematic 3D (laptop + telefon)</option><option value="liquid_glass">Liquid Glass (sticlă, bule)</option><option value="classic">Clasic (text simplu)</option></select></div>
             <div><label>Culori</label>
               <select id="palette">
                 <option value="random">🎲 Diferite la fiecare video</option><option value="aurora">Aurora (cyan, mov, roz)</option>
@@ -353,11 +379,11 @@ function render() {
         : `Conectat la ${st.repo}.` },
     { done: repoOk && st.codeUploaded, t: "Urcă programul în repo",
       p: "În repo-ul GitHub: Add file → Upload files → trage toate fișierele din folderul dezarhivat → Commit." },
-    { done: repoOk && st.installed, t: "Instalează programarea automată",
-      p: "Creează setările și programul de postare în repo.", btn: repoOk && st.codeUploaded && !st.installed ? ["Instalează", installNow] : null },
+    { done: repoOk && st.installed && st.workflowCurrent !== false, t: "Instalează / actualizează programarea automată",
+      p: "Creează setările și programul de postare în repo.", btn: repoOk && st.codeUploaded && !(st.installed && st.workflowCurrent !== false) ? ["Instalează", installNow] : null },
     { done: hasGemini, t: "Cheia Gemini (scrie textele)", p: "Lipește cheia în cardul „Cont & chei”." },
     { done: hasIg, t: "Conectează Instagram", p: "Completează App ID, App Secret și token-ul în cardul „Cont & chei”." },
-    { done: hasTest, t: "Fă un video de test", p: "Apasă „🎬 Video de test”. După ~5 minute îl găsești în „Ce rulează acum” → link → Artifacts.",
+    { done: hasTest, t: "Fă o previzualizare", p: "Alege tipul și apasă „👁 Previzualizare”. După ~5–8 minute apare în Istoric, direct în panou.",
       btn: st.installed && hasGemini && !hasTest ? ["Video de test", () => runMode("test", $("testVideo"))] : null },
   ];
   const all = steps.every(x => x.done);
@@ -374,20 +400,21 @@ function render() {
   if (hasIg && s && s.instagram_username) setPill($("igPill"), "ok", "@" + s.instagram_username);
   else setPill($("igPill"), "warn", "Instagram neconectat");
   $("geminiState").textContent = hasGemini ? "· ✓ salvată" : "· lipsește";
-  $("igState").textContent = hasIg ? `· ✓ conectat${s && s.instagram_username ? " ca @" + s.instagram_username : ""}` : "· neconectat";
+  $("igState").textContent = hasIg ? `· ✓ conectat${s && s.instagram_username ? " ca @" + s.instagram_username : ""}${sec.has("FB_PAGE_ID") && s.facebook_page ? " + Facebook: " + s.facebook_page : ""}` : "· neconectat";
   $("pexelsState").textContent = sec.has("PEXELS_API_KEY") ? "· ✓ salvată" : "· lipsește";
 
   // ----- control
   if (s) {
     const running = (st.runs || []).some(r => r.status !== "completed");
-    const nx = nextSlot(s.times, s.timezone);
+    const all = [...(s.times || []), ...(s.carousel_times || []), ...(s.story_times || [])];
+    const nx = nextSlot([...new Set(all)], s.timezone);
     $("pauseBtn").textContent = s.paused ? "▶ Pornește" : "⏸ Pauză";
     $("pauseBtn").className = s.paused ? "primary" : "";
     if (!all) { $("statusLine").textContent = "Termină configurarea ca să pornească postarea automată."; }
     else if (s.paused) $("statusLine").textContent = "⏸ Postarea automată e pe pauză.";
     else $("statusLine").textContent = running ? "⚙️ Se face un video chiar acum…" : "✅ Postarea automată e pornită.";
     $("nextPost").textContent = s.paused || !nx ? "—" : `${nx.day} la ${nx.t}`;
-    $("nextSub").textContent = `${s.times.length} postări pe zi · fus orar ${s.timezone}`;
+    $("nextSub").textContent = `${(s.times || []).length} reels · ${(s.carousel_times || []).length} carusel · ${(s.story_times || []).length * (s.stories_per_slot || 1)} stories pe zi${s.post_to_facebook !== false && s.facebook_page ? " · + Facebook" : ""} · ${s.timezone}`;
     fillSettings(s);
   }
 
@@ -406,19 +433,34 @@ function render() {
   const h = st.history || [];
   $("history").replaceChildren(...(h.length ? h.map(x => {
     const pill = el("span", {});
+    const typeName = { reel: "🎬 Reel", carousel: "🗂 Carusel", story: "📱 Story" }[x.type || "reel"] || "";
     setPill(pill, x.status === "posted" ? "ok" : x.status === "test" ? "" : "bad",
       x.status === "posted" ? "postat" : x.status === "test" ? "test" : "eroare");
     const links = el("div", { class: "row" });
     if (x.permalink) links.append(el("a", { href: x.permalink, target: "_blank", rel: "noopener" }, "Vezi pe Instagram ↗"));
-    if (x.run_url) links.append(el("a", { href: x.run_url, target: "_blank", rel: "noopener" }, x.status === "test" ? "Descarcă video-ul ↗" : "rulare ↗"));
+    if (x.fb_link) links.append(el("a", { href: x.fb_link, target: "_blank", rel: "noopener" }, "Vezi pe Facebook ↗"));
+    if (x.run_url) links.append(el("a", { href: x.run_url, target: "_blank", rel: "noopener" }, "rulare ↗"));
+    const prev = el("div", { class: "row", style: "margin-top:10px;gap:8px" });
+    for (const u of (x.previews || []).filter(u => /^https:\/\/[a-z0-9.-]+\.vercel-storage\.com\//.test(u))) {
+      if (/\.mp4(\?|$)/.test(u)) prev.append(el("video", { src: u, controls: "", playsinline: "", preload: "metadata", style: "width:180px;border-radius:14px;background:#000" }));
+      else prev.append(el("a", { href: u, target: "_blank", rel: "noopener" }, el("img", { src: u, loading: "lazy", style: "width:110px;border-radius:12px;display:block" })));
+    }
     return el("div", { class: "item" },
-      el("div", { class: "top" }, el("span", { class: "meta" }, fmtDate(x.time)), pill),
+      el("div", { class: "top" }, el("span", { class: "meta" }, `${typeName} · ${fmtDate(x.time)}`), pill),
       x.hook ? el("div", { class: "hook" }, String(x.hook).replace(/\*/g, "")) : null,
       x.topic ? el("div", { class: "meta" }, x.topic) : null,
       x.error ? el("div", { class: "err" }, x.error) : null,
+      x.fb_error ? el("div", { class: "err" }, "Facebook: " + x.fb_error) : null,
+      prev.childNodes.length ? prev : null,
       x.caption ? el("details", {}, el("summary", {}, "caption"), x.caption) : null,
       links);
   }) : [el("div", { class: "empty" }, "Încă nicio postare. Prima apare la ora programată sau când apeși „Postează acum”.")]));
+
+  const cl = st.comments || [];
+  $("commentLog").replaceChildren(...(cl.length ? cl.map(c => el("div", { class: "item" },
+    el("div", { class: "top" }, el("span", { class: "meta" }, `${c.platform === "facebook" ? "Facebook" : "Instagram"} · ${c.user || ""} · ${fmtDate(c.time)}`)),
+    el("div", { class: "meta", style: "margin-top:6px" }, "„" + c.comment + "”"),
+    el("div", { class: "hook", style: "font-weight:600" }, "↳ " + c.reply))) : [el("div", { class: "empty" }, "Încă niciun răspuns.")]));
 
   clearTimeout(window._poll);
   window._poll = setTimeout(() => load(true), runs.some(r => r.status !== "completed") ? 15000 : 60000);
@@ -428,7 +470,10 @@ function render() {
 let filled = false;
 function fillSettings(s) {
   if (filled) return; filled = true;
-  draftTimes = [...s.times]; drawTimes();
+  for (const k of LISTS) draft[k] = [...(s[k] || [])]; drawTimes();
+  $("storiesPer").value = s.stories_per_slot || 1; $("postFb").value = s.post_to_facebook === false ? "0" : "1";
+  const cm = s.comments || {}; $("cmEnabled").value = cm.enabled === false ? "0" : "1"; $("cmEvery").value = String(cm.every_hours || 1);
+  $("cmMax").value = cm.max_per_run || 20; $("cmInstr").value = cm.instructions || "";
   $("timezone").value = s.timezone; $("language").value = s.language; $("hashtags").value = s.hashtags_count;
   $("style").value = s.video.style; $("palette").value = s.video.palette; $("background").value = s.video.background;
   $("bName").value = s.brand.name; $("bHandle").value = s.brand.handle; $("bDesc").value = s.brand.description;
@@ -437,18 +482,28 @@ function fillSettings(s) {
   $("pexelsBox").classList.toggle("hidden", s.video.background !== "pexels");
 }
 $("background").onchange = () => $("pexelsBox").classList.toggle("hidden", $("background").value !== "pexels");
+const LISTS = ["times", "carousel_times", "story_times"];
+let draft = { times: [], carousel_times: [], story_times: [] };
 function drawTimes() {
-  draftTimes.sort();
-  $("times").replaceChildren(...draftTimes.map(t => {
-    const x = el("button", { title: "Șterge" }, "✕"); x.onclick = () => { draftTimes = draftTimes.filter(y => y !== t); drawTimes(); };
-    return el("span", { class: "chip" }, t, x);
-  }));
-  if (!draftTimes.length) $("times").append(el("span", { class: "meta" }, "Nicio oră — nu va posta automat."));
+  for (const key of LISTS) {
+    draft[key].sort();
+    $("times-" + key).replaceChildren(...draft[key].map(t => {
+      const x = el("button", { title: "Șterge" }, "✕"); x.onclick = () => { draft[key] = draft[key].filter(y => y !== t); drawTimes(); };
+      return el("span", { class: "chip" }, t, x);
+    }));
+    if (!draft[key].length) $("times-" + key).append(el("span", { class: "meta" }, "Nicio oră — oprit."));
+  }
 }
-$("addTime").onclick = () => { const v = $("newTime").value; if (v && !draftTimes.includes(v)) { draftTimes.push(v); drawTimes(); } $("newTime").value = ""; };
+document.querySelectorAll("[data-add]").forEach(btn => btn.onclick = () => {
+  const key = btn.dataset.add, inp = $("new-" + key), v = inp.value;
+  if (v && !draft[key].includes(v)) { draft[key].push(v); drawTimes(); } inp.value = "";
+});
 $("saveSettings").onclick = (e) => withBtn(e.currentTarget, async () => {
   const settings = {
-    times: draftTimes, timezone: $("timezone").value, language: $("language").value, hashtags_count: $("hashtags").value,
+    times: draft.times, carousel_times: draft.carousel_times, story_times: draft.story_times,
+    stories_per_slot: $("storiesPer").value, post_to_facebook: $("postFb").value === "1",
+    comments: { enabled: $("cmEnabled").value === "1", every_hours: $("cmEvery").value, max_per_run: $("cmMax").value, instructions: $("cmInstr").value },
+    timezone: $("timezone").value, language: $("language").value, hashtags_count: $("hashtags").value,
     video: { style: $("style").value, palette: $("palette").value, background: $("background").value },
     brand: { name: $("bName").value, handle: $("bHandle").value, description: $("bDesc").value,
       audience: $("bAudience").value, tone: $("bTone").value, call_to_action: $("bCta").value },
@@ -460,10 +515,13 @@ $("saveSettings").onclick = (e) => withBtn(e.currentTarget, async () => {
 // ---------- actions ----------
 async function installNow() { await api("install", {}); toast("✓ Instalat! Programarea automată e activă."); await load(true); }
 async function runMode(mode, btn) {
-  if (mode === "now" && !confirm("Fac un video nou și îl postez pe Instagram acum?")) return;
+  const kind = $("kind").value;
+  const names = { reel: "un Reel cinematic", carousel: "un carusel", story: "stories", comments: "răspunsuri la comentarii" };
+  if (kind === "comments") mode = "now";
+  if (mode === "now" && !confirm(`Fac ${names[kind]} și îl public acum${S.settings && S.settings.post_to_facebook !== false ? " (Instagram + Facebook)" : ""}?`)) return;
   await withBtn(btn, async () => {
-    await api("run", { mode });
-    toast(mode === "now" ? "🚀 Pornit! Postarea apare în ~5 minute." : "🎬 Pornit! Video-ul de test e gata în ~5 minute.");
+    await api("run", { mode, kind });
+    toast(mode === "now" ? `🚀 Pornit! Apare în ~${kind === "reel" ? "6–8" : "3–4"} minute.` : `👁 Pornit! Previzualizarea apare în Istoric în ~${kind === "reel" ? "6–8" : "3–4"} minute.`);
     setTimeout(() => load(true), 4000);
   });
 }
@@ -491,7 +549,9 @@ $("igConnect").onclick = (e) => withBtn(e.currentTarget, async () => {
     return;
   }
   $("igChoose").replaceChildren(); $("fbToken").value = ""; $("appSecret").value = "";
-  toast(`✓ Conectat la @${r.connected}`); await load(true);
+  toast(`✓ Conectat la @${r.connected}${r.page ? " + pagina " + r.page : ""}`);
+  if (r.warnings && r.warnings.length) setTimeout(() => toast("Merge, dar lipsesc permisiunile: " + r.warnings.join(", ") + ". Adaugă-le și reconectează ca să meargă tot.", true), 3800);
+  await load(true);
 });
 
 load();

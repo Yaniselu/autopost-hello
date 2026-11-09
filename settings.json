@@ -32,9 +32,24 @@
     "myths vs facts about AI and software"
   ],
   "video": {
-    "style": "liquid_glass",
+    "style": "cinematic",
     "palette": "random",
     "background": "liquid"
   },
-  "instagram_username": ""
+  "instagram_username": "",
+  "carousel_times": [
+    "13:00"
+  ],
+  "story_times": [
+    "09:30",
+    "19:30"
+  ],
+  "stories_per_slot": 1,
+  "post_to_facebook": true,
+  "comments": {
+    "enabled": true,
+    "every_hours": 1,
+    "max_per_run": 20,
+    "instructions": ""
+  }
 }

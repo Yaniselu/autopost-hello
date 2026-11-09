@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+@font-face { font-family: "Inter"; font-weight: 800; src: url(/fonts/InterDisplay-ExtraBold.otf); }
+@font-face { font-family: "Inter"; font-weight: 900; src: url(/fonts/InterDisplay-ExtraBold.otf); }
+@font-face { font-family: "Inter"; font-weight: 700; src: url(/fonts/Inter-SemiBold.otf); }
+@font-face { font-family: "Inter"; font-weight: 600; src: url(/fonts/Inter-SemiBold.otf); }
+@font-face { font-family: "Inter"; font-weight: 500; src: url(/fonts/Inter-Medium.otf); }
+@font-face { font-family: "Inter"; font-weight: 400; src: url(/fonts/Inter-Medium.otf); }
+:root { --accent: #78f0ff; --accent2: #be8cff; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: #000; font-family: Inter, sans-serif; color: #fff; }
+#stage { position: relative; width: var(--w); height: var(--h); overflow: hidden; }
+canvas#gl { position: absolute; inset: 0; width: 100%; height: 100%; }
+.layer { position: absolute; inset: 0; pointer-events: none; }
+#vignette { background: radial-gradient(120% 75% at 50% 45%, transparent 55%, rgba(0,0,0,.55) 100%); }
+#grain { opacity: .07; mix-blend-mode: overlay; background-size: 256px 256px; }
+#flash { background: #fff; opacity: 0; }
+.glass {
+  background: linear-gradient(155deg, rgba(255,255,255,.20), rgba(255,255,255,.06) 50%, rgba(255,255,255,.10));
+  border: 1.5px solid rgba(255,255,255,.28);
+  backdrop-filter: blur(26px) saturate(170%);
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,.6), inset 0 1.5px 0 rgba(255,255,255,.55), inset 0 -1px 0 rgba(255,255,255,.1);
+}
+#bar { position: absolute; left: 70px; right: 70px; top: 86px; height: 12px; border-radius: 99px; overflow: hidden; }
+#bar i { position: absolute; left: 0; top: 0; bottom: 0; width: 0; border-radius: 99px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2)); box-shadow: 0 0 18px var(--accent); }
+#label { position: absolute; left: 70px; top: 150px; padding: 14px 26px; border-radius: 99px;
+  font-weight: 700; font-size: 30px; letter-spacing: .14em; opacity: 0; }
+#label b { color: var(--accent); }
+#headline { position: absolute; left: 70px; right: 70px; top: 240px; font-weight: 800; font-size: 96px;
+  line-height: 1.04; letter-spacing: -0.02em; text-shadow: 0 8px 40px rgba(0,0,0,.55); }
+#headline.center { text-align: center; }
+#headline .w { display: inline-block; white-space: pre; will-change: transform; }
+.hl { background: linear-gradient(100deg, var(--accent), var(--accent2)); -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 0 22px color-mix(in srgb, var(--accent) 55%, transparent)); }
+#steps { position: absolute; left: 60px; right: 60px; bottom: 300px; display: flex; flex-direction: column; gap: 22px; }
+.step { display: flex; gap: 26px; align-items: center; padding: 26px 30px; border-radius: 36px; opacity: 0; }
+.step .n { flex: none; width: 74px; height: 74px; border-radius: 50%; display: grid; place-items: center;
+  font-weight: 800; font-size: 34px; color: #071018; background: linear-gradient(135deg, var(--accent), var(--accent2)); }
+.step .t { font-weight: 800; font-size: 44px; line-height: 1.05; }
+.step .d { font-weight: 500; font-size: 30px; opacity: .78; margin-top: 6px; line-height: 1.2; }
+#handle { position: absolute; left: 50%; bottom: 150px; transform: translateX(-50%); padding: 14px 30px; border-radius: 99px;
+  font-weight: 600; font-size: 34px; white-space: nowrap; }
+#brand { position: absolute; left: 0; right: 0; top: 230px; text-align: center; font-weight: 900; font-size: 112px;
+  letter-spacing: .12em; opacity: 0; text-shadow: 0 0 50px color-mix(in srgb, var(--accent) 60%, transparent); }
+#ctaText { position: absolute; left: 80px; right: 80px; top: 380px; text-align: center; font-weight: 700; font-size: 52px; opacity: 0; line-height: 1.15; }
+#follow { position: absolute; left: 50%; bottom: 300px; padding: 34px 80px; border-radius: 99px; font-weight: 800; font-size: 54px;
+  letter-spacing: .06em; opacity: 0; transform: translateX(-50%); background: linear-gradient(120deg, color-mix(in srgb, var(--accent) 75%, transparent), color-mix(in srgb, var(--accent2) 75%, transparent)); color: #071018; }
+
+/* ---------- stills (carousel / story) ---------- */
+#still { position: absolute; inset: 0; display: none; }
+#still .card { position: absolute; left: 70px; right: 70px; border-radius: 56px; padding: 70px 64px; }
+#still .big { font-weight: 900; font-size: 210px; line-height: .9; letter-spacing: -.04em; }
+#still .title { font-weight: 800; font-size: 82px; line-height: 1.05; letter-spacing: -.02em; }
+#still .body { font-weight: 500; font-size: 44px; line-height: 1.35; opacity: .86; margin-top: 30px; }
+#still .kicker { display: inline-block; padding: 14px 28px; border-radius: 99px; font-weight: 700; font-size: 30px; letter-spacing: .14em; margin-bottom: 34px; }
+#still .swipe { position: absolute; right: 70px; bottom: 70px; padding: 18px 34px; border-radius: 99px; font-weight: 700; font-size: 32px; }
+#still .page { position: absolute; left: 70px; bottom: 76px; font-weight: 700; font-size: 30px; opacity: .7; letter-spacing: .1em; }
+</style>
+<script type="importmap">
+{ "imports": { "three": "/three/build/three.module.js", "three/addons/": "/three/examples/jsm/" } }
+</script>
+</head>
+<body>
+<div id="stage">
+  <canvas id="gl"></canvas>
+  <div class="layer" id="vignette"></div>
+  <div class="layer" id="ui">
+    <div id="bar" class="glass"><i></i></div>
+    <div id="label" class="glass"></div>
+    <div id="headline"></div>
+    <div id="steps"></div>
+    <div id="brand"></div>
+    <div id="ctaText"></div>
+    <div id="follow" class="glass">FOLLOW →</div>
+    <div id="handle" class="glass"></div>
+  </div>
+  <div id="still"></div>
+  <div class="layer" id="grain"></div>
+  <div class="layer" id="flash"></div>
+</div>
+<script type="module" src="/scene/scene.js"></script>
+</body>
+</html>

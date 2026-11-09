@@ -32,7 +32,7 @@ hashtags_count: 8        # câte hashtag-uri sub caption
 # ---------- AI pentru text (gratuit: Google Gemini) ----------
 llm:
   provider: "gemini"     # "gemini" sau "groq"
-  gemini_model: "gemini-2.5-flash"
+  gemini_model: ""       # gol = alege automat cel mai bun model gratuit disponibil
   groq_model: "llama-3.3-70b-versatile"
   temperature: 1.0
 
@@ -45,7 +45,9 @@ schedule:
 
 # ---------- Video ----------
 video:
-  style: "liquid_glass"  # "liquid_glass" (sticlă, bule, refracții) sau "classic"
+  style: "cinematic"     # "cinematic" (3D laptop + telefon), "liquid_glass" sau "classic"
+  fps_cinematic: 24
+  render_scale: 0.6667   # rezoluția 3D (textul e mereu la 1080x1920)
   palette: "random"      # random | aurora | sunset | ocean | neon | mint
   width: 1080
   height: 1920
