@@ -35,7 +35,7 @@ async function setup(job) {
   // real account images (logo + latest posts) for the profile screen
   const loadImg = (src) => new Promise((res) => { if (!src) return res(null); const i = new Image(); i.onload = () => res(i); i.onerror = () => res(null); i.src = src; });
   const acc = job.account || {};
-  J._img = { avatar: await loadImg(acc.avatar), grid: (await Promise.all((acc.grid || []).map(loadImg))).filter(Boolean) };
+  J._img = { avatar: await loadImg(acc.avatar), mark: await loadImg(acc.logo_mark), grid: (await Promise.all((acc.grid || []).map(loadImg))).filter(Boolean) };
 
   // reels: render the 3D at reduced size (fast in software GL); text is composited later at full res
   const sc = job.mode === "reel" ? (job.render_scale || 0.6667) : 1;
@@ -184,6 +184,15 @@ function roundedRect(w, h, r) {
   return new THREE.ShapeGeometry(s, 12);
 }
 
+// brand emblem (the Velosyntech mark) where a manufacturer logo would be
+function emblem(size, finish) {
+  if (!J._img || !J._img.mark) return null;
+  const tex = new THREE.Texture(J._img.mark); tex.colorSpace = THREE.SRGBColorSpace; tex.needsUpdate = true;
+  const dark = ["black", "graphite", "spaceblack", "blue"].includes(finish);
+  return new THREE.Mesh(new THREE.PlaneGeometry(size, size), new THREE.MeshStandardMaterial({
+    map: tex, transparent: true, metalness: 0.95, roughness: 0.12, color: dark ? 0xe8eaee : 0x8a8e95, envMapIntensity: 1.4 }));
+}
+
 function buildLaptop(finish) {
   const g = new THREE.Group(), alu = metal(finish);
   const dark = new THREE.MeshStandardMaterial({ color: 0x0c0c0f, roughness: 0.6, metalness: 0.2 });
@@ -207,6 +216,7 @@ function buildLaptop(finish) {
 
   const lidPivot = new THREE.Group(); lidPivot.position.set(0, 0.09, -1.03); g.add(lidPivot);
   const lid = new THREE.Mesh(new RoundedBoxGeometry(3.0, 2.02, 0.05, 4, 0.024), alu); lid.position.set(0, 1.01, 0); lidPivot.add(lid);
+  const em = emblem(0.62, finish); if (em) { em.position.set(0, 1.03, -0.0262); em.rotation.y = Math.PI; lidPivot.add(em); }
   const bezel = new THREE.Mesh(roundedRect(2.95, 1.97, 0.07), glassBlack); bezel.position.set(0, 1.01, 0.0256); lidPivot.add(bezel);
   lapCanvas = document.createElement("canvas"); lapCanvas.width = 1024; lapCanvas.height = 640;
   lapTex = new THREE.CanvasTexture(lapCanvas); lapTex.colorSpace = THREE.SRGBColorSpace; lapTex.generateMipmaps = false; lapTex.minFilter = THREE.LinearFilter;
@@ -230,6 +240,7 @@ function buildPhone(finish) {
   screen.position.z = 0.0432; g.add(screen);
   const backGlass = new THREE.Mesh(roundedRect(0.735, 1.535, 0.1), new THREE.MeshStandardMaterial({ color: fin(finish).back, roughness: 0.42, metalness: 0.25 }));
   backGlass.position.z = -0.0428; backGlass.rotation.y = Math.PI; g.add(backGlass);
+  const pem = emblem(0.26, finish); if (pem) { pem.position.set(0, -0.02, -0.0432); pem.rotation.y = Math.PI; g.add(pem); }
   const bump = new THREE.Mesh(new RoundedBoxGeometry(0.36, 0.36, 0.03, 3, 0.08), new THREE.MeshStandardMaterial({ color: fin(finish).plate, roughness: 0.12, metalness: 0.55 }));
   bump.position.set(0.165, 0.555, -0.055); g.add(bump);
   const flash = new THREE.Mesh(new THREE.CylinderGeometry(0.022, 0.022, 0.034, 20), new THREE.MeshStandardMaterial({ color: 0xfff4dc, emissive: 0x3a3428, roughness: 0.3 }));

@@ -44,7 +44,10 @@ def pick_palette(cfg: dict, rng: random.Random) -> tuple[str, dict]:
 
 def account_for_job(cfg: dict) -> dict:
     a = (cfg.get("_account") or {}).get("assets") or {}
-    return {k: a.get(k) for k in ("username", "name", "followers", "posts", "avatar", "grid") if a.get(k) is not None}
+    if not a:
+        from .account import render_assets
+        a = render_assets(None)  # at least the logo file
+    return {k: a.get(k) for k in ("username", "name", "followers", "posts", "avatar", "grid", "logo_mark") if a.get(k) is not None}
 
 
 def run_renderer(job: dict, out_dir: Path) -> None:
@@ -226,6 +229,9 @@ class Overlay:
         self.bar = Glass(W - 140, 18, 9, bevel=8, strength=5, blur=6, shadow=0.15, sheen=False)
         self.handle_img = _text_img(cfg["brand"]["handle"], ImageFont.truetype(str(FONT_MED), 36), (255, 255, 255, 235))
         av = ((cfg.get("_account") or {}).get("assets") or {}).get("avatar_bytes")
+        if not av:
+            from .account import local_logo
+            av = local_logo()[0]
         self.logo = self.logo_small = None
         if av:
             from .account import logo_png

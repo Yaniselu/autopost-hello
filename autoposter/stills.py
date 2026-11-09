@@ -35,6 +35,9 @@ def _job(cfg, mode_w, mode_h, seed, stills, extra=None):
 def _logo_html(cfg, size=46):
     av = (((cfg.get("_account") or {}).get("assets") or {}).get("avatar"))
     if not av:
+        from .account import _data_url, local_logo
+        av = _data_url(local_logo()[0])
+    if not av:
         return ""
     return (f'<img src="{av}" style="width:{size}px;height:{size}px;border-radius:50%;vertical-align:middle;'
             f'margin:-8px 14px -6px -10px;box-shadow:0 0 0 3px rgba(255,255,255,.35)">')

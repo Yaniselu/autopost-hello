@@ -15,7 +15,33 @@ import os
 import requests
 from PIL import Image, ImageDraw
 
-from .config import DATA, env
+from .config import ASSETS, DATA, env
+
+LOGO_FILE = ASSETS / "logo.png"
+
+
+def local_logo() -> tuple[bytes | None, str | None]:
+    """assets/logo.png -> (square JPEG bytes for round avatars, white-on-transparent PNG data URL for 3D/overlays)."""
+    if not LOGO_FILE.exists():
+        return None, None
+    im = Image.open(LOGO_FILE).convert("RGB")
+    side = min(im.size)
+    im = im.crop(((im.width - side) // 2, (im.height - side) // 2, (im.width + side) // 2, (im.height + side) // 2))
+    buf = io.BytesIO()
+    im.resize((512, 512), Image.LANCZOS).save(buf, "JPEG", quality=95)
+    # mark only: luminance becomes alpha, colour white (works on any background)
+    mark = im.convert("L")
+    bbox = mark.point(lambda v: 255 if v > 60 else 0).getbbox() or (0, 0, side, side)
+    mark = mark.crop(bbox)
+    pad = int(max(mark.size) * 0.06)
+    canvas = Image.new("L", (max(mark.size) + 2 * pad, max(mark.size) + 2 * pad), 0)
+    canvas.paste(mark, ((canvas.width - mark.width) // 2, (canvas.height - mark.height) // 2))
+    canvas = canvas.resize((512, 512), Image.LANCZOS)
+    rgba = Image.new("RGBA", canvas.size, (255, 255, 255, 0))
+    rgba.putalpha(canvas)
+    b2 = io.BytesIO()
+    rgba.save(b2, "PNG")
+    return buf.getvalue(), "data:image/png;base64," + base64.b64encode(b2.getvalue()).decode()
 from .llm import generate, redact
 
 STYLE_FILE = DATA / "style_guide.json"
@@ -77,10 +103,12 @@ def logo_png(avatar_jpeg: bytes, size: int = 512) -> Image.Image:
 
 
 def render_assets(acct: dict | None) -> dict:
-    """What the renderer needs: avatar + 9 real grid thumbnails (as data URLs) and the numbers."""
+    """What the renderer needs: logo, avatar + 9 real grid thumbnails (as data URLs) and the numbers."""
+    logo_jpeg, logo_mark = local_logo()
     if not acct:
-        return {}
+        return {"avatar": _data_url(logo_jpeg), "avatar_bytes": logo_jpeg, "logo_mark": logo_mark} if logo_jpeg else {}
     avatar = _img_bytes(acct.get("profile_picture_url", ""), 512) if acct.get("profile_picture_url") else None
+    avatar = logo_jpeg or avatar  # the official logo file wins over the (compressed) profile photo
     grid = []
     for m in acct.get("media", [])[:12]:
         url = m.get("thumbnail_url") or (m.get("media_url") if m.get("media_type") != "VIDEO" else None)
@@ -91,7 +119,7 @@ def render_assets(acct: dict | None) -> dict:
             break
     return {"username": acct.get("username"), "name": acct.get("name") or acct.get("username"),
             "followers": acct.get("followers_count"), "posts": acct.get("media_count"),
-            "avatar": _data_url(avatar), "avatar_bytes": avatar, "grid": grid}
+            "avatar": _data_url(avatar), "avatar_bytes": avatar, "logo_mark": logo_mark, "grid": grid}
 
 
 STYLE_PROMPT = """You are a senior social media strategist. Study this Instagram account so new posts
