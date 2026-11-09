@@ -12,29 +12,17 @@ Postează singur Reels în stil **Liquid Glass** pe @velosyntech, **fără să-�
 
 ---
 
-## Instalare (o singură dată, ~30 min)
+## Instalare
 
-### 1. GitHub: urcă programul
-1. Fă-ți cont pe https://github.com (dacă n-ai).
-2. **New repository** → nume: `velosyntech-autoposter` → **Private** → Create.
-3. În repo: **Add file → Upload files** → trage **tot conținutul** folderului dezarhivat
-   (folderele `autoposter`, `panel`, `assets`, `data` și restul fișierelor) → **Commit changes**.
+**Deja făcut:** codul e în repo-ul `Yaniselu/autopost-hello`, iar panoul e online pe
+**https://autopost-hello.vercel.app**, cu parolă (`PANEL_PASSWORD` în Vercel).
 
-### 2. GitHub: fă o cheie pentru panou
-1. https://github.com/settings/tokens/new (Settings → Developer settings → Personal access tokens → **Tokens (classic)**)
-2. Note: `panou velosyntech` · Expiration: **No expiration**
-3. Bifează **`repo`** și **`workflow`** → **Generate token** → copiază-l (începe cu `ghp_`).
-
-### 3. Vercel: pune panoul online
-1. https://vercel.com/new → la repo-ul `velosyntech-autoposter` apasă **Import**.
-2. **Root Directory** → **Edit** → alege **`panel`**.
-3. Deschide **Environment Variables** și adaugă 3 variabile:
-   | Name | Value |
-   |---|---|
-   | `PANEL_PASSWORD` | parola ta pentru panou (minim 8 caractere) |
-   | `GITHUB_TOKEN` | token-ul `ghp_…` de la pasul 2 |
-   | `GITHUB_REPO` | `Yaniselu/autopost-hello` |
-4. **Deploy**. Primești un link de tipul `velosyntech-autoposter.vercel.app`. Ăsta e panoul tău.
+### Mai trebuie: cheia GitHub pentru panou (2 minute)
+1. Deschide https://github.com/settings/tokens/new?scopes=repo,workflow&description=autopost-panel
+   (Expiration: **No expiration**; `repo` și `workflow` sunt deja bifate) → **Generate token** → copiază `ghp_…`.
+2. Deschide https://vercel.com/yaniselus-projects/autopost-hello/settings/environment-variables
+   → **Add** → Key: `GITHUB_TOKEN`, Value: token-ul → Save.
+3. Vercel → **Deployments** → la ultimul deploy: **⋯ → Redeploy**.
 
 ### 4. În panou (intri cu parola)
 Panoul îți arată ce mai e de făcut, bifă cu bifă:
