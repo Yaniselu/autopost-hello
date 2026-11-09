@@ -26,6 +26,9 @@ Make it crystal clear for EVERYONE, not only tech people: simple everyday words,
 (if a tool name is needed, say what it does), one idea per line, a concrete benefit the viewer feels
 (time, money, customers, stress). High impact: bold contrast, curiosity, a real "aha".
 
+WHAT PERFORMED BEST on this account so far (measured views/saves/shares - lean into it):
+{learned}
+{dm_rule}
 Do not repeat or closely resemble these recent topics (ours and already on the account):
 {recent}
 """
@@ -34,16 +37,21 @@ REEL = BRAND + """
 Create ONE cinematic Instagram Reel script about: "{pillar}".
 Story structure: HOOK -> THE PROBLEM -> THE FIX (exactly 3 steps) -> THE RESULT -> CTA.
 On-screen text rules (short, punchy; wrap 1-2 key words in *asterisks* to highlight):
-- hook: max 8 words, scroll-stopping.
+- hooks: 3 DIFFERENT hook options, each {{"text": max 8 words (with *highlight*), "type": one of
+  "question" | "bold_claim" | "number" | "pain" | "curiosity" | "myth", "spoken": the same hook said out loud
+  naturally (max 14 words)}}. Use 3 different types. "best_hook": index (0-2) of the strongest one.
 - problem.text: max 14 words, the pain the viewer recognises.
 - problem.alerts: 3 notification texts shown on a phone/laptop screen, max 4 words each (e.g. "Report overdue").
 - solution.steps: 3 items {{"title": max 4 words, "text": max 8 words}}.
 - result: max 10 words, the outcome.
 - app_name: 1-2 word generic tool name shown on the laptop screen (not a real brand).
 - cta: max 7 words (e.g. "{cta}").
+- voiceover: what a friendly, confident English narrator SAYS over the video (spoken style, simple words,
+  contractions, no hashtags/emojis): {{"problem": max 22 words, "steps": [3 lines, max 14 words each,
+  e.g. "First, ..."], "result": max 16 words, "cta": max 10 words}}.
 Caption: 3-5 short paragraphs, first line is a hook, add value beyond the video, end with a question.
 Max 2 emojis. hashtags: exactly {hashtags_count} relevant hashtags.
-Return ONLY JSON: {{"topic","hook","problem":{{"text","alerts"}},"solution":{{"steps"}},"result","app_name","cta","caption","hashtags"}}
+Return ONLY JSON: {{"topic","hooks","best_hook","problem":{{"text","alerts"}},"solution":{{"steps"}},"result","app_name","cta","voiceover","caption","hashtags"}}
 """
 
 CAROUSEL = BRAND + """
@@ -82,12 +90,19 @@ def _ctx(cfg: dict, history: list, kind: str) -> dict:
     pillars = cfg["content_pillars"]
     done = [h for h in history if h.get("status") == "posted" and h.get("type", "reel") == kind]
     pillar = pillars[(len(done) + {"reel": 0, "carousel": 3, "story": 5}.get(kind, 0)) % len(pillars)]
+    import random as _r
+    from .learning import choose_pillar, prompt_notes
+    pillar = choose_pillar(pillars, pillar, _r.Random())
+    dm = cfg.get("dm") or {}
+    dm_rule = (f'Comment-to-DM is active: end the caption with a line like "Comment {dm.get("keyword", "DEMO")} and '
+               f'we\'ll send you {dm.get("offer") or "a free demo"} in DM." ') if dm.get("enabled") and kind != "story" else ""
     recent = [h["topic"] for h in history if h.get("topic") and h.get("status") != "error"][-30:]
     acc = cfg.get("_account") or {}
     recent += acc.get("ig_recent", [])[:15]
     guide = acc.get("guide") or {}
     b = cfg["brand"]
     return {
+        "learned": prompt_notes(), "dm_rule": dm_rule,
         "bio": acc.get("bio") or "(not available)",
         "guide": json.dumps(guide, ensure_ascii=False)[:2500] if guide else "(no posts analysed yet - use the brand info)",
         "name": b["name"], "handle": b["handle"], "description": b["description"].strip(),
@@ -107,6 +122,20 @@ def generate_reel(cfg: dict, history: list) -> dict:
     ctx = _ctx(cfg, history, "reel")
 
     def check(o):
+        hooks = [h for h in (o.get("hooks") or []) if isinstance(h, dict) and h.get("text")]
+        if hooks:
+            import random as _r
+            from .learning import choose_hook
+            try:
+                best = int(o.get("best_hook", 0))
+            except (TypeError, ValueError):
+                best = 0
+            pick = hooks[choose_hook(hooks, best, _r.Random())]
+            o["hook"], o["hook_type"] = pick["text"], pick.get("type", "")
+            o["hook_options"] = [{"text": h["text"], "type": h.get("type")} for h in hooks]
+            vo = o.get("voiceover") if isinstance(o.get("voiceover"), dict) else {}
+            vo["hook"] = pick.get("spoken") or pick["text"]
+            o["voiceover"] = vo
         _need(o, "topic", "hook", "problem", "solution", "result", "caption", "hashtags")
         steps = o["solution"].get("steps") or []
         if len(steps) < 3 or not all(s.get("title") for s in steps):

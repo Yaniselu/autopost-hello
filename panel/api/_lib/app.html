@@ -184,7 +184,8 @@ a{color:var(--accent)}
         <span class="mono">instagram_basic</span> <span class="mono">instagram_content_publish</span> <span class="mono">pages_show_list</span>
         <span class="mono">pages_read_engagement</span> <span class="mono">pages_manage_posts</span>
         <span class="mono">pages_manage_engagement</span> <span class="mono">pages_read_user_content</span> <span class="mono">instagram_manage_comments</span>
-        <span class="mono">business_management</span>, apasă „Generate Access Token” și copiază-l aici.
+        <span class="mono">business_management</span>
+        <span class="mono">instagram_manage_insights</span> <span class="mono">instagram_manage_messages</span> <span class="mono">pages_messaging</span>, apasă „Generate Access Token” și copiază-l aici.
         Panoul îl transformă într-unul care nu expiră.</p>
       <div id="igChoose"></div>
       <button class="primary small" id="igConnect">Conectează Instagram</button>
@@ -197,6 +198,13 @@ a{color:var(--accent)}
           <button class="small" id="pexelsSave">Salvează</button>
         </div>
       </div>
+    </section>
+
+    <!-- results -->
+    <section class="card glass c12">
+      <h2>Ce funcționează (din rezultate)</h2>
+      <p class="sub">Vizualizări, salvări, distribuiri și like-uri pentru fiecare postare. Programul alege mai des temele, hook-urile și stilul care merg.</p>
+      <div id="insights" class="list" style="max-height:420px"></div>
     </section>
 
     <!-- style learned from the account -->
@@ -233,6 +241,17 @@ a{color:var(--accent)}
             <div><label>Postează și pe Facebook</label><select id="postFb"><option value="1">Da, pe pagina legată</option><option value="0">Nu, doar Instagram</option></select></div>
             <div><label>Răspunde la comentarii</label><select id="cmEnabled"><option value="1">Da, automat</option><option value="0">Nu</option></select></div>
           </div>
+          <div class="two">
+            <div><label>Voce AI în reels (engleză)</label><select id="voiceOn"><option value="1">Da, cu subtitrări sincronizate</option><option value="0">Nu</option></select></div>
+            <div><label>Învață din rezultate</label><select id="learnOn"><option value="1">Da</option><option value="0">Nu</option></select></div>
+          </div>
+          <label>Comentariu cu cuvânt cheie → DM automat</label>
+          <div class="two">
+            <div><select id="dmOn"><option value="1">Activ</option><option value="0">Oprit</option></select></div>
+            <div><input id="dmKey" placeholder="DEMO"></div>
+          </div>
+          <label>Link trimis în DM</label><input id="dmLink" placeholder="https://velosyntech.com/demo">
+          <label>Mesajul din DM ({name} = numele, {link} = link-ul)</label><input id="dmMsg">
           <label>Repost în story după fiecare Reel / Carusel</label>
           <select id="repost"><option value="1">Da — story „NEW REEL / NEW POST”</option><option value="0">Nu</option></select>
           <div class="two">
@@ -445,6 +464,31 @@ function render() {
       links);
   }) : [el("div", { class: "empty" }, "Încă nicio postare. Prima apare la ora programată sau când apeși „Postează acum”.")]));
 
+  const ins = st.insights;
+  if (!ins || !ins.posts_measured) $("insights").replaceChildren(el("div", { class: "empty" }, "Încă nu sunt destule postări măsurate. Rezultatele apar după primele postări (statisticile se actualizează la fiecare rulare)."));
+  else {
+    const rows = [];
+    const grp = (label, g, map) => {
+      const ent = Object.entries(g || {}).sort((a, b) => b[1].avg - a[1].avg);
+      if (!ent.length) return;
+      rows.push(el("div", { class: "item" }, el("div", { class: "meta" }, label),
+        el("div", { style: "margin-top:6px;display:flex;flex-wrap:wrap;gap:8px" }, ...ent.map(([k, v], i) =>
+          el("span", { class: "chip", style: i === 0 ? "border-color:var(--accent)" : "" }, `${map ? (map[k] || k) : k} · ${v.avg} (${v.n})`)))));
+    };
+    grp("Stil reel", ins.by_style, { cinematic: "🎬 Cinematic", liquid_glass: "💧 Liquid Glass" });
+    grp("Tip de hook", ins.by_hook_type, { question: "Întrebare", bold_claim: "Afirmație îndrăzneață", number: "Cifră", pain: "Durere", curiosity: "Curiozitate", myth: "Mit" });
+    grp("Tip postare", ins.by_type, { reel: "Reel", carousel: "Carusel", story: "Story" });
+    grp("Ora postării", ins.by_hour);
+    grp("Teme", ins.by_pillar);
+    if (ins.recommended_hours && ins.recommended_hours.length) rows.push(el("div", { class: "item" }, el("div", { class: "meta" }, "Ore recomandate (cele mai bune rezultate)"), el("div", { class: "hook" }, ins.recommended_hours.join(" · "))));
+    (ins.top_posts || []).forEach((p, i) => rows.push(el("div", { class: "item" },
+      el("div", { class: "top" }, el("span", { class: "meta" }, `#${i + 1} · scor ${p.score} · ${p.type || ""} ${p.style ? "· " + p.style : ""}`),
+        p.permalink ? el("a", { href: p.permalink, target: "_blank", rel: "noopener" }, "vezi ↗") : null),
+      el("div", { class: "hook" }, String(p.hook || "").replace(/\*/g, "")),
+      el("div", { class: "meta" }, Object.entries(p.metrics || {}).filter(([k]) => !k.startsWith("_")).map(([k, v]) => `${k}: ${v}`).join(" · ")))));
+    if (ins.basic_only) rows.push(el("div", { class: "err" }, "Doar like-uri și comentarii: adaugă permisiunea instagram_manage_insights și reconectează contul pentru vizualizări, salvări și distribuiri."));
+    $("insights").replaceChildren(...rows);
+  }
   const sg = st.styleGuide;
   if (!sg || !sg.guide) $("styleGuide").replaceChildren(el("div", { class: "empty" }, "Încă nu a analizat contul — se face automat la prima postare sau previzualizare."));
   else {
@@ -474,6 +518,9 @@ function fillSettings(s) {
   $("storiesPer").value = s.stories_per_slot || 1; $("postFb").value = s.post_to_facebook === false ? "0" : "1"; $("repost").value = s.repost_to_story === false ? "0" : "1";
   const cm = s.comments || {}; $("cmEnabled").value = cm.enabled === false ? "0" : "1"; $("cmEvery").value = String(cm.every_hours || 1);
   $("cmMax").value = cm.max_per_run || 20; $("cmInstr").value = cm.instructions || "";
+  const dm = s.dm || {}; $("dmOn").value = dm.enabled === false ? "0" : "1"; $("dmKey").value = dm.keyword || "DEMO";
+  $("dmLink").value = dm.link || ""; $("dmMsg").value = dm.message || "";
+  $("voiceOn").value = (s.voice || {}).enabled === false ? "0" : "1"; $("learnOn").value = (s.learning || {}).enabled === false ? "0" : "1";
   $("timezone").value = s.timezone; $("language").value = s.language; $("hashtags").value = s.hashtags_count;
   $("style").value = s.video.style; $("palette").value = s.video.palette; $("background").value = s.video.background;
   $("bName").value = s.brand.name; $("bHandle").value = s.brand.handle; $("bDesc").value = s.brand.description;
@@ -501,6 +548,8 @@ document.querySelectorAll("[data-add]").forEach(btn => btn.onclick = () => {
 $("saveSettings").onclick = (e) => withBtn(e.currentTarget, async () => {
   const settings = {
     times: draft.times, carousel_times: draft.carousel_times, story_times: draft.story_times,
+    voice: { enabled: $("voiceOn").value === "1" }, learning: { enabled: $("learnOn").value === "1" },
+    dm: { enabled: $("dmOn").value === "1", keyword: $("dmKey").value, link: $("dmLink").value, message: $("dmMsg").value },
     stories_per_slot: $("storiesPer").value, post_to_facebook: $("postFb").value === "1", repost_to_story: $("repost").value === "1",
     comments: { enabled: $("cmEnabled").value === "1", every_hours: $("cmEvery").value, max_per_run: $("cmMax").value, instructions: $("cmInstr").value },
     timezone: $("timezone").value, language: $("language").value, hashtags_count: $("hashtags").value,

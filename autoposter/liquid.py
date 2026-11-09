@@ -28,13 +28,15 @@ def _words(s) -> int:
     return len(str(s or "").replace("*", "").split())
 
 
-def timeline(post: dict) -> dict:
-    hook = max(2.6, 1.4 + _words(post["hook"]) * 0.22)
-    problem = max(4.0, 2.4 + _words(post["problem"]["text"]) * 0.22)
-    steps = [max(2.1, 1.2 + (_words(s["title"]) + _words(s["text"])) * 0.17) for s in post["solution"]["steps"]]
+def timeline(post: dict, durations: dict | None = None) -> dict:
+    D = durations or {}
+    hook = max(2.6, 1.4 + _words(post["hook"]) * 0.22, D.get("hook", 0))
+    problem = max(4.0, 2.4 + _words(post["problem"]["text"]) * 0.22, D.get("problem", 0))
+    steps = [max(2.1, 1.2 + (_words(s["title"]) + _words(s["text"])) * 0.17, (D.get("steps") or [0] * 9)[i])
+             for i, s in enumerate(post["solution"]["steps"])]
     solution = 0.6 + sum(steps)
-    result = max(2.8, 1.6 + _words(post["result"]) * 0.2)
-    cta = 3.4
+    result = max(2.8, 1.6 + _words(post["result"]) * 0.2, D.get("result", 0))
+    cta = max(3.4, D.get("cta", 0))
     S, t = {}, 0.0
     for k, d in (("hook", hook), ("problem", problem), ("solution", solution), ("result", result), ("cta", cta)):
         S[k] = {"start": t, "dur": d}
@@ -221,6 +223,8 @@ class LiquidReel:
         yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
         r = np.sqrt(((xx - W / 2) / (W * 0.62)) ** 2 + ((yy - H * 0.46) / (H * 0.6)) ** 2)
         self.edge = np.clip((r - 0.45) * 1.6, 0, 1).astype(np.float32)[..., None]
+        from .subtitles import Subtitles
+        self.subs = Subtitles(cfg.get("_voice_words") or [], self.accent)
 
     # ------------------------------------------------------------------ helpers
     @staticmethod
@@ -391,6 +395,8 @@ class LiquidReel:
                 q = (lt - 1.65) / 0.7
                 if 0 <= q < 1:
                     self._ring(f, bx + self.btn.w // 2 + 100, by + self.btn.h // 2, q, WHITE, 26, 150, 7)
+        if sec != "cta":
+            self.subs.draw(f, t, H - 300, _paste_rgba)
         return f.tobytes()
 
 
@@ -407,14 +413,17 @@ def _work(args):
     return _R.frame(i, fps)
 
 
-def render_liquid_reel(post: dict, cfg: dict, out: Path, work: Path, seed: int) -> Path:
+def render_liquid_reel(post: dict, cfg: dict, out: Path, work: Path, seed: int, vo: dict | None = None) -> Path:
+    from .voice import assemble, section_durations
     fps = int(cfg["video"].get("fps_cinematic", 24))
-    tl = timeline(post)
+    tl = timeline(post, section_durations(vo))
     palette = cfg["video"].get("palette", "random")
     palette = palette if palette in PALETTES else random.Random(seed).choice(list(PALETTES))
     post["_plan"] = {"style": "liquid_glass", "palette": palette}
     print(f"[liquid] palette {palette}, {tl['total']:.1f}s")
-    audio = build_soundtrack(tl["total"], tl["cues"], cfg, work / "audio.wav", seed=seed, style="cinematic")
+    voice, words = assemble(vo, tl, tl["total"])
+    cfg["_voice_words"] = words
+    audio = build_soundtrack(tl["total"], tl["cues"], cfg, work / "audio.wav", seed=seed, style="cinematic", voice=voice)
     n = int(math.ceil(tl["total"] * fps))
     cmd = [FFMPEG, "-y", "-v", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(fps), "-i", "pipe:0",
            "-i", str(audio), "-map", "0:v", "-map", "1:a", "-shortest", "-c:v", "libx264", "-preset", "medium", "-crf", "20",

@@ -248,6 +248,8 @@ class Overlay:
         f2[..., 3] = np.maximum(f2[..., 3], 0.12)
         self.btn_fill_done = f2
         self.alert_times = [c[0] for c in tl.get("cues", []) if c[1] == "alert"]
+        from .subtitles import Subtitles
+        self.subs = Subtitles(cfg.get("_voice_words") or [], self.accent)
 
         # ---------- film look
         yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
@@ -465,7 +467,7 @@ class Overlay:
             cw, chh = self.card_size
             steps = self.tl["steps"]
             out = min(1.0, max(0.0, (lt - (dur - 0.25)) / 0.25))
-            base_y = H - 330 - len(self.cards) * (chh + 22)
+            base_y = H - 380 - len(self.cards) * (chh + 22)
             for j, (glass, fill_) in enumerate(self.cards):
                 st = steps[j]["start"]
                 k = ease_out_back((t - st) / 0.5)
@@ -528,6 +530,8 @@ class Overlay:
                     d.ellipse((10, 10, rad * 2 + 10, rad * 2 + 10), outline=(255, 255, 255, int(220 * (1 - q))), width=6)
                     d.ellipse((rad - 16, rad - 16, rad + 36, rad + 36), fill=(255, 255, 255, int(160 * (1 - q))))
                     _paste_rgba(f, rp, bx + self.btn.w // 2 + 90 - rad - 10, by + self.btn.h // 2 - rad - 10)
+        if sec != "cta":
+            self.subs.draw(f, t, H - 300, _paste_rgba)
         return f.tobytes()
 
 
@@ -546,7 +550,8 @@ def _work(args):
 
 
 def render_cinematic_reel(post: dict, cfg: dict, out: Path, work: Path, seed: int,
-                          previous_plan: dict | None = None) -> Path:
+                          previous_plan: dict | None = None, vo: dict | None = None) -> Path:
+    from .voice import assemble, section_durations
     rng = random.Random(seed)
     plan = make_plan(rng, previous_plan)
     post["_plan"] = plan
@@ -562,7 +567,7 @@ def render_cinematic_reel(post: dict, cfg: dict, out: Path, work: Path, seed: in
         "render_scale": cfg["video"].get("render_scale", 0.6667),
         "reel": {"hook": post["hook"], "app_name": post.get("app_name", "Workspace"),
                  "problem": post["problem"], "solution": post["solution"], "result": post["result"],
-                 "cta": post.get("cta", "")},
+                 "cta": post.get("cta", ""), "durations": section_durations(vo)},
     }
     plan["palette"] = pal_name
     print(f"[cinematic] palette {pal_name}, plan {json.dumps(plan)}")
@@ -571,8 +576,10 @@ def render_cinematic_reel(post: dict, cfg: dict, out: Path, work: Path, seed: in
     tl = json.loads((rdir / "timeline.json").read_text())
     frames = sorted((rdir / "frames").glob("*.jpg"))
     total = round(len(frames) / fps, 3)
+    voice, words = assemble(vo, tl, total)
+    cfg["_voice_words"] = words
     audio = build_soundtrack(total, [(t, n) for t, n in tl["cues"]], cfg, work / "audio.wav", seed=seed,
-                             style="cinematic")
+                             style="cinematic", voice=voice)
     cmd = [FFMPEG, "-y", "-v", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(fps),
            "-i", "pipe:0", "-i", str(audio), "-map", "0:v", "-map", "1:a", "-shortest",
            "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-maxrate", "10M", "-bufsize", "20M",

@@ -36,6 +36,10 @@ const DEFAULT_SETTINGS = {
   stories_per_slot: 1,
   post_to_facebook: true,
   repost_to_story: true,
+  voice: { enabled: true },
+  dm: { enabled: true, keyword: "DEMO", link: "https://velosyntech.com", offer: "a free demo",
+        message: "Hi {name}! Here's the link to book your free demo: {link}", public_reply: "Just sent you a DM 📩" },
+  learning: { enabled: true },
   comments: { enabled: true, every_hours: 1, max_per_run: 20, instructions: "" },
   instagram_username: "",
   facebook_page: "",
@@ -70,6 +74,21 @@ function validateSettings(input, current) {
   if (input.stories_per_slot !== undefined) s.stories_per_slot = Math.max(1, Math.min(5, parseInt(input.stories_per_slot, 10) || 1));
   if (input.post_to_facebook !== undefined) s.post_to_facebook = !!input.post_to_facebook;
   if (input.repost_to_story !== undefined) s.repost_to_story = !!input.repost_to_story;
+  if (input.voice) s.voice = { ...(s.voice || {}), enabled: !!input.voice.enabled };
+  if (input.learning) s.learning = { ...(s.learning || {}), enabled: !!input.learning.enabled };
+  if (input.dm) {
+    const d = { ...(s.dm || {}) };
+    if (input.dm.enabled !== undefined) d.enabled = !!input.dm.enabled;
+    if (input.dm.keyword !== undefined) d.keyword = str(input.dm.keyword, 30).replace(/[^\p{L}\p{N}_-]/gu, "").toUpperCase();
+    if (input.dm.link !== undefined) {
+      const l = str(input.dm.link, 300);
+      if (l && !/^https:\/\/[^\s]+$/.test(l)) throw new UserError("Link-ul pentru DM trebuie să înceapă cu https://");
+      d.link = l;
+    }
+    if (input.dm.message !== undefined) d.message = str(input.dm.message, 600);
+    if (input.dm.offer !== undefined) d.offer = str(input.dm.offer, 80);
+    s.dm = d;
+  }
   if (input.comments) {
     s.comments = { ...(s.comments || {}) };
     if (input.comments.enabled !== undefined) s.comments.enabled = !!input.comments.enabled;
@@ -135,6 +154,9 @@ async function graph(path, params) {
 const REQUIRED = ["instagram_basic", "instagram_content_publish", "pages_show_list", "pages_read_engagement"];
 const OPTIONAL = {
   instagram_manage_comments: "răspunsuri la comentarii pe Instagram",
+  instagram_manage_insights: "statistici (vizualizări, salvări, distribuiri) pentru învățare",
+  instagram_manage_messages: "DM automat la cuvântul cheie (Instagram)",
+  pages_messaging: "DM automat la cuvântul cheie (Facebook)",
   pages_manage_posts: "postare pe Facebook",
   pages_manage_engagement: "răspunsuri la comentarii pe Facebook",
   pages_read_user_content: "citirea comentariilor de pe Facebook",
@@ -223,6 +245,7 @@ async function state() {
     gh.readJson("data/comments.json", { log: [] }),
   ]);
   const style = await gh.readJson("data/style_guide.json", null).catch(() => ({ data: null }));
+  const learned = await gh.readJson("data/insights.json", null).catch(() => ({ data: null }));
   // media storage key lives on Vercel; copy it to GitHub once so the worker can upload images
   if (process.env.BLOB_READ_WRITE_TOKEN && !secrets.includes("BLOB_READ_WRITE_TOKEN")) {
     try { await gh.setSecret("BLOB_READ_WRITE_TOKEN", process.env.BLOB_READ_WRITE_TOKEN); secrets.push("BLOB_READ_WRITE_TOKEN"); } catch {}
@@ -237,6 +260,7 @@ async function state() {
     history: (Array.isArray(history.data) ? history.data : []).slice(-60).reverse(),
     comments: ((comments.data && comments.data.log) || []).slice(-30).reverse(),
     styleGuide: style && style.data ? { time: style.data.time, guide: style.data.guide } : null,
+    insights: learned && learned.data ? learned.data : null,
     runs,
     secrets: SECRET_NAMES.filter((n) => secrets.includes(n)),
   };

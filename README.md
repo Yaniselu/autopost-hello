@@ -12,6 +12,11 @@ Postează singur, fără să-ți ții calculatorul pornit, pe **Instagram și pe
 - **Folosește contul real**: înainte de fiecare postare citește profilul (logo, urmăritori, ultimele postări) și analizează
   reel-urile/caruselurile existente (texte, like-uri, comentarii, imagini) ca să scrie în stilul care merge la voi.
   Logo-ul apare în video, iar la final telefonul arată profilul real cu grid-ul real și un tap pe „Follow” → „Following ✓”.
+- **Voce AI în engleză** (voci neurale gratuite, alternate) cu subtitrări sincronizate cuvânt cu cuvânt; muzica scade sub voce.
+- **Învață din rezultate**: vizualizări, salvări, distribuiri, like-uri, comentarii pentru fiecare postare → alege mai des
+  temele, tipurile de hook și stilul care merg; recomandă orele; raport în panou („Ce funcționează”).
+- **Test A/B de hook-uri**: 3 variante (întrebare, cifră, afirmație…) la fiecare reel; alege tipul care performează.
+- **Comentariu „DEMO” → DM automat** cu link-ul (Instagram + Facebook) + răspuns public „Just sent you a DM 📩”.
 - **Răspunsuri automate la comentarii**, pe Instagram și Facebook
 - Textele le scrie Google Gemini (gratuit). Modelul se alege automat, iar răspunsurile la comentarii folosesc modelul mai ieftin.
 

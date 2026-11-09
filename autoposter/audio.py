@@ -277,7 +277,7 @@ def load_music_file(duration: float) -> np.ndarray | None:
 
 # ------------------------------------------------------------------ mixing
 def build_soundtrack(duration: float, cues: list[tuple[float, str]], cfg: dict, out: Path, seed=None,
-                     style: str = "classic") -> Path:
+                     style: str = "classic", voice: np.ndarray | None = None) -> Path:
     """cues: list of (time_seconds, sfx_name)."""
     a = cfg["audio"]
     n = int(duration * SR)
@@ -309,7 +309,19 @@ def build_soundtrack(duration: float, cues: list[tuple[float, str]], cfg: dict, 
             sfx_track[i:i + len(sig)] += sig
         sfx_track *= a.get("sfx_volume", 0.9) * 0.6
 
-    mix = music + sfx_track[:, None]
+    if voice is not None and len(voice):
+        v = np.zeros(n)
+        v[: min(n, len(voice))] = voice[:n]
+        # duck the music (and a bit the sfx) while someone is speaking, with smooth attack/release
+        env = np.abs(v)
+        k = int(SR * 0.25)
+        env = np.convolve(env, np.ones(k) / k, mode="same")
+        env = np.clip(env / (np.percentile(env[env > 1e-4], 90) if np.any(env > 1e-4) else 1), 0, 1)
+        music = music * (1 - 0.68 * env)[:, None]
+        sfx_track = sfx_track * (1 - 0.35 * env)
+        mix = music + sfx_track[:, None] + (v * 0.95)[:, None]
+    else:
+        mix = music + sfx_track[:, None]
     fade_in = np.minimum(1, np.arange(n) / (0.15 * SR))
     fade_out = np.minimum(1, (n - np.arange(n)) / (1.2 * SR))
     mix *= (fade_in * fade_out)[:, None]

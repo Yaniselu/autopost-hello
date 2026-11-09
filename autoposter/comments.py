@@ -92,6 +92,49 @@ def _collect_fb(cfg, seen):
     return out
 
 
+def _keyword_hit(text: str, keyword: str) -> bool:
+    import re
+    return bool(keyword) and re.search(rf"(?<![\w]){re.escape(keyword)}(?![\w])", text or "", re.I) is not None
+
+
+def _send_dm(cfg, item, message: str) -> None:
+    """Private reply: a DM to the person who commented (Instagram & Facebook allow one per comment, within 7 days)."""
+    base = f"https://graph.facebook.com/{cfg['instagram']['graph_version']}"
+    sender = env("IG_USER_ID") if item["platform"] == "instagram" else env("FB_PAGE_ID")
+    _check(requests.post(f"{base}/{sender}/messages", params={"access_token": env("IG_ACCESS_TOKEN")},
+                         json={"recipient": {"comment_id": item["id"]}, "message": {"text": message}}, timeout=30))
+
+
+def handle_dm_keywords(cfg: dict, items: list, state: dict) -> list:
+    """Comments containing the keyword get a DM with the link + a short public reply. Returns the rest."""
+    dm = cfg.get("dm") or {}
+    if not dm.get("enabled") or not dm.get("keyword"):
+        return items
+    base = f"https://graph.facebook.com/{cfg['instagram']['graph_version']}"
+    rest = []
+    msg = (dm.get("message") or "Hi {name}! Here's the link to book your free demo: {link}")
+    for it in items:
+        if not _keyword_hit(it["comment"], dm["keyword"]):
+            rest.append(it)
+            continue
+        text = msg.replace("{name}", (it.get("user") or "").split(" ")[0] or "there").replace("{link}", dm.get("link") or "")
+        try:
+            _send_dm(cfg, it, text)
+            path = "replies" if it["platform"] == "instagram" else "comments"
+            _check(requests.post(f"{base}/{it['id']}/{path}", data={"message": dm.get("public_reply") or "Just sent you a DM 📩",
+                                                                    "access_token": env("IG_ACCESS_TOKEN")}, timeout=30))
+            state["replied"].append(it["id"])
+            state["log"].append({"time": dt.datetime.now(dt.timezone.utc).isoformat(timespec="minutes"),
+                                 "platform": it["platform"], "user": it["user"], "comment": it["comment"][:200],
+                                 "reply": "📩 DM: " + text[:180]})
+            state["dms"] = state.get("dms", 0) + 1
+            print(f"[comments] DM sent for keyword '{dm['keyword']}'")
+        except InstagramError as e:
+            print(f"[comments] DM failed ({redact(e)}) - answering normally")
+            rest.append(it)
+    return rest
+
+
 def run_comments(cfg: dict) -> dict:
     opts = cfg.get("comments") or {}
     if not opts.get("enabled", True):
@@ -110,8 +153,10 @@ def run_comments(cfg: dict) -> dict:
             items += _collect_fb(cfg, seen)
         except InstagramError as e:
             print(f"[comments] facebook: {redact(e)}")
+    items = handle_dm_keywords(cfg, items, state)
     items = items[: int(opts.get("max_per_run", 20))]
     if not items:
+        _save(state)
         print("[comments] nothing new")
         return {"replied": 0}
 

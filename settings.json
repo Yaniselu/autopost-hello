@@ -51,5 +51,19 @@
     "instructions": "Raspunde in engleza, trimite la dm sau pe velosyntech.com"
   },
   "instagram_username": "velosyntechcom",
-  "facebook_page": "Velosyntech"
+  "facebook_page": "Velosyntech",
+  "voice": {
+    "enabled": true
+  },
+  "learning": {
+    "enabled": true
+  },
+  "dm": {
+    "enabled": true,
+    "keyword": "DEMO",
+    "link": "https://velosyntech.com",
+    "offer": "a free demo",
+    "message": "Hi {name}! Here's the link to book your free demo: {link}",
+    "public_reply": "Just sent you a DM 📩"
+  }
 }

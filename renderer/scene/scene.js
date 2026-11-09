@@ -312,12 +312,13 @@ function buildPhone(finish) {
 
 // ===================================================================== reel timeline
 function buildTimeline(r) {
-  const hook = Math.max(2.6, 1.4 + words(r.hook) * 0.22);
-  const problem = Math.max(3.8, 2.2 + words(r.problem.text) * 0.22);
-  const steps = r.solution.steps.map((s) => Math.max(2.1, 1.2 + (words(s.title) + words(s.text)) * 0.17));
+  const D = r.durations || {};  // minimum lengths so the voice-over fits
+  const hook = Math.max(2.6, 1.4 + words(r.hook) * 0.22, D.hook || 0);
+  const problem = Math.max(3.8, 2.2 + words(r.problem.text) * 0.22, D.problem || 0);
+  const steps = r.solution.steps.map((s, i) => Math.max(2.1, 1.2 + (words(s.title) + words(s.text)) * 0.17, (D.steps || [])[i] || 0));
   const solution = 0.7 + steps.reduce((a, b) => a + b, 0);
-  const result = Math.max(2.8, 1.6 + words(r.result) * 0.2);
-  const cta = 3.0;
+  const result = Math.max(2.8, 1.6 + words(r.result) * 0.2, D.result || 0);
+  const cta = Math.max(3.0, D.cta || 0);
   const S = {}; let t = 0;
   for (const [k, d] of [["hook", hook], ["problem", problem], ["solution", solution], ["result", result], ["cta", cta]]) { S[k] = { start: t, dur: d }; t += d; }
   const stepTimes = []; let st = S.solution.start + 0.7;
