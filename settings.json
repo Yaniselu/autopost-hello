@@ -4,15 +4,11 @@
   "times": [
     "08:00",
     "10:00",
-    "12:00",
-    "14:00",
     "16:00",
-    "18:00",
-    "20:00",
-    "22:00"
+    "20:00"
   ],
   "language": "English",
-  "hashtags_count": 8,
+  "hashtags_count": 5,
   "brand": {
     "name": "Velosyntech",
     "handle": "@velosyntech",
@@ -36,9 +32,9 @@
     "palette": "random",
     "background": "liquid"
   },
-  "instagram_username": "",
   "carousel_times": [
-    "13:00"
+    "13:00",
+    "19:00"
   ],
   "story_times": [
     "09:30",
@@ -50,6 +46,8 @@
     "enabled": true,
     "every_hours": 1,
     "max_per_run": 20,
-    "instructions": ""
-  }
+    "instructions": "Raspunde in engleza, trimite la dm sau pe velosyntech.com"
+  },
+  "instagram_username": "",
+  "facebook_page": ""
 }
