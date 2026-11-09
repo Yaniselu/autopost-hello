@@ -35,6 +35,7 @@ const DEFAULT_SETTINGS = {
   story_times: ["09:30", "19:30"],
   stories_per_slot: 1,
   post_to_facebook: true,
+  repost_to_story: true,
   comments: { enabled: true, every_hours: 1, max_per_run: 20, instructions: "" },
   instagram_username: "",
   facebook_page: "",
@@ -68,6 +69,7 @@ function validateSettings(input, current) {
   if (input.story_times !== undefined) s.story_times = cleanTimes(input.story_times, 12);
   if (input.stories_per_slot !== undefined) s.stories_per_slot = Math.max(1, Math.min(5, parseInt(input.stories_per_slot, 10) || 1));
   if (input.post_to_facebook !== undefined) s.post_to_facebook = !!input.post_to_facebook;
+  if (input.repost_to_story !== undefined) s.repost_to_story = !!input.repost_to_story;
   if (input.comments) {
     s.comments = { ...(s.comments || {}) };
     if (input.comments.enabled !== undefined) s.comments.enabled = !!input.comments.enabled;

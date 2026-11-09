@@ -72,6 +72,31 @@ def _upload_previews(paths: list[Path]) -> list[str]:
     return urls
 
 
+def _repost(kind: str, source: Path, cfg: dict, work: Path, publish: bool, palette: str | None = None) -> dict:
+    """Story announcing the new reel/carousel (on Instagram + Facebook). Never fails the main post."""
+    if not cfg.get("repost_to_story", True):
+        return {}
+    from . import publish as pub
+    from .glass import PALETTES
+    from .llm import redact
+    from .repost import frame_from_video, make_repost_story
+    try:
+        p = PALETTES.get(palette or "", PALETTES["aurora"])
+        src = frame_from_video(source, work / "repost-src.jpg") if source.suffix == ".mp4" else source
+        img = make_repost_story(src, kind, cfg, OUTPUT / f"repost-{source.stem}.jpg", tuple(p["accent"]), tuple(p["accent2"]))
+        if not publish:
+            return {"repost_preview": img}
+        url = pub.blob_upload(img, "media")
+        try:
+            res = pub.both(lambda: pub.ig_story(url, cfg), lambda: pub.fb_story(url, cfg), cfg)
+        finally:
+            pub.blob_delete([url])
+        return {"repost": "ok", **({"repost_fb_error": res["fb_error"]} if res.get("fb_error") else {})}
+    except Exception as e:  # noqa: BLE001
+        print(f"[repost] failed: {redact(e)}")
+        return {"repost_error": redact(f"{type(e).__name__}: {e}")[:300]}
+
+
 # ====================================================================== jobs
 def run_job(cfg: dict, kind: str, mode: str) -> dict:
     """Makes (and unless mode == 'test', publishes) one piece of content. Returns a history entry."""
@@ -93,11 +118,14 @@ def run_job(cfg: dict, kind: str, mode: str) -> dict:
             video = render_reel(post, cfg, OUTPUT / f"reel-{stamp}.mp4", work, seed, prev)
             if post.get("_plan"):
                 entry["plan"] = post["_plan"]
+            pal = (post.get("_plan") or {}).get("palette")
             if mode == "test":
-                entry.update(status="test", previews=_upload_previews([video]))
+                rp = _repost("reel", video, cfg, work, False, pal).get("repost_preview")
+                entry.update(status="test", previews=_upload_previews([video] + ([rp] if rp else [])))
             else:
                 entry.update(pub.both(lambda: pub.ig_reel(video, caption, cfg), lambda: pub.fb_reel(video, caption, cfg), cfg))
                 entry["status"] = "posted"
+                entry.update(_repost("reel", video, cfg, work, True, pal))
 
         elif kind == "carousel":
             from .stills import render_carousel
@@ -108,7 +136,8 @@ def run_job(cfg: dict, kind: str, mode: str) -> dict:
             for i, im in enumerate(images):
                 shutil.copy(im, OUTPUT / f"carousel-{stamp}-{i:02d}.jpg")
             if mode == "test":
-                entry.update(status="test", previews=_upload_previews(images))
+                rp = _repost("carousel", images[0], cfg, work, False).get("repost_preview")
+                entry.update(status="test", previews=_upload_previews(images + ([rp] if rp else [])))
             else:
                 urls = [pub.blob_upload(p, "media") for p in images]
                 try:
@@ -117,6 +146,7 @@ def run_job(cfg: dict, kind: str, mode: str) -> dict:
                 finally:
                     pub.blob_delete(urls)
                 entry["status"] = "posted"
+                entry.update(_repost("carousel", images[0], cfg, work, True))
 
         elif kind == "story":
             from .stills import render_stories

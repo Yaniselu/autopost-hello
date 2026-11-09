@@ -48,6 +48,7 @@ def load_config() -> dict:
     cfg["timezone"] = s.get("timezone", "Europe/Bucharest")
     cfg["paused"] = bool(s.get("paused", False))
     cfg["post_to_facebook"] = bool(s.get("post_to_facebook", True))
+    cfg["repost_to_story"] = bool(s.get("repost_to_story", True))
     cfg["stories_per_slot"] = int(s.get("stories_per_slot", 1) or 1)
     cfg["comments"] = s.get("comments") or {"enabled": True}
     cfg["instagram_username"] = s.get("instagram_username", "")
