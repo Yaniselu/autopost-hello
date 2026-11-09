@@ -114,20 +114,8 @@ a{color:var(--accent)}
 <div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div></div>
 <div id="bubbles"></div>
 
-<!-- ======================= LOGIN ======================= -->
-<section id="login" class="login hidden">
-  <form class="card glass" id="loginForm">
-    <div class="logo">VELO<b>SYNTECH</b></div>
-    <h1>Auto-Poster</h1>
-    <p class="sub" id="loginHint">Introdu parola ca să intri în panou.</p>
-    <input type="password" id="pw" placeholder="Parola" autocomplete="current-password" required>
-    <div style="height:14px"></div>
-    <button class="primary" style="width:100%;justify-content:center" id="loginBtn">Intră</button>
-  </form>
-</section>
-
 <!-- ======================= APP ======================= -->
-<main id="app" class="wrap hidden">
+<main id="app" class="wrap">
   <header class="glass">
     <div class="logo">VELO<b>SYNTECH</b> <span style="color:var(--muted);letter-spacing:.05em;font-weight:600">· Auto-Poster</span></div>
     <div class="sp"></div>
@@ -297,7 +285,7 @@ a{color:var(--accent)}
 
 <div class="toast glass" id="toast"></div>
 
-<script>
+<script nonce="__NONCE__">
 const $ = (id) => document.getElementById(id);
 let S = null;          // last state from the server
 let draftTimes = [];
@@ -352,24 +340,14 @@ function nextSlot(times, tz) {
 }
 
 // ---------- screens ----------
-function showLogin(configured) {
-  $("app").classList.add("hidden"); $("login").classList.remove("hidden");
-  $("loginHint").textContent = configured === false
-    ? "Parola nu e setată încă. Pune PANEL_PASSWORD (minim 8 caractere) în Vercel → Settings → Environment Variables, apoi Redeploy."
-    : "Introdu parola ca să intri în panou.";
-  setTimeout(() => $("pw").focus(), 50);
-}
-$("loginForm").onsubmit = (e) => {
-  e.preventDefault();
-  withBtn($("loginBtn"), async () => { await api("login", { password: $("pw").value }); $("pw").value = ""; await load(); });
-};
-$("logoutBtn").onclick = async () => { await api("logout", {}).catch(() => {}); showLogin(true); };
+// the app page is only served after login; if the session ends, go back to the login page
+function showLogin() { location.replace("/"); }
+$("logoutBtn").onclick = async () => { await api("logout", {}).catch(() => {}); location.replace("/"); };
 
 async function load(silent) {
   let st;
   try { st = await api("state"); } catch (e) { if (e.message !== "login" && !silent) toast(e.message, true); return; }
   S = st;
-  $("login").classList.add("hidden"); $("app").classList.remove("hidden");
   render();
 }
 

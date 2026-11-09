@@ -1,7 +1,7 @@
 // Single serverless function handling every panel action: /api/<route>
-const auth = require("../lib/auth");
-const gh = require("../lib/github");
-const { buildWorkflow } = require("../lib/workflow");
+const auth = require("./_lib/auth");
+const gh = require("./_lib/github");
+const { buildWorkflow } = require("./_lib/workflow");
 
 const GRAPH = "https://graph.facebook.com/v23.0";
 
@@ -247,13 +247,23 @@ const routes = {
     if (!auth.passwordConfigured()) {
       throw new UserError("Parola panoului nu e setată pe Vercel (PANEL_PASSWORD, minim 8 caractere).");
     }
+    const ip = clientIp(req);
+    if (locked(ip)) {
+      res.status(429).json({ error: "Prea multe încercări greșite. Încearcă din nou peste 15 minute." });
+      return null;
+    }
     if (!auth.checkPassword((req.body || {}).password)) {
-      await new Promise((r) => setTimeout(r, 900)); // slow down guessing
+      fail(ip);
+      await new Promise((r) => setTimeout(r, 1200)); // slow down guessing
       res.status(401).json({ error: "Parolă greșită." });
       return null;
     }
+    FAILS.delete(ip);
     auth.setSession(res);
     return { ok: true };
+  },
+  async session(req) {
+    return { loggedIn: auth.isLoggedIn(req), passwordConfigured: auth.passwordConfigured() };
   },
   async logout(req, res) {
     auth.clearSession(res);
@@ -318,14 +328,43 @@ const routes = {
   },
 };
 
-const PUBLIC = new Set(["login", "logout"]);
+const PUBLIC = new Set(["login", "logout", "session"]);
+const GETS = new Set(["state", "session", "app"]);
+
+// ---- brute-force protection: too many wrong passwords from one IP -> locked for a while
+const FAILS = new Map();
+const MAX_FAILS = 8, WINDOW_MS = 15 * 60 * 1000;
+function clientIp(req) { return String(req.headers["x-forwarded-for"] || req.socket?.remoteAddress || "?").split(",")[0].trim(); }
+function locked(ip) { const f = FAILS.get(ip); return f && f.count >= MAX_FAILS && Date.now() - f.first < WINDOW_MS; }
+function fail(ip) {
+  const f = FAILS.get(ip);
+  if (!f || Date.now() - f.first > WINDOW_MS) FAILS.set(ip, { count: 1, first: Date.now() }); else f.count++;
+}
+
+function sendApp(res) {
+  const fs = require("fs"), path = require("path"), crypto = require("crypto");
+  const nonce = crypto.randomBytes(16).toString("base64");
+  const html = fs.readFileSync(path.join(__dirname, "_lib", "app.html"), "utf8").replace("__NONCE__", nonce);
+  res.setHeader("Content-Type", "text/html; charset=utf-8");
+  res.setHeader("Content-Security-Policy", [
+    "default-src 'self'", `script-src 'nonce-${nonce}'`, "style-src 'self' 'unsafe-inline' https://rsms.me",
+    "font-src https://rsms.me data:", "img-src 'self' data: https://*.public.blob.vercel-storage.com",
+    "media-src https://*.public.blob.vercel-storage.com", "connect-src 'self'", "frame-ancestors 'none'",
+    "base-uri 'none'", "form-action 'self'", "object-src 'none'"].join("; "));
+  res.status(200).send(html);
+}
 
 module.exports = async function handler(req, res) {
   res.setHeader("Cache-Control", "no-store");
   const route = String((req.query && req.query.route) || "");
   const fn = routes[route];
-  if (!fn) return res.status(404).json({ error: "Not found" });
-  if (route === "state" ? req.method !== "GET" : req.method !== "POST") {
+  if (!fn && route !== "app") return res.status(404).json({ error: "Not found" });
+  if (route === "app") {
+    if (req.method !== "GET") return res.status(405).end();
+    if (!auth.isLoggedIn(req)) { res.setHeader("Location", "/"); return res.status(302).end(); }
+    return sendApp(res);
+  }
+  if (GETS.has(route) ? req.method !== "GET" : req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
   if (req.method === "POST" && !String(req.headers["content-type"] || "").includes("application/json")) {
