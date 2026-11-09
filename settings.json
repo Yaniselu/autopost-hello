@@ -28,7 +28,7 @@
     "what happens after hours when your website gets a question"
   ],
   "video": {
-    "style": "cinematic",
+    "style": "rotate",
     "palette": "random",
     "background": "liquid"
   },

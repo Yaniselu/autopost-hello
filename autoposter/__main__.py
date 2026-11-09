@@ -47,9 +47,29 @@ def _reel_as_slides(post: dict) -> dict:
     return p
 
 
-def render_reel(post: dict, cfg: dict, out: Path, work: Path, seed: int, previous_plan: dict | None = None) -> Path:
+STYLE_CYCLE = ["cinematic", "liquid_glass"]
+
+
+def pick_style(cfg: dict, history: list) -> str:
+    """'rotate' alternates the looks through the day: 1st, 3rd... reel cinematic 3D, 2nd, 4th... liquid glass."""
     style = cfg["video"].get("style", "cinematic")
-    if style == "cinematic":
+    if style != "rotate":
+        return style
+    slot, times = cfg.get("_slot") or "", sorted(cfg["schedule"].get("times") or [])
+    hhmm = slot.split("T")[1][:5] if "T" in slot else ""
+    if hhmm in times:
+        return STYLE_CYCLE[times.index(hhmm) % len(STYLE_CYCLE)]
+    last = next((h.get("style") for h in reversed(history) if h.get("type", "reel") == "reel" and h.get("style")), None)
+    return STYLE_CYCLE[(STYLE_CYCLE.index(last) + 1) % len(STYLE_CYCLE)] if last in STYLE_CYCLE else STYLE_CYCLE[0]
+
+
+def render_reel(post: dict, cfg: dict, out: Path, work: Path, seed: int, previous_plan: dict | None = None,
+                style: str | None = None) -> Path:
+    style = style or cfg["video"].get("style", "cinematic")
+    if style == "liquid_glass":
+        from .liquid import render_liquid_reel
+        return render_liquid_reel(post, cfg, out, work, seed)
+    if style in ("cinematic", "rotate"):
         from .cinematic import render_cinematic_reel
         return render_cinematic_reel(post, cfg, out, work, seed, previous_plan)
     if style == "liquid_glass":
@@ -120,8 +140,11 @@ def run_job(cfg: dict, kind: str, mode: str) -> dict:
             post = generate_reel(cfg, history)
             caption = build_caption(post)
             entry.update(topic=post["topic"], pillar=post.get("pillar"), hook=post["hook"], caption=caption)
-            prev = next((h.get("plan") for h in reversed(history) if h.get("plan")), None)
-            video = render_reel(post, cfg, OUTPUT / f"reel-{stamp}.mp4", work, seed, prev)
+            prev = next((h.get("plan") for h in reversed(history) if h.get("plan") and h["plan"].get("hook")), None)
+            style = pick_style(cfg, history)
+            entry["style"] = style
+            print(f"[reel] style: {style}")
+            video = render_reel(post, cfg, OUTPUT / f"reel-{stamp}.mp4", work, seed, prev, style)
             if post.get("_plan"):
                 entry["plan"] = post["_plan"]
             pal = (post.get("_plan") or {}).get("palette")
@@ -197,6 +220,7 @@ def run_cloud(cfg: dict, kind: str, mode: str, slot: str) -> None:
     entry = {"time": dt.datetime.now(ZoneInfo(cfg.get("timezone", "Europe/Bucharest"))).isoformat(timespec="minutes"),
              "type": kind, "mode": mode, "slot": slot or None, "run_url": os.environ.get("RUN_URL")}
     failed = False
+    cfg["_slot"] = slot
     try:
         entry.update(run_job(cfg, kind, mode))
     except BaseException as e:  # noqa: BLE001 - every failure must show up in the panel

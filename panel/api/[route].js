@@ -30,7 +30,7 @@ const DEFAULT_SETTINGS = {
     "productivity tools and workflows for tech teams",
     "myths vs facts about AI and software",
   ],
-  video: { style: "cinematic", palette: "random", background: "liquid" },
+  video: { style: "rotate", palette: "random", background: "liquid" },
   carousel_times: ["13:00"],
   story_times: ["09:30", "19:30"],
   stories_per_slot: 1,
@@ -101,7 +101,7 @@ function validateSettings(input, current) {
     s.content_pillars = p;
   }
   if (input.video) {
-    if (["cinematic", "liquid_glass", "classic"].includes(input.video.style)) s.video.style = input.video.style;
+    if (["rotate", "cinematic", "liquid_glass", "classic"].includes(input.video.style)) s.video.style = input.video.style;
     if (PALETTES.includes(input.video.palette)) s.video.palette = input.video.palette;
     if (["liquid", "pexels", "gradient"].includes(input.video.background)) s.video.background = input.video.background;
   }
