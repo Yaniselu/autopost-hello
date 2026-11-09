@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "time": "2026-11-09T15:01+02:00",
+    "mode": "test",
+    "slot": null,
+    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42621735139",
+    "status": "error",
+    "error": "RuntimeError: Could not generate content: 404 Client Error: Not Found for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AQ.Ab8RN6I20d2J0iA7KubKwKQvVmDadMFRlbwCb0iA5nhEitMx8A"
+  }
+]
