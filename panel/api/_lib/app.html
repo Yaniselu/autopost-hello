@@ -123,6 +123,7 @@ a{color:var(--accent)}
     <button class="small" id="logoutBtn">Ieși</button>
   </header>
 
+  <div id="alerts" style="display:grid;gap:14px;margin-bottom:18px"></div>
   <div class="grid">
     <!-- setup -->
     <section class="card glass c12" id="setupCard">
@@ -463,6 +464,29 @@ function render() {
       x.caption ? el("details", {}, el("summary", {}, "caption"), x.caption) : null,
       links);
   }) : [el("div", { class: "empty" }, "Încă nicio postare. Prima apare la ora programată sau când apeși „Postează acum”.")]));
+
+  // ----- alerts: broken Instagram connection / scheduler not running
+  const al = [];
+  const banner = (color, title, body, extra) => el("section", { class: "card glass", style: `border-color:${color};box-shadow:0 0 0 1px ${color} inset` },
+    el("h2", { style: `color:${color}` }, title), el("p", { class: "sub", style: "margin:6px 0 0" }, body), extra || null);
+  if (st.health && st.health.ok === false) {
+    const b = el("button", { class: "small primary", style: "margin-top:12px" }, "Reconectează acum ↓");
+    b.onclick = () => $("keysCard").scrollIntoView({ behavior: "smooth" });
+    al.push(banner("var(--bad)", "⚠️ Instagram nu mai acceptă conexiunea", st.health.message + " (verificat " + fmtDate(st.health.checked) + ")", b));
+  }
+  const sch = st.scheduler || {};
+  const age = sch.lastTick ? (Date.now() - Date.parse(sch.lastTick)) / 60000 : Infinity;
+  if (sch.configured && age > 200) {
+    const box = el("div", { style: "margin-top:12px" });
+    const inp = el("input", { readonly: "", value: sch.url || "" });
+    const cp = el("button", { class: "small", style: "margin-top:8px" }, "Copiază link-ul");
+    cp.onclick = async () => { try { await navigator.clipboard.writeText(sch.url); toast("✓ Copiat"); } catch { inp.select(); } };
+    box.append(inp, cp, el("p", { class: "sub", style: "margin:10px 0 0" },
+      "Pe cron-job.org (gratuit): Create cronjob → lipești link-ul la URL → Execution schedule: Every 5 minutes → Save. De atunci postările pornesc exact la oră."));
+    al.push(banner("var(--warn)", "⏱ Activează programatorul precis", "GitHub singur pornește postările cu întârziere sau le sare. Un apel la fiecare 5 minute le pornește exact la ora setată.", box));
+  }
+  $("alerts").replaceChildren(...al);
+  if (sch.configured && age <= 200) $("nextSub").textContent += ` · ⏱ programator activ (semnal acum ${Math.round(age)} min)`;
 
   const ins = st.insights;
   if (!ins || !ins.posts_measured) $("insights").replaceChildren(el("div", { class: "empty" }, "Încă nu sunt destule postări măsurate. Rezultatele apar după primele postări (statisticile se actualizează la fiecare rulare)."));

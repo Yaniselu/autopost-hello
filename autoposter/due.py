@@ -11,7 +11,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent.parent
-WINDOW = dt.timedelta(minutes=100)  # GitHub may start scheduled runs late; a 2nd cron line acts as backup
+WINDOW = dt.timedelta(hours=3)  # a missed slot is still posted if a trigger arrives within 3 hours
 COMMENTS_MINUTE = "41"
 KINDS = (("reel", "times"), ("carousel", "carousel_times"), ("story", "story_times"))
 
@@ -45,10 +45,16 @@ def due_slots(now_utc: dt.datetime, done: list, s: dict | None = None) -> list[t
     return out
 
 
-def decide(event: str, mode: str, kind: str, cron: str, now_utc: dt.datetime | None = None) -> dict:
+def decide(event: str, mode: str, kind: str, cron: str, now_utc: dt.datetime | None = None, slot: str = "") -> dict:
     nothing = {"run": "false", "mode": "", "slot": "", "kind": ""}
     if event == "workflow_dispatch":
         k = kind if kind in ("reel", "carousel", "story", "comments") else "reel"
+        if mode == "scheduled":  # sent by the panel's precise scheduler (/api/tick)
+            done = _read(ROOT / "data" / "state.json", {}).get("done", [])
+            if slot and slot in done:
+                print(f"{slot} already done -> nothing to do.")
+                return nothing
+            return {"run": "true", "mode": "scheduled", "slot": slot, "kind": k}
         return {"run": "true", "mode": mode if mode in ("now", "test") else "test", "slot": "", "kind": k}
     s = settings()
     if s.get("paused"):
@@ -69,8 +75,8 @@ def decide(event: str, mode: str, kind: str, cron: str, now_utc: dt.datetime | N
 
 
 def main():
-    a = sys.argv[1:] + ["", "", "", ""]
-    out = decide(a[0], a[1], a[2], a[3])
+    a = sys.argv[1:] + ["", "", "", "", ""]
+    out = decide(a[0], a[1], a[2], a[3], slot=a[4])
     lines = "".join(f"{k}={v}\n" for k, v in out.items())
     if os.environ.get("GITHUB_OUTPUT"):
         with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:

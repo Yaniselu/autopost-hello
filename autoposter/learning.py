@@ -47,6 +47,8 @@ def _fetch_metrics(cfg, media_id: str, token: str) -> dict:
     else:  # no insights permission or metric not supported for this media type -> basic counters
         b = requests.get(f"{base}/{media_id}", params={"fields": "like_count,comments_count", "access_token": token},
                          timeout=30).json()
+        if "error" in b or "like_count" not in b:
+            raise RuntimeError(str(b.get("error", b))[:200])
         out = {"likes": b.get("like_count", 0), "comments": b.get("comments_count", 0), "_basic": True}
     return out
 

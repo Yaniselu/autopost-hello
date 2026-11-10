@@ -220,12 +220,51 @@ def run_job(cfg: dict, kind: str, mode: str) -> dict:
     return entry
 
 
+HEALTH_FILE = DATA / "health.json"
+
+
+def check_connection_health(cfg: dict) -> tuple[bool, str]:
+    """Cheap check that Instagram still accepts our token (before spending minutes on a video)."""
+    import requests
+    if not (os.environ.get("IG_USER_ID") and os.environ.get("IG_ACCESS_TOKEN")):
+        return False, "Contul Instagram nu e conectat (lipsesc cheile)."
+    try:
+        r = requests.get(f"https://graph.facebook.com/{cfg['instagram']['graph_version']}/{os.environ['IG_USER_ID']}",
+                         params={"fields": "username", "access_token": os.environ["IG_ACCESS_TOKEN"]}, timeout=30)
+        data = r.json()
+    except Exception as e:  # noqa: BLE001 - network hiccup: don't block, let the real call decide
+        return True, f"check skipped ({type(e).__name__})"
+    if r.ok and data.get("username"):
+        return True, data["username"]
+    err = data.get("error", {})
+    return False, (f"Instagram nu mai acceptă conexiunea ({err.get('message', r.status_code)}). "
+                   "Reconectează contul în panou: Cont & chei → token nou din Graph API Explorer → Conectează.")
+
+
+def _write_health(ok: bool, msg: str) -> None:
+    HEALTH_FILE.write_text(json.dumps({"ok": ok, "message": msg, "checked": dt.datetime.now(dt.timezone.utc)
+                                       .isoformat(timespec="minutes")}, ensure_ascii=False, indent=1), encoding="utf-8")
+
+
+def _retryable(err: str) -> bool:
+    e = err.lower()
+    return any(x in e for x in ("oauth", "reconecteaz", "http 5", "timeout", "timed out", "connection", "429",
+                                "rate limit", "temporarily", "text generation failed", "please retry"))
+
+
 def run_cloud(cfg: dict, kind: str, mode: str, slot: str) -> None:
     """One GitHub Actions run. Records the result for the panel's history."""
     from zoneinfo import ZoneInfo
 
     from .content import load_history, save_history
     from .llm import redact
+
+    if mode != "test":
+        ok, msg = check_connection_health(cfg)
+        _write_health(ok, msg)
+        if not ok and kind == "comments":
+            print(f"[health] {msg}")
+            sys.exit(1)
 
     if kind == "comments":
         from .comments import run_comments
@@ -237,22 +276,33 @@ def run_cloud(cfg: dict, kind: str, mode: str, slot: str) -> None:
     failed = False
     cfg["_slot"] = slot
     try:
+        if mode != "test" and not ok:
+            raise RuntimeError(msg)
         entry.update(run_job(cfg, kind, mode))
     except BaseException as e:  # noqa: BLE001 - every failure must show up in the panel
         failed = True
         entry.update(status="error", error=redact(f"{type(e).__name__}: {e}")[:600])
         traceback.print_exc()
     finally:
+        state = _load_state()
+        retry = False
+        if slot:
+            tries = state.setdefault("attempts", {})
+            tries[slot] = tries.get(slot, 0) + 1
+            retry = failed and _retryable(entry.get("error", "")) and tries[slot] < 3
+            if retry:
+                entry["retry"] = f"se reîncearcă automat (încercarea {tries[slot]}/3)"
+            else:
+                state["done"].append(slot)
+            state["attempts"] = {k: v for k, v in tries.items() if k not in state["done"][-50:]} | (
+                {slot: tries[slot]} if retry else {})
+        _save_state(state)
         entry = {k: v for k, v in entry.items() if v not in (None, "", [])}
         save_history(load_history(), entry)
-        if slot:
-            state = _load_state()
-            state["done"].append(slot)
-            _save_state(state)
         if os.environ.get("BLOB_READ_WRITE_TOKEN"):
             from .publish import blob_cleanup
             blob_cleanup("previews/", 3)
-    print(json.dumps({k: entry.get(k) for k in ("type", "status", "hook", "permalink", "fb_link", "error")},
+    print(json.dumps({k: entry.get(k) for k in ("type", "status", "hook", "permalink", "fb_link", "error", "retry")},
                      ensure_ascii=False))
     if failed:
         sys.exit(1)

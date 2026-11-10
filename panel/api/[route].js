@@ -1,7 +1,7 @@
 // Single serverless function handling every panel action: /api/<route>
 const auth = require("./_lib/auth");
 const gh = require("./_lib/github");
-const { buildWorkflow } = require("./_lib/workflow");
+const { buildWorkflow, dueSlots } = require("./_lib/workflow");
 
 const GRAPH = "https://graph.facebook.com/v23.0";
 
@@ -230,7 +230,7 @@ async function connectInstagram({ appId, appSecret, token, igId }) {
 }
 
 // ---------------------------------------------------------------- routes
-async function state() {
+async function state(req) {
   const missingEnv = ["GITHUB_TOKEN", "GITHUB_REPO"].filter((k) => !(process.env[k] || "").trim());
   if (missingEnv.length) return { missingEnv };
   const repo = await gh.getRepo();
@@ -246,6 +246,8 @@ async function state() {
   ]);
   const style = await gh.readJson("data/style_guide.json", null).catch(() => ({ data: null }));
   const learned = await gh.readJson("data/insights.json", null).catch(() => ({ data: null }));
+  const health = await gh.readJson("data/health.json", null).catch(() => ({ data: null }));
+  const disp = await gh.readJson("data/dispatch.json", null).catch(() => ({ data: null }));
   // media storage key lives on Vercel; copy it to GitHub once so the worker can upload images
   if (process.env.BLOB_READ_WRITE_TOKEN && !secrets.includes("BLOB_READ_WRITE_TOKEN")) {
     try { await gh.setSecret("BLOB_READ_WRITE_TOKEN", process.env.BLOB_READ_WRITE_TOKEN); secrets.push("BLOB_READ_WRITE_TOKEN"); } catch {}
@@ -261,6 +263,13 @@ async function state() {
     comments: ((comments.data && comments.data.log) || []).slice(-30).reverse(),
     styleGuide: style && style.data ? { time: style.data.time, guide: style.data.guide } : null,
     insights: learned && learned.data ? learned.data : null,
+    health: health && health.data ? health.data : null,
+    scheduler: {
+      lastTick: disp && disp.data ? disp.data.lastTick || null : null,
+      configured: !!(process.env.TICK_SECRET || "").trim(),
+      url: (process.env.TICK_SECRET || "").trim()
+        ? `https://${req.headers["x-forwarded-host"] || req.headers.host}/api/tick?key=${encodeURIComponent(process.env.TICK_SECRET.trim())}` : null,
+    },
     runs,
     secrets: SECRET_NAMES.filter((n) => secrets.includes(n)),
   };
@@ -285,6 +294,35 @@ const routes = {
     FAILS.delete(ip);
     auth.setSession(res);
     return { ok: true };
+  },
+  // Precise scheduler: an external cron calls /api/tick?key=... every 5 minutes; when a post is due
+  // it starts exactly that job on GitHub (GitHub's own schedule is unreliable and stays only as backup).
+  async tick(req, res) {
+    const key = (process.env.TICK_SECRET || "").trim();
+    const given = String((req.query && req.query.key) || "");
+    const crypto = require("crypto");
+    const eq = key && crypto.timingSafeEqual(crypto.createHash("sha256").update(given).digest(), crypto.createHash("sha256").update(key).digest());
+    if (!eq) { res.status(401).json({ error: "bad key" }); return null; }
+    const { settings } = await loadSettings();
+    const state = (await gh.readJson("data/state.json", { done: [] })).data || { done: [] };
+    const disp = await gh.readJson("data/dispatch.json", {});
+    const d = disp.data && typeof disp.data === "object" ? disp.data : {};
+    d.slots = d.slots || {};
+    const now = Date.now();
+    for (const [k, v] of Object.entries(d.slots)) if (now - Date.parse(v) > 6 * 3600e3) delete d.slots[k];
+    const due = dueSlots(settings, state.done || [], now);
+    // one job per tick; a slot already started is not started again for 50 minutes (it may still be running)
+    const next = due.find((x) => !d.slots[x.tag] || now - Date.parse(d.slots[x.tag]) > 50 * 60e3);
+    let changed = false;
+    if (next) {
+      await gh.dispatch("scheduled", next.kind, next.tag);
+      d.slots[next.tag] = new Date(now).toISOString();
+      changed = true;
+    }
+    if (!d.lastTick || now - Date.parse(d.lastTick) > 3 * 3600e3) changed = true; // heartbeat for the panel
+    d.lastTick = new Date(now).toISOString();
+    if (changed) await gh.writeFile("data/dispatch.json", JSON.stringify(d, null, 1) + "\n", "Scheduler", disp.sha);
+    return { ok: true, paused: !!settings.paused, due: due.map((x) => x.tag), started: next ? next.tag : null };
   },
   async session(req) {
     return { loggedIn: auth.isLoggedIn(req), passwordConfigured: auth.passwordConfigured() };
@@ -352,8 +390,8 @@ const routes = {
   },
 };
 
-const PUBLIC = new Set(["login", "logout", "session"]);
-const GETS = new Set(["state", "session", "app"]);
+const PUBLIC = new Set(["login", "logout", "session", "tick"]);
+const GETS = new Set(["state", "session", "app", "tick"]);
 
 // ---- brute-force protection: too many wrong passwords from one IP -> locked for a while
 const FAILS = new Map();
