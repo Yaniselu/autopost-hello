@@ -94,5 +94,14 @@
     "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42840822871",
     "status": "error",
     "error": "InstagramError: HTTP 400: {'message': 'Cannot call API for app 1686332366250214 on behalf of user 122105983761535947', 'type': 'OAuthException', 'code': 200, 'fbtrace_id': 'AxBVI-xVEPHaZ_ptsOK-5ld'}"
+  },
+  {
+    "time": "2026-11-10T20:15+02:00",
+    "type": "reel",
+    "mode": "scheduled",
+    "slot": "reel@2026-11-10T20:00:00+02:00",
+    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42873176203",
+    "status": "error",
+    "error": "InstagramError: HTTP 400: {'message': 'Cannot call API for app 1686332366250214 on behalf of user 122105983761535947', 'type': 'OAuthException', 'code': 200, 'fbtrace_id': 'AUXzInx44_5L_9wJliwn-lQ'}"
   }
 ]
