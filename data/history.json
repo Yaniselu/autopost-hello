@@ -304,5 +304,22 @@
     "fb_link": "https://www.facebook.com/1491182390739007_122099971677546258",
     "status": "posted",
     "repost": "ok"
+  },
+  {
+    "time": "2026-11-11T19:31+02:00",
+    "type": "story",
+    "mode": "scheduled",
+    "slot": "story@2026-11-11T19:30:00+02:00",
+    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43068821840",
+    "topic": "Who answers your site at night?",
+    "hook": "Who answers your site at night?",
+    "caption": "Who answers your site at night? — If the answer is nobody, you are handing warm buyers straight to your competitors before morning.",
+    "status": "posted",
+    "stories": [
+      {
+        "ig_id": "18171765274416901",
+        "fb_id": "1402931691921226"
+      }
+    ]
   }
 ]
