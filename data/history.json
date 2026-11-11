@@ -103,5 +103,15 @@
     "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42873176203",
     "status": "error",
     "error": "InstagramError: HTTP 400: {'message': 'Cannot call API for app 1686332366250214 on behalf of user 122105983761535947', 'type': 'OAuthException', 'code': 200, 'fbtrace_id': 'AUXzInx44_5L_9wJliwn-lQ'}"
+  },
+  {
+    "time": "2026-11-11T08:50+02:00",
+    "type": "reel",
+    "mode": "scheduled",
+    "slot": "reel@2026-11-11T08:00:00+02:00",
+    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42975123785",
+    "status": "error",
+    "error": "RuntimeError: Instagram nu mai acceptă conexiunea (Cannot call API for app 1686332366250214 on behalf of user 122105983761535947). Reconectează contul în panou: Cont & chei → token nou din Graph API Explorer → Conectează.",
+    "retry": "se reîncearcă automat (încercarea 1/3)"
   }
 ]
