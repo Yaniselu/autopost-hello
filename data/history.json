@@ -113,5 +113,15 @@
     "status": "error",
     "error": "RuntimeError: Instagram nu mai acceptă conexiunea (Cannot call API for app 1686332366250214 on behalf of user 122105983761535947). Reconectează contul în panou: Cont & chei → token nou din Graph API Explorer → Conectează.",
     "retry": "se reîncearcă automat (încercarea 1/3)"
+  },
+  {
+    "time": "2026-11-11T09:06+02:00",
+    "type": "reel",
+    "mode": "scheduled",
+    "slot": "reel@2026-11-11T08:00:00+02:00",
+    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42977045358",
+    "status": "error",
+    "error": "RuntimeError: Instagram nu mai acceptă conexiunea (Cannot call API for app 1686332366250214 on behalf of user 122105983761535947). Reconectează contul în panou: Cont & chei → token nou din Graph API Explorer → Conectează.",
+    "retry": "se reîncearcă automat (încercarea 2/3)"
   }
 ]
