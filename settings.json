@@ -44,18 +44,7 @@
   "stories_per_slot": 1,
   "post_to_facebook": true,
   "repost_to_story": true,
-  "comments": {
-    "enabled": true,
-    "every_hours": 2,
-    "max_per_run": 20,
-    "instructions": "Raspunde in engleza, trimite la dm sau pe velosyntech.com"
-  },
-  "instagram_username": "velosyntechcom",
-  "facebook_page": "Velosyntech",
   "voice": {
-    "enabled": true
-  },
-  "learning": {
     "enabled": true
   },
   "dm": {
@@ -65,5 +54,16 @@
     "offer": "a free demo",
     "message": "Hi {name}! Here's the link to book your free demo: {link}",
     "public_reply": "Just sent you a DM 📩"
-  }
+  },
+  "learning": {
+    "enabled": true
+  },
+  "comments": {
+    "enabled": true,
+    "every_hours": 2,
+    "max_per_run": 20,
+    "instructions": "Raspunde in engleza, trimite la dm sau pe velosyntech.com"
+  },
+  "instagram_username": "velosyntechcom",
+  "facebook_page": "Velosyntech"
 }
