@@ -1,24 +1,42 @@
 {
- "updated": "2026-11-11T08:13+00:00",
- "posts_measured": 1,
+ "updated": "2026-11-11T08:34+00:00",
+ "posts_measured": 2,
  "basic_only": false,
  "by_type": {
   "reel": {
-   "avg": 189.3,
+   "avg": 129.0,
+   "n": 2
+  }
+ },
+ "by_style": {
+  "cinematic": {
+   "avg": 68.7,
    "n": 1
   }
  },
- "by_style": {},
  "by_pillar": {
   "an AI assistant answering website visitors 24/7 (before vs after)": {
    "avg": 189.3,
    "n": 1
+  },
+  "losing customers because nobody replies fast enough": {
+   "avg": 68.7,
+   "n": 1
   }
  },
- "by_hook_type": {},
+ "by_hook_type": {
+  "pain": {
+   "avg": 68.7,
+   "n": 1
+  }
+ },
  "by_hour": {
   "21:12": {
    "avg": 189.3,
+   "n": 1
+  },
+  "10:13": {
+   "avg": 68.7,
    "n": 1
   }
  },
@@ -37,6 +55,22 @@
     "saved": 0,
     "shares": 3,
     "total_interactions": 15
+   }
+  },
+  {
+   "hook": "Slow *replies* cost you paying customers.",
+   "type": "reel",
+   "style": "cinematic",
+   "score": 68.7,
+   "permalink": "https://www.instagram.com/reel/DfmDVonDBBh/",
+   "metrics": {
+    "views": 14,
+    "reach": 0,
+    "likes": 1,
+    "comments": 0,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 3
    }
   }
  ],

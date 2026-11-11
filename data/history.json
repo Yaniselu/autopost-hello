@@ -169,5 +169,15 @@
     "fb_link": "https://www.facebook.com/reel/2227329004861773",
     "status": "posted",
     "repost": "ok"
+  },
+  {
+    "time": "2026-11-11T10:34+02:00",
+    "type": "reel",
+    "mode": "scheduled",
+    "slot": "reel@2026-11-11T10:00:00+02:00",
+    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42987570735",
+    "status": "error",
+    "error": "LLMError: text generation failed: Expecting value: line 51 column 7 (char 1605)",
+    "retry": "se reîncearcă automat (încercarea 1/3)"
   }
 ]
