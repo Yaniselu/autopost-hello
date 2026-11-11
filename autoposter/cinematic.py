@@ -556,8 +556,17 @@ def render_cinematic_reel(post: dict, cfg: dict, out: Path, work: Path, seed: in
     plan = make_plan(rng, previous_plan)
     post["_plan"] = plan
     fps = int(cfg["video"].get("fps_cinematic", 24))
-    pal_name, pal = pick_palette(cfg, rng)
+    light = cfg["video"].get("theme", "light") == "light"
+    if light:
+        from .light import pick_light_palette
+        pal_name, pal = pick_light_palette(cfg, rng)
+        if plan.get("finish_phone") in ("white", "natural"):  # contrast on paper
+            plan["finish_phone"] = rng.choice(["black", "blue", "desert"])
+        plan["theme"] = "light"
+    else:
+        pal_name, pal = pick_palette(cfg, rng)
     job = {
+        "theme": "light" if light else "dark",
         "mode": "reel", "width": W, "height": H, "fps": fps, "seed": seed,
         "finish": plan["finish_phone"], "finish_phone": plan["finish_phone"], "finish_laptop": plan["finish_laptop"],
         "plan": plan, "date_label": date_label(cfg),
@@ -585,6 +594,13 @@ def render_cinematic_reel(post: dict, cfg: dict, out: Path, work: Path, seed: in
            "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-maxrate", "10M", "-bufsize", "20M",
            "-pix_fmt", "yuv420p", "-profile:v", "high",
            "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", str(out)]
+    if light:
+        from .light import _encode
+        _encode([(i, str(p)) for i, p in enumerate(frames)], total, fps, audio, out,
+                (post, cfg, tl, pal, fps, "cinematic", seed, words))
+        shutil.rmtree(rdir / "frames", ignore_errors=True)
+        print(f"[cinematic] saved {out}")
+        return out
     proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
     procs = max(1, min(os.cpu_count() or 2, 6))
     pal_clean = dict(pal)

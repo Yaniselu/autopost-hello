@@ -67,10 +67,14 @@ jobs:
 
       - if: steps.due.outputs.run == 'true' && steps.due.outputs.kind != 'comments'
         name: Install video tools
+        # apt is optional (fonts are bundled, ffmpeg falls back to the pip one): never let a slow
+        # Ubuntu mirror eat the whole run
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq ffmpeg fonts-inter
-          cd renderer && npm ci --silent && npx playwright install --with-deps chromium
+          APT="-o Acquire::Retries=2 -o Acquire::http::Timeout=20 -o Acquire::https::Timeout=20 -o DPkg::Lock::Timeout=60"
+          timeout 240 sudo apt-get $APT update -qq || echo "::warning::apt update skipped"
+          timeout 240 sudo apt-get $APT install -y -qq --no-install-recommends ffmpeg || echo "::warning::system ffmpeg skipped, using bundled one"
+          cd renderer && npm ci --silent
+          timeout 420 npx playwright install --with-deps chromium || timeout 300 npx playwright install chromium
 
       - if: steps.due.outputs.run == 'true'
         name: Run

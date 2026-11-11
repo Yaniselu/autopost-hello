@@ -414,6 +414,9 @@ def _work(args):
 
 
 def render_liquid_reel(post: dict, cfg: dict, out: Path, work: Path, seed: int, vo: dict | None = None) -> Path:
+    if cfg["video"].get("theme", "light") == "light":
+        from .light import render_light_liquid
+        return render_light_liquid(post, cfg, out, work, seed, vo)
     from .voice import assemble, section_durations
     fps = int(cfg["video"].get("fps_cinematic", 24))
     tl = timeline(post, section_durations(vo))

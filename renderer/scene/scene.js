@@ -51,7 +51,8 @@ async function setup(job) {
   scene.environment = pm.fromScene(new RoomEnvironment(), 0.04).texture;
   camera = new THREE.PerspectiveCamera(30, W / H, 0.1, 200);
 
-  buildWorld(job.palette, (job.plan && job.plan.bg) || "bokeh");
+  const LIGHT = job.theme === "light";
+  if (LIGHT) buildLightWorld(job.palette); else buildWorld(job.palette, (job.plan && job.plan.bg) || "bokeh");
   laptop = buildLaptop(job.finish_laptop || job.finish);
   phone = buildPhone(job.finish_phone || job.finish);
   scene.add(laptop.group, phone.group);
@@ -59,7 +60,10 @@ async function setup(job) {
   const rt = new THREE.WebGLRenderTarget(RW, RH, { type: THREE.HalfFloatType, samples: job.msaa ?? 2 });
   composer = new EffectComposer(renderer, rt);
   composer.addPass(new RenderPass(scene, camera));
-  bloom = new UnrealBloomPass(new THREE.Vector2(RW / 2, RH / 2), 0.42, 0.5, 0.94);
+  bloom = LIGHT ? new UnrealBloomPass(new THREE.Vector2(RW / 2, RH / 2), 0.12, 0.4, 0.985)
+    : new UnrealBloomPass(new THREE.Vector2(RW / 2, RH / 2), 0.42, 0.5, 0.94);
+  if (LIGHT) document.body.classList.add("light");
+  if (LIGHT) { renderer.toneMapping = THREE.NeutralToneMapping; renderer.toneMappingExposure = 1.0; $("vignette").style.display = "none"; $("grain").style.opacity = "0.035"; }
   composer.addPass(bloom);
   composer.addPass(new OutputPass());
 
@@ -157,6 +161,45 @@ function buildWorld(pal, variant) {
   const rim1 = new THREE.PointLight(new THREE.Color(pal.accent), 60, 0, 2); rim1.position.set(-4, 3, -3); scene.add(rim1);
   const rim2 = new THREE.PointLight(new THREE.Color(pal.accent2), 60, 0, 2); rim2.position.set(4.5, 2.5, -2.5); scene.add(rim2);
   scene.add(new THREE.AmbientLight(0xffffff, 0.05));
+}
+
+// bright "paper" studio: warm off-white seamless backdrop, soft key light, real contact shadows
+function buildLightWorld(pal) {
+  const top = new THREE.Color(pal.bg[1] || "#f6f3ed"), bottom = new THREE.Color(pal.bg[0] || "#e2dcd2");
+  const bg = new THREE.Mesh(new THREE.SphereGeometry(80, 32, 16), new THREE.ShaderMaterial({
+    side: THREE.BackSide, depthWrite: false, toneMapped: false,
+    uniforms: { top: { value: top }, bottom: { value: bottom } },
+    vertexShader: "varying vec3 vP; void main(){ vP = normalize(position); gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.); }",
+    fragmentShader: "uniform vec3 top; uniform vec3 bottom; varying vec3 vP; void main(){ float h = vP.y*.5+.5; gl_FragColor = vec4(mix(bottom, top, smoothstep(.4,.7,h)), 1.); }",
+  }));
+  scene.add(bg);
+  // seamless floor: same paper tone, a touch brighter where the light falls
+  const fc = document.createElement("canvas"); fc.width = fc.height = 512; const fx = fc.getContext("2d");
+  const fg = fx.createRadialGradient(256, 256, 0, 256, 256, 256);
+  fg.addColorStop(0, "#" + top.clone().lerp(new THREE.Color(0xffffff), 0.35).getHexString());
+  fg.addColorStop(0.5, "#" + top.getHexString()); fg.addColorStop(1, "#" + bottom.getHexString());
+  fx.fillStyle = fg; fx.fillRect(0, 0, 512, 512);
+  const ftex = new THREE.CanvasTexture(fc); ftex.colorSpace = THREE.SRGBColorSpace;
+  const floor = new THREE.Mesh(new THREE.PlaneGeometry(60, 60), new THREE.MeshBasicMaterial({ map: ftex, toneMapped: false }));
+  floor.rotation.x = -Math.PI / 2; scene.add(floor);
+  // soft pastel colour washes far behind (normal blending, very subtle)
+  const glows = pal.glow && pal.glow.length ? pal.glow : [pal.accent];
+  for (let i = 0; i < 3; i++) {
+    const m = new THREE.SpriteMaterial({ map: radialTexture("rgba(255,255,255,1)", "rgba(255,255,255,0)"), color: new THREE.Color(glows[i % glows.length]),
+      transparent: true, depthWrite: false, opacity: 0.35, toneMapped: false });
+    const sp = new THREE.Sprite(m); const base = new THREE.Vector3((i - 1) * 9, 4 + rnd() * 4, -24 - rnd() * 6);
+    sp.scale.set(16, 16, 1); sp.userData = { base, ph: rnd() * 6.28, sp: 0.12 + rnd() * 0.12 }; bokeh.push(sp); scene.add(sp);
+  }
+  dust = new THREE.Points(new THREE.BufferGeometry(), new THREE.PointsMaterial({ size: 0 })); dust.userData.base = new Float32Array(0); dust.visible = false;
+  const sh = radialTexture("rgba(40,30,20,.9)", "rgba(40,30,20,0)");
+  shadowL = new THREE.Mesh(new THREE.PlaneGeometry(4.4, 3.2), new THREE.MeshBasicMaterial({ map: sh, transparent: true, depthWrite: false, opacity: 0.75 }));
+  shadowL.rotation.x = -Math.PI / 2; shadowL.position.y = 0.005; scene.add(shadowL);
+  shadowP = new THREE.Mesh(new THREE.PlaneGeometry(1.3, 0.75), new THREE.MeshBasicMaterial({ map: sh, transparent: true, depthWrite: false, opacity: 0.85 }));
+  shadowP.rotation.x = -Math.PI / 2; shadowP.position.y = 0.006; scene.add(shadowP);
+  const key = new THREE.SpotLight(0xfff6ea, 70, 0, 0.6, 1, 2); key.position.set(-3, 9, 7); key.target.position.set(0, 0.8, 0); scene.add(key, key.target);
+  const fill = new THREE.DirectionalLight(0xffffff, 1.1); fill.position.set(5, 4, 6); scene.add(fill);
+  const rim = new THREE.PointLight(new THREE.Color(pal.accent).lerp(new THREE.Color(0xffffff), 0.7), 25, 0, 2); rim.position.set(3, 3, -3); scene.add(rim);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0xe8e0d4, 0.9));
 }
 
 // Apple-like colourways (no logos): phone = titanium tones, laptop = space black / silver
@@ -344,6 +387,7 @@ function lookFrom(px, py, pz, tx, ty, tz, t, shake = 1) {
 function animateWorld(t) {
   bokeh.forEach((s) => { const u = s.userData; s.position.set(u.base.x + Math.sin(t * u.sp + u.ph) * 1.2, u.base.y + Math.cos(t * u.sp * 0.8 + u.ph) * 0.7, u.base.z); });
   const p = dust.geometry.attributes.position, b = dust.userData.base;
+  if (!p) return;
   for (let i = 0; i < p.count; i++) { p.array[i * 3 + 1] = (b[i * 3 + 1] + t * 0.12) % 9; p.array[i * 3] = b[i * 3] + Math.sin(t * 0.3 + i) * 0.1; }
   p.needsUpdate = true;
 }

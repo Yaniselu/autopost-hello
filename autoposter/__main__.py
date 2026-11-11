@@ -106,7 +106,11 @@ def _repost(kind: str, source: Path, cfg: dict, work: Path, publish: bool, palet
     from .llm import redact
     from .repost import frame_from_video, make_repost_story
     try:
-        p = PALETTES.get(palette or "", PALETTES["aurora"])
+        from .light import LIGHT_PALETTES
+        if cfg["video"].get("theme", "light") == "light":
+            p = LIGHT_PALETTES.get(palette or "", LIGHT_PALETTES["cobalt"])
+        else:
+            p = PALETTES.get(palette or "", PALETTES["aurora"])
         src = frame_from_video(source, work / "repost-src.jpg") if source.suffix == ".mp4" else source
         img = make_repost_story(src, kind, cfg, OUTPUT / f"repost-{source.stem}.jpg", tuple(p["accent"]), tuple(p["accent2"]))
         if not publish:
@@ -249,7 +253,8 @@ def _write_health(ok: bool, msg: str) -> None:
 def _retryable(err: str) -> bool:
     e = err.lower()
     return any(x in e for x in ("oauth", "reconecteaz", "http 5", "timeout", "timed out", "connection", "429",
-                                "rate limit", "temporarily", "text generation failed", "please retry"))
+                                "rate limit", "temporarily", "text generation failed", "please retry",
+                                "api key", "http 401"))
 
 
 def run_cloud(cfg: dict, kind: str, mode: str, slot: str) -> None:

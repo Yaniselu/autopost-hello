@@ -75,25 +75,25 @@ def layout_lines(words, font, max_width) -> list[list[tuple[str, bool]]]:
     return lines
 
 
-def render_line(line, font, color, accent) -> Image.Image:
+def render_line(line, font, color, accent, shadow_a: float = 0.75, glow: bool = True) -> Image.Image:
     """Renders one line of rich text to an RGBA image with soft shadow + accent glow."""
     space = font.getlength(" ")
     width = int(sum(font.getlength(w) for w, _ in line) + space * (len(line) - 1)) + 60
     asc, desc = font.getmetrics()
     height = asc + desc + 60
     text = Image.new("RGBA", (width, height), (0, 0, 0, 0))
-    glow = Image.new("RGBA", (width, height), (0, 0, 0, 0))
-    dt, dg = ImageDraw.Draw(text), ImageDraw.Draw(glow)
+    glow_im = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+    dt, dg = ImageDraw.Draw(text), ImageDraw.Draw(glow_im)
     x = 30
     for w, hl in line:
         dt.text((x, 30), w, font=font, fill=accent if hl else color)
-        if hl:
+        if hl and glow:
             dg.text((x, 30), w, font=font, fill=accent + (170,))
         x += font.getlength(w) + space
     shadow = Image.new("RGBA", (width, height), (0, 0, 0, 0))
-    shadow.putalpha(text.getchannel("A").point(lambda a: int(a * 0.75)))
+    shadow.putalpha(text.getchannel("A").point(lambda a: int(a * shadow_a)))
     shadow = shadow.filter(ImageFilter.GaussianBlur(10))
-    out = Image.alpha_composite(shadow, glow.filter(ImageFilter.GaussianBlur(14)))
+    out = Image.alpha_composite(shadow, glow_im.filter(ImageFilter.GaussianBlur(14)))
     return Image.alpha_composite(out, text)
 
 

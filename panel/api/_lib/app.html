@@ -267,13 +267,20 @@ a{color:var(--accent)}
           </div>
           <datalist id="tzlist"><option>Europe/Bucharest</option><option>Europe/London</option><option>Europe/Berlin</option><option>America/New_York</option><option>UTC</option></datalist>
           <div class="two">
+            <div><label>Temă (video, carusel, stories)</label>
+              <select id="theme"><option value="light">☀️ Deschis – fundal alb murdar</option><option value="dark">🌙 Întunecat</option></select></div>
+            <div></div>
+          </div>
+          <div class="two">
             <div><label>Stil video</label>
               <select id="style"><option value="rotate">🔁 Alternează: Cinematic 3D ↔ Liquid Glass</option><option value="cinematic">Cinematic 3D (laptop + telefon)</option><option value="liquid_glass">Liquid Glass (sticlă, bule)</option><option value="classic">Clasic (text simplu)</option></select></div>
             <div><label>Culori</label>
               <select id="palette">
                 <option value="random">🎲 Diferite la fiecare video</option><option value="aurora">Aurora (cyan, mov, roz)</option>
                 <option value="sunset">Sunset (portocaliu, roz)</option><option value="ocean">Ocean (albastru, turcoaz)</option>
-                <option value="neon">Neon (magenta, cyan)</option><option value="mint">Mint (verde, albastru)</option></select></div>
+                <option value="neon">Neon (magenta, cyan)</option><option value="mint">Mint (verde, albastru)</option>
+                <optgroup label="Tema deschisă"><option value="cobalt">Cobalt (albastru)</option><option value="tangerine">Tangerine (portocaliu)</option>
+                <option value="emerald">Emerald (verde)</option><option value="violet">Violet (mov)</option><option value="coral">Coral (roz)</option></optgroup></select></div>
           </div>
           <div class="two">
             <div><label>Fundal</label>
@@ -546,7 +553,7 @@ function fillSettings(s) {
   $("dmLink").value = dm.link || ""; $("dmMsg").value = dm.message || "";
   $("voiceOn").value = (s.voice || {}).enabled === false ? "0" : "1"; $("learnOn").value = (s.learning || {}).enabled === false ? "0" : "1";
   $("timezone").value = s.timezone; $("language").value = s.language; $("hashtags").value = s.hashtags_count;
-  $("style").value = s.video.style; $("palette").value = s.video.palette; $("background").value = s.video.background;
+  $("theme").value = s.video.theme || "light"; $("style").value = s.video.style; $("palette").value = s.video.palette; $("background").value = s.video.background;
   $("bName").value = s.brand.name; $("bHandle").value = s.brand.handle; $("bDesc").value = s.brand.description;
   $("bAudience").value = s.brand.audience; $("bTone").value = s.brand.tone; $("bCta").value = s.brand.call_to_action;
   $("pillars").value = s.content_pillars.join("\n");
@@ -577,7 +584,7 @@ $("saveSettings").onclick = (e) => withBtn(e.currentTarget, async () => {
     stories_per_slot: $("storiesPer").value, post_to_facebook: $("postFb").value === "1", repost_to_story: $("repost").value === "1",
     comments: { enabled: $("cmEnabled").value === "1", every_hours: $("cmEvery").value, max_per_run: $("cmMax").value, instructions: $("cmInstr").value },
     timezone: $("timezone").value, language: $("language").value, hashtags_count: $("hashtags").value,
-    video: { style: $("style").value, palette: $("palette").value, background: $("background").value },
+    video: { theme: $("theme").value, style: $("style").value, palette: $("palette").value, background: $("background").value },
     brand: { name: $("bName").value, handle: $("bHandle").value, description: $("bDesc").value,
       audience: $("bAudience").value, tone: $("bTone").value, call_to_action: $("bCta").value },
     content_pillars: $("pillars").value.split("\n").map(x => x.trim()).filter(Boolean),

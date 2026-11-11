@@ -7,7 +7,8 @@ W = 1080
 
 
 class Subtitles:
-    def __init__(self, words: list, accent: tuple, size: int = 54):
+    def __init__(self, words: list, accent: tuple, size: int = 54, theme: str = "dark"):
+        light = theme == "light"
         self.chunks = []
         font = ImageFont.truetype(str(FONT_BOLD), size)
         cur = []
@@ -24,12 +25,13 @@ class Subtitles:
             states = []
             for k in range(len(ch)):
                 line = [(w[2], j == k) for j, w in enumerate(ch)]
-                im = render_line(line, font, (255, 255, 255), accent)
+                im = (render_line(line, font, (22, 22, 26), accent, shadow_a=0.0, glow=False) if light
+                      else render_line(line, font, (255, 255, 255), accent))
                 if im.width > W - 80:
                     im = im.resize((W - 80, int(im.height * (W - 80) / im.width)), Image.LANCZOS)
                 pill = Image.new("RGBA", (im.width - 20, im.height - 46), (0, 0, 0, 0))
                 ImageDraw.Draw(pill).rounded_rectangle((0, 0, pill.width - 1, pill.height - 1), radius=pill.height // 2,
-                                                       fill=(0, 0, 0, 120))
+                                                       fill=(255, 255, 255, 235) if light else (0, 0, 0, 120))
                 full = Image.new("RGBA", im.size, (0, 0, 0, 0))
                 full.alpha_composite(pill, (10, 23))
                 full.alpha_composite(im)

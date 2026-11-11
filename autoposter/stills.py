@@ -22,9 +22,17 @@ def _rich(text: str) -> str:
 
 def _job(cfg, mode_w, mode_h, seed, stills, extra=None):
     rng = random.Random(seed)
-    _, pal = pick_palette(cfg, rng)
-    job = {"mode": "stills", "width": mode_w, "height": mode_h, "fps": 30, "seed": seed,
-           "finish": rng.choice(["graphite", "silver"]), "date_label": date_label(cfg),
+    light = cfg["video"].get("theme", "light") == "light"
+    if light:
+        from .light import pick_light_palette
+        _, pal = pick_light_palette(cfg, rng)
+    else:
+        _, pal = pick_palette(cfg, rng)
+    if light:  # dotted paper texture at the top of every slide
+        for s in stills:
+            s["html"] = '<div class="dots"></div>' + s["html"]
+    job = {"mode": "stills", "theme": "light" if light else "dark", "width": mode_w, "height": mode_h, "fps": 30, "seed": seed,
+           "finish": rng.choice(["black", "blue"] if light else ["graphite", "silver"]), "date_label": date_label(cfg),
            "brand": {"name": cfg["brand"]["name"], "handle": cfg["brand"]["handle"]},
            "account": account_for_job(cfg),
            "palette": {k: v for k, v in pal.items() if not k.startswith("_")}, "stills": stills}

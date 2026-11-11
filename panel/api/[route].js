@@ -30,7 +30,7 @@ const DEFAULT_SETTINGS = {
     "productivity tools and workflows for tech teams",
     "myths vs facts about AI and software",
   ],
-  video: { style: "rotate", palette: "random", background: "liquid" },
+  video: { theme: "light", style: "rotate", palette: "random", background: "liquid" },
   carousel_times: ["13:00"],
   story_times: ["09:30", "19:30"],
   stories_per_slot: 1,
@@ -45,7 +45,7 @@ const DEFAULT_SETTINGS = {
   facebook_page: "",
 };
 
-const PALETTES = ["random", "aurora", "sunset", "ocean", "neon", "mint"];
+const PALETTES = ["random", "aurora", "sunset", "ocean", "neon", "mint", "cobalt", "tangerine", "emerald", "violet", "coral"];
 const SECRET_NAMES = ["GEMINI_API_KEY", "IG_USER_ID", "IG_ACCESS_TOKEN", "FB_PAGE_ID", "BLOB_READ_WRITE_TOKEN", "PEXELS_API_KEY"];
 const KINDS = ["reel", "carousel", "story", "comments"];
 
@@ -120,6 +120,7 @@ function validateSettings(input, current) {
     s.content_pillars = p;
   }
   if (input.video) {
+    if (["light", "dark"].includes(input.video.theme)) s.video.theme = input.video.theme;
     if (["rotate", "cinematic", "liquid_glass", "classic"].includes(input.video.style)) s.video.style = input.video.style;
     if (PALETTES.includes(input.video.palette)) s.video.palette = input.video.palette;
     if (["liquid", "pexels", "gradient"].includes(input.video.background)) s.video.background = input.video.background;

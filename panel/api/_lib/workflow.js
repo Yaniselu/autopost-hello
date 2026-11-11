@@ -114,9 +114,11 @@ jobs:
       - if: ${media}
         name: Install video tools
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq ffmpeg fonts-inter
-          cd renderer && npm ci --silent && npx playwright install --with-deps chromium
+          APT="-o Acquire::Retries=2 -o Acquire::http::Timeout=20 -o Acquire::https::Timeout=20 -o DPkg::Lock::Timeout=60"
+          timeout 240 sudo apt-get $APT update -qq || echo "::warning::apt update skipped"
+          timeout 240 sudo apt-get $APT install -y -qq --no-install-recommends ffmpeg || echo "::warning::system ffmpeg skipped, using bundled one"
+          cd renderer && npm ci --silent
+          timeout 420 npx playwright install --with-deps chromium || timeout 300 npx playwright install chromium
 
       - if: ${when}
         name: Run

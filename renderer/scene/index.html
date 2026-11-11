@@ -59,6 +59,23 @@ canvas#gl { position: absolute; inset: 0; width: 100%; height: 100%; }
 #still .kicker { display: inline-block; padding: 14px 28px; border-radius: 99px; font-weight: 700; font-size: 30px; letter-spacing: .14em; margin-bottom: 34px; }
 #still .swipe { position: absolute; right: 70px; bottom: 70px; padding: 18px 34px; border-radius: 99px; font-weight: 700; font-size: 32px; }
 #still .page { position: absolute; left: 70px; bottom: 76px; font-weight: 700; font-size: 30px; opacity: .7; letter-spacing: .1em; }
+
+/* ---------- light theme: warm off-white paper, ink text, white cards, marker highlights ---------- */
+body.light { color: #16161a; background: #f3efe8; }
+body.light .glass { background: rgba(255,255,255,.95); border: 1.5px solid rgba(22,22,26,.06); backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: 0 24px 50px -24px rgba(60,40,20,.35), 0 2px 6px rgba(60,40,20,.06); }
+body.light .hl { color: #16161a; -webkit-background-clip: border-box; background-clip: border-box; filter: none; padding: 0 .08em; border-radius: .08em;
+  background: linear-gradient(transparent 52%, color-mix(in srgb, var(--accent) 38%, white) 52%, color-mix(in srgb, var(--accent) 38%, white) 92%, transparent 92%); }
+body.light #still .big.hl { color: var(--accent); background: none; }
+body.light #still .body { color: rgba(22,22,26,.72); opacity: 1; }
+body.light #still .kicker { background: #16161a; color: #fff; border: 0; box-shadow: none; }
+body.light #still .kicker img { box-shadow: 0 0 0 3px rgba(255,255,255,.6) !important; }
+body.light #still .swipe { background: var(--accent); color: #fff; border: 0; }
+body.light #still .page { color: #16161a; opacity: .6; }
+body.light #still .card::after { content: ""; position: absolute; left: 64px; bottom: 54px; width: 120px; height: 10px; border-radius: 9px; background: var(--accent); }
+body.light #still .dots { position: absolute; inset: 0 0 auto 0; height: 420px; pointer-events: none;
+  background-image: radial-gradient(rgba(22,22,26,.14) 2px, transparent 2.5px); background-size: 32px 32px;
+  -webkit-mask-image: linear-gradient(#000, transparent); mask-image: linear-gradient(#000, transparent); }
 </style>
 <script type="importmap">
 { "imports": { "three": "/three/build/three.module.js", "three/addons/": "/three/examples/jsm/" } }

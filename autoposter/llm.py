@@ -115,17 +115,26 @@ def _groq(prompt: str, model: str, temperature: float, as_json: bool, images=Non
 def parse_json(raw: str):
     raw = raw.strip()
     raw = re.sub(r"^```(?:json)?\s*|\s*```$", "", raw).strip()
-    try:
-        return json.loads(raw)
-    except ValueError:
-        m = re.search(r"[\[{].*[\]}]", raw, re.S)
-        if not m:
-            raise
-        return json.loads(m.group(0))
+    attempts = [raw]
+    m = re.search(r"[\[{].*[\]}]", raw, re.S)
+    if m:
+        attempts.append(m.group(0))
+    for cand in list(attempts):  # common model slips: trailing commas, smart quotes, comments
+        fixed = re.sub(r",\s*([}\]])", r"\1", cand)
+        fixed = fixed.replace("\u201c", '"').replace("\u201d", '"')
+        fixed = re.sub(r"^\s*//.*$", "", fixed, flags=re.M)
+        attempts.append(fixed)
+    last = None
+    for cand in attempts:
+        try:
+            return json.loads(cand)
+        except ValueError as e:
+            last = e
+    raise last
 
 
 def generate(prompt: str, cfg: dict, kind: str = "content", as_json: bool = True,
-             validate=None, attempts: int = 4, images: list[bytes] | None = None):
+             validate=None, attempts: int = 6, images: list[bytes] | None = None):
     """Returns parsed JSON (or text). `validate(obj)` may raise to force a retry."""
     llm = cfg.get("llm", {})
     temperature = llm.get("temperature", 0.9) if kind == "content" else 0.6

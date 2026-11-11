@@ -205,7 +205,7 @@ export function drawPhone(ctx, W, H, st, t) {
     ctx.strokeStyle = "#06121a"; ctx.lineWidth = 16; ctx.lineCap = "round"; ctx.beginPath();
     ctx.moveTo(-38, -150); ctx.lineTo(-10, -120); ctx.lineTo(42, -178); ctx.stroke();
     ctx.textAlign = "center"; ctx.fillStyle = "#fff";
-    ctx.font = "800 40px Inter"; const lines = wrap(ctx, data.result || "Done.", W - 120);
+    ctx.font = "800 40px Inter"; const lines = wrap(ctx, String(data.result || "Done.").replace(/\*/g, ""), W - 120);
     lines.slice(0, 4).forEach((l, i) => ctx.fillText(l, 0, 0 + i * 50));
     ctx.restore(); ctx.textAlign = "left";
   } else if (mode === "steps" || mode === "app") {
