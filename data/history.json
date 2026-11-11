@@ -231,5 +231,22 @@
     "fb_link": "https://www.facebook.com/1491182390739007_122099718879546258",
     "status": "posted",
     "repost": "ok"
+  },
+  {
+    "time": "2026-11-11T15:31+02:00",
+    "type": "story",
+    "mode": "scheduled",
+    "slot": "story@2026-11-11T15:30:00+02:00",
+    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43029733301",
+    "topic": "Most leads reply at night",
+    "hook": "Most leads reply at night",
+    "caption": "Most leads reply at night — Up to half of all website questions arrive after your office closes. Are you answering them?",
+    "status": "posted",
+    "stories": [
+      {
+        "ig_id": "18120620641992576",
+        "fb_id": "1101100396039581"
+      }
+    ]
   }
 ]

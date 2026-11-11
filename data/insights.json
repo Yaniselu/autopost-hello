@@ -1,11 +1,15 @@
 {
- "updated": "2026-11-11T11:23+00:00",
- "posts_measured": 2,
+ "updated": "2026-11-11T13:31+00:00",
+ "posts_measured": 3,
  "basic_only": false,
  "by_type": {
   "reel": {
    "avg": 129.0,
    "n": 2
+  },
+  "carousel": {
+   "avg": 141.2,
+   "n": 1
   }
  },
  "by_style": {
@@ -22,6 +26,10 @@
   "losing customers because nobody replies fast enough": {
    "avg": 68.7,
    "n": 1
+  },
+  "turning website visitors into leads and booked demos": {
+   "avg": 141.2,
+   "n": 1
   }
  },
  "by_hook_type": {
@@ -37,6 +45,10 @@
   },
   "10:13": {
    "avg": 68.7,
+   "n": 1
+  },
+  "13:23": {
+   "avg": 141.2,
    "n": 1
   }
  },
@@ -55,6 +67,22 @@
     "saved": 0,
     "shares": 3,
     "total_interactions": 15
+   }
+  },
+  {
+   "hook": "Turn website *visitors* into booked clients.",
+   "type": "carousel",
+   "style": null,
+   "score": 141.15,
+   "permalink": "https://www.instagram.com/p/DfmXkKgGDEa/",
+   "metrics": {
+    "views": 271,
+    "reach": 56,
+    "likes": 1,
+    "comments": 0,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 2
    }
   },
   {
