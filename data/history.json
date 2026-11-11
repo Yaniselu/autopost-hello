@@ -287,5 +287,22 @@
     "fb_link": "https://www.facebook.com/reel/1717993509748276",
     "status": "posted",
     "repost": "ok"
+  },
+  {
+    "time": "2026-11-11T19:02+02:00",
+    "type": "carousel",
+    "mode": "scheduled",
+    "slot": "carousel@2026-11-11T19:00:00+02:00",
+    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43063910859",
+    "topic": "simple n8n automations that save hours every week",
+    "pillar": "simple n8n automations that save hours every week",
+    "hook": "Stop doing *manual* copy-paste work.",
+    "caption": "Busywork is the silent profit killer in most growing businesses. Moving data between apps by hand wastes hours that your team could spend talking to actual buyers. \n\nConnecting your tools takes minutes to set up and runs silently in the background forever. Stop trading human time for computer tasks. \n\nWhich task takes up most of your Mondays? \n\nComment DEMO and we'll send you a free demo in DM.\n\n#automation #businessowner #productivity #workflow #velosyntech",
+    "ig_id": "18128266489900070",
+    "permalink": "https://www.instagram.com/p/Dfm-jw5F_Gg/",
+    "fb_id": "1491182390739007_122099971677546258",
+    "fb_link": "https://www.facebook.com/1491182390739007_122099971677546258",
+    "status": "posted",
+    "repost": "ok"
   }
 ]

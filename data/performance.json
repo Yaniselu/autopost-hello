@@ -61,5 +61,26 @@
   "hour": "13:23",
   "time": "2026-11-11T13:23+02:00",
   "permalink": "https://www.instagram.com/p/DfmXkKgGDEa/"
+ },
+ "18113468702118556": {
+  "fetched": "2026-11-11T17:02:30.979511+00:00",
+  "metrics": {
+   "views": 402,
+   "reach": 216,
+   "likes": 7,
+   "comments": 4,
+   "saved": 0,
+   "shares": 2,
+   "total_interactions": 14
+  },
+  "score": 180.97,
+  "type": "reel",
+  "style": "liquid_glass",
+  "pillar": "answering customers in any language automatically",
+  "hook_type": "question",
+  "hook": "Lost a sale because of *language*?",
+  "hour": "17:16",
+  "time": "2026-11-11T17:16+02:00",
+  "permalink": "https://www.instagram.com/reel/DfmyOtliYsU/"
  }
 }
