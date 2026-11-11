@@ -1,12 +1,16 @@
 {
  "17977988487160971": {
-  "fetched": "2026-11-10T15:06:45.737343+00:00",
+  "fetched": "2026-11-11T08:13:18.383052+00:00",
   "metrics": {
-   "likes": 0,
-   "comments": 0,
-   "_basic": true
+   "views": 561,
+   "reach": 366,
+   "likes": 7,
+   "comments": 2,
+   "saved": 0,
+   "shares": 3,
+   "total_interactions": 15
   },
-  "score": 0.0,
+  "score": 189.29,
   "type": "reel",
   "style": null,
   "pillar": "an AI assistant answering website visitors 24/7 (before vs after)",

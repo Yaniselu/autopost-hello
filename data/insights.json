@@ -1,24 +1,24 @@
 {
- "updated": "2026-11-10T18:15+00:00",
+ "updated": "2026-11-11T08:13+00:00",
  "posts_measured": 1,
- "basic_only": true,
+ "basic_only": false,
  "by_type": {
   "reel": {
-   "avg": 0.0,
+   "avg": 189.3,
    "n": 1
   }
  },
  "by_style": {},
  "by_pillar": {
   "an AI assistant answering website visitors 24/7 (before vs after)": {
-   "avg": 0.0,
+   "avg": 189.3,
    "n": 1
   }
  },
  "by_hook_type": {},
  "by_hour": {
   "21:12": {
-   "avg": 0.0,
+   "avg": 189.3,
    "n": 1
   }
  },
@@ -27,12 +27,16 @@
    "hook": "Your website is silent when customers buy.",
    "type": "reel",
    "style": null,
-   "score": 0.0,
+   "score": 189.29,
    "permalink": "https://www.instagram.com/reel/DfiF0VNil9U/",
    "metrics": {
-    "likes": 0,
-    "comments": 0,
-    "_basic": true
+    "views": 561,
+    "reach": 366,
+    "likes": 7,
+    "comments": 2,
+    "saved": 0,
+    "shares": 3,
+    "total_interactions": 15
    }
   }
  ],

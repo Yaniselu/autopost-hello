@@ -123,5 +123,51 @@
     "status": "error",
     "error": "RuntimeError: Instagram nu mai acceptă conexiunea (Cannot call API for app 1686332366250214 on behalf of user 122105983761535947). Reconectează contul în panou: Cont & chei → token nou din Graph API Explorer → Conectează.",
     "retry": "se reîncearcă automat (încercarea 2/3)"
+  },
+  {
+    "time": "2026-11-11T10:13+02:00",
+    "type": "reel",
+    "mode": "now",
+    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42985210920",
+    "topic": "losing customers because nobody replies fast enough",
+    "pillar": "losing customers because nobody replies fast enough",
+    "hook": "Slow *replies* cost you paying customers.",
+    "caption": "People hate waiting. If a potential client lands on your page and cannot get a fast answer about your service, they will simply close the tab and message the next business on Google.\n\nYou do not need to sit by your inbox all day to fix this. Smart automation handles the first contact, gives clear answers, and secures the lead while you focus on your actual work.\n\nHow fast do you usually reply to website messages? Let us know below.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessgrowth #automation #smallbiz #leadgeneration #ai",
+    "hook_type": "pain",
+    "hook_options": [
+      {
+        "text": "Slow *replies* cost you paying customers.",
+        "type": "pain"
+      },
+      {
+        "text": "Why do buyers leave your *website* instantly?",
+        "type": "question"
+      },
+      {
+        "text": "Fast *answers* win the deal every time.",
+        "type": "bold_claim"
+      }
+    ],
+    "style": "cinematic",
+    "voice": "en-US-BrianMultilingualNeural",
+    "plan": {
+      "hook": "lid_open",
+      "problem": "high_angle",
+      "solution": "orbit_right",
+      "result": "low_hero",
+      "cta": "duo_cta",
+      "bg": "bokeh",
+      "type": "caption",
+      "transition": "whip",
+      "finish_phone": "natural",
+      "finish_laptop": "silver",
+      "palette": "aurora"
+    },
+    "ig_id": "18078997739438412",
+    "permalink": "https://www.instagram.com/reel/DfmDVonDBBh/",
+    "fb_id": "2227329004861773",
+    "fb_link": "https://www.facebook.com/reel/2227329004861773",
+    "status": "posted",
+    "repost": "ok"
   }
 ]
