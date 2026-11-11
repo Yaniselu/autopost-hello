@@ -321,5 +321,52 @@
         "fb_id": "1402931691921226"
       }
     ]
+  },
+  {
+    "time": "2026-11-11T20:01+02:00",
+    "type": "reel",
+    "mode": "scheduled",
+    "slot": "reel@2026-11-11T20:00:00+02:00",
+    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43073612296",
+    "topic": "turning website visitors into leads and booked demos",
+    "pillar": "turning website visitors into leads and booked demos",
+    "hook": "Your *website* is leaking potential clients.",
+    "caption": "Most business websites act like a silent digital brochure. People arrive, read a few paragraphs, and leave without a trace.\n\nYou do not need more traffic. You need a way to capture the attention of the people who are already landing on your pages.\n\nWhen you turn passive visitors into active conversations, your entire sales process speeds up.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessgrowth #leadgeneration #automation #smallbusiness #sales",
+    "hook_type": "bold_claim",
+    "hook_options": [
+      {
+        "text": "Stop *ignoring* your website traffic.",
+        "type": "pain"
+      },
+      {
+        "text": "Your *website* is leaking potential clients.",
+        "type": "bold_claim"
+      },
+      {
+        "text": "Why do visitors *leave* without buying?",
+        "type": "question"
+      }
+    ],
+    "style": "cinematic",
+    "plan": {
+      "hook": "macro_pull",
+      "problem": "high_angle",
+      "solution": "phone_focus",
+      "result": "phone_result",
+      "cta": "duo_cta",
+      "bg": "spot",
+      "type": "kinetic",
+      "transition": "zoom",
+      "finish_phone": "black",
+      "finish_laptop": "silver",
+      "theme": "light",
+      "palette": "tangerine"
+    },
+    "ig_id": "17942837514390841",
+    "permalink": "https://www.instagram.com/reel/DfnGCe_EkXu/",
+    "fb_id": "1508845884438451",
+    "fb_link": "https://www.facebook.com/reel/1508845884438451",
+    "status": "posted",
+    "repost": "ok"
   }
 ]
