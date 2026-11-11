@@ -188,5 +188,14 @@
     "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42993611927",
     "status": "error",
     "error": "LLMError: Gemini: cannot list models (HTTP 401) - check the API key"
+  },
+  {
+    "time": "2026-11-11T11:25+02:00",
+    "type": "reel",
+    "mode": "scheduled",
+    "slot": "reel@2026-11-11T10:00:00+02:00",
+    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42995006277",
+    "status": "error",
+    "error": "LLMError: Gemini: cannot list models (HTTP 401) - check the API key"
   }
 ]
