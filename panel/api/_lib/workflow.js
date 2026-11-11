@@ -115,10 +115,13 @@ jobs:
         name: Install video tools
         run: |
           APT="-o Acquire::Retries=2 -o Acquire::http::Timeout=20 -o Acquire::https::Timeout=20 -o DPkg::Lock::Timeout=60"
-          timeout 240 sudo apt-get $APT update -qq || echo "::warning::apt update skipped"
-          timeout 240 sudo apt-get $APT install -y -qq --no-install-recommends ffmpeg || echo "::warning::system ffmpeg skipped, using bundled one"
+          timeout 150 sudo apt-get $APT update -qq || echo "::warning::apt update skipped"
+          timeout 180 sudo apt-get $APT install -y -qq --no-install-recommends ffmpeg || echo "::warning::system ffmpeg skipped, using bundled one"
           cd renderer && npm ci --silent
-          timeout 420 npx playwright install --with-deps chromium || timeout 300 npx playwright install chromium
+          timeout 300 npx playwright install chromium
+          # system libraries only if the browser can't start without them (needs apt, can be slow)
+          node -e "import('playwright').then(p=>p.chromium.launch()).then(b=>b.close())" \\
+            || timeout 420 npx playwright install --with-deps chromium
 
       - if: ${when}
         name: Run
