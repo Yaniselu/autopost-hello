@@ -248,5 +248,44 @@
         "fb_id": "1101100396039581"
       }
     ]
+  },
+  {
+    "time": "2026-11-11T17:16+02:00",
+    "type": "reel",
+    "mode": "scheduled",
+    "slot": "reel@2026-11-11T16:00:00+02:00",
+    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43044041950",
+    "topic": "answering customers in any language automatically",
+    "pillar": "answering customers in any language automatically",
+    "hook": "Lost a sale because of *language*?",
+    "caption": "Your website reaches a global audience, but language barriers stop foreign visitors from buying your services.\n\nWhen someone lands on your page from another country, they want quick answers in their own language. If they have to translate text manually, they simply go to a competitor instead.\n\nAutomating instant multi-language replies keeps global leads engaged and ready to purchase 24/7.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessautomation #leadgeneration #smallbiztips #aiagents #websitedesign",
+    "hook_type": "question",
+    "hook_options": [
+      {
+        "text": "Lost a sale because of *language*?",
+        "type": "question"
+      },
+      {
+        "text": "Foreign visitors leave without *buying* anything.",
+        "type": "statement"
+      },
+      {
+        "text": "Speak every language on *autopilot*.",
+        "type": "bold_claim"
+      }
+    ],
+    "style": "liquid_glass",
+    "voice": "en-US-EmmaMultilingualNeural",
+    "plan": {
+      "style": "liquid_glass",
+      "theme": "light",
+      "palette": "coral"
+    },
+    "ig_id": "18113468702118556",
+    "permalink": "https://www.instagram.com/reel/DfmyOtliYsU/",
+    "fb_id": "1717993509748276",
+    "fb_link": "https://www.facebook.com/reel/1717993509748276",
+    "status": "posted",
+    "repost": "ok"
   }
 ]
