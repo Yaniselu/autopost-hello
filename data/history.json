@@ -582,5 +582,13 @@
     "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43251207759",
     "status": "error",
     "error": "InstagramError: HTTP 400: {'debug_info': {'retriable': False, 'type': 'ProcessingFailedError', 'message': 'Request processing failed'}}"
+  },
+  {
+    "time": "2026-11-12T18:30+02:00",
+    "type": "reel",
+    "mode": "now",
+    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43259213255",
+    "status": "error",
+    "error": "LLMError: text generation failed: Gemini gemini-flash-lite-latest: HTTP 503 This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
   }
 ]
