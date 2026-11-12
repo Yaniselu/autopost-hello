@@ -76,6 +76,18 @@ def pick_model(kind: str, configured: str | None = None) -> str:
     return cands[0]
 
 
+def _backups(*skip) -> list[str]:
+    """Other stable Gemini text models (different capacity pools) for when the main ones are overloaded."""
+    try:
+        models = list_models()
+    except Exception:  # noqa: BLE001
+        return []
+    bad = ("image", "tts", "audio", "live", "embedding", "thinking", "exp", "learnlm", "gemma", "preview", "latest")
+    c = [m for m in models if m.startswith("gemini") and "flash" in m and not any(b in m for b in bad) and m not in skip]
+    c.sort(key=lambda m: (_version(m), "lite" not in m), reverse=True)
+    return c[:3]
+
+
 def _gemini(prompt: str, model: str, temperature: float, as_json: bool, images: list[bytes] | None = None) -> str:
     import base64
     parts = [{"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(b).decode()}} for b in (images or [])]
@@ -134,7 +146,7 @@ def parse_json(raw: str):
 
 
 def generate(prompt: str, cfg: dict, kind: str = "content", as_json: bool = True,
-             validate=None, attempts: int = 6, images: list[bytes] | None = None):
+             validate=None, attempts: int = 8, images: list[bytes] | None = None):
     """Returns parsed JSON (or text). `validate(obj)` may raise to force a retry."""
     llm = cfg.get("llm", {})
     temperature = llm.get("temperature", 0.9) if kind == "content" else 0.6
@@ -144,11 +156,12 @@ def generate(prompt: str, cfg: dict, kind: str = "content", as_json: bool = True
     else:
         main = pick_model(kind, llm.get("gemini_model") if kind == "content" else None)
         other = pick_model("content" if kind == "light" else "light")
-        order = [(_gemini, main), (_gemini, other)]
+        order = [(_gemini, main), (_gemini, other)] + [(_gemini, m) for m in _backups(main, other)]
 
     last = None
-    for i in range(attempts):
-        fn, model = order[0] if (i % 2 == 0 or len(order) == 1) else order[1]
+    busy = 0
+    for i in range(max(attempts, len(order) + 2)):
+        fn, model = order[i % len(order)] if busy else (order[0] if (i % 2 == 0 or len(order) == 1) else order[1])
         try:
             out = fn(prompt, model, temperature, as_json, images)
             obj = parse_json(out) if as_json else out
@@ -162,5 +175,9 @@ def generate(prompt: str, cfg: dict, kind: str = "content", as_json: bool = True
             print(f"[llm] {model} attempt {i + 1} failed: {redact(e)}")
             if status == 404 and fn is _gemini:
                 list_models(refresh=True)
-            time.sleep(min(30, 4 * (i + 1)) if status == 429 else 2)
+            if status in (429, 500, 503):  # overloaded: spread over more models and wait longer
+                busy += 1
+                time.sleep(min(45, 6 * busy))
+            else:
+                time.sleep(2)
     raise LLMError(f"text generation failed: {redact(last)}")
