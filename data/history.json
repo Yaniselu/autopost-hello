@@ -433,5 +433,43 @@
         "fb_id": "1162841289430742"
       }
     ]
+  },
+  {
+    "time": "2026-11-12T10:01+02:00",
+    "type": "reel",
+    "mode": "scheduled",
+    "slot": "reel@2026-11-12T10:00:00+02:00",
+    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43179477845",
+    "topic": "customer support questions an AI can handle for you",
+    "pillar": "customer support questions an AI can handle for you",
+    "hook": "Tired of answering the *same questions* daily?",
+    "caption": "You shouldn't be paying yourself or your team to type \"pricing starts at...\" twelve times every afternoon.\n\nMost routine support inquiries fall into predictable buckets: standard pricing, turnaround times, and delivery updates. When you connect an AI assistant trained on your business data, it resolves up to 80% of these tickets instantly on your website without human intervention.\n\nYour team only steps in when a high-value customer needs custom guidance or personal attention. Everything else runs quietly in the background.\n\nComment DEMO and we'll send you a free demo in DM.\n\nHow many repetitive questions hit your inbox this morning?\n\n#customersupport #businessautomation #workflowautomation #smallbusinessowner #n8n",
+    "hook_type": "pain",
+    "hook_options": [
+      {
+        "text": "Tired of answering the *same questions* daily?",
+        "type": "pain"
+      },
+      {
+        "text": "80% of support questions are *identical*.",
+        "type": "number"
+      },
+      {
+        "text": "Your inbox should not be *copy-paste*.",
+        "type": "bold_claim"
+      }
+    ],
+    "style": "liquid_glass",
+    "plan": {
+      "style": "liquid_glass",
+      "theme": "light",
+      "palette": "cobalt"
+    },
+    "ig_id": "18115637627605999",
+    "permalink": "https://www.instagram.com/reel/DfolOKhkvSB/",
+    "fb_id": "3753226224844741",
+    "fb_link": "https://www.facebook.com/reel/3753226224844741",
+    "status": "posted",
+    "repost": "ok"
   }
 ]
