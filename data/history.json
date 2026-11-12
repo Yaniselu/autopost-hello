@@ -643,5 +643,22 @@
     "fb_error": "InstagramError: HTTP 500: {'debug_info': {'retriable': False, 'type': 'ProcessingFailedError', 'message': '{\"success\":false,\"error\":{\"message\":\"unknown error\"}}'}}",
     "status": "posted",
     "repost": "ok"
+  },
+  {
+    "time": "2026-11-12T19:04+02:00",
+    "type": "carousel",
+    "mode": "scheduled",
+    "slot": "carousel@2026-11-12T19:00:00+02:00",
+    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43265428809",
+    "topic": "turning website visitors into leads and booked demos",
+    "pillar": "turning website visitors into leads and booked demos",
+    "hook": "Turn silent visitors into *booked demos*",
+    "caption": "Traditional contact forms are where hot leads go cold. When interested buyers have to wait hours for a simple reply, they move on to a competitor who responds faster.\n\nConverting site traffic into booked meetings shouldn't require endless back-and-forth emails. An automated assistant answers questions, qualifies prospects, and places meetings straight onto your calendar 24/7.\n\nComment DEMO and we'll send you a free demo in DM. How many potential clients left your site this week because booking a call took too many steps?\n\n#leadgeneration #businessautomation #salesfunnel #aiagents #b2bgrowth",
+    "ig_id": "18154200001547184",
+    "permalink": "https://www.instagram.com/p/DfpjeBrERCn/",
+    "fb_id": "1491182390739007_122100780933546258",
+    "fb_link": "https://www.facebook.com/1491182390739007_122100780933546258",
+    "status": "posted",
+    "repost": "ok"
   }
 ]

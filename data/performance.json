@@ -208,5 +208,26 @@
   "hour": "13:01",
   "time": "2026-11-12T13:01+02:00",
   "permalink": "https://www.instagram.com/p/Dfo6Ak_jRu_/"
+ },
+ "18074963666766792": {
+  "fetched": "2026-11-12T17:04:31.727648+00:00",
+  "metrics": {
+   "views": 7,
+   "reach": 0,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 51.99,
+  "type": "reel",
+  "style": "story",
+  "pillar": "simple n8n automations that save hours every week",
+  "hook_type": "pain",
+  "hook": "Clara spent hours replying to messages every single week.",
+  "hour": "18:54",
+  "time": "2026-11-12T18:54+02:00",
+  "permalink": "https://www.instagram.com/reel/Dfpi1y3k9vJ/"
  }
 }
