@@ -25,31 +25,34 @@ def _check(r: requests.Response) -> dict:
     return data
 
 
-def publish_reel(video: Path, caption: str, cfg: dict) -> tuple[str, str | None]:
+def publish_reel(video: Path, caption: str, cfg: dict, video_url: str | None = None) -> tuple[str, str | None]:
+    """Resumable upload of the file, or (video_url given) let Instagram fetch it from a public URL."""
     ig = cfg["instagram"]
     base = f"https://graph.facebook.com/{ig['graph_version']}"
     user_id, token = env("IG_USER_ID"), env("IG_ACCESS_TOKEN")
 
-    # 1) create an upload container
-    data = _check(requests.post(f"{base}/{user_id}/media", data={
-        "media_type": "REELS",
-        "upload_type": "resumable",
-        "caption": caption,
-        "share_to_feed": "true" if ig.get("share_to_feed", True) else "false",
-        "access_token": token,
-    }, timeout=60))
-    container_id, upload_uri = data["id"], data["uri"]
+    # 1) create a container
+    params = {"media_type": "REELS", "caption": caption, "access_token": token,
+              "share_to_feed": "true" if ig.get("share_to_feed", True) else "false"}
+    if video_url:
+        params["video_url"] = video_url
+    else:
+        params["upload_type"] = "resumable"
+    data = _check(requests.post(f"{base}/{user_id}/media", data=params, timeout=60))
+    container_id = data["id"]
     print(f"[instagram] container {container_id}")
 
     # 2) upload the bytes
-    size = video.stat().st_size
-    with open(video, "rb") as f:
-        _check(requests.post(upload_uri, headers={
+    if not video_url:
+        size = video.stat().st_size
+        data_bytes = video.read_bytes()
+        _check(requests.post(data["uri"], headers={
             "Authorization": f"OAuth {token}",
             "offset": "0",
             "file_size": str(size),
-        }, data=f, timeout=600))
-    print(f"[instagram] uploaded {size / 1e6:.1f} MB")
+            "Content-Type": "application/octet-stream",
+        }, data=data_bytes, timeout=600))
+        print(f"[instagram] uploaded {size / 1e6:.1f} MB")
 
     # 3) wait until Instagram finishes processing
     for _ in range(60):

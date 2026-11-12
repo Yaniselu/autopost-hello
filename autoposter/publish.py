@@ -102,9 +102,41 @@ def _ig_publish(cfg, container_id, token):
 
 
 # ====================================================================== Instagram
+def safe_encode(video: Path) -> Path:
+    """Conservative re-encode (constant 30 fps, H.264 high@4.1, AAC 44.1 kHz stereo) - what Instagram never rejects."""
+    import subprocess
+    from .ff import FFMPEG
+    out = video.with_name(video.stem + "-safe.mp4")
+    subprocess.run([FFMPEG, "-y", "-v", "error", "-i", str(video), "-r", "30", "-vsync", "cfr", "-c:v", "libx264",
+                    "-profile:v", "high", "-level", "4.1", "-pix_fmt", "yuv420p", "-preset", "medium", "-crf", "21",
+                    "-maxrate", "8M", "-bufsize", "16M", "-c:a", "aac", "-ar", "44100", "-ac", "2", "-b:a", "160k",
+                    "-movflags", "+faststart", str(out)], check=True)
+    return out
+
+
 def ig_reel(video: Path, caption: str, cfg: dict) -> dict:
-    media_id, link = publish_reel(video, caption, cfg)
-    return {"ig_id": media_id, "permalink": link}
+    """Upload with automatic fallbacks: resumable -> safe re-encode -> Instagram fetches it from a public URL."""
+    from .llm import redact
+    try:
+        media_id, link = publish_reel(video, caption, cfg)
+        return {"ig_id": media_id, "permalink": link}
+    except InstagramError as e:
+        if "oauth" in str(e).lower() or "permission" in str(e).lower():
+            raise
+        print(f"[instagram] upload failed ({redact(e)[:160]}) -> retrying with a safe re-encode")
+    safe = safe_encode(video)
+    time.sleep(5)
+    try:
+        media_id, link = publish_reel(safe, caption, cfg)
+        return {"ig_id": media_id, "permalink": link, "ig_note": "posted after safe re-encode"}
+    except InstagramError as e:
+        print(f"[instagram] resumable upload failed again ({redact(e)[:160]}) -> letting Instagram fetch it from a URL")
+    url = blob_upload(safe, "media")
+    try:
+        media_id, link = publish_reel(safe, caption, cfg, video_url=url)
+        return {"ig_id": media_id, "permalink": link, "ig_note": "posted via URL upload"}
+    finally:
+        blob_delete([url])
 
 
 def ig_carousel(image_urls: list[str], caption: str, cfg: dict) -> dict:
