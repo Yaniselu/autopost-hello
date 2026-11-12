@@ -47,27 +47,32 @@ def _reel_as_slides(post: dict) -> dict:
     return p
 
 
-STYLE_CYCLE = ["story", "cinematic", "story", "liquid_glass", "story"]  # story = animated cartoon story (main)
 STYLES = ["story", "cinematic", "liquid_glass"]
+# how many of every 5 reels are animated stories (setting video.story_share)
+CYCLES = {"all": ["story"] * 5,
+          "most": ["story", "cinematic", "story", "liquid_glass", "story"],
+          "some": ["cinematic", "story", "liquid_glass", "story", "cinematic"],
+          "none": ["cinematic", "liquid_glass"]}
 
 
 def pick_style(cfg: dict, history: list) -> str:
-    """'rotate' mixes the looks through the day: 3 of 5 reels are animated stories, the others alternate
-    cinematic 3D and liquid glass. A style that clearly wins on results gets more slots."""
+    """'rotate' mixes the looks through the day (by default 3 of 5 reels are animated stories, the others
+    alternate cinematic 3D and liquid glass). Manual 'post now' runs use a story. A style that clearly
+    wins on results gets more slots."""
     style = cfg["video"].get("style", "cinematic")
     if style != "rotate":
         return style
+    cycle = CYCLES.get(cfg["video"].get("story_share", "most"), CYCLES["most"])
     slot, times = cfg.get("_slot") or "", sorted(cfg["schedule"].get("times") or [])
     hhmm = slot.split("T")[1][:5] if "T" in slot else ""
+    if not hhmm:
+        return "story" if "story" in cycle else cycle[0]
     from .learning import style_bias
     winner = style_bias()
-    if hhmm in times:
-        idx = times.index(hhmm)
-    else:
-        idx = sum(1 for h in history if h.get("type", "reel") == "reel" and h.get("status") == "posted")
-    if winner in STYLES and winner != "story":  # the clear winner gets 2 of every 3 slots
+    idx = times.index(hhmm) if hhmm in times else 0
+    if winner in STYLES and winner in cycle and winner != "story" and "story" in cycle:
         return winner if idx % 3 != 2 else "story"
-    return STYLE_CYCLE[idx % len(STYLE_CYCLE)]
+    return cycle[idx % len(cycle)]
 
 
 def render_reel(post: dict, cfg: dict, out: Path, work: Path, seed: int, previous_plan: dict | None = None,

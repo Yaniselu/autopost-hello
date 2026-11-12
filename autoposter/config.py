@@ -50,6 +50,8 @@ def load_config() -> dict:
     cfg["post_to_facebook"] = bool(s.get("post_to_facebook", True))
     cfg["repost_to_story"] = bool(s.get("repost_to_story", True))
     cfg["voice"] = s.get("voice") or {"enabled": True}
+    cfg.setdefault("audio", {}).update({k: v for k, v in (s.get("audio") or {}).items() if v is not None})
+    cfg["story"] = s.get("story") or {}
     cfg["dm"] = s.get("dm") or {}
     cfg["learning"] = s.get("learning") or {"enabled": True}
     cfg["stories_per_slot"] = int(s.get("stories_per_slot", 1) or 1)

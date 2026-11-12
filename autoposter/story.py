@@ -38,6 +38,7 @@ It works like the best explainer reels: a tiny story the viewer can't stop watch
 has a problem that gets worse beat by beat, then {name} fixes it, then a happy ending.
 
 Pick a business that fits the topic: one of "salon" | "cafe" | "clinic" | "restaurant" | "store" | "gym".
+{business_rule}
 Give it a short friendly name (max 14 characters, e.g. "Mia's Salon") and 3 services with prices.
 
 beats: 7 to 9 items {{"scene": one of the scenes below, "line": what the narrator says, max 12 words}}.
@@ -106,6 +107,14 @@ def generate_story(cfg: dict, history: list) -> dict:
     from .content import BRAND, _ctx, _need
     from .llm import generate
     ctx = _ctx(cfg, history, "reel")
+    allowed = [b for b in ((cfg.get("story") or {}).get("businesses") or BUSINESSES) if b in BUSINESSES] or BUSINESSES
+    recent = [(h.get("plan") or {}).get("business") for h in history if (h.get("plan") or {}).get("business")][-4:]
+    fresh = [b for b in allowed if b not in recent] or allowed
+    rnd = random.Random()
+    suggest = rnd.choice(fresh)
+    ctx["business_rule"] = (f'Use the business type "{suggest}" unless it really does not fit the topic; then pick another from '
+                            f'{json.dumps(fresh)}. Never reuse these recent ones: {json.dumps(recent) if recent else "none"}. '
+                            "Invent a new owner name and business name each time.")
 
     def check(o):
         _need(o, "topic", "beats", "caption", "hashtags")
@@ -121,7 +130,7 @@ def generate_story(cfg: dict, history: list) -> dict:
             o["beats"][0]["line"] = str(pick.get("spoken") or pick["text"])
             o["hook_type"], o["hook_options"] = pick.get("type", ""), [{"text": h["text"], "type": h.get("type")} for h in hooks]
         o["hook"] = o["beats"][0]["line"]
-        o["business"] = o.get("business") if o.get("business") in BUSINESSES else "salon"
+        o["business"] = o.get("business") if o.get("business") in allowed else suggest
         o["business_name"] = str(o.get("business_name") or "Mia's Shop")[:16]
         sv = [s for s in (o.get("services") or []) if isinstance(s, (list, tuple)) and len(s) >= 2]
         o["services"] = [[str(a)[:11], str(b)[:6]] for a, b, *_ in sv][:3]
@@ -155,7 +164,8 @@ def make_story_voice(post: dict, cfg: dict, seed: int, work: Path, history: list
         from .voice import VOICES, _decode, _synth
     except ImportError:
         return None
-    voices = (cfg.get("voice") or {}).get("voices") or VOICES
+    vc = cfg.get("voice") or {}
+    voices = [vc["voice"]] if vc.get("voice") in VOICES else (vc.get("voices") or VOICES)
     last = next((h.get("voice") for h in reversed(history or []) if h.get("voice")), None)
     voice = random.Random(seed).choice([v for v in voices if v != last] or voices)
     rate = (cfg.get("voice") or {}).get("rate", "+6%")
