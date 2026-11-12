@@ -50,7 +50,7 @@ const DEFAULT_SETTINGS = {
 const VOICES = ["auto", "en-US-AndrewMultilingualNeural", "en-US-AvaMultilingualNeural", "en-US-BrianMultilingualNeural", "en-US-EmmaMultilingualNeural"];
 const BUSINESSES = ["salon", "cafe", "clinic", "restaurant", "store", "gym"];
 const PALETTES = ["random", "aurora", "sunset", "ocean", "neon", "mint", "cobalt", "tangerine", "emerald", "violet", "coral"];
-const SECRET_NAMES = ["GEMINI_API_KEY", "IG_USER_ID", "IG_ACCESS_TOKEN", "FB_PAGE_ID", "BLOB_READ_WRITE_TOKEN", "PEXELS_API_KEY"];
+const SECRET_NAMES = ["GEMINI_API_KEY", "IG_USER_ID", "IG_ACCESS_TOKEN", "FB_PAGE_ID", "BLOB_READ_WRITE_TOKEN", "PEXELS_API_KEY", "GROQ_API_KEY"];
 const KINDS = ["reel", "carousel", "story", "comments"];
 
 class UserError extends Error {}
@@ -390,6 +390,14 @@ const routes = {
     const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${encodeURIComponent(key)}`);
     if (!r.ok) throw new UserError(`Cheia Gemini nu funcționează (${r.status}). Verifică dacă ai copiat-o complet.`);
     await gh.setSecret("GEMINI_API_KEY", key);
+    return { ok: true };
+  },
+  async groq(req) {
+    const key = str((req.body || {}).key, 200);
+    if (!key) throw new UserError("Lipește cheia Groq.");
+    const r = await fetch("https://api.groq.com/openai/v1/models", { headers: { Authorization: `Bearer ${key}` } });
+    if (!r.ok) throw new UserError(`Cheia Groq nu funcționează (${r.status}). Verifică dacă ai copiat-o complet.`);
+    await gh.setSecret("GROQ_API_KEY", key);
     return { ok: true };
   },
   async pexels(req) {

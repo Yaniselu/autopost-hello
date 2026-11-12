@@ -157,11 +157,16 @@ def generate(prompt: str, cfg: dict, kind: str = "content", as_json: bool = True
         main = pick_model(kind, llm.get("gemini_model") if kind == "content" else None)
         other = pick_model("content" if kind == "light" else "light")
         order = [(_gemini, main), (_gemini, other)] + [(_gemini, m) for m in _backups(main, other)]
+        if os.environ.get("GROQ_API_KEY") and not images:  # free backup provider when Gemini is overloaded
+            order.append((_groq, llm.get("groq_model", "llama-3.3-70b-versatile")))
 
     last = None
     busy = 0
     for i in range(max(attempts, len(order) + 2)):
-        fn, model = order[i % len(order)] if busy else (order[0] if (i % 2 == 0 or len(order) == 1) else order[1])
+        if busy >= 2 and order[-1][0] is _groq and i % 2 == 1:
+            fn, model = order[-1]
+        else:
+            fn, model = order[i % len(order)] if busy else (order[0] if (i % 2 == 0 or len(order) == 1) else order[1])
         try:
             out = fn(prompt, model, temperature, as_json, images)
             obj = parse_json(out) if as_json else out

@@ -156,6 +156,12 @@ a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
       </div>
       <p class="sub" style="margin:6px 0 0">Gratuită: <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a></p>
 
+      <label>Cheie de rezervă Groq (opțional) <span id="groqState"></span></label>
+      <div class="row" style="flex-wrap:nowrap">
+        <input type="password" id="groqKey" placeholder="gsk_…">
+        <button class="small" id="groqSave">Salvează</button>
+      </div>
+      <p class="sub" style="margin:6px 0 0">Gratuită: <a href="https://console.groq.com/keys" target="_blank" rel="noopener">console.groq.com/keys</a>. Dacă Gemini e supraîncărcat, textele se scriu cu Groq, ca postarea să nu se piardă.</p>
       <div style="height:10px"></div>
       <label>Instagram <span id="igState"></span></label>
       <div class="two">
@@ -419,6 +425,7 @@ function render() {
   $("geminiState").textContent = hasGemini ? "· ✓ salvată" : "· lipsește";
   $("igState").textContent = hasIg ? `· ✓ conectat${s && s.instagram_username ? " ca @" + s.instagram_username : ""}${sec.has("FB_PAGE_ID") && s.facebook_page ? " + Facebook: " + s.facebook_page : ""}` : "· neconectat";
   $("pexelsState").textContent = sec.has("PEXELS_API_KEY") ? "· ✓ salvată" : "· lipsește";
+  $("groqState").textContent = sec.has("GROQ_API_KEY") ? "· ✓ salvată" : "· nesetată";
 
   // ----- control
   if (s) {
@@ -625,6 +632,9 @@ $("postNow").onclick = (e) => runMode("now", e.currentTarget);
 $("testVideo").onclick = (e) => runMode("test", e.currentTarget);
 $("pauseBtn").onclick = (e) => withBtn(e.currentTarget, async () => {
   const r = await api("pause", { paused: !S.settings.paused }); toast(r.paused ? "⏸ Pus pe pauză" : "▶ Pornit"); await load(true);
+});
+$("groqSave").onclick = (e) => withBtn(e.currentTarget, async () => {
+  await api("groq", { key: $("groqKey").value }); $("groqKey").value = ""; toast("✓ Cheia Groq funcționează și e salvată"); await load(true);
 });
 $("geminiSave").onclick = (e) => withBtn(e.currentTarget, async () => {
   await api("gemini", { key: $("geminiKey").value }); $("geminiKey").value = ""; toast("✓ Cheia Gemini funcționează și e salvată"); await load(true);
