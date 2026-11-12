@@ -606,5 +606,42 @@
     "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43261068083",
     "status": "error",
     "error": "InstagramError: HTTP 400: {'debug_info': {'retriable': False, 'type': 'ProcessingFailedError', 'message': 'Request processing failed'}}"
+  },
+  {
+    "time": "2026-11-12T18:54+02:00",
+    "type": "reel",
+    "mode": "now",
+    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43263441125",
+    "topic": "simple n8n automations that save hours every week",
+    "pillar": "simple n8n automations that save hours every week",
+    "hook": "Clara spent hours replying to messages every single week.",
+    "caption": "Every hour spent answering routine questions is an hour taken away from serving clients or growing your business.\n\nWhen potential clients reach out after hours, slow responses mean lost revenue. Automating FAQ responses and appointment bookings keeps your schedule full around the clock without extra staff.\n\nSimple workflows built on n8n handle the busywork so your team can focus on what actually drives profit.\n\nComment DEMO and we'll send you a free demo in DM.\n\nHow many hours does your team spend on repetitive messages each week?\n\n#businessautomation #n8n #salonowner #aiassistant #leadgeneration",
+    "hook_type": "pain",
+    "hook_options": [
+      {
+        "text": "Clara spent hours replying to messages every single week.",
+        "type": "pain"
+      },
+      {
+        "text": "How this salon saved 15 hours of admin work.",
+        "type": "number"
+      },
+      {
+        "text": "Stop losing haircut bookings after doors close at night.",
+        "type": "bold_claim"
+      }
+    ],
+    "style": "story",
+    "plan": {
+      "style": "story",
+      "theme": "light",
+      "palette": "cobalt",
+      "business": "salon"
+    },
+    "ig_id": "18074963666766792",
+    "permalink": "https://www.instagram.com/reel/Dfpi1y3k9vJ/",
+    "fb_error": "InstagramError: HTTP 500: {'debug_info': {'retriable': False, 'type': 'ProcessingFailedError', 'message': '{\"success\":false,\"error\":{\"message\":\"unknown error\"}}'}}",
+    "status": "posted",
+    "repost": "ok"
   }
 ]
