@@ -677,5 +677,45 @@
         "fb_id": "1575827211065122"
       }
     ]
+  },
+  {
+    "time": "2026-11-12T20:01+02:00",
+    "type": "reel",
+    "mode": "scheduled",
+    "slot": "reel@2026-11-12T20:00:00+02:00",
+    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43275358373",
+    "topic": "turning website visitors into leads and booked demos",
+    "pillar": "turning website visitors into leads and booked demos",
+    "hook": "Nico lost dozens of table bookings every single night.",
+    "caption": "Most website visitors leave if they do not get an immediate answer. When interested buyers land on your site during peak hours or late at night, a delayed reply costs you paying customers.\n\nStop letting warm leads go cold. An automated website assistant responds instantly, answers routine questions, and books appointments 24/7 directly into your schedule.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessautomation #leadgeneration #aiagency #n8n #customerengagement",
+    "hook_type": "pain",
+    "hook_options": [
+      {
+        "text": "Nico lost dozens of table bookings every single night.",
+        "type": "pain"
+      },
+      {
+        "text": "Is your website turning away hungry customers after hours?",
+        "type": "question"
+      },
+      {
+        "text": "How one restaurant booked 30 more tables every week.",
+        "type": "number"
+      }
+    ],
+    "style": "story",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "plan": {
+      "style": "story",
+      "theme": "light",
+      "palette": "cobalt",
+      "business": "restaurant"
+    },
+    "ig_id": "17980281342130630",
+    "permalink": "https://www.instagram.com/reel/DfprEUKFW7H/",
+    "fb_id": "1791542822064080",
+    "fb_link": "https://www.facebook.com/reel/1791542822064080",
+    "status": "posted",
+    "repost": "ok"
   }
 ]

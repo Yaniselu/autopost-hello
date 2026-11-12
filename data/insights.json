@@ -1,24 +1,24 @@
 {
- "updated": "2026-11-12T17:31+00:00",
+ "updated": "2026-11-12T18:01+00:00",
  "posts_measured": 12,
  "basic_only": false,
  "by_type": {
   "reel": {
-   "avg": 136.1,
+   "avg": 137.9,
    "n": 8
   },
   "carousel": {
-   "avg": 133.3,
+   "avg": 135.0,
    "n": 4
   }
  },
  "by_style": {
   "cinematic": {
-   "avg": 138.8,
+   "avg": 141.1,
    "n": 4
   },
   "liquid_glass": {
-   "avg": 145.9,
+   "avg": 148.4,
    "n": 2
   },
   "story": {
@@ -28,23 +28,23 @@
  },
  "by_pillar": {
   "an AI assistant answering website visitors 24/7 (before vs after)": {
-   "avg": 189.4,
+   "avg": 190.4,
    "n": 1
   },
   "losing customers because nobody replies fast enough": {
-   "avg": 180.4,
+   "avg": 182.4,
    "n": 1
   },
   "turning website visitors into leads and booked demos": {
-   "avg": 123.3,
+   "avg": 126.0,
    "n": 3
   },
   "answering customers in any language automatically": {
-   "avg": 197.7,
+   "avg": 202.8,
    "n": 1
   },
   "simple n8n automations that save hours every week": {
-   "avg": 110.7,
+   "avg": 112.6,
    "n": 3
   },
   "customer support questions an AI can handle for you": {
@@ -58,15 +58,15 @@
  },
  "by_hook_type": {
   "pain": {
-   "avg": 114.5,
+   "avg": 115.0,
    "n": 4
   },
   "question": {
-   "avg": 197.7,
+   "avg": 202.8,
    "n": 1
   },
   "bold_claim": {
-   "avg": 124.9,
+   "avg": 131.8,
    "n": 1
   },
   "myth": {
@@ -76,27 +76,27 @@
  },
  "by_hour": {
   "21:12": {
-   "avg": 189.4,
+   "avg": 190.4,
    "n": 1
   },
   "10:13": {
-   "avg": 180.4,
+   "avg": 182.4,
    "n": 1
   },
   "13:23": {
-   "avg": 152.5,
+   "avg": 153.5,
    "n": 1
   },
   "17:16": {
-   "avg": 197.7,
+   "avg": 202.8,
    "n": 1
   },
   "19:02": {
-   "avg": 148.6,
+   "avg": 154.3,
    "n": 1
   },
   "20:01": {
-   "avg": 124.9,
+   "avg": 131.8,
    "n": 1
   },
   "08:01": {
@@ -129,75 +129,75 @@
    "hook": "Lost a sale because of *language*?",
    "type": "reel",
    "style": "liquid_glass",
-   "score": 197.74,
+   "score": 202.83,
    "permalink": "https://www.instagram.com/reel/DfmyOtliYsU/",
    "metrics": {
-    "views": 698,
-    "reach": 474,
-    "likes": 10,
+    "views": 790,
+    "reach": 539,
+    "likes": 12,
     "comments": 4,
     "saved": 0,
     "shares": 2,
-    "total_interactions": 18
+    "total_interactions": 20
    }
   },
   {
    "hook": "Your website is silent when customers buy.",
    "type": "reel",
    "style": null,
-   "score": 189.38,
+   "score": 190.42,
    "permalink": "https://www.instagram.com/reel/DfiF0VNil9U/",
    "metrics": {
-    "views": 563,
+    "views": 564,
     "reach": 366,
-    "likes": 7,
+    "likes": 8,
     "comments": 2,
     "saved": 0,
     "shares": 3,
-    "total_interactions": 15
+    "total_interactions": 16
    }
   },
   {
    "hook": "Slow *replies* cost you paying customers.",
    "type": "reel",
    "style": "cinematic",
-   "score": 180.38,
+   "score": 182.42,
    "permalink": "https://www.instagram.com/reel/DfmDVonDBBh/",
    "metrics": {
-    "views": 586,
-    "reach": 404,
-    "likes": 9,
+    "views": 611,
+    "reach": 419,
+    "likes": 10,
     "comments": 0,
     "saved": 0,
     "shares": 2,
-    "total_interactions": 14
-   }
-  },
-  {
-   "hook": "Turn website *visitors* into booked clients.",
-   "type": "carousel",
-   "style": null,
-   "score": 152.52,
-   "permalink": "https://www.instagram.com/p/DfmXkKgGDEa/",
-   "metrics": {
-    "views": 350,
-    "reach": 69,
-    "likes": 6,
-    "comments": 0,
-    "saved": 0,
-    "shares": 0,
-    "total_interactions": 8
+    "total_interactions": 15
    }
   },
   {
    "hook": "Stop doing *manual* copy-paste work.",
    "type": "carousel",
    "style": null,
-   "score": 148.59,
+   "score": 154.28,
    "permalink": "https://www.instagram.com/p/Dfm-jw5F_Gg/",
    "metrics": {
-    "views": 299,
-    "reach": 60,
+    "views": 333,
+    "reach": 69,
+    "likes": 9,
+    "comments": 0,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 11
+   }
+  },
+  {
+   "hook": "Turn website *visitors* into booked clients.",
+   "type": "carousel",
+   "style": null,
+   "score": 153.5,
+   "permalink": "https://www.instagram.com/p/DfmXkKgGDEa/",
+   "metrics": {
+    "views": 364,
+    "reach": 70,
     "likes": 6,
     "comments": 0,
     "saved": 0,
