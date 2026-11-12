@@ -173,7 +173,7 @@ def make_story_voice(post: dict, cfg: dict, seed: int, work: Path, history: list
     try:
         for i, b in enumerate(post["beats"]):
             mp3 = work / f"vo-beat{i}.mp3"
-            words = asyncio.run(_synth(_clean(b["line"]), voice, mp3, rate))
+            words = asyncio.run(_synth(b["line"], voice, mp3, rate))
             audio = _decode(mp3)
             if len(audio) < SR * 0.25:
                 raise RuntimeError("empty audio")

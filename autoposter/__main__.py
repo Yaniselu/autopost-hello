@@ -270,7 +270,8 @@ def _retryable(err: str) -> bool:
     e = err.lower()
     return any(x in e for x in ("oauth", "reconecteaz", "http 5", "timeout", "timed out", "connection", "429",
                                 "rate limit", "temporarily", "text generation failed", "please retry",
-                                "api key", "http 401"))
+                                "api key", "http 401", "processingfailed", "request processing failed",
+                                "unknown error", "high demand"))
 
 
 def run_cloud(cfg: dict, kind: str, mode: str, slot: str) -> None:

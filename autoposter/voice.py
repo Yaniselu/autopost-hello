@@ -37,7 +37,19 @@ def lines_for(post: dict, cfg: dict) -> dict:
     }
 
 
-async def _synth(text: str, voice: str, mp3: Path, rate: str) -> list:
+def speakable(text: str) -> str:
+    """Only what a TTS voice can read: no emojis/symbols, plain quotes, no markdown."""
+    import re
+    import unicodedata
+    t = str(text or "").replace("*", "").replace("\u2019", "'").replace("\u2018", "'").replace("\u201c", '"').replace("\u201d", '"')
+    t = t.replace("\u2014", ", ").replace("\u2013", ", ").replace("&", " and ").replace("%", " percent").replace("/", " or ")
+    t = "".join(ch for ch in t if unicodedata.category(ch)[0] in "LNPZ" or ch in "$'")
+    t = re.sub(r"\s+", " ", t).strip()
+    t = re.sub(r"\s+([,.!?])", r"\1", t).strip(" ,")
+    return t if re.search(r"[A-Za-z0-9]", t) else ""
+
+
+async def _synth_once(text: str, voice: str, mp3: Path, rate: str) -> list:
     import edge_tts
     words = []
     try:
@@ -51,6 +63,24 @@ async def _synth(text: str, voice: str, mp3: Path, rate: str) -> list:
             elif ch["type"] == "WordBoundary":
                 words.append((ch["offset"] / 1e7, (ch["offset"] + ch["duration"]) / 1e7, ch["text"]))
     return words
+
+
+async def _synth(text: str, voice: str, mp3: Path, rate: str) -> list:
+    """Retries (the free service sometimes drops a request) and falls back to the other voices."""
+    import time as _t
+    text = speakable(text) or "Here's how."
+    tries = [voice, voice] + [v for v in VOICES if v != voice][:2]
+    last = None
+    for k, v in enumerate(tries):
+        try:
+            words = await _synth_once(text, v, mp3, rate if k < 2 else "+0%")
+            if mp3.exists() and mp3.stat().st_size > 2000:
+                return words
+            last = RuntimeError("empty audio")
+        except Exception as e:  # noqa: BLE001
+            last = e
+        _t.sleep(1.5 * (k + 1))
+    raise last
 
 
 def _decode(mp3: Path) -> np.ndarray:

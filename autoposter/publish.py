@@ -169,14 +169,24 @@ def fb_enabled(cfg: dict) -> bool:
 
 
 def fb_reel(video: Path, caption: str, cfg: dict) -> dict:
+    """Facebook's upload server sometimes answers 500 'unknown error': retry, then with a safe re-encode."""
+    try:
+        return _fb_reel(video, caption, cfg)
+    except InstagramError as e:
+        print(f"[facebook] reel upload failed ({redact(e)[:120]}) -> retrying")
+    time.sleep(8)
+    safe = video.with_name(video.stem + "-safe.mp4")
+    return _fb_reel(safe if safe.exists() else safe_encode(video), caption, cfg)
+
+
+def _fb_reel(video: Path, caption: str, cfg: dict) -> dict:
     page, token = env("FB_PAGE_ID"), env("IG_ACCESS_TOKEN")
     start = _check(requests.post(f"{_base(cfg)}/{page}/video_reels", data={
         "upload_phase": "start", "access_token": token}, timeout=60))
     vid, upload_url = start["video_id"], start["upload_url"]
     size = video.stat().st_size
-    with open(video, "rb") as f:
-        _check(requests.post(upload_url, data=f, timeout=600, headers={
-            "Authorization": f"OAuth {token}", "offset": "0", "file_size": str(size)}))
+    _check(requests.post(upload_url, data=video.read_bytes(), timeout=600, headers={
+        "Authorization": f"OAuth {token}", "offset": "0", "file_size": str(size), "Content-Type": "application/octet-stream"}))
     _check(requests.post(f"{_base(cfg)}/{page}/video_reels", data={
         "upload_phase": "finish", "video_id": vid, "video_state": "PUBLISHED",
         "description": caption, "access_token": token}, timeout=120))
