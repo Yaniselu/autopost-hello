@@ -471,5 +471,53 @@
     "fb_link": "https://www.facebook.com/reel/3753226224844741",
     "status": "posted",
     "repost": "ok"
+  },
+  {
+    "time": "2026-11-12T10:31+02:00",
+    "type": "reel",
+    "mode": "scheduled",
+    "slot": "reel@2026-11-12T10:30:00+02:00",
+    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43183495286",
+    "topic": "myths vs facts about AI chatbots for small businesses",
+    "pillar": "myths vs facts about AI chatbots for small businesses",
+    "hook": "AI assistants are *too complex* to set up.",
+    "caption": "Most business owners think AI assistants require a dedicated tech team and months of frustrating setup. That is an expensive myth.\n\nModern automated workflows connect directly to your existing website content in minutes. They read your actual pages, learn your exact offers, and reply accurately to visitors around the clock.\n\nSkip the guesswork and let smart systems handle the repetitive questions while you focus on closing deals.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#automation #businessgrowth #nocode #smallbiz #efficiency",
+    "hook_type": "myth",
+    "hook_options": [
+      {
+        "text": "Are *chatbots* just expensive toys?",
+        "type": "question"
+      },
+      {
+        "text": "AI assistants are *too complex* to set up.",
+        "type": "myth"
+      },
+      {
+        "text": "Bots *destroy* your customer trust.",
+        "type": "bold_claim"
+      }
+    ],
+    "style": "cinematic",
+    "voice": "en-US-AvaMultilingualNeural",
+    "plan": {
+      "hook": "macro_pull",
+      "problem": "screen_push",
+      "solution": "side_track",
+      "result": "low_hero",
+      "cta": "phone_spin",
+      "bg": "bokeh",
+      "type": "typewriter",
+      "transition": "flash",
+      "finish_phone": "blue",
+      "finish_laptop": "silver",
+      "theme": "light",
+      "palette": "coral"
+    },
+    "ig_id": "18146423287612901",
+    "permalink": "https://www.instagram.com/reel/Dfop8KgADR6/",
+    "fb_id": "1400786472134916",
+    "fb_link": "https://www.facebook.com/reel/1400786472134916",
+    "status": "posted",
+    "repost": "ok"
   }
 ]

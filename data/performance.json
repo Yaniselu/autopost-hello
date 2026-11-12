@@ -145,5 +145,26 @@
   "hour": "08:01",
   "time": "2026-11-12T08:01+02:00",
   "permalink": "https://www.instagram.com/reel/DfoYn1TjlX0/"
+ },
+ "18115637627605999": {
+  "fetched": "2026-11-12T08:31:37.670186+00:00",
+  "metrics": {
+   "views": 42,
+   "reach": 13,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 1
+  },
+  "score": 94.03,
+  "type": "reel",
+  "style": "liquid_glass",
+  "pillar": "customer support questions an AI can handle for you",
+  "hook_type": "pain",
+  "hook": "Tired of answering the *same questions* daily?",
+  "hour": "10:01",
+  "time": "2026-11-12T10:01+02:00",
+  "permalink": "https://www.instagram.com/reel/DfolOKhkvSB/"
  }
 }
