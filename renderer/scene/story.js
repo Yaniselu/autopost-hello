@@ -148,8 +148,8 @@ function buildShop(S) {
   closedSign.scale.set(0.7, 0.35, 1); closedSign.position.set(-0.9, FLOOR + 1.6, 0.25); closedSign.visible = false; g.add(closedSign);
   // awning
   const aw = canvasTex(512, 64, (x) => { for (let i = 0; i < 16; i++) { x.fillStyle = i % 2 ? "#ffffff" : hex(ACC); x.fillRect(i * 32, 0, 32, 64); } });
-  const awning = add(g, new THREE.PlaneGeometry(w + 0.2, 0.62), mat(0xffffff, { map: aw }), 0, FLOOR + h - 0.66, 0.36, true);
-  awning.rotation.x = -1.05; awning.material.side = THREE.DoubleSide;
+  const awning = add(g, new THREE.PlaneGeometry(w + 0.2, 0.42), mat(0xffffff, { map: aw }), 0, FLOOR + h - 0.56, 0.3, true);
+  awning.rotation.x = -1.2; awning.material.side = THREE.DoubleSide;
   // back wall: clock, board, lamps, plants
   const clock = new THREE.Group(); clock.position.set(-0.15, FLOOR + 1.95, -d + 0.1); g.add(clock); props.push(clock);
   add(clock, cyl(0.24, 0.24, 0.06, 32), mat(0x2c2c30), 0, 0, 0).rotation.x = Math.PI / 2;
@@ -298,8 +298,8 @@ function buildNeighbours() {
     for (let r = 0; r < 5; r++) for (let k = 0; k < 3; k++) { x.fillStyle = "#cfe6f2"; x.fillRect(30 + k * 75, 40 + r * 95, 48, 60); x.fillStyle = "rgba(255,255,255,.5)"; x.fillRect(30 + k * 75, 40 + r * 95, 48, 8); } });
   const bld = (x, w, h, c, z = -1.3) => add(scene, box(w, h, 2.4, 0.04), mat(0xffffff, { map: win(c) }), x, h / 2, z - 1.2);
   bld(-4.75, 4.8, 4.4, "#e8cfa9"); bld(11.9, 4.4, 5.2, "#cfdfe9"); bld(-9.8, 5, 6.4, "#e9d7e4"); bld(16.6, 5, 4.2, "#dfe9cf");
-  const far = ["#cfdbe6", "#d9e3ec", "#c8d6e2", "#e1e8ef"];
-  for (let i = 0; i < 18; i++) { const fh = 5 + R() * 9; add(scene, box(2 + R() * 2.5, fh, 2, 0.02), mat(far[i % 4], { r: 1 }), -22 + i * 2.8 + R(), fh / 2, -12 - R() * 6, false); }
+  const far = ["#bcd8ee", "#cfe4f3", "#f0dcc8", "#d5e9d8", "#e9d5e6"];
+  for (let i = 0; i < 18; i++) { const fh = 3.5 + R() * 6; add(scene, box(2 + R() * 2.5, fh, 2, 0.02), mat(0xffffff, { map: win(far[i % 5]), r: 1 }), -22 + i * 2.8 + R(), fh / 2, -12 - R() * 6, false); }
   for (const x of [3.9, -7.3, 10.6, 14.2]) tree(x, 0.32);
   for (const x of [-2.9, 5.7]) lamp(x);
 }
@@ -454,7 +454,7 @@ const ENTRY = [[3.0, 0.4, WALK], [1.75, 0.35, WALK], [1.55, -0.25, FLOOR]];
 // ------------------------------------------------------------------ camera
 const SHOTS = {
   wide: { p: [0, 2.2, 13.2], l: [0, 1.9, 0], push: 1.4 },
-  shop: { p: [0, 1.6, 8.3], l: [0, 1.2, -1.0], push: 0.8 },
+  shop: { p: [0, 1.5, 8.3], l: [0, 1.4, -1.0], push: 0.8 },
   station: { p: [0.9, 1.35, 5.6], l: [0.9, 1.05, -1.3], push: 0.6 },
   couch: { p: [-1.05, 1.25, 4.8], l: [-1.05, 0.95, -1.4], push: 0.6 },
   home: { p: [HOME_X, 1.5, 6.6], l: [HOME_X, 1.2, -0.9], push: 0.7 },
