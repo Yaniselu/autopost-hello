@@ -166,5 +166,26 @@
   "hour": "10:01",
   "time": "2026-11-12T10:01+02:00",
   "permalink": "https://www.instagram.com/reel/DfolOKhkvSB/"
+ },
+ "18146423287612901": {
+  "fetched": "2026-11-12T11:01:25.450222+00:00",
+  "metrics": {
+   "views": 109,
+   "reach": 56,
+   "likes": 1,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 2
+  },
+  "score": 118.51,
+  "type": "reel",
+  "style": "cinematic",
+  "pillar": "myths vs facts about AI chatbots for small businesses",
+  "hook_type": "myth",
+  "hook": "AI assistants are *too complex* to set up.",
+  "hour": "10:31",
+  "time": "2026-11-12T10:31+02:00",
+  "permalink": "https://www.instagram.com/reel/Dfop8KgADR6/"
  }
 }
