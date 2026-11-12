@@ -115,28 +115,33 @@ def safe_encode(video: Path) -> Path:
 
 
 def ig_reel(video: Path, caption: str, cfg: dict) -> dict:
-    """Upload with automatic fallbacks: resumable -> safe re-encode -> Instagram fetches it from a public URL."""
-    from .llm import redact
-    try:
-        media_id, link = publish_reel(video, caption, cfg)
-        return {"ig_id": media_id, "permalink": link}
-    except InstagramError as e:
-        if "oauth" in str(e).lower() or "permission" in str(e).lower():
-            raise
-        print(f"[instagram] upload failed ({redact(e)[:160]}) -> retrying with a safe re-encode")
-    safe = safe_encode(video)
-    time.sleep(5)
-    try:
-        media_id, link = publish_reel(safe, caption, cfg)
-        return {"ig_id": media_id, "permalink": link, "ig_note": "posted after safe re-encode"}
-    except InstagramError as e:
-        print(f"[instagram] resumable upload failed again ({redact(e)[:160]}) -> letting Instagram fetch it from a URL")
-    url = blob_upload(safe, "media")
-    try:
-        media_id, link = publish_reel(safe, caption, cfg, video_url=url)
-        return {"ig_id": media_id, "permalink": link, "ig_note": "posted via URL upload"}
-    finally:
-        blob_delete([url])
+    """Instagram fetches the video from a temporary public URL (most reliable); fallbacks: direct
+    resumable upload, then a safe re-encode."""
+    attempts = []
+    if os.environ.get("BLOB_READ_WRITE_TOKEN"):
+        attempts.append(("url", video))
+    attempts += [("resumable", video), ("safe", None)]
+    last = None
+    for how, path in attempts:
+        if how == "safe":
+            path = safe_encode(video)
+        try:
+            if how in ("url",) or (how == "safe" and os.environ.get("BLOB_READ_WRITE_TOKEN")):
+                url = blob_upload(path, "media")
+                try:
+                    media_id, link = publish_reel(path, caption, cfg, video_url=url)
+                finally:
+                    blob_delete([url])
+            else:
+                media_id, link = publish_reel(path, caption, cfg)
+            return {"ig_id": media_id, "permalink": link, **({"ig_note": f"posted via {how}"} if how != "url" else {})}
+        except InstagramError as e:
+            last = e
+            if "oauth" in str(e).lower() or "permission" in str(e).lower():
+                raise
+            print(f"[instagram] {how} upload failed ({redact(e)[:160]}) -> next method")
+            time.sleep(5)
+    raise last
 
 
 def ig_carousel(image_urls: list[str], caption: str, cfg: dict) -> dict:
