@@ -34,7 +34,7 @@ async function openPage(browser, job) {
     if (!p || !fs.existsSync(p)) return route.fulfill({ status: 404, body: "not found" });
     return route.fulfill({ status: 200, contentType: TYPES[path.extname(p)] || "application/octet-stream", body: fs.readFileSync(p) });
   });
-  await page.goto("http://render.local/");
+  await page.goto(job.page ? `http://render.local/scene/${job.page}.html` : "http://render.local/");
   await page.waitForFunction(() => window.__ready === true, null, { timeout: 60000 });
   const tl = await page.evaluate((j) => window.setup(j), job);
   return { page, tl };

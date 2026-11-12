@@ -47,30 +47,40 @@ def _reel_as_slides(post: dict) -> dict:
     return p
 
 
-STYLE_CYCLE = ["cinematic", "liquid_glass"]
+STYLES = ["story", "cinematic", "liquid_glass"]
+# how many of every 5 reels are animated stories (setting video.story_share)
+CYCLES = {"all": ["story"] * 5,
+          "most": ["story", "cinematic", "story", "liquid_glass", "story"],
+          "some": ["cinematic", "story", "liquid_glass", "story", "cinematic"],
+          "none": ["cinematic", "liquid_glass"]}
 
 
 def pick_style(cfg: dict, history: list) -> str:
-    """'rotate' alternates the looks through the day: 1st, 3rd... reel cinematic 3D, 2nd, 4th... liquid glass."""
+    """'rotate' mixes the looks through the day (by default 3 of 5 reels are animated stories, the others
+    alternate cinematic 3D and liquid glass). Manual 'post now' runs use a story. A style that clearly
+    wins on results gets more slots."""
     style = cfg["video"].get("style", "cinematic")
     if style != "rotate":
         return style
+    cycle = CYCLES.get(cfg["video"].get("story_share", "most"), CYCLES["most"])
     slot, times = cfg.get("_slot") or "", sorted(cfg["schedule"].get("times") or [])
     hhmm = slot.split("T")[1][:5] if "T" in slot else ""
+    if not hhmm:
+        return "story" if "story" in cycle else cycle[0]
     from .learning import style_bias
     winner = style_bias()
-    if hhmm in times:
-        idx = times.index(hhmm)
-        if winner in STYLE_CYCLE:  # the clear winner gets 2 of every 3 slots
-            return winner if idx % 3 != 2 else next(x for x in STYLE_CYCLE if x != winner)
-        return STYLE_CYCLE[idx % len(STYLE_CYCLE)]
-    last = next((h.get("style") for h in reversed(history) if h.get("type", "reel") == "reel" and h.get("style")), None)
-    return STYLE_CYCLE[(STYLE_CYCLE.index(last) + 1) % len(STYLE_CYCLE)] if last in STYLE_CYCLE else STYLE_CYCLE[0]
+    idx = times.index(hhmm) if hhmm in times else 0
+    if winner in STYLES and winner in cycle and winner != "story" and "story" in cycle:
+        return winner if idx % 3 != 2 else "story"
+    return cycle[idx % len(cycle)]
 
 
 def render_reel(post: dict, cfg: dict, out: Path, work: Path, seed: int, previous_plan: dict | None = None,
                 style: str | None = None, vo: dict | None = None) -> Path:
     style = style or cfg["video"].get("style", "cinematic")
+    if style == "story":
+        from .story import render_story_reel
+        return render_story_reel(post, cfg, out, work, seed, vo)
     if style == "liquid_glass":
         from .liquid import render_liquid_reel
         return render_liquid_reel(post, cfg, out, work, seed, vo)
@@ -151,16 +161,22 @@ def run_job(cfg: dict, kind: str, mode: str) -> dict:
     entry = {"type": kind}
     try:
         if kind == "reel":
-            post = generate_reel(cfg, history)
+            style = pick_style(cfg, history)
+            print(f"[reel] style: {style}")
+            if style == "story":
+                from .story import generate_story, make_story_voice
+                post = generate_story(cfg, history)
+            else:
+                post = generate_reel(cfg, history)
             caption = build_caption(post)
             entry.update(topic=post["topic"], pillar=post.get("pillar"), hook=post["hook"], caption=caption,
-                         hook_type=post.get("hook_type"), hook_options=post.get("hook_options"))
+                         hook_type=post.get("hook_type"), hook_options=post.get("hook_options"), style=style)
             prev = next((h.get("plan") for h in reversed(history) if h.get("plan") and h["plan"].get("hook")), None)
-            style = pick_style(cfg, history)
-            entry["style"] = style
-            print(f"[reel] style: {style}")
-            from .voice import make_voiceover
-            vo = make_voiceover(post, cfg, seed, work, history)
+            if style == "story":
+                vo = make_story_voice(post, cfg, seed, work, history)
+            else:
+                from .voice import make_voiceover
+                vo = make_voiceover(post, cfg, seed, work, history)
             if vo:
                 entry["voice"] = vo["voice"]
             video = render_reel(post, cfg, OUTPUT / f"reel-{stamp}.mp4", work, seed, prev, style, vo)

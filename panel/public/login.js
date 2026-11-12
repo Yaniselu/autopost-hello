@@ -1,3 +1,4 @@
+document.documentElement.dataset.theme = localStorage.getItem("vt-theme") || "light";
 (function () {
   var f = document.getElementById("f"), pw = document.getElementById("pw"), msg = document.getElementById("msg"), go = document.getElementById("go");
   fetch("/api/session", { credentials: "same-origin" }).then(function (r) { return r.json(); }).then(function (d) {

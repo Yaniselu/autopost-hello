@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="ro" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -9,110 +9,92 @@
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 <style>
 :root{
-  --text:#f4f6ff; --muted:rgba(235,240,255,.62); --accent:#78f0ff; --accent2:#be8cff;
-  --ok:#5ff5b0; --warn:#ffd36e; --bad:#ff7a9a;
-  --glass:rgba(255,255,255,.08); --glass2:rgba(255,255,255,.14); --stroke:rgba(255,255,255,.22);
-  --radius:28px;
+  --bg:#f7f7f5; --surface:#ffffff; --surface2:#f3f3f0; --line:#e8e7e3; --text:#111113; --muted:#6c6c72;
+  --accent:#111113; --accent2:#2a5bff; --on-accent:#ffffff;
+  --ok:#14a870; --warn:#d99a00; --bad:#e5484d;
+  --glass:var(--surface2); --glass2:#ecebe7; --stroke:var(--line);
+  --shadow:0 1px 2px rgba(17,17,19,.04),0 8px 24px -12px rgba(17,17,19,.10);
+  --radius:20px;
+}
+[data-theme="dark"]{
+  --bg:#000000; --surface:#0d0d0f; --surface2:#17171a; --line:#232327; --text:#f4f4f5; --muted:#8e8e96;
+  --accent:#f4f4f5; --accent2:#6b8cff; --on-accent:#0b0b0c;
+  --ok:#3ddc97; --warn:#ffc53d; --bad:#ff6369;
+  --glass2:#1e1e22; --shadow:0 1px 0 rgba(255,255,255,.03),0 12px 30px -16px rgba(0,0,0,.9);
 }
 *{box-sizing:border-box}
-html{background:#07061a}
+html{background:var(--bg);transition:background .25s}
 html,body{margin:0;min-height:100%;color:var(--text);
-  font-family:"Inter var",Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+  font-family:"Inter var",Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased;font-feature-settings:"cv11","ss01"}
 body{min-height:100vh;overflow-x:hidden}
-/* ---------- liquid background ---------- */
-.bg{position:fixed;inset:0;z-index:-2;overflow:hidden;background:radial-gradient(120% 80% at 50% 0%,#14113a 0%,#07061a 60%)}
-.blob{position:absolute;width:55vmax;height:55vmax;border-radius:50%;filter:blur(70px);opacity:.75;mix-blend-mode:screen;
-  animation:float 26s ease-in-out infinite alternate}
-.b1{background:#00d2ff;left:-15vmax;top:-10vmax}
-.b2{background:#7c4dff;right:-18vmax;top:10vmax;animation-duration:32s;animation-delay:-8s}
-.b3{background:#ff40aa;left:10vmax;bottom:-25vmax;animation-duration:38s;animation-delay:-14s;opacity:.55}
-.b4{background:#00ffbe;right:5vmax;bottom:-20vmax;width:35vmax;height:35vmax;animation-duration:29s;opacity:.4}
-@keyframes float{0%{transform:translate(0,0) scale(1)}50%{transform:translate(8vmax,6vmax) scale(1.15)}100%{transform:translate(-6vmax,10vmax) scale(.9)}}
-.bubble{position:fixed;z-index:-1;border-radius:50%;pointer-events:none;
-  background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.75) 0 6%,rgba(255,255,255,.08) 18%,rgba(255,255,255,.02) 60%,rgba(255,255,255,.18) 100%);
-  box-shadow:inset 0 0 18px rgba(255,255,255,.25),inset -6px -10px 24px rgba(120,240,255,.18);
-  backdrop-filter:blur(2px) saturate(160%);-webkit-backdrop-filter:blur(2px) saturate(160%);
-  animation:rise linear infinite}
-@keyframes rise{from{transform:translateY(110vh)}to{transform:translateY(-30vh)}}
-/* ---------- glass ---------- */
-.glass{position:relative;background:linear-gradient(160deg,rgba(255,255,255,.16),rgba(255,255,255,.05) 45%,rgba(255,255,255,.08));
-  border-radius:var(--radius);border:1px solid var(--stroke);
-  backdrop-filter:blur(28px) saturate(170%);-webkit-backdrop-filter:blur(28px) saturate(170%);
-  box-shadow:0 30px 60px -20px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.45),inset 0 -1px 0 rgba(255,255,255,.08),inset 0 0 40px rgba(255,255,255,.04);
-  overflow:hidden}
-.glass::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
-  background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.14) 45%,transparent 60%);
-  transform:translateX(-120%);animation:sheen 9s ease-in-out infinite}
-@keyframes sheen{0%,60%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
-.wrap{max-width:1100px;margin:0 auto;padding:28px 18px 80px}
-header{display:flex;align-items:center;gap:14px;padding:14px 18px;margin-bottom:22px;border-radius:999px}
-.logo{font-weight:800;letter-spacing:.18em;font-size:15px}
-.logo b{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.glass{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.wrap{max-width:1120px;margin:0 auto;padding:24px 18px 80px}
+header{display:flex;align-items:center;gap:12px;padding:12px 14px 12px 20px;margin-bottom:22px;border-radius:999px;position:sticky;top:12px;z-index:5;
+  background:color-mix(in srgb,var(--surface) 82%,transparent)!important;backdrop-filter:saturate(180%) blur(16px);-webkit-backdrop-filter:saturate(180%) blur(16px)}
+.logo{font-weight:800;letter-spacing:.16em;font-size:14px}
+.logo b{color:var(--accent2)}
 header .sp{flex:1}
-.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
 .card{padding:24px}
-.c12{grid-column:span 12}.c7{grid-column:span 7}.c5{grid-column:span 5}.c6{grid-column:span 6}
-@media(max-width:860px){.c7,.c5,.c6{grid-column:span 12}}
-h2{margin:0 0 4px;font-size:20px;letter-spacing:-.01em}
-.sub{color:var(--muted);font-size:14px;margin:0 0 18px;line-height:1.5}
-.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;font-size:13px;font-weight:600;
-  background:var(--glass);border:1px solid var(--stroke);white-space:nowrap}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--muted);box-shadow:0 0 12px currentColor}
-.ok .dot{background:var(--ok);color:var(--ok)}.warn .dot{background:var(--warn);color:var(--warn)}.bad .dot{background:var(--bad);color:var(--bad)}
-.run .dot{background:var(--accent);color:var(--accent);animation:pulse 1.2s infinite}
+.c12{grid-column:span 12}.c7{grid-column:span 7}.c5{grid-column:span 5}.c6{grid-column:span 6}.c4{grid-column:span 4}
+@media(max-width:860px){.c7,.c5,.c6,.c4{grid-column:span 12}}
+h2{margin:0 0 4px;font-size:18px;font-weight:700;letter-spacing:-.015em}
+h3{margin:18px 0 2px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.sub{color:var(--muted);font-size:14px;margin:0 0 18px;line-height:1.55}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border-radius:999px;font-size:13px;font-weight:600;
+  background:var(--surface2);border:1px solid var(--line);white-space:nowrap}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.ok .dot{background:var(--ok)}.warn .dot{background:var(--warn)}.bad .dot{background:var(--bad)}
+.run .dot{background:var(--accent2);animation:pulse 1.2s infinite}
 @keyframes pulse{50%{opacity:.3}}
-/* ---------- buttons & inputs ---------- */
-button,.btn{appearance:none;border:1px solid rgba(255,255,255,.3);color:var(--text);font:600 15px/1 inherit;font-family:inherit;
-  padding:14px 20px;border-radius:999px;cursor:pointer;position:relative;transition:transform .15s,box-shadow .2s,background .2s;
-  background:linear-gradient(160deg,rgba(255,255,255,.22),rgba(255,255,255,.06));
-  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 10px 25px -10px rgba(0,0,0,.5);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
-button:hover{transform:translateY(-1px) scale(1.02)}button:active{transform:scale(.97)}
-button:disabled{opacity:.5;cursor:wait;transform:none}
-.primary{background:linear-gradient(120deg,rgba(120,240,255,.75),rgba(190,140,255,.75));border-color:rgba(255,255,255,.5);color:#0b0a1f}
-.danger{background:linear-gradient(120deg,rgba(255,122,154,.45),rgba(255,122,154,.18))}
-.small{padding:9px 14px;font-size:13px}
+button,.btn{appearance:none;border:1px solid var(--line);color:var(--text);font:600 14px/1 inherit;font-family:inherit;
+  padding:12px 18px;border-radius:999px;cursor:pointer;background:var(--surface);transition:transform .12s,background .2s,border-color .2s,opacity .2s;
+  text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+button:hover{border-color:var(--muted)}button:active{transform:scale(.97)}
+button:disabled{opacity:.45;cursor:wait;transform:none}
+.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.primary:hover{opacity:.88;border-color:var(--accent)}
+.danger{color:var(--bad);border-color:color-mix(in srgb,var(--bad) 35%,var(--line))}
+.small{padding:8px 13px;font-size:13px}
+.icon{width:38px;height:38px;padding:0;justify-content:center;font-size:16px}
 .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 label{display:block;font-size:13px;color:var(--muted);margin:14px 0 6px;font-weight:600}
-input,textarea,select{width:100%;font:15px/1.4 inherit;font-family:inherit;color:var(--text);padding:13px 16px;border-radius:16px;
-  background:rgba(10,10,30,.35);border:1px solid rgba(255,255,255,.18);outline:none;
-  box-shadow:inset 0 2px 8px rgba(0,0,0,.25);transition:border .2s,box-shadow .2s}
+input,textarea,select{width:100%;font:15px/1.4 inherit;font-family:inherit;color:var(--text);padding:11px 14px;border-radius:12px;
+  background:var(--surface2);border:1px solid var(--line);outline:none;transition:border .2s,box-shadow .2s,background .2s}
+input[type=range]{padding:0;height:6px;accent-color:var(--accent2);background:transparent;border:0}
+input[type=checkbox]{width:auto;accent-color:var(--accent2)}
 textarea{min-height:110px;resize:vertical}
-input:focus,textarea:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(120,240,255,.15)}
-select option{background:#14113a}
+input:focus,textarea:focus,select:focus{border-color:var(--accent2);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent2) 18%,transparent);background:var(--surface)}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}@media(max-width:600px){.two{grid-template-columns:1fr}}
-/* ---------- misc ---------- */
-.big{font-size:34px;font-weight:800;letter-spacing:-.02em;margin:6px 0 2px}
+.checks{display:flex;flex-wrap:wrap;gap:8px}
+.checks label{margin:0;display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:999px;background:var(--surface2);border:1px solid var(--line);color:var(--text);cursor:pointer}
+.big{font-size:32px;font-weight:800;letter-spacing:-.03em;margin:6px 0 2px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{display:inline-flex;align-items:center;gap:6px;padding:8px 8px 8px 14px;border-radius:999px;background:var(--glass2);border:1px solid var(--stroke);font-weight:600}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:6px 6px 6px 13px;border-radius:999px;background:var(--surface2);border:1px solid var(--line);font-weight:600;font-size:14px}
 .chip button{padding:4px 8px;font-size:12px;border-radius:999px}
 .steps{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.steps li{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;border-radius:20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
-.steps .n{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:14px;background:var(--glass2);border:1px solid var(--stroke)}
-.steps .done .n{background:linear-gradient(120deg,var(--ok),#78f0ff);color:#062016;border:none}
+.steps li{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;border-radius:16px;background:var(--surface2);border:1px solid var(--line)}
+.steps .n{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:13px;background:var(--surface);border:1px solid var(--line)}
+.steps .done .n{background:var(--ok);color:#fff;border:none}
 .steps .t{font-weight:700}.steps p{margin:4px 0 0;color:var(--muted);font-size:14px;line-height:1.5}
-.steps code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;background:rgba(0,0,0,.3);padding:2px 7px;border-radius:7px}
-a{color:var(--accent)}
+.steps code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--glass2);padding:2px 7px;border-radius:7px}
+a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
 .list{display:grid;gap:10px;max-height:560px;overflow:auto;padding-right:4px}
-.item{padding:14px 16px;border-radius:20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
+.item{padding:14px 16px;border-radius:16px;background:var(--surface2);border:1px solid var(--line)}
 .item .top{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-.item .hook{font-weight:700;margin:8px 0 2px}.item .meta{color:var(--muted);font-size:13px}
+.item .hook{font-weight:700;margin:8px 0 2px}.item .meta,.meta{color:var(--muted);font-size:13px}
 .item details{margin-top:8px;color:var(--muted);font-size:14px;white-space:pre-wrap}
 .item .err{color:var(--bad);font-size:13px;margin-top:6px;word-break:break-word}
 .empty{color:var(--muted);text-align:center;padding:30px 10px}
-.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(150%);padding:14px 22px;border-radius:999px;z-index:20;
-  font-weight:600;transition:transform .35s cubic-bezier(.2,1.4,.4,1);max-width:92vw}
-.toast.show{transform:translateX(-50%) translateY(0)}
-.login{min-height:92vh;display:grid;place-items:center}
-.login .card{width:min(420px,92vw);padding:38px 30px;text-align:center}
-.login h1{font-size:28px;margin:10px 0 6px;letter-spacing:-.02em}
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(160%);padding:13px 20px;border-radius:999px;z-index:20;
+  font-weight:600;transition:transform .35s cubic-bezier(.2,1.4,.4,1),opacity .25s;max-width:92vw;background:var(--accent)!important;color:var(--on-accent)!important;border:0!important;opacity:0;pointer-events:none}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
 .hidden{display:none!important}
 .pal{display:inline-block;width:14px;height:14px;border-radius:50%;margin-right:4px;vertical-align:middle}
+::selection{background:color-mix(in srgb,var(--accent2) 30%,transparent)}
 </style>
 </head>
 <body>
-<div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div></div>
-<div id="bubbles"></div>
 
 <!-- ======================= APP ======================= -->
 <main id="app" class="wrap">
@@ -120,6 +102,7 @@ a{color:var(--accent)}
     <div class="logo">VELO<b>SYNTECH</b> <span style="color:var(--muted);letter-spacing:.05em;font-weight:600">· Auto-Poster</span></div>
     <div class="sp"></div>
     <span class="pill" id="igPill"><span class="dot"></span><span>—</span></span>
+    <button class="small icon" id="themeBtn" title="Schimbă tema (alb / negru)">🌙</button>
     <button class="small" id="logoutBtn">Ieși</button>
   </header>
 
@@ -140,7 +123,7 @@ a{color:var(--accent)}
       <p class="sub" id="nextSub" style="margin-bottom:20px">—</p>
       <div class="row">
         <select id="kind" style="width:auto;min-width:190px">
-          <option value="reel">🎬 Reel cinematic</option><option value="carousel">🗂 Carusel</option>
+          <option value="reel">🎬 Reel (poveste animată)</option><option value="carousel">🗂 Carusel</option>
           <option value="story">📱 Story</option><option value="comments">💬 Răspunde la comentarii</option></select>
         <button class="primary" id="postNow">🚀 Postează acum</button>
         <button id="testVideo">👁 Previzualizare</button>
@@ -273,7 +256,7 @@ a{color:var(--accent)}
           </div>
           <div class="two">
             <div><label>Stil video</label>
-              <select id="style"><option value="rotate">🔁 Alternează: Cinematic 3D ↔ Liquid Glass</option><option value="cinematic">Cinematic 3D (laptop + telefon)</option><option value="liquid_glass">Liquid Glass (sticlă, bule)</option><option value="classic">Clasic (text simplu)</option></select></div>
+              <select id="style"><option value="rotate">🔁 Mix: 3 povești animate + Cinematic 3D + Liquid Glass</option><option value="story">🎬 Poveste animată (personaje 3D)</option><option value="cinematic">Cinematic 3D (laptop + telefon)</option><option value="liquid_glass">Liquid Glass (sticlă, bule)</option><option value="classic">Clasic (text simplu)</option></select></div>
             <div><label>Culori</label>
               <select id="palette">
                 <option value="random">🎲 Diferite la fiecare video</option><option value="aurora">Aurora (cyan, mov, roz)</option>
@@ -289,6 +272,27 @@ a{color:var(--accent)}
           </div>
         </div>
         <div class="c6">
+          <h3>🎬 Video și voce</h3>
+          <div class="two">
+            <div><label>Câte reels sunt povești animate</label>
+              <select id="storyShare"><option value="all">Toate (5 din 5)</option><option value="most">Majoritatea (3 din 5)</option>
+              <option value="some">Unele (2 din 5)</option><option value="none">Niciunul</option></select></div>
+            <div><label>Vocea</label>
+              <select id="voiceName"><option value="auto">🔁 Alternează vocile</option><option value="en-US-AndrewMultilingualNeural">Andrew (bărbat, cald)</option>
+              <option value="en-US-BrianMultilingualNeural">Brian (bărbat, energic)</option><option value="en-US-AvaMultilingualNeural">Ava (femeie, clară)</option>
+              <option value="en-US-EmmaMultilingualNeural">Emma (femeie, prietenoasă)</option></select></div>
+          </div>
+          <div class="two">
+            <div><label>Viteza vocii</label>
+              <select id="voiceRate"><option value="-6%">Mai lent</option><option value="+0%">Normal</option><option value="+6%">Puțin mai rapid</option>
+              <option value="+12%">Rapid</option><option value="+18%">Foarte rapid</option></select></div>
+            <div><label>Efecte sonore (whoosh, pop, notificări)</label><select id="sfxOn"><option value="1">Da</option><option value="0">Nu</option></select></div>
+          </div>
+          <label>Volumul muzicii: <span id="musicVal">55%</span></label>
+          <input type="range" id="musicVol" min="0" max="100" step="5">
+          <label>Tipuri de afaceri în povești (alege din ele, fără să se repete)</label>
+          <div class="checks" id="bizChecks"></div>
+          <h3>🏷 Brand</h3>
           <div class="two">
             <div><label>Nume brand</label><input id="bName"></div>
             <div><label>Handle Instagram</label><input id="bHandle"></div>
@@ -317,18 +321,17 @@ const $ = (id) => document.getElementById(id);
 let S = null;          // last state from the server
 let draftTimes = [];
 
-// ---------- decorative bubbles ----------
-for (let i = 0; i < 9; i++) {
-  const b = document.createElement("div");
-  const s = 30 + Math.random() * 110;
-  Object.assign(b.style, { width: s + "px", height: s + "px", left: Math.random() * 100 + "vw",
-    animationDuration: 28 + Math.random() * 30 + "s", animationDelay: -Math.random() * 50 + "s" });
-  b.className = "bubble"; $("bubbles").appendChild(b);
+// ---------- theme (white / black), remembered on this device ----------
+function applyTheme(t) {
+  document.documentElement.dataset.theme = t; localStorage.setItem("vt-theme", t);
+  $("themeBtn").textContent = t === "dark" ? "☀️" : "🌙";
 }
+applyTheme(localStorage.getItem("vt-theme") || "light");
+$("themeBtn").addEventListener("click", () => applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark"));
 
 // ---------- helpers ----------
 function toast(msg, bad) {
-  const t = $("toast"); t.textContent = msg; t.style.color = bad ? "var(--bad)" : "var(--text)";
+  const t = $("toast"); t.textContent = msg; t.style.background = bad ? "var(--bad)" : "";
   t.classList.add("show"); clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove("show"), bad ? 7000 : 3500);
 }
 async function api(route, body) {
@@ -558,7 +561,18 @@ function fillSettings(s) {
   $("bAudience").value = s.brand.audience; $("bTone").value = s.brand.tone; $("bCta").value = s.brand.call_to_action;
   $("pillars").value = s.content_pillars.join("\n");
   $("pexelsBox").classList.toggle("hidden", s.video.background !== "pexels");
+  const v = s.voice || {}; $("voiceName").value = v.voice || "auto"; $("voiceRate").value = v.rate || "+6%";
+  const au = s.audio || {}; $("sfxOn").value = au.sfx === false ? "0" : "1";
+  $("musicVol").value = Math.round((au.music_volume ?? 0.55) * 100); $("musicVal").textContent = $("musicVol").value + "%";
+  $("storyShare").value = s.video.story_share || "most";
+  const biz = (s.story || {}).businesses || Object.keys(BIZ);
+  $("bizChecks").replaceChildren(...Object.entries(BIZ).map(([k, n]) => {
+    const c = el("input", { type: "checkbox", value: k }); c.checked = biz.includes(k);
+    return el("label", {}, c, n);
+  }));
 }
+const BIZ = { salon: "💇 Salon", cafe: "☕ Cafenea", clinic: "🩺 Clinică", restaurant: "🍝 Restaurant", store: "🛍 Magazin", gym: "🏋️ Sală de sport" };
+$("musicVol").oninput = () => { $("musicVal").textContent = $("musicVol").value + "%"; };
 $("background").onchange = () => $("pexelsBox").classList.toggle("hidden", $("background").value !== "pexels");
 const LISTS = ["times", "carousel_times", "story_times"];
 let draft = { times: [], carousel_times: [], story_times: [] };
@@ -579,12 +593,14 @@ document.querySelectorAll("[data-add]").forEach(btn => btn.onclick = () => {
 $("saveSettings").onclick = (e) => withBtn(e.currentTarget, async () => {
   const settings = {
     times: draft.times, carousel_times: draft.carousel_times, story_times: draft.story_times,
-    voice: { enabled: $("voiceOn").value === "1" }, learning: { enabled: $("learnOn").value === "1" },
+    voice: { enabled: $("voiceOn").value === "1", voice: $("voiceName").value, rate: $("voiceRate").value },
+    audio: { music_volume: Number($("musicVol").value) / 100, sfx: $("sfxOn").value === "1" },
+    story: { businesses: [...$("bizChecks").querySelectorAll("input:checked")].map(x => x.value) }, learning: { enabled: $("learnOn").value === "1" },
     dm: { enabled: $("dmOn").value === "1", keyword: $("dmKey").value, link: $("dmLink").value, message: $("dmMsg").value },
     stories_per_slot: $("storiesPer").value, post_to_facebook: $("postFb").value === "1", repost_to_story: $("repost").value === "1",
     comments: { enabled: $("cmEnabled").value === "1", every_hours: $("cmEvery").value, max_per_run: $("cmMax").value, instructions: $("cmInstr").value },
     timezone: $("timezone").value, language: $("language").value, hashtags_count: $("hashtags").value,
-    video: { theme: $("theme").value, style: $("style").value, palette: $("palette").value, background: $("background").value },
+    video: { theme: $("theme").value, style: $("style").value, palette: $("palette").value, background: $("background").value, story_share: $("storyShare").value },
     brand: { name: $("bName").value, handle: $("bHandle").value, description: $("bDesc").value,
       audience: $("bAudience").value, tone: $("bTone").value, call_to_action: $("bCta").value },
     content_pillars: $("pillars").value.split("\n").map(x => x.trim()).filter(Boolean),
@@ -596,7 +612,7 @@ $("saveSettings").onclick = (e) => withBtn(e.currentTarget, async () => {
 async function installNow() { await api("install", {}); toast("✓ Instalat! Programarea automată e activă."); await load(true); }
 async function runMode(mode, btn) {
   const kind = $("kind").value;
-  const names = { reel: "un Reel cinematic", carousel: "un carusel", story: "stories", comments: "răspunsuri la comentarii" };
+  const names = { reel: "un Reel (poveste animată)", carousel: "un carusel", story: "stories", comments: "răspunsuri la comentarii" };
   if (kind === "comments") mode = "now";
   if (mode === "now" && !confirm(`Fac ${names[kind]} și îl public acum${S.settings && S.settings.post_to_facebook !== false ? " (Instagram + Facebook)" : ""}?`)) return;
   await withBtn(btn, async () => {

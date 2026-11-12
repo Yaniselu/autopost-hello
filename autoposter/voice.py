@@ -67,7 +67,8 @@ def make_voiceover(post: dict, cfg: dict, seed: int, work: Path, history: list |
     except ImportError:
         print("[voice] edge-tts not installed -> no voice-over")
         return None
-    voices = (cfg.get("voice") or {}).get("voices") or VOICES
+    vc = cfg.get("voice") or {}
+    voices = [vc["voice"]] if vc.get("voice") in VOICES else (vc.get("voices") or VOICES)
     last = next((h.get("voice") for h in reversed(history or []) if h.get("voice")), None)
     choices = [v for v in voices if v != last] or voices
     voice = random.Random(seed).choice(choices)
