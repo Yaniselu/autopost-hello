@@ -368,5 +368,53 @@
     "fb_link": "https://www.facebook.com/reel/1508845884438451",
     "status": "posted",
     "repost": "ok"
+  },
+  {
+    "time": "2026-11-12T08:01+02:00",
+    "type": "reel",
+    "mode": "scheduled",
+    "slot": "reel@2026-11-12T08:00:00+02:00",
+    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43165128927",
+    "topic": "simple n8n automations that save hours every week",
+    "pillar": "simple n8n automations that save hours every week",
+    "hook": "Stop *wasting* your Mondays on manual *copy-paste*.",
+    "caption": "Busywork is the silent profit killer in most growing businesses. Moving data between apps by hand wastes valuable time that should go toward serving clients.\n\nSmart workflows handle the repetitive tasks in the background, keeping your records accurate while you focus on what actually moves the needle.\n\nWhat repetitive task takes up most of your team's week?\n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessautomation #productivity #workflow #operations #velosyntech",
+    "hook_type": "pain",
+    "hook_options": [
+      {
+        "text": "Stop *wasting* your Mondays on manual *copy-paste*.",
+        "type": "pain"
+      },
+      {
+        "text": "Your team loses *ten hours* a week.",
+        "type": "number"
+      },
+      {
+        "text": "Still moving data *manually* between your apps?",
+        "type": "question"
+      }
+    ],
+    "style": "cinematic",
+    "voice": "en-US-BrianMultilingualNeural",
+    "plan": {
+      "hook": "rise_turn",
+      "problem": "orbit_left",
+      "solution": "side_track",
+      "result": "low_hero",
+      "cta": "phone_spin",
+      "bg": "grid",
+      "type": "caption",
+      "transition": "zoom",
+      "finish_phone": "desert",
+      "finish_laptop": "silver",
+      "theme": "light",
+      "palette": "emerald"
+    },
+    "ig_id": "18119739512277920",
+    "permalink": "https://www.instagram.com/reel/DfoYn1TjlX0/",
+    "fb_id": "1153755757381125",
+    "fb_link": "https://www.facebook.com/reel/1153755757381125",
+    "status": "posted",
+    "repost": "ok"
   }
 ]

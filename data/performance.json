@@ -1,8 +1,8 @@
 {
  "17977988487160971": {
-  "fetched": "2026-11-11T08:13:18.383052+00:00",
+  "fetched": "2026-11-12T06:01:23.317596+00:00",
   "metrics": {
-   "views": 561,
+   "views": 563,
    "reach": 366,
    "likes": 7,
    "comments": 2,
@@ -10,7 +10,7 @@
    "shares": 3,
    "total_interactions": 15
   },
-  "score": 189.29,
+  "score": 189.38,
   "type": "reel",
   "style": null,
   "pillar": "an AI assistant answering website visitors 24/7 (before vs after)",
@@ -21,17 +21,17 @@
   "permalink": "https://www.instagram.com/reel/DfiF0VNil9U/"
  },
  "18078997739438412": {
-  "fetched": "2026-11-11T08:34:17.368129+00:00",
+  "fetched": "2026-11-12T06:01:23.317596+00:00",
   "metrics": {
-   "views": 14,
-   "reach": 0,
-   "likes": 1,
+   "views": 586,
+   "reach": 404,
+   "likes": 9,
    "comments": 0,
    "saved": 0,
-   "shares": 0,
-   "total_interactions": 3
+   "shares": 2,
+   "total_interactions": 14
   },
-  "score": 68.7,
+  "score": 180.38,
   "type": "reel",
   "style": "cinematic",
   "pillar": "losing customers because nobody replies fast enough",
@@ -42,17 +42,17 @@
   "permalink": "https://www.instagram.com/reel/DfmDVonDBBh/"
  },
  "18018073727952152": {
-  "fetched": "2026-11-11T13:31:19.206023+00:00",
+  "fetched": "2026-11-12T06:01:23.317596+00:00",
   "metrics": {
-   "views": 271,
-   "reach": 56,
-   "likes": 1,
+   "views": 350,
+   "reach": 69,
+   "likes": 6,
    "comments": 0,
    "saved": 0,
    "shares": 0,
-   "total_interactions": 2
+   "total_interactions": 8
   },
-  "score": 141.15,
+  "score": 152.52,
   "type": "carousel",
   "style": null,
   "pillar": "turning website visitors into leads and booked demos",
@@ -63,17 +63,17 @@
   "permalink": "https://www.instagram.com/p/DfmXkKgGDEa/"
  },
  "18113468702118556": {
-  "fetched": "2026-11-11T17:02:30.979511+00:00",
+  "fetched": "2026-11-12T06:01:23.317596+00:00",
   "metrics": {
-   "views": 402,
-   "reach": 216,
-   "likes": 7,
+   "views": 698,
+   "reach": 474,
+   "likes": 10,
    "comments": 4,
    "saved": 0,
    "shares": 2,
-   "total_interactions": 14
+   "total_interactions": 18
   },
-  "score": 180.97,
+  "score": 197.74,
   "type": "reel",
   "style": "liquid_glass",
   "pillar": "answering customers in any language automatically",
@@ -84,17 +84,17 @@
   "permalink": "https://www.instagram.com/reel/DfmyOtliYsU/"
  },
  "18128266489900070": {
-  "fetched": "2026-11-11T17:31:19.647118+00:00",
+  "fetched": "2026-11-12T06:01:23.317596+00:00",
   "metrics": {
-   "views": 84,
-   "reach": 0,
-   "likes": 0,
+   "views": 299,
+   "reach": 60,
+   "likes": 6,
    "comments": 0,
    "saved": 0,
    "shares": 0,
-   "total_interactions": 1
+   "total_interactions": 8
   },
-  "score": 111.07,
+  "score": 148.59,
   "type": "carousel",
   "style": null,
   "pillar": "simple n8n automations that save hours every week",
@@ -103,5 +103,26 @@
   "hour": "19:02",
   "time": "2026-11-11T19:02+02:00",
   "permalink": "https://www.instagram.com/p/Dfm-jw5F_Gg/"
+ },
+ "17942837514390841": {
+  "fetched": "2026-11-12T06:01:23.317596+00:00",
+  "metrics": {
+   "views": 130,
+   "reach": 60,
+   "likes": 3,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 4
+  },
+  "score": 124.88,
+  "type": "reel",
+  "style": "cinematic",
+  "pillar": "turning website visitors into leads and booked demos",
+  "hook_type": "bold_claim",
+  "hook": "Your *website* is leaking potential clients.",
+  "hour": "20:01",
+  "time": "2026-11-11T20:01+02:00",
+  "permalink": "https://www.instagram.com/reel/DfnGCe_EkXu/"
  }
 }
