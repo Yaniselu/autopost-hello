@@ -124,5 +124,26 @@
   "hour": "20:01",
   "time": "2026-11-11T20:01+02:00",
   "permalink": "https://www.instagram.com/reel/DfnGCe_EkXu/"
+ },
+ "18119739512277920": {
+  "fetched": "2026-11-12T07:31:04.505442+00:00",
+  "metrics": {
+   "views": 114,
+   "reach": 40,
+   "likes": 1,
+   "comments": 0,
+   "saved": 0,
+   "shares": 2,
+   "total_interactions": 4
+  },
+  "score": 131.62,
+  "type": "reel",
+  "style": "cinematic",
+  "pillar": "simple n8n automations that save hours every week",
+  "hook_type": "pain",
+  "hook": "Stop *wasting* your Mondays on manual *copy-paste*.",
+  "hour": "08:01",
+  "time": "2026-11-12T08:01+02:00",
+  "permalink": "https://www.instagram.com/reel/DfoYn1TjlX0/"
  }
 }

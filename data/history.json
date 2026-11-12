@@ -416,5 +416,22 @@
     "fb_link": "https://www.facebook.com/reel/1153755757381125",
     "status": "posted",
     "repost": "ok"
+  },
+  {
+    "time": "2026-11-12T09:31+02:00",
+    "type": "story",
+    "mode": "scheduled",
+    "slot": "story@2026-11-12T09:30:00+02:00",
+    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43175752164",
+    "topic": "Half your traffic arrives late.",
+    "hook": "Half your traffic arrives late.",
+    "caption": "Half your traffic arrives late. — Up to 50% of website inquiries happen after your office doors close.",
+    "status": "posted",
+    "stories": [
+      {
+        "ig_id": "17913514680589942",
+        "fb_id": "1162841289430742"
+      }
+    ]
   }
 ]
