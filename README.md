@@ -1,8 +1,11 @@
 # Velosyntech Auto-Poster
 
 Postează singur, fără să-ți ții calculatorul pornit, pe **Instagram și pe pagina de Facebook**:
-- **Două stiluri care alternează** (setarea „Alternează”): reel 1, 3… = Cinematic 3D (iPhone + Mac), reel 2, 4… = Liquid Glass
-  (fundal lichid, bule de sticlă, carduri de sticlă). Ambele au aceeași structură, logo-ul, profilul real și muzică cinematică.
+- **Trei stiluri în mix** (setarea „Mix”): din 5 reels pe zi, 3 sunt **povești animate** (personaje 3D cartoon într-un orășel:
+  afacerea are o problemă care crește, Velosyntech o rezolvă, final fericit; un cuvânt pe ecran sincronizat cu vocea, bară de
+  iconițe care se umple, notificări, chat AI live pe telefon, card de final cu Follow și buclă perfectă la început),
+  iar celelalte alternează Cinematic 3D (iPhone + Mac) și Liquid Glass.
+- **Temă deschisă** (fundal alb murdar) pentru reels, carusele și stories, cu mult motion design.
 - **Fiecare reel arată altfel**: un „regizor” automat alege la fiecare video alte unghiuri de cameră (14 variante), alt fundal
   (bokeh, grilă tech, spot de lumină), alt stil de text (cinetic, subtitrări tip CapCut, mașină de scris), alte tranziții
   (whip, zoom, glitch, flash), alte culori, altă muzică și alte finisaje de iPhone/Mac. Nu repetă combinația videoclipului anterior.

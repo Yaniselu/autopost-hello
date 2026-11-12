@@ -121,7 +121,7 @@ function validateSettings(input, current) {
   }
   if (input.video) {
     if (["light", "dark"].includes(input.video.theme)) s.video.theme = input.video.theme;
-    if (["rotate", "cinematic", "liquid_glass", "classic"].includes(input.video.style)) s.video.style = input.video.style;
+    if (["rotate", "story", "cinematic", "liquid_glass", "classic"].includes(input.video.style)) s.video.style = input.video.style;
     if (PALETTES.includes(input.video.palette)) s.video.palette = input.video.palette;
     if (["liquid", "pexels", "gradient"].includes(input.video.background)) s.video.background = input.video.background;
   }
