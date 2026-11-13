@@ -1,38 +1,39 @@
 {
- "time": "2026-11-09T18:50:28.696831+00:00",
+ "time": "2026-11-13T06:03:24.859747+00:00",
  "media_count": 30,
  "guide": {
-  "what_they_sell": "AI agents and automated workflows for websites to respond to customers 24/7 and eliminate manual busywork.",
-  "audience": "Business owners, founders, and team leads dealing with repetitive tasks, manual data entry, and missed after-hours leads.",
-  "language": "English (with occasional Romanian for local events)",
-  "tone": "Direct, professional, pragmatic, punchy, and problem-focused",
+  "what_they_sell": "Custom AI assistants and automated workflows built on n8n that respond to website customers 24/7 in any language.",
+  "audience": "Small-to-medium business owners, local businesses, and entrepreneurs losing leads due to slow website response times.",
+  "language": "English (with occasional Romanian posts for local events like Craiova Hackathon)",
+  "tone": "Direct, practical, results-driven, urgent, and professional.",
   "recurring_topics": [
-   "manual work vs automation",
-   "lost leads outside business hours",
-   "stop hiring to fix process problems",
-   "hackathon events and live updates"
+   "Slow website response times losing leads",
+   "The cost of manual data entry and busywork",
+   "24/7 AI availability and multilingual support",
+   "Behind-the-scenes event coverage (hackathons)",
+   "Debunking the myth that AI requires complex tech teams"
   ],
   "best_performing_patterns": [
-   "High engagement on local event coverage (Craiova Hackathon)",
-   "Strong engagement on provocative text-heavy hooks addressing business pain points (hiring vs process, manual copy-pasting costs)"
+   "Event coverage and community engagement (e.g., Craiova Hackathon posts)",
+   "Relatable pain-point hooks addressing lost leads at night or after hours",
+   "Short, punchy Reels with strong visual context or behind-the-scenes footage"
   ],
   "hook_examples": [
-   "Stop hiring to fix a process problem.",
-   "Lost a lead while you slept?",
-   "Still doing it manually?",
-   "Your team is losing 10+ hours a week to copy-paste."
+   "Most website visitors leave if they do not get an immediate answer.",
+   "Your website gets traffic every single day, but most visitors vanish before you even know they were there.",
+   "La 02:47, un client îți vizitează site-ul și întreabă ceva."
   ],
-  "cta_style": "Subtle or direct directional links to velosyntech.com and contact emails, or inviting demo requests.",
-  "visual_notes": "Clean dark or light abstract minimalist background with floating 3D spheres/balloons, bold sans-serif white typography, and clean UI card overlays.",
+  "cta_style": "Simple and direct, often including contact email (contact@velosyntech.com), website (velosyntech.com), and relevant event tags (@craiovahackathon).",
+  "visual_notes": "Clean corporate-to-startup style featuring event footage, human faces speaking to camera, text overlays with high-contrast text, minimalist backgrounds, and subtle branding.",
   "do": [
-   "Focus on concrete business pains (wasted time, lost money, manual errors)",
-   "Use bold, punchy typography on reels and carousels",
-   "Highlight specific metrics like hours lost or missed night leads"
+   "Focus heavily on the pain of delayed responses and lost revenue",
+   "Keep text overlays clear and easy to read on mobile",
+   "Include direct contact information and website in captions"
   ],
   "dont": [
-   "Use overly complex corporate jargon",
-   "Bury the hook at the end of the caption",
-   "Post cluttered or low-contrast visuals"
+   "Use overly technical jargon without explaining the business benefit",
+   "Make captions overly fluffy or conversational without a core problem-solution dynamic",
+   "Ignore local tech events and networking opportunities"
   ]
  }
 }

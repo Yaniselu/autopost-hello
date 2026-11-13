@@ -717,5 +717,45 @@
     "fb_link": "https://www.facebook.com/reel/1791542822064080",
     "status": "posted",
     "repost": "ok"
+  },
+  {
+    "time": "2026-11-13T08:01+02:00",
+    "type": "reel",
+    "mode": "scheduled",
+    "slot": "reel@2026-11-13T08:00:00+02:00",
+    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43375720833",
+    "topic": "losing customers because nobody replies fast enough",
+    "pillar": "losing customers because nobody replies fast enough",
+    "hook": "Every missed message is money walking away.",
+    "caption": "When potential buyers reach out, they expect a reply in seconds, not hours. If your inbox sits full while you are busy running your business, interested shoppers simply go elsewhere.\n\nAutomating your instant replies ensures every question gets answered the moment it arrives. No more missed opportunities after hours.\n\nComment DEMO and we will send you a free demo in DM.\n\n#velosyntech #businessautomation #n8n #localbusiness #aiassistant",
+    "hook_type": "pain",
+    "hook_options": [
+      {
+        "text": "Every missed message is money walking away.",
+        "type": "pain"
+      },
+      {
+        "text": "Why do buyers leave before you even reply?",
+        "type": "question"
+      },
+      {
+        "text": "Slow replies cost Luka dozens of sales.",
+        "type": "bold_claim"
+      }
+    ],
+    "style": "story",
+    "voice": "en-US-EmmaMultilingualNeural",
+    "plan": {
+      "style": "story",
+      "theme": "light",
+      "palette": "coral",
+      "business": "store"
+    },
+    "ig_id": "18183958852437132",
+    "permalink": "https://www.instagram.com/reel/Dfq9i4OirTr/",
+    "fb_id": "2081758532475041",
+    "fb_link": "https://www.facebook.com/reel/2081758532475041",
+    "status": "posted",
+    "repost": "ok"
   }
 ]

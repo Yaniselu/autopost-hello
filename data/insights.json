@@ -1,29 +1,29 @@
 {
- "updated": "2026-11-12T18:01+00:00",
- "posts_measured": 12,
+ "updated": "2026-11-13T06:03+00:00",
+ "posts_measured": 13,
  "basic_only": false,
  "by_type": {
   "reel": {
-   "avg": 137.9,
-   "n": 8
+   "avg": 157.8,
+   "n": 9
   },
   "carousel": {
-   "avg": 135.0,
+   "avg": 149.7,
    "n": 4
   }
  },
  "by_style": {
   "cinematic": {
-   "avg": 141.1,
+   "avg": 147.8,
    "n": 4
   },
   "liquid_glass": {
-   "avg": 148.4,
+   "avg": 183.8,
    "n": 2
   },
   "story": {
-   "avg": 52.0,
-   "n": 1
+   "avg": 135.6,
+   "n": 2
   }
  },
  "by_pillar": {
@@ -36,30 +36,30 @@
    "n": 1
   },
   "turning website visitors into leads and booked demos": {
-   "avg": 126.0,
-   "n": 3
+   "avg": 139.4,
+   "n": 4
   },
   "answering customers in any language automatically": {
    "avg": 202.8,
    "n": 1
   },
   "simple n8n automations that save hours every week": {
-   "avg": 112.6,
+   "avg": 147.3,
    "n": 3
   },
   "customer support questions an AI can handle for you": {
-   "avg": 116.8,
+   "avg": 156.1,
    "n": 2
   },
   "myths vs facts about AI chatbots for small businesses": {
-   "avg": 118.5,
+   "avg": 132.1,
    "n": 1
   }
  },
  "by_hook_type": {
   "pain": {
-   "avg": 115.0,
-   "n": 4
+   "avg": 152.6,
+   "n": 5
   },
   "question": {
    "avg": 202.8,
@@ -70,7 +70,7 @@
    "n": 1
   },
   "myth": {
-   "avg": 118.5,
+   "avg": 132.1,
    "n": 1
   }
  },
@@ -92,35 +92,35 @@
    "n": 1
   },
   "19:02": {
-   "avg": 154.3,
+   "avg": 154.7,
    "n": 1
   },
   "20:01": {
-   "avg": 131.8,
-   "n": 1
+   "avg": 130.4,
+   "n": 2
   },
   "08:01": {
-   "avg": 131.6,
+   "avg": 144.8,
    "n": 1
   },
   "10:01": {
-   "avg": 94.0,
+   "avg": 164.7,
    "n": 1
   },
   "10:31": {
-   "avg": 118.5,
+   "avg": 132.1,
    "n": 1
   },
   "13:01": {
-   "avg": 139.6,
+   "avg": 147.4,
    "n": 1
   },
   "18:54": {
-   "avg": 52.0,
+   "avg": 142.2,
    "n": 1
   },
   "19:04": {
-   "avg": 92.6,
+   "avg": 143.3,
    "n": 1
   }
  },
@@ -174,13 +174,29 @@
    }
   },
   {
+   "hook": "Tired of answering the *same questions* daily?",
+   "type": "reel",
+   "style": "liquid_glass",
+   "score": 164.71,
+   "permalink": "https://www.instagram.com/reel/DfolOKhkvSB/",
+   "metrics": {
+    "views": 486,
+    "reach": 352,
+    "likes": 4,
+    "comments": 0,
+    "saved": 0,
+    "shares": 1,
+    "total_interactions": 8
+   }
+  },
+  {
    "hook": "Stop doing *manual* copy-paste work.",
    "type": "carousel",
    "style": null,
-   "score": 154.28,
+   "score": 154.72,
    "permalink": "https://www.instagram.com/p/Dfm-jw5F_Gg/",
    "metrics": {
-    "views": 333,
+    "views": 339,
     "reach": 69,
     "likes": 9,
     "comments": 0,
@@ -188,23 +204,9 @@
     "shares": 0,
     "total_interactions": 11
    }
-  },
-  {
-   "hook": "Turn website *visitors* into booked clients.",
-   "type": "carousel",
-   "style": null,
-   "score": 153.5,
-   "permalink": "https://www.instagram.com/p/DfmXkKgGDEa/",
-   "metrics": {
-    "views": 364,
-    "reach": 70,
-    "likes": 6,
-    "comments": 0,
-    "saved": 0,
-    "shares": 0,
-    "total_interactions": 8
-   }
   }
  ],
- "recommended_hours": []
+ "recommended_hours": [
+  "20:01"
+ ]
 }
