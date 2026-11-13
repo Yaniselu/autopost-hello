@@ -872,5 +872,57 @@
    "https://du2pm6als1feycap.public.blob.vercel-storage.com/previews/reel-20261113-083042-PaVj0p0wqp1xYzEGpZpQ4L3xuNx0cB.mp4",
    "https://du2pm6als1feycap.public.blob.vercel-storage.com/previews/repost-reel-20261113-083042-hqvvTTnDPWBZiM6UAUVVieikhWlSPW.jpg"
   ]
+ },
+ {
+  "time": "2026-11-13T10:40+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-13T10:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43393748737",
+  "topic": "turning website visitors into leads and booked demos",
+  "pillar": "turning website visitors into leads and booked demos",
+  "hook": "Here are 3 website mistakes stopping visitors from booking demos.",
+  "caption": "Most business websites fail at one simple task: turning casual visitors into confirmed appointments or leads.\n\nWhen interested buyers visit your site after hours, long forms and delayed replies force them to look elsewhere. You lose potential revenue simply because nobody answered in time.\n\nBy adding an AI assistant built on n8n automation, your website answers routine questions instantly and schedules demos 24/7 in any language.\n\nAre you still relying on traditional contact forms to capture leads?\n\nComment DEMO and we will send you a free demo in DM.\n\n#leadgeneration #businessautomation #n8n #aiassistant #smallbusiness",
+  "hook_type": "number",
+  "hook_options": [
+   {
+    "text": "3 website mistakes costing your business booked demos every single day.",
+    "type": "number"
+   },
+   {
+    "text": "Are you making these 3 huge website mistakes right now?",
+    "type": "question"
+   },
+   {
+    "text": "Stop letting website visitors vanish without booking a demo.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-EmmaMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "cobalt",
+   "business": "clinic",
+   "story_type": "countdown",
+   "sets": [
+    "home",
+    "office",
+    "park",
+    "shop"
+   ],
+   "names": [
+    "Dr. Lucas",
+    "Maya",
+    "Sam"
+   ]
+  },
+  "ig_id": "17989135710064825",
+  "permalink": "https://www.instagram.com/reel/DfrQBiWCW8p/",
+  "fb_id": "1849807686218734",
+  "fb_link": "https://www.facebook.com/reel/1849807686218734",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
