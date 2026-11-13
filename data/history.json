@@ -774,5 +774,53 @@
         "fb_id": "1886466615843528"
       }
     ]
+  },
+  {
+    "time": "2026-11-13T10:01+02:00",
+    "type": "reel",
+    "mode": "scheduled",
+    "slot": "reel@2026-11-13T10:00:00+02:00",
+    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43389875125",
+    "topic": "answering customers in any language automatically",
+    "pillar": "answering customers in any language automatically",
+    "hook": "Language barriers kill *global sales*.",
+    "caption": "Your business is global, but your chat window might be holding you back. When a potential buyer visits from another country, a language gap usually means a lost sale.\n\nYou do not need a multilingual customer service team to expand your market. A smart automated assistant handles translation behind the scenes in seconds.\n\nOpen your doors to the world and stop leaving money on the table.\n\nComment DEMO and we'll send you a free demo in DM.\n\ncontact@velosyntech.com | velosyntech.com\n\n#GlobalBusiness #AIAutomation #SmallBizTips #Multilingual #BusinessGrowth",
+    "hook_type": "bold_claim",
+    "hook_options": [
+      {
+        "text": "Language barriers kill *global sales*.",
+        "type": "bold_claim"
+      },
+      {
+        "text": "Can your website speak *every language*?",
+        "type": "question"
+      },
+      {
+        "text": "Three ways to *translate* instantly.",
+        "type": "number"
+      }
+    ],
+    "style": "cinematic",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "plan": {
+      "hook": "lid_open",
+      "problem": "orbit_left",
+      "solution": "orbit_right",
+      "result": "low_hero",
+      "cta": "duo_cta",
+      "bg": "grid",
+      "type": "typewriter",
+      "transition": "glitch",
+      "finish_phone": "black",
+      "finish_laptop": "silver",
+      "theme": "light",
+      "palette": "cobalt"
+    },
+    "ig_id": "18204099262391837",
+    "permalink": "https://www.instagram.com/reel/DfrLh6_DT2l/",
+    "fb_id": "1486428286884337",
+    "fb_link": "https://www.facebook.com/reel/1486428286884337",
+    "status": "posted",
+    "repost": "ok"
   }
 ]
