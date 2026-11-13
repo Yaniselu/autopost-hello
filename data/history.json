@@ -958,5 +958,44 @@
     "fb_id": "1911438499842405"
    }
   ]
+ },
+ {
+  "time": "2026-11-13T16:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-13T16:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43438695390",
+  "topic": "simple n8n automations that save hours every week",
+  "pillar": "simple n8n automations that save hours every week",
+  "hook": "Stop *copying data* between apps manually.",
+  "caption": "Most business owners lose up to 10 hours every week simply moving information from one app to another.\n\nManual copy-pasting is not just tedious—it creates delays and opens the door to simple human errors. By setting up basic workflows, every web inquiry can instantly format itself and update your internal systems.\n\nWhen your tools update themselves automatically, your team stops acting like manual data bridges and starts focusing on real growth.\n\nHow many hours does your team spend on repetitive admin work each week? Comment DEMO and we'll send you a free demo in DM.\n\n#businessautomation #n8n #productivityhacks #aiassistants #leadgeneration",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "Stop *copying data* between apps manually.",
+    "type": "pain"
+   },
+   {
+    "text": "You are *wasting 10 hours* every week.",
+    "type": "bold_claim"
+   },
+   {
+    "text": "The secret to *automating your inbox*.",
+    "type": "curiosity"
+   }
+  ],
+  "style": "liquid_glass",
+  "voice": "en-US-BrianMultilingualNeural",
+  "plan": {
+   "style": "liquid_glass",
+   "theme": "light",
+   "palette": "coral"
+  },
+  "ig_id": "18122640557515413",
+  "permalink": "https://www.instagram.com/reel/DfrzicNApAc/",
+  "fb_id": "1030834913363914",
+  "fb_link": "https://www.facebook.com/reel/1030834913363914",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
