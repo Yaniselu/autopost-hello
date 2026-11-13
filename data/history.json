@@ -1031,5 +1031,58 @@
     "fb_id": "1834866314188693"
    }
   ]
+ },
+ {
+  "time": "2026-11-13T20:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-13T20:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43478384913",
+  "topic": "losing customers because nobody replies fast enough",
+  "pillar": "losing customers because nobody replies fast enough",
+  "hook": "Why is one business always booked while others lose clients daily?",
+  "caption": "When an interested customer reaches out on your website, waiting hours for a reply usually means losing them to a faster competitor.\n\nBy automating your responses, every visitor gets an immediate answer regardless of time or language.\n\nAn AI assistant built on n8n captures leads and schedules appointments automatically so you can grow your business stress-free.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#leadgeneration #aiassistants #n8n #businessautomation #smallbusinessgrowth",
+  "hook_type": "curiosity",
+  "hook_options": [
+   {
+    "text": "Why is one business always booked while others lose clients daily?",
+    "type": "curiosity"
+   },
+   {
+    "text": "Slow website replies are secretly handing your customers to competitors.",
+    "type": "pain"
+   },
+   {
+    "text": "What if your website booked clients automatically while you slept?",
+    "type": "question"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-EmmaMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "violet",
+   "business": "salon",
+   "story_type": "secret",
+   "sets": [
+    "home",
+    "office",
+    "park",
+    "shop",
+    "street"
+   ],
+   "names": [
+    "Elena",
+    "Oliver",
+    "Chloe"
+   ]
+  },
+  "ig_id": "18133832326761665",
+  "permalink": "https://www.instagram.com/reel/DfsQDQegdhy/",
+  "fb_id": "1159248223209419",
+  "fb_link": "https://www.facebook.com/reel/1159248223209419",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
