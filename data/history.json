@@ -757,5 +757,22 @@
     "fb_link": "https://www.facebook.com/reel/2081758532475041",
     "status": "posted",
     "repost": "ok"
+  },
+  {
+    "time": "2026-11-13T09:31+02:00",
+    "type": "story",
+    "mode": "scheduled",
+    "slot": "story@2026-11-13T09:30:00+02:00",
+    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43386235106",
+    "topic": "Most buyers shop at night",
+    "hook": "Most buyers shop at night",
+    "caption": "Most buyers shop at night — Up to half of all website inquiries arrive outside normal business hours when nobody is online to reply.",
+    "status": "posted",
+    "stories": [
+      {
+        "ig_id": "18122295613954790",
+        "fb_id": "1886466615843528"
+      }
+    ]
   }
 ]

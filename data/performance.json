@@ -271,5 +271,26 @@
   "hour": "20:01",
   "time": "2026-11-12T20:01+02:00",
   "permalink": "https://www.instagram.com/reel/DfprEUKFW7H/"
+ },
+ "18183958852437132": {
+  "fetched": "2026-11-13T07:31:07.115273+00:00",
+  "metrics": {
+   "views": 192,
+   "reach": 138,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 131.57,
+  "type": "reel",
+  "style": "story",
+  "pillar": "losing customers because nobody replies fast enough",
+  "hook_type": "pain",
+  "hook": "Every missed message is money walking away.",
+  "hour": "08:01",
+  "time": "2026-11-13T08:01+02:00",
+  "permalink": "https://www.instagram.com/reel/Dfq9i4OirTr/"
  }
 }
