@@ -334,5 +334,26 @@
   "hour": "10:40",
   "time": "2026-11-13T10:40+02:00",
   "permalink": "https://www.instagram.com/reel/DfrQBiWCW8p/"
+ },
+ "17920549254467339": {
+  "fetched": "2026-11-13T13:31:20.637299+00:00",
+  "metrics": {
+   "views": 243,
+   "reach": 55,
+   "likes": 2,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 3
+  },
+  "score": 139.43,
+  "type": "carousel",
+  "style": null,
+  "pillar": "losing customers because nobody replies fast enough",
+  "hook_type": null,
+  "hook": "Stop *ignoring* your buyers",
+  "hour": "13:01",
+  "time": "2026-11-13T13:01+02:00",
+  "permalink": "https://www.instagram.com/p/Dfrem4PDfoZ/"
  }
 }

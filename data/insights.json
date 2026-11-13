@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-13T11:01+00:00",
- "posts_measured": 16,
+ "updated": "2026-11-13T13:31+00:00",
+ "posts_measured": 17,
  "basic_only": false,
  "by_type": {
   "reel": {
@@ -8,8 +8,8 @@
    "n": 12
   },
   "carousel": {
-   "avg": 149.7,
-   "n": 4
+   "avg": 147.7,
+   "n": 5
   }
  },
  "by_style": {
@@ -32,8 +32,8 @@
    "n": 1
   },
   "losing customers because nobody replies fast enough": {
-   "avg": 157.0,
-   "n": 2
+   "avg": 151.1,
+   "n": 3
   },
   "turning website visitors into leads and booked demos": {
    "avg": 138.9,
@@ -116,8 +116,8 @@
    "n": 1
   },
   "13:01": {
-   "avg": 147.4,
-   "n": 1
+   "avg": 143.4,
+   "n": 2
   },
   "18:54": {
    "avg": 142.2,
@@ -217,6 +217,7 @@
  "recommended_hours": [
   "08:01",
   "20:01",
-  "10:01"
+  "10:01",
+  "13:01"
  ]
 }

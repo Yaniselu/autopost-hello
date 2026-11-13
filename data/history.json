@@ -941,5 +941,22 @@
   "fb_link": "https://www.facebook.com/1491182390739007_122101398261546258",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-13T15:31+02:00",
+  "type": "story",
+  "mode": "scheduled",
+  "slot": "story@2026-11-13T15:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43434241927",
+  "topic": "Your calendar fills while you sleep",
+  "hook": "Your calendar fills while you sleep",
+  "caption": "Your calendar fills while you sleep — An AI assistant books meetings 24/7 so you wake up to paying clients.",
+  "status": "posted",
+  "stories": [
+   {
+    "ig_id": "18108239531208748",
+    "fb_id": "1911438499842405"
+   }
+  ]
  }
 ]
