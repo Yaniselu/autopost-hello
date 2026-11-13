@@ -924,5 +924,22 @@
   "fb_link": "https://www.facebook.com/reel/1849807686218734",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-13T13:01+02:00",
+  "type": "carousel",
+  "mode": "scheduled",
+  "slot": "carousel@2026-11-13T13:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43413558800",
+  "topic": "losing customers because nobody replies fast enough",
+  "pillar": "losing customers because nobody replies fast enough",
+  "hook": "Stop *ignoring* your buyers",
+  "caption": "Waiting hours to reply to a website inquiry is the fastest way to hand money directly to your competitors. Modern buyers expect answers instantly, no matter what time they happen to be browsing your pages.\n\nFixing this gap does not require hiring a massive support team. You just need an automated system that greets visitors the second they arrive and secures their contact details automatically.\n\nComment DEMO and we will send you a free demo in DM.\n\n#businessgrowth #leadgeneration #automation #smallbiz #sales",
+  "ig_id": "17920549254467339",
+  "permalink": "https://www.instagram.com/p/Dfrem4PDfoZ/",
+  "fb_id": "1491182390739007_122101398261546258",
+  "fb_link": "https://www.facebook.com/1491182390739007_122101398261546258",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
