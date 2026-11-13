@@ -1014,5 +1014,22 @@
   "fb_link": "https://www.facebook.com/1491182390739007_122101657557546258",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-13T19:31+02:00",
+  "type": "story",
+  "mode": "scheduled",
+  "slot": "story@2026-11-13T19:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43473471098",
+  "topic": "Most website leads vanish instantly",
+  "hook": "Most website leads vanish instantly",
+  "caption": "Most website leads vanish instantly — If you do not reply in minutes, visitors simply buy from your competitor instead.",
+  "status": "posted",
+  "stories": [
+   {
+    "ig_id": "18113430326238803",
+    "fb_id": "1834866314188693"
+   }
+  ]
  }
 ]
