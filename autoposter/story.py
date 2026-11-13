@@ -130,7 +130,7 @@ RULES:
 - Accurate and honest: no fake statistics, no real company names; numbers are clearly illustrative.
 
 Also: hooks: 3 alternative FIRST lines {{"text": max 12 words, "type": question|bold_claim|number|pain|curiosity|myth,
-"spoken": same line said naturally}}; "best_hook": 0-2. business_name (max 14 chars), services (3 ["name","$price"]),
+"spoken": same line said naturally}}; "best_hook": 0-2. business_name (max 14 chars, must clearly be a {business}), services (3 ["name","$price"]),
 office_name and warehouse_name (max 12 chars, invented). cta: max 7 words. Caption: 3-5 short paragraphs with the lesson,
 end with a question, max 2 emojis. hashtags: exactly {hashtags_count}.
 Return ONLY JSON: {{"topic","story_type","business","business_name","services","office_name","warehouse_name","cast","shots",
@@ -243,10 +243,10 @@ def normalize(o: dict, allowed_biz: list, suggest_biz: str) -> dict:
         sh["props"] = props[:3]
         sh["ui"] = _ui(s.get("ui"))
         shots.append(sh)
-    if len(shots) < 4:
-        raise ValueError("story has too few usable shots")
-    if len({s["set"] for s in shots}) < 2:
-        raise ValueError("story uses only one place")
+    if len(shots) < 6:
+        raise ValueError(f"story has only {len(shots)} usable shots, need 7-10")
+    if len({s["set"] for s in shots}) < 3:
+        raise ValueError("story must use at least 3 different sets (places)")
     shots[-1]["ui"] = {"type": "endcard"}
     shots[-1]["mood"] = "good"
     o["cast"], o["shots"] = cast, shots

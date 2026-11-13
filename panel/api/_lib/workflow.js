@@ -141,10 +141,7 @@ jobs:
         run: |
           git config user.name "autoposter-bot"
           git config user.email "autoposter-bot@users.noreply.github.com"
-          git add data/
-          git diff --cached --quiet && exit 0
-          git commit -q -m "Update history"
-          for i in 1 2 3; do git pull -q --rebase && git push -q && break; sleep 5; done
+          python -m autoposter.sync || (sleep 15 && python -m autoposter.sync)
 
       - if: always() && ${media}
         name: Keep the files for 7 days
