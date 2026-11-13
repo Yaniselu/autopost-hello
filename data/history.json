@@ -1,826 +1,876 @@
 [
-  {
-    "time": "2026-11-09T15:01+02:00",
-    "mode": "test",
-    "slot": null,
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42621735139",
-    "status": "error",
-    "error": "RuntimeError: Could not generate content: 404 Client Error: Not Found for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***"
+ {
+  "time": "2026-11-09T15:01+02:00",
+  "mode": "test",
+  "slot": null,
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42621735139",
+  "status": "error",
+  "error": "RuntimeError: Could not generate content: 404 Client Error: Not Found for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***"
+ },
+ {
+  "time": "2026-11-09T18:39+02:00",
+  "mode": "test",
+  "slot": null,
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42656962712",
+  "status": "error",
+  "error": "RuntimeError: Could not generate content: 404 Client Error: Not Found for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***"
+ },
+ {
+  "time": "2026-11-09T19:36+02:00",
+  "type": "reel",
+  "mode": "test",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42666102232",
+  "topic": "practical AI tips that save time at work",
+  "pillar": "practical AI tips that save time at work",
+  "hook": "Stop wasting hours on busywork.",
+  "caption": "Most professionals use AI like a toy instead of an operating system.\n\nThe secret isn't writing complex prompts for everything. It is identifying the three most repetitive tasks in your workflow and building simple, repeatable guardrails around them.\n\nStart small. Pick one bottleneck today, test an automated fix, and measure the time saved.\n\nWhat is your biggest daily time sink? Let's discuss below. 🤖\n\n#ArtificialIntelligence #ProductivityHacks #WorkflowAutomation #TechTips #Velosyntech",
+  "status": "test",
+  "previews": [
+   "https://du2pm6als1feycap.public.blob.vercel-storage.com/previews/reel-20261109-173618-XT9gLLzMxZQRY9f8GP7geX1szpSfOF.mp4"
+  ]
+ },
+ {
+  "time": "2026-11-09T20:50+02:00",
+  "type": "reel",
+  "mode": "test",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42677432964",
+  "topic": "an AI assistant answering website visitors 24/7 (before vs after)",
+  "pillar": "an AI assistant answering website visitors 24/7 (before vs after)",
+  "hook": "Your website is *ignoring* your next customer.",
+  "caption": "Most businesses treat their website like a digital brochure that goes to sleep at 5 PM. Meanwhile, your visitors are shopping, researching, and making buying decisions late at night or over the weekend.\n\nWhen they cannot get an immediate answer to a simple question about your pricing or availability, they do not wait. They click away to your competitor who replies instantly.\n\nAdding an AI assistant changes that dynamic completely. It handles the midnight questions in any language, qualifies the buyer, and secures the booking before you even open your eyes.\n\nHow many inquiries do you think you miss outside of normal working hours?\n\n#businessgrowth #automation #leadgeneration #smallbusiness #ai",
+  "plan": {
+   "hook": "lid_open",
+   "problem": "orbit_left",
+   "solution": "side_track",
+   "result": "duo_front",
+   "cta": "phone_spin",
+   "bg": "bokeh",
+   "type": "kinetic",
+   "transition": "glitch",
+   "finish_phone": "natural",
+   "finish_laptop": "spaceblack",
+   "palette": "sunset"
   },
-  {
-    "time": "2026-11-09T18:39+02:00",
-    "mode": "test",
-    "slot": null,
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42656962712",
-    "status": "error",
-    "error": "RuntimeError: Could not generate content: 404 Client Error: Not Found for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***"
+  "status": "test",
+  "previews": [
+   "https://du2pm6als1feycap.public.blob.vercel-storage.com/previews/reel-20261109-185031-t1ySgkwb9UMkIopArGQivGuVLuVYI5.mp4",
+   "https://du2pm6als1feycap.public.blob.vercel-storage.com/previews/repost-reel-20261109-185031-SXI03oTceOvjK2LgvHFeS38nsqsG7Z.jpg"
+  ]
+ },
+ {
+  "time": "2026-11-09T21:12+02:00",
+  "type": "reel",
+  "mode": "now",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42680726699",
+  "topic": "an AI assistant answering website visitors 24/7 (before vs after)",
+  "pillar": "an AI assistant answering website visitors 24/7 (before vs after)",
+  "hook": "Your website is silent when customers buy.",
+  "caption": "Most business websites act like a locked door outside of standard office hours. When a buyer finally has time to look at your services at night, they want answers immediately, not tomorrow morning.\n\nWaiting until morning means losing high-intent buyers to competitors who respond instantly. Speed wins business every single time.\n\nInstalling a smart assistant changes this dynamic by handling every inquiry instantly, day or night.\n\nHow many website visitors do you think you miss after hours?\n\n#businessgrowth #automation #smallbusiness #leadgeneration #ai",
+  "plan": {
+   "hook": "macro_pull",
+   "problem": "screen_push",
+   "solution": "side_track",
+   "result": "duo_front",
+   "cta": "duo_cta",
+   "bg": "grid",
+   "type": "caption",
+   "transition": "flash",
+   "finish_phone": "blue",
+   "finish_laptop": "silver",
+   "palette": "aurora"
   },
-  {
-    "time": "2026-11-09T19:36+02:00",
-    "type": "reel",
-    "mode": "test",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42666102232",
-    "topic": "practical AI tips that save time at work",
-    "pillar": "practical AI tips that save time at work",
-    "hook": "Stop wasting hours on busywork.",
-    "caption": "Most professionals use AI like a toy instead of an operating system.\n\nThe secret isn't writing complex prompts for everything. It is identifying the three most repetitive tasks in your workflow and building simple, repeatable guardrails around them.\n\nStart small. Pick one bottleneck today, test an automated fix, and measure the time saved.\n\nWhat is your biggest daily time sink? Let's discuss below. 🤖\n\n#ArtificialIntelligence #ProductivityHacks #WorkflowAutomation #TechTips #Velosyntech",
-    "status": "test",
-    "previews": [
-      "https://du2pm6als1feycap.public.blob.vercel-storage.com/previews/reel-20261109-173618-XT9gLLzMxZQRY9f8GP7geX1szpSfOF.mp4"
-    ]
+  "ig_id": "17977988487160971",
+  "permalink": "https://www.instagram.com/reel/DfiF0VNil9U/",
+  "fb_id": "2262384711212122",
+  "fb_link": "https://www.facebook.com/reel/2262384711212122",
+  "status": "posted",
+  "repost": "ok"
+ },
+ {
+  "time": "2026-11-10T17:06+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-10T16:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42840822871",
+  "status": "error",
+  "error": "InstagramError: HTTP 400: {'message': 'Cannot call API for app 1686332366250214 on behalf of user 122105983761535947', 'type': 'OAuthException', 'code': 200, 'fbtrace_id': 'AxBVI-xVEPHaZ_ptsOK-5ld'}"
+ },
+ {
+  "time": "2026-11-10T20:15+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-10T20:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42873176203",
+  "status": "error",
+  "error": "InstagramError: HTTP 400: {'message': 'Cannot call API for app 1686332366250214 on behalf of user 122105983761535947', 'type': 'OAuthException', 'code': 200, 'fbtrace_id': 'AUXzInx44_5L_9wJliwn-lQ'}"
+ },
+ {
+  "time": "2026-11-11T08:50+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-11T08:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42975123785",
+  "status": "error",
+  "error": "RuntimeError: Instagram nu mai acceptă conexiunea (Cannot call API for app 1686332366250214 on behalf of user 122105983761535947). Reconectează contul în panou: Cont & chei → token nou din Graph API Explorer → Conectează.",
+  "retry": "se reîncearcă automat (încercarea 1/3)"
+ },
+ {
+  "time": "2026-11-11T09:06+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-11T08:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42977045358",
+  "status": "error",
+  "error": "RuntimeError: Instagram nu mai acceptă conexiunea (Cannot call API for app 1686332366250214 on behalf of user 122105983761535947). Reconectează contul în panou: Cont & chei → token nou din Graph API Explorer → Conectează.",
+  "retry": "se reîncearcă automat (încercarea 2/3)"
+ },
+ {
+  "time": "2026-11-11T10:13+02:00",
+  "type": "reel",
+  "mode": "now",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42985210920",
+  "topic": "losing customers because nobody replies fast enough",
+  "pillar": "losing customers because nobody replies fast enough",
+  "hook": "Slow *replies* cost you paying customers.",
+  "caption": "People hate waiting. If a potential client lands on your page and cannot get a fast answer about your service, they will simply close the tab and message the next business on Google.\n\nYou do not need to sit by your inbox all day to fix this. Smart automation handles the first contact, gives clear answers, and secures the lead while you focus on your actual work.\n\nHow fast do you usually reply to website messages? Let us know below.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessgrowth #automation #smallbiz #leadgeneration #ai",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "Slow *replies* cost you paying customers.",
+    "type": "pain"
+   },
+   {
+    "text": "Why do buyers leave your *website* instantly?",
+    "type": "question"
+   },
+   {
+    "text": "Fast *answers* win the deal every time.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "cinematic",
+  "voice": "en-US-BrianMultilingualNeural",
+  "plan": {
+   "hook": "lid_open",
+   "problem": "high_angle",
+   "solution": "orbit_right",
+   "result": "low_hero",
+   "cta": "duo_cta",
+   "bg": "bokeh",
+   "type": "caption",
+   "transition": "whip",
+   "finish_phone": "natural",
+   "finish_laptop": "silver",
+   "palette": "aurora"
   },
-  {
-    "time": "2026-11-09T20:50+02:00",
-    "type": "reel",
-    "mode": "test",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42677432964",
-    "topic": "an AI assistant answering website visitors 24/7 (before vs after)",
-    "pillar": "an AI assistant answering website visitors 24/7 (before vs after)",
-    "hook": "Your website is *ignoring* your next customer.",
-    "caption": "Most businesses treat their website like a digital brochure that goes to sleep at 5 PM. Meanwhile, your visitors are shopping, researching, and making buying decisions late at night or over the weekend.\n\nWhen they cannot get an immediate answer to a simple question about your pricing or availability, they do not wait. They click away to your competitor who replies instantly.\n\nAdding an AI assistant changes that dynamic completely. It handles the midnight questions in any language, qualifies the buyer, and secures the booking before you even open your eyes.\n\nHow many inquiries do you think you miss outside of normal working hours?\n\n#businessgrowth #automation #leadgeneration #smallbusiness #ai",
-    "plan": {
-      "hook": "lid_open",
-      "problem": "orbit_left",
-      "solution": "side_track",
-      "result": "duo_front",
-      "cta": "phone_spin",
-      "bg": "bokeh",
-      "type": "kinetic",
-      "transition": "glitch",
-      "finish_phone": "natural",
-      "finish_laptop": "spaceblack",
-      "palette": "sunset"
-    },
-    "status": "test",
-    "previews": [
-      "https://du2pm6als1feycap.public.blob.vercel-storage.com/previews/reel-20261109-185031-t1ySgkwb9UMkIopArGQivGuVLuVYI5.mp4",
-      "https://du2pm6als1feycap.public.blob.vercel-storage.com/previews/repost-reel-20261109-185031-SXI03oTceOvjK2LgvHFeS38nsqsG7Z.jpg"
-    ]
+  "ig_id": "18078997739438412",
+  "permalink": "https://www.instagram.com/reel/DfmDVonDBBh/",
+  "fb_id": "2227329004861773",
+  "fb_link": "https://www.facebook.com/reel/2227329004861773",
+  "status": "posted",
+  "repost": "ok"
+ },
+ {
+  "time": "2026-11-11T10:34+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-11T10:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42987570735",
+  "status": "error",
+  "error": "LLMError: text generation failed: Expecting value: line 51 column 7 (char 1605)",
+  "retry": "se reîncearcă automat (încercarea 1/3)"
+ },
+ {
+  "time": "2026-11-11T11:17+02:00",
+  "type": "story",
+  "mode": "scheduled",
+  "slot": "story@2026-11-11T09:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42993611927",
+  "status": "error",
+  "error": "LLMError: Gemini: cannot list models (HTTP 401) - check the API key"
+ },
+ {
+  "time": "2026-11-11T11:25+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-11T10:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42995006277",
+  "status": "error",
+  "error": "LLMError: Gemini: cannot list models (HTTP 401) - check the API key"
+ },
+ {
+  "time": "2026-11-11T11:31+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-11T10:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42995739550",
+  "status": "error",
+  "error": "LLMError: Gemini: cannot list models (HTTP 401) - check the API key"
+ },
+ {
+  "time": "2026-11-11T13:01+02:00",
+  "type": "carousel",
+  "mode": "scheduled",
+  "slot": "carousel@2026-11-11T13:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43008355117",
+  "status": "error",
+  "error": "LLMError: Gemini: cannot list models (HTTP 401) - check the API key"
+ },
+ {
+  "time": "2026-11-11T13:23+02:00",
+  "type": "carousel",
+  "mode": "now",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43011460402",
+  "topic": "turning website visitors into leads and booked demos",
+  "pillar": "turning website visitors into leads and booked demos",
+  "hook": "Turn website *visitors* into booked clients.",
+  "caption": "Your website gets traffic every single day, but most visitors vanish before you even know they were there. Waiting until morning to reply means handing those buyers directly to your competitors.\n\nAdding an automated assistant changes how your business handles online demand. It greets every visitor, answers their questions instantly, and secures the booking while their interest is highest.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#velosyntech #businessautomation #leadgeneration #aiagents #growth",
+  "ig_id": "18018073727952152",
+  "permalink": "https://www.instagram.com/p/DfmXkKgGDEa/",
+  "fb_id": "1491182390739007_122099718879546258",
+  "fb_link": "https://www.facebook.com/1491182390739007_122099718879546258",
+  "status": "posted",
+  "repost": "ok"
+ },
+ {
+  "time": "2026-11-11T15:31+02:00",
+  "type": "story",
+  "mode": "scheduled",
+  "slot": "story@2026-11-11T15:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43029733301",
+  "topic": "Most leads reply at night",
+  "hook": "Most leads reply at night",
+  "caption": "Most leads reply at night — Up to half of all website questions arrive after your office closes. Are you answering them?",
+  "status": "posted",
+  "stories": [
+   {
+    "ig_id": "18120620641992576",
+    "fb_id": "1101100396039581"
+   }
+  ]
+ },
+ {
+  "time": "2026-11-11T17:16+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-11T16:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43044041950",
+  "topic": "answering customers in any language automatically",
+  "pillar": "answering customers in any language automatically",
+  "hook": "Lost a sale because of *language*?",
+  "caption": "Your website reaches a global audience, but language barriers stop foreign visitors from buying your services.\n\nWhen someone lands on your page from another country, they want quick answers in their own language. If they have to translate text manually, they simply go to a competitor instead.\n\nAutomating instant multi-language replies keeps global leads engaged and ready to purchase 24/7.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessautomation #leadgeneration #smallbiztips #aiagents #websitedesign",
+  "hook_type": "question",
+  "hook_options": [
+   {
+    "text": "Lost a sale because of *language*?",
+    "type": "question"
+   },
+   {
+    "text": "Foreign visitors leave without *buying* anything.",
+    "type": "statement"
+   },
+   {
+    "text": "Speak every language on *autopilot*.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "liquid_glass",
+  "voice": "en-US-EmmaMultilingualNeural",
+  "plan": {
+   "style": "liquid_glass",
+   "theme": "light",
+   "palette": "coral"
   },
-  {
-    "time": "2026-11-09T21:12+02:00",
-    "type": "reel",
-    "mode": "now",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42680726699",
-    "topic": "an AI assistant answering website visitors 24/7 (before vs after)",
-    "pillar": "an AI assistant answering website visitors 24/7 (before vs after)",
-    "hook": "Your website is silent when customers buy.",
-    "caption": "Most business websites act like a locked door outside of standard office hours. When a buyer finally has time to look at your services at night, they want answers immediately, not tomorrow morning.\n\nWaiting until morning means losing high-intent buyers to competitors who respond instantly. Speed wins business every single time.\n\nInstalling a smart assistant changes this dynamic by handling every inquiry instantly, day or night.\n\nHow many website visitors do you think you miss after hours?\n\n#businessgrowth #automation #smallbusiness #leadgeneration #ai",
-    "plan": {
-      "hook": "macro_pull",
-      "problem": "screen_push",
-      "solution": "side_track",
-      "result": "duo_front",
-      "cta": "duo_cta",
-      "bg": "grid",
-      "type": "caption",
-      "transition": "flash",
-      "finish_phone": "blue",
-      "finish_laptop": "silver",
-      "palette": "aurora"
-    },
-    "ig_id": "17977988487160971",
-    "permalink": "https://www.instagram.com/reel/DfiF0VNil9U/",
-    "fb_id": "2262384711212122",
-    "fb_link": "https://www.facebook.com/reel/2262384711212122",
-    "status": "posted",
-    "repost": "ok"
+  "ig_id": "18113468702118556",
+  "permalink": "https://www.instagram.com/reel/DfmyOtliYsU/",
+  "fb_id": "1717993509748276",
+  "fb_link": "https://www.facebook.com/reel/1717993509748276",
+  "status": "posted",
+  "repost": "ok"
+ },
+ {
+  "time": "2026-11-11T19:02+02:00",
+  "type": "carousel",
+  "mode": "scheduled",
+  "slot": "carousel@2026-11-11T19:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43063910859",
+  "topic": "simple n8n automations that save hours every week",
+  "pillar": "simple n8n automations that save hours every week",
+  "hook": "Stop doing *manual* copy-paste work.",
+  "caption": "Busywork is the silent profit killer in most growing businesses. Moving data between apps by hand wastes hours that your team could spend talking to actual buyers. \n\nConnecting your tools takes minutes to set up and runs silently in the background forever. Stop trading human time for computer tasks. \n\nWhich task takes up most of your Mondays? \n\nComment DEMO and we'll send you a free demo in DM.\n\n#automation #businessowner #productivity #workflow #velosyntech",
+  "ig_id": "18128266489900070",
+  "permalink": "https://www.instagram.com/p/Dfm-jw5F_Gg/",
+  "fb_id": "1491182390739007_122099971677546258",
+  "fb_link": "https://www.facebook.com/1491182390739007_122099971677546258",
+  "status": "posted",
+  "repost": "ok"
+ },
+ {
+  "time": "2026-11-11T19:31+02:00",
+  "type": "story",
+  "mode": "scheduled",
+  "slot": "story@2026-11-11T19:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43068821840",
+  "topic": "Who answers your site at night?",
+  "hook": "Who answers your site at night?",
+  "caption": "Who answers your site at night? — If the answer is nobody, you are handing warm buyers straight to your competitors before morning.",
+  "status": "posted",
+  "stories": [
+   {
+    "ig_id": "18171765274416901",
+    "fb_id": "1402931691921226"
+   }
+  ]
+ },
+ {
+  "time": "2026-11-11T20:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-11T20:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43073612296",
+  "topic": "turning website visitors into leads and booked demos",
+  "pillar": "turning website visitors into leads and booked demos",
+  "hook": "Your *website* is leaking potential clients.",
+  "caption": "Most business websites act like a silent digital brochure. People arrive, read a few paragraphs, and leave without a trace.\n\nYou do not need more traffic. You need a way to capture the attention of the people who are already landing on your pages.\n\nWhen you turn passive visitors into active conversations, your entire sales process speeds up.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessgrowth #leadgeneration #automation #smallbusiness #sales",
+  "hook_type": "bold_claim",
+  "hook_options": [
+   {
+    "text": "Stop *ignoring* your website traffic.",
+    "type": "pain"
+   },
+   {
+    "text": "Your *website* is leaking potential clients.",
+    "type": "bold_claim"
+   },
+   {
+    "text": "Why do visitors *leave* without buying?",
+    "type": "question"
+   }
+  ],
+  "style": "cinematic",
+  "plan": {
+   "hook": "macro_pull",
+   "problem": "high_angle",
+   "solution": "phone_focus",
+   "result": "phone_result",
+   "cta": "duo_cta",
+   "bg": "spot",
+   "type": "kinetic",
+   "transition": "zoom",
+   "finish_phone": "black",
+   "finish_laptop": "silver",
+   "theme": "light",
+   "palette": "tangerine"
   },
-  {
-    "time": "2026-11-10T17:06+02:00",
-    "type": "reel",
-    "mode": "scheduled",
-    "slot": "reel@2026-11-10T16:00:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42840822871",
-    "status": "error",
-    "error": "InstagramError: HTTP 400: {'message': 'Cannot call API for app 1686332366250214 on behalf of user 122105983761535947', 'type': 'OAuthException', 'code': 200, 'fbtrace_id': 'AxBVI-xVEPHaZ_ptsOK-5ld'}"
+  "ig_id": "17942837514390841",
+  "permalink": "https://www.instagram.com/reel/DfnGCe_EkXu/",
+  "fb_id": "1508845884438451",
+  "fb_link": "https://www.facebook.com/reel/1508845884438451",
+  "status": "posted",
+  "repost": "ok"
+ },
+ {
+  "time": "2026-11-12T08:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-12T08:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43165128927",
+  "topic": "simple n8n automations that save hours every week",
+  "pillar": "simple n8n automations that save hours every week",
+  "hook": "Stop *wasting* your Mondays on manual *copy-paste*.",
+  "caption": "Busywork is the silent profit killer in most growing businesses. Moving data between apps by hand wastes valuable time that should go toward serving clients.\n\nSmart workflows handle the repetitive tasks in the background, keeping your records accurate while you focus on what actually moves the needle.\n\nWhat repetitive task takes up most of your team's week?\n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessautomation #productivity #workflow #operations #velosyntech",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "Stop *wasting* your Mondays on manual *copy-paste*.",
+    "type": "pain"
+   },
+   {
+    "text": "Your team loses *ten hours* a week.",
+    "type": "number"
+   },
+   {
+    "text": "Still moving data *manually* between your apps?",
+    "type": "question"
+   }
+  ],
+  "style": "cinematic",
+  "voice": "en-US-BrianMultilingualNeural",
+  "plan": {
+   "hook": "rise_turn",
+   "problem": "orbit_left",
+   "solution": "side_track",
+   "result": "low_hero",
+   "cta": "phone_spin",
+   "bg": "grid",
+   "type": "caption",
+   "transition": "zoom",
+   "finish_phone": "desert",
+   "finish_laptop": "silver",
+   "theme": "light",
+   "palette": "emerald"
   },
-  {
-    "time": "2026-11-10T20:15+02:00",
-    "type": "reel",
-    "mode": "scheduled",
-    "slot": "reel@2026-11-10T20:00:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42873176203",
-    "status": "error",
-    "error": "InstagramError: HTTP 400: {'message': 'Cannot call API for app 1686332366250214 on behalf of user 122105983761535947', 'type': 'OAuthException', 'code': 200, 'fbtrace_id': 'AUXzInx44_5L_9wJliwn-lQ'}"
+  "ig_id": "18119739512277920",
+  "permalink": "https://www.instagram.com/reel/DfoYn1TjlX0/",
+  "fb_id": "1153755757381125",
+  "fb_link": "https://www.facebook.com/reel/1153755757381125",
+  "status": "posted",
+  "repost": "ok"
+ },
+ {
+  "time": "2026-11-12T09:31+02:00",
+  "type": "story",
+  "mode": "scheduled",
+  "slot": "story@2026-11-12T09:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43175752164",
+  "topic": "Half your traffic arrives late.",
+  "hook": "Half your traffic arrives late.",
+  "caption": "Half your traffic arrives late. — Up to 50% of website inquiries happen after your office doors close.",
+  "status": "posted",
+  "stories": [
+   {
+    "ig_id": "17913514680589942",
+    "fb_id": "1162841289430742"
+   }
+  ]
+ },
+ {
+  "time": "2026-11-12T10:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-12T10:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43179477845",
+  "topic": "customer support questions an AI can handle for you",
+  "pillar": "customer support questions an AI can handle for you",
+  "hook": "Tired of answering the *same questions* daily?",
+  "caption": "You shouldn't be paying yourself or your team to type \"pricing starts at...\" twelve times every afternoon.\n\nMost routine support inquiries fall into predictable buckets: standard pricing, turnaround times, and delivery updates. When you connect an AI assistant trained on your business data, it resolves up to 80% of these tickets instantly on your website without human intervention.\n\nYour team only steps in when a high-value customer needs custom guidance or personal attention. Everything else runs quietly in the background.\n\nComment DEMO and we'll send you a free demo in DM.\n\nHow many repetitive questions hit your inbox this morning?\n\n#customersupport #businessautomation #workflowautomation #smallbusinessowner #n8n",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "Tired of answering the *same questions* daily?",
+    "type": "pain"
+   },
+   {
+    "text": "80% of support questions are *identical*.",
+    "type": "number"
+   },
+   {
+    "text": "Your inbox should not be *copy-paste*.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "liquid_glass",
+  "plan": {
+   "style": "liquid_glass",
+   "theme": "light",
+   "palette": "cobalt"
   },
-  {
-    "time": "2026-11-11T08:50+02:00",
-    "type": "reel",
-    "mode": "scheduled",
-    "slot": "reel@2026-11-11T08:00:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42975123785",
-    "status": "error",
-    "error": "RuntimeError: Instagram nu mai acceptă conexiunea (Cannot call API for app 1686332366250214 on behalf of user 122105983761535947). Reconectează contul în panou: Cont & chei → token nou din Graph API Explorer → Conectează.",
-    "retry": "se reîncearcă automat (încercarea 1/3)"
+  "ig_id": "18115637627605999",
+  "permalink": "https://www.instagram.com/reel/DfolOKhkvSB/",
+  "fb_id": "3753226224844741",
+  "fb_link": "https://www.facebook.com/reel/3753226224844741",
+  "status": "posted",
+  "repost": "ok"
+ },
+ {
+  "time": "2026-11-12T10:31+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-12T10:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43183495286",
+  "topic": "myths vs facts about AI chatbots for small businesses",
+  "pillar": "myths vs facts about AI chatbots for small businesses",
+  "hook": "AI assistants are *too complex* to set up.",
+  "caption": "Most business owners think AI assistants require a dedicated tech team and months of frustrating setup. That is an expensive myth.\n\nModern automated workflows connect directly to your existing website content in minutes. They read your actual pages, learn your exact offers, and reply accurately to visitors around the clock.\n\nSkip the guesswork and let smart systems handle the repetitive questions while you focus on closing deals.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#automation #businessgrowth #nocode #smallbiz #efficiency",
+  "hook_type": "myth",
+  "hook_options": [
+   {
+    "text": "Are *chatbots* just expensive toys?",
+    "type": "question"
+   },
+   {
+    "text": "AI assistants are *too complex* to set up.",
+    "type": "myth"
+   },
+   {
+    "text": "Bots *destroy* your customer trust.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "cinematic",
+  "voice": "en-US-AvaMultilingualNeural",
+  "plan": {
+   "hook": "macro_pull",
+   "problem": "screen_push",
+   "solution": "side_track",
+   "result": "low_hero",
+   "cta": "phone_spin",
+   "bg": "bokeh",
+   "type": "typewriter",
+   "transition": "flash",
+   "finish_phone": "blue",
+   "finish_laptop": "silver",
+   "theme": "light",
+   "palette": "coral"
   },
-  {
-    "time": "2026-11-11T09:06+02:00",
-    "type": "reel",
-    "mode": "scheduled",
-    "slot": "reel@2026-11-11T08:00:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42977045358",
-    "status": "error",
-    "error": "RuntimeError: Instagram nu mai acceptă conexiunea (Cannot call API for app 1686332366250214 on behalf of user 122105983761535947). Reconectează contul în panou: Cont & chei → token nou din Graph API Explorer → Conectează.",
-    "retry": "se reîncearcă automat (încercarea 2/3)"
+  "ig_id": "18146423287612901",
+  "permalink": "https://www.instagram.com/reel/Dfop8KgADR6/",
+  "fb_id": "1400786472134916",
+  "fb_link": "https://www.facebook.com/reel/1400786472134916",
+  "status": "posted",
+  "repost": "ok"
+ },
+ {
+  "time": "2026-11-12T13:01+02:00",
+  "type": "carousel",
+  "mode": "scheduled",
+  "slot": "carousel@2026-11-12T13:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43205354807",
+  "topic": "customer support questions an AI can handle for you",
+  "pillar": "customer support questions an AI can handle for you",
+  "hook": "Stop answering the *same* questions daily.",
+  "caption": "Your team spends valuable hours repeating the exact same answers every single week. Most website inquiries are routine questions about pricing, hours, or availability that do not require human brainpower.\n\nAutomating these repetitive tasks frees up your schedule for high-value work that actually grows your business. Set up a smart assistant that handles the noise instantly.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessautomation #customerservice #smallbiz #productivity #velosyntech",
+  "ig_id": "18228157789337990",
+  "permalink": "https://www.instagram.com/p/Dfo6Ak_jRu_/",
+  "fb_id": "1491182390739007_122100563829546258",
+  "fb_link": "https://www.facebook.com/1491182390739007_122100563829546258",
+  "status": "posted",
+  "repost": "ok"
+ },
+ {
+  "time": "2026-11-12T15:31+02:00",
+  "type": "story",
+  "mode": "scheduled",
+  "slot": "story@2026-11-12T15:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43227940526",
+  "topic": "Half of all buyers",
+  "hook": "Half of all buyers",
+  "caption": "Half of all buyers — Half of all buyers message businesses when the office is closed. Are you missing them?",
+  "status": "posted",
+  "stories": [
+   {
+    "ig_id": "18094391237203098",
+    "fb_id": "1842250667097080"
+   }
+  ]
+ },
+ {
+  "time": "2026-11-12T16:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-12T16:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43232793586",
+  "status": "error",
+  "error": "LLMError: text generation failed: Gemini gemini-flash-lite-latest: HTTP 503 This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+  "retry": "se reîncearcă automat (încercarea 1/3)"
+ },
+ {
+  "time": "2026-11-12T16:55+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-12T16:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43242197691",
+  "status": "error",
+  "error": "LLMError: text generation failed: Gemini gemini-flash-lite-latest: HTTP 503 This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+  "retry": "se reîncearcă automat (încercarea 2/3)"
+ },
+ {
+  "time": "2026-11-12T17:45+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-12T16:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43251207759",
+  "status": "error",
+  "error": "InstagramError: HTTP 400: {'debug_info': {'retriable': False, 'type': 'ProcessingFailedError', 'message': 'Request processing failed'}}"
+ },
+ {
+  "time": "2026-11-12T18:30+02:00",
+  "type": "reel",
+  "mode": "now",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43259213255",
+  "status": "error",
+  "error": "LLMError: text generation failed: Gemini gemini-flash-lite-latest: HTTP 503 This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+ },
+ {
+  "time": "2026-11-12T18:33+02:00",
+  "type": "reel",
+  "mode": "now",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43259787787",
+  "status": "error",
+  "error": "LLMError: text generation failed: Gemini gemini-3.8-flash: HTTP 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/g"
+ },
+ {
+  "time": "2026-11-12T18:40+02:00",
+  "type": "reel",
+  "mode": "now",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43261068083",
+  "status": "error",
+  "error": "InstagramError: HTTP 400: {'debug_info': {'retriable': False, 'type': 'ProcessingFailedError', 'message': 'Request processing failed'}}"
+ },
+ {
+  "time": "2026-11-12T18:54+02:00",
+  "type": "reel",
+  "mode": "now",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43263441125",
+  "topic": "simple n8n automations that save hours every week",
+  "pillar": "simple n8n automations that save hours every week",
+  "hook": "Clara spent hours replying to messages every single week.",
+  "caption": "Every hour spent answering routine questions is an hour taken away from serving clients or growing your business.\n\nWhen potential clients reach out after hours, slow responses mean lost revenue. Automating FAQ responses and appointment bookings keeps your schedule full around the clock without extra staff.\n\nSimple workflows built on n8n handle the busywork so your team can focus on what actually drives profit.\n\nComment DEMO and we'll send you a free demo in DM.\n\nHow many hours does your team spend on repetitive messages each week?\n\n#businessautomation #n8n #salonowner #aiassistant #leadgeneration",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "Clara spent hours replying to messages every single week.",
+    "type": "pain"
+   },
+   {
+    "text": "How this salon saved 15 hours of admin work.",
+    "type": "number"
+   },
+   {
+    "text": "Stop losing haircut bookings after doors close at night.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "story",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "cobalt",
+   "business": "salon"
   },
-  {
-    "time": "2026-11-11T10:13+02:00",
-    "type": "reel",
-    "mode": "now",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42985210920",
-    "topic": "losing customers because nobody replies fast enough",
-    "pillar": "losing customers because nobody replies fast enough",
-    "hook": "Slow *replies* cost you paying customers.",
-    "caption": "People hate waiting. If a potential client lands on your page and cannot get a fast answer about your service, they will simply close the tab and message the next business on Google.\n\nYou do not need to sit by your inbox all day to fix this. Smart automation handles the first contact, gives clear answers, and secures the lead while you focus on your actual work.\n\nHow fast do you usually reply to website messages? Let us know below.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessgrowth #automation #smallbiz #leadgeneration #ai",
-    "hook_type": "pain",
-    "hook_options": [
-      {
-        "text": "Slow *replies* cost you paying customers.",
-        "type": "pain"
-      },
-      {
-        "text": "Why do buyers leave your *website* instantly?",
-        "type": "question"
-      },
-      {
-        "text": "Fast *answers* win the deal every time.",
-        "type": "bold_claim"
-      }
-    ],
-    "style": "cinematic",
-    "voice": "en-US-BrianMultilingualNeural",
-    "plan": {
-      "hook": "lid_open",
-      "problem": "high_angle",
-      "solution": "orbit_right",
-      "result": "low_hero",
-      "cta": "duo_cta",
-      "bg": "bokeh",
-      "type": "caption",
-      "transition": "whip",
-      "finish_phone": "natural",
-      "finish_laptop": "silver",
-      "palette": "aurora"
-    },
-    "ig_id": "18078997739438412",
-    "permalink": "https://www.instagram.com/reel/DfmDVonDBBh/",
-    "fb_id": "2227329004861773",
-    "fb_link": "https://www.facebook.com/reel/2227329004861773",
-    "status": "posted",
-    "repost": "ok"
+  "ig_id": "18074963666766792",
+  "permalink": "https://www.instagram.com/reel/Dfpi1y3k9vJ/",
+  "fb_error": "InstagramError: HTTP 500: {'debug_info': {'retriable': False, 'type': 'ProcessingFailedError', 'message': '{\"success\":false,\"error\":{\"message\":\"unknown error\"}}'}}",
+  "status": "posted",
+  "repost": "ok"
+ },
+ {
+  "time": "2026-11-12T19:04+02:00",
+  "type": "carousel",
+  "mode": "scheduled",
+  "slot": "carousel@2026-11-12T19:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43265428809",
+  "topic": "turning website visitors into leads and booked demos",
+  "pillar": "turning website visitors into leads and booked demos",
+  "hook": "Turn silent visitors into *booked demos*",
+  "caption": "Traditional contact forms are where hot leads go cold. When interested buyers have to wait hours for a simple reply, they move on to a competitor who responds faster.\n\nConverting site traffic into booked meetings shouldn't require endless back-and-forth emails. An automated assistant answers questions, qualifies prospects, and places meetings straight onto your calendar 24/7.\n\nComment DEMO and we'll send you a free demo in DM. How many potential clients left your site this week because booking a call took too many steps?\n\n#leadgeneration #businessautomation #salesfunnel #aiagents #b2bgrowth",
+  "ig_id": "18154200001547184",
+  "permalink": "https://www.instagram.com/p/DfpjeBrERCn/",
+  "fb_id": "1491182390739007_122100780933546258",
+  "fb_link": "https://www.facebook.com/1491182390739007_122100780933546258",
+  "status": "posted",
+  "repost": "ok"
+ },
+ {
+  "time": "2026-11-12T19:31+02:00",
+  "type": "story",
+  "mode": "scheduled",
+  "slot": "story@2026-11-12T19:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43270158818",
+  "topic": "Most website buyers visit late",
+  "hook": "Most website buyers visit late",
+  "caption": "Most website buyers visit late — Half your online traffic arrives after office hours when your team has already gone home.",
+  "status": "posted",
+  "stories": [
+   {
+    "ig_id": "17990266946882832",
+    "fb_id": "1575827211065122"
+   }
+  ]
+ },
+ {
+  "time": "2026-11-12T20:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-12T20:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43275358373",
+  "topic": "turning website visitors into leads and booked demos",
+  "pillar": "turning website visitors into leads and booked demos",
+  "hook": "Nico lost dozens of table bookings every single night.",
+  "caption": "Most website visitors leave if they do not get an immediate answer. When interested buyers land on your site during peak hours or late at night, a delayed reply costs you paying customers.\n\nStop letting warm leads go cold. An automated website assistant responds instantly, answers routine questions, and books appointments 24/7 directly into your schedule.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessautomation #leadgeneration #aiagency #n8n #customerengagement",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "Nico lost dozens of table bookings every single night.",
+    "type": "pain"
+   },
+   {
+    "text": "Is your website turning away hungry customers after hours?",
+    "type": "question"
+   },
+   {
+    "text": "How one restaurant booked 30 more tables every week.",
+    "type": "number"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-AndrewMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "cobalt",
+   "business": "restaurant"
   },
-  {
-    "time": "2026-11-11T10:34+02:00",
-    "type": "reel",
-    "mode": "scheduled",
-    "slot": "reel@2026-11-11T10:00:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42987570735",
-    "status": "error",
-    "error": "LLMError: text generation failed: Expecting value: line 51 column 7 (char 1605)",
-    "retry": "se reîncearcă automat (încercarea 1/3)"
+  "ig_id": "17980281342130630",
+  "permalink": "https://www.instagram.com/reel/DfprEUKFW7H/",
+  "fb_id": "1791542822064080",
+  "fb_link": "https://www.facebook.com/reel/1791542822064080",
+  "status": "posted",
+  "repost": "ok"
+ },
+ {
+  "time": "2026-11-13T08:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-13T08:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43375720833",
+  "topic": "losing customers because nobody replies fast enough",
+  "pillar": "losing customers because nobody replies fast enough",
+  "hook": "Every missed message is money walking away.",
+  "caption": "When potential buyers reach out, they expect a reply in seconds, not hours. If your inbox sits full while you are busy running your business, interested shoppers simply go elsewhere.\n\nAutomating your instant replies ensures every question gets answered the moment it arrives. No more missed opportunities after hours.\n\nComment DEMO and we will send you a free demo in DM.\n\n#velosyntech #businessautomation #n8n #localbusiness #aiassistant",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "Every missed message is money walking away.",
+    "type": "pain"
+   },
+   {
+    "text": "Why do buyers leave before you even reply?",
+    "type": "question"
+   },
+   {
+    "text": "Slow replies cost Luka dozens of sales.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-EmmaMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "coral",
+   "business": "store"
   },
-  {
-    "time": "2026-11-11T11:17+02:00",
-    "type": "story",
-    "mode": "scheduled",
-    "slot": "story@2026-11-11T09:30:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42993611927",
-    "status": "error",
-    "error": "LLMError: Gemini: cannot list models (HTTP 401) - check the API key"
+  "ig_id": "18183958852437132",
+  "permalink": "https://www.instagram.com/reel/Dfq9i4OirTr/",
+  "fb_id": "2081758532475041",
+  "fb_link": "https://www.facebook.com/reel/2081758532475041",
+  "status": "posted",
+  "repost": "ok"
+ },
+ {
+  "time": "2026-11-13T09:31+02:00",
+  "type": "story",
+  "mode": "scheduled",
+  "slot": "story@2026-11-13T09:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43386235106",
+  "topic": "Most buyers shop at night",
+  "hook": "Most buyers shop at night",
+  "caption": "Most buyers shop at night — Up to half of all website inquiries arrive outside normal business hours when nobody is online to reply.",
+  "status": "posted",
+  "stories": [
+   {
+    "ig_id": "18122295613954790",
+    "fb_id": "1886466615843528"
+   }
+  ]
+ },
+ {
+  "time": "2026-11-13T10:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-13T10:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43389875125",
+  "topic": "answering customers in any language automatically",
+  "pillar": "answering customers in any language automatically",
+  "hook": "Language barriers kill *global sales*.",
+  "caption": "Your business is global, but your chat window might be holding you back. When a potential buyer visits from another country, a language gap usually means a lost sale.\n\nYou do not need a multilingual customer service team to expand your market. A smart automated assistant handles translation behind the scenes in seconds.\n\nOpen your doors to the world and stop leaving money on the table.\n\nComment DEMO and we'll send you a free demo in DM.\n\ncontact@velosyntech.com | velosyntech.com\n\n#GlobalBusiness #AIAutomation #SmallBizTips #Multilingual #BusinessGrowth",
+  "hook_type": "bold_claim",
+  "hook_options": [
+   {
+    "text": "Language barriers kill *global sales*.",
+    "type": "bold_claim"
+   },
+   {
+    "text": "Can your website speak *every language*?",
+    "type": "question"
+   },
+   {
+    "text": "Three ways to *translate* instantly.",
+    "type": "number"
+   }
+  ],
+  "style": "cinematic",
+  "voice": "en-US-AndrewMultilingualNeural",
+  "plan": {
+   "hook": "lid_open",
+   "problem": "orbit_left",
+   "solution": "orbit_right",
+   "result": "low_hero",
+   "cta": "duo_cta",
+   "bg": "grid",
+   "type": "typewriter",
+   "transition": "glitch",
+   "finish_phone": "black",
+   "finish_laptop": "silver",
+   "theme": "light",
+   "palette": "cobalt"
   },
-  {
-    "time": "2026-11-11T11:25+02:00",
-    "type": "reel",
-    "mode": "scheduled",
-    "slot": "reel@2026-11-11T10:00:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42995006277",
-    "status": "error",
-    "error": "LLMError: Gemini: cannot list models (HTTP 401) - check the API key"
+  "ig_id": "18204099262391837",
+  "permalink": "https://www.instagram.com/reel/DfrLh6_DT2l/",
+  "fb_id": "1486428286884337",
+  "fb_link": "https://www.facebook.com/reel/1486428286884337",
+  "status": "posted",
+  "repost": "ok"
+ },
+ {
+  "time": "2026-11-13T10:30+02:00",
+  "type": "reel",
+  "mode": "test",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43393691570",
+  "topic": "losing customers because nobody replies fast enough",
+  "pillar": "losing customers because nobody replies fast enough",
+  "hook": "Most website visitors leave if they do not get an immediate answer.",
+  "caption": "When potential buyers reach out, they expect a reply in seconds, not hours. If your inbox sits empty overnight, those interested visitors simply walk away to competitors.\n\nVelosyntech builds custom AI assistants that answer website questions 24/7, capture details, and book appointments automatically while you sleep.\n\nStop letting delayed responses cost you revenue. Comment DEMO and we'll send you a free demo in DM.\n\n#velosyntech #leadgeneration #businessautomation #aiassistant #smallbiz",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "Most website visitors leave if they do not get an immediate answer.",
+    "type": "pain"
+   },
+   {
+    "text": "Why are you losing website leads while you sleep?",
+    "type": "question"
+   },
+   {
+    "text": "Slow replies cost you paying customers every single day.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-AvaMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "cobalt",
+   "business": "clinic",
+   "story_type": "customer_pov",
+   "sets": [
+    "home",
+    "office",
+    "shop",
+    "stage",
+    "street"
+   ],
+   "names": [
+    "Leo",
+    "Maya"
+   ]
   },
-  {
-    "time": "2026-11-11T11:31+02:00",
-    "type": "reel",
-    "mode": "scheduled",
-    "slot": "reel@2026-11-11T10:30:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/42995739550",
-    "status": "error",
-    "error": "LLMError: Gemini: cannot list models (HTTP 401) - check the API key"
-  },
-  {
-    "time": "2026-11-11T13:01+02:00",
-    "type": "carousel",
-    "mode": "scheduled",
-    "slot": "carousel@2026-11-11T13:00:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43008355117",
-    "status": "error",
-    "error": "LLMError: Gemini: cannot list models (HTTP 401) - check the API key"
-  },
-  {
-    "time": "2026-11-11T13:23+02:00",
-    "type": "carousel",
-    "mode": "now",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43011460402",
-    "topic": "turning website visitors into leads and booked demos",
-    "pillar": "turning website visitors into leads and booked demos",
-    "hook": "Turn website *visitors* into booked clients.",
-    "caption": "Your website gets traffic every single day, but most visitors vanish before you even know they were there. Waiting until morning to reply means handing those buyers directly to your competitors.\n\nAdding an automated assistant changes how your business handles online demand. It greets every visitor, answers their questions instantly, and secures the booking while their interest is highest.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#velosyntech #businessautomation #leadgeneration #aiagents #growth",
-    "ig_id": "18018073727952152",
-    "permalink": "https://www.instagram.com/p/DfmXkKgGDEa/",
-    "fb_id": "1491182390739007_122099718879546258",
-    "fb_link": "https://www.facebook.com/1491182390739007_122099718879546258",
-    "status": "posted",
-    "repost": "ok"
-  },
-  {
-    "time": "2026-11-11T15:31+02:00",
-    "type": "story",
-    "mode": "scheduled",
-    "slot": "story@2026-11-11T15:30:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43029733301",
-    "topic": "Most leads reply at night",
-    "hook": "Most leads reply at night",
-    "caption": "Most leads reply at night — Up to half of all website questions arrive after your office closes. Are you answering them?",
-    "status": "posted",
-    "stories": [
-      {
-        "ig_id": "18120620641992576",
-        "fb_id": "1101100396039581"
-      }
-    ]
-  },
-  {
-    "time": "2026-11-11T17:16+02:00",
-    "type": "reel",
-    "mode": "scheduled",
-    "slot": "reel@2026-11-11T16:00:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43044041950",
-    "topic": "answering customers in any language automatically",
-    "pillar": "answering customers in any language automatically",
-    "hook": "Lost a sale because of *language*?",
-    "caption": "Your website reaches a global audience, but language barriers stop foreign visitors from buying your services.\n\nWhen someone lands on your page from another country, they want quick answers in their own language. If they have to translate text manually, they simply go to a competitor instead.\n\nAutomating instant multi-language replies keeps global leads engaged and ready to purchase 24/7.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessautomation #leadgeneration #smallbiztips #aiagents #websitedesign",
-    "hook_type": "question",
-    "hook_options": [
-      {
-        "text": "Lost a sale because of *language*?",
-        "type": "question"
-      },
-      {
-        "text": "Foreign visitors leave without *buying* anything.",
-        "type": "statement"
-      },
-      {
-        "text": "Speak every language on *autopilot*.",
-        "type": "bold_claim"
-      }
-    ],
-    "style": "liquid_glass",
-    "voice": "en-US-EmmaMultilingualNeural",
-    "plan": {
-      "style": "liquid_glass",
-      "theme": "light",
-      "palette": "coral"
-    },
-    "ig_id": "18113468702118556",
-    "permalink": "https://www.instagram.com/reel/DfmyOtliYsU/",
-    "fb_id": "1717993509748276",
-    "fb_link": "https://www.facebook.com/reel/1717993509748276",
-    "status": "posted",
-    "repost": "ok"
-  },
-  {
-    "time": "2026-11-11T19:02+02:00",
-    "type": "carousel",
-    "mode": "scheduled",
-    "slot": "carousel@2026-11-11T19:00:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43063910859",
-    "topic": "simple n8n automations that save hours every week",
-    "pillar": "simple n8n automations that save hours every week",
-    "hook": "Stop doing *manual* copy-paste work.",
-    "caption": "Busywork is the silent profit killer in most growing businesses. Moving data between apps by hand wastes hours that your team could spend talking to actual buyers. \n\nConnecting your tools takes minutes to set up and runs silently in the background forever. Stop trading human time for computer tasks. \n\nWhich task takes up most of your Mondays? \n\nComment DEMO and we'll send you a free demo in DM.\n\n#automation #businessowner #productivity #workflow #velosyntech",
-    "ig_id": "18128266489900070",
-    "permalink": "https://www.instagram.com/p/Dfm-jw5F_Gg/",
-    "fb_id": "1491182390739007_122099971677546258",
-    "fb_link": "https://www.facebook.com/1491182390739007_122099971677546258",
-    "status": "posted",
-    "repost": "ok"
-  },
-  {
-    "time": "2026-11-11T19:31+02:00",
-    "type": "story",
-    "mode": "scheduled",
-    "slot": "story@2026-11-11T19:30:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43068821840",
-    "topic": "Who answers your site at night?",
-    "hook": "Who answers your site at night?",
-    "caption": "Who answers your site at night? — If the answer is nobody, you are handing warm buyers straight to your competitors before morning.",
-    "status": "posted",
-    "stories": [
-      {
-        "ig_id": "18171765274416901",
-        "fb_id": "1402931691921226"
-      }
-    ]
-  },
-  {
-    "time": "2026-11-11T20:01+02:00",
-    "type": "reel",
-    "mode": "scheduled",
-    "slot": "reel@2026-11-11T20:00:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43073612296",
-    "topic": "turning website visitors into leads and booked demos",
-    "pillar": "turning website visitors into leads and booked demos",
-    "hook": "Your *website* is leaking potential clients.",
-    "caption": "Most business websites act like a silent digital brochure. People arrive, read a few paragraphs, and leave without a trace.\n\nYou do not need more traffic. You need a way to capture the attention of the people who are already landing on your pages.\n\nWhen you turn passive visitors into active conversations, your entire sales process speeds up.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessgrowth #leadgeneration #automation #smallbusiness #sales",
-    "hook_type": "bold_claim",
-    "hook_options": [
-      {
-        "text": "Stop *ignoring* your website traffic.",
-        "type": "pain"
-      },
-      {
-        "text": "Your *website* is leaking potential clients.",
-        "type": "bold_claim"
-      },
-      {
-        "text": "Why do visitors *leave* without buying?",
-        "type": "question"
-      }
-    ],
-    "style": "cinematic",
-    "plan": {
-      "hook": "macro_pull",
-      "problem": "high_angle",
-      "solution": "phone_focus",
-      "result": "phone_result",
-      "cta": "duo_cta",
-      "bg": "spot",
-      "type": "kinetic",
-      "transition": "zoom",
-      "finish_phone": "black",
-      "finish_laptop": "silver",
-      "theme": "light",
-      "palette": "tangerine"
-    },
-    "ig_id": "17942837514390841",
-    "permalink": "https://www.instagram.com/reel/DfnGCe_EkXu/",
-    "fb_id": "1508845884438451",
-    "fb_link": "https://www.facebook.com/reel/1508845884438451",
-    "status": "posted",
-    "repost": "ok"
-  },
-  {
-    "time": "2026-11-12T08:01+02:00",
-    "type": "reel",
-    "mode": "scheduled",
-    "slot": "reel@2026-11-12T08:00:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43165128927",
-    "topic": "simple n8n automations that save hours every week",
-    "pillar": "simple n8n automations that save hours every week",
-    "hook": "Stop *wasting* your Mondays on manual *copy-paste*.",
-    "caption": "Busywork is the silent profit killer in most growing businesses. Moving data between apps by hand wastes valuable time that should go toward serving clients.\n\nSmart workflows handle the repetitive tasks in the background, keeping your records accurate while you focus on what actually moves the needle.\n\nWhat repetitive task takes up most of your team's week?\n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessautomation #productivity #workflow #operations #velosyntech",
-    "hook_type": "pain",
-    "hook_options": [
-      {
-        "text": "Stop *wasting* your Mondays on manual *copy-paste*.",
-        "type": "pain"
-      },
-      {
-        "text": "Your team loses *ten hours* a week.",
-        "type": "number"
-      },
-      {
-        "text": "Still moving data *manually* between your apps?",
-        "type": "question"
-      }
-    ],
-    "style": "cinematic",
-    "voice": "en-US-BrianMultilingualNeural",
-    "plan": {
-      "hook": "rise_turn",
-      "problem": "orbit_left",
-      "solution": "side_track",
-      "result": "low_hero",
-      "cta": "phone_spin",
-      "bg": "grid",
-      "type": "caption",
-      "transition": "zoom",
-      "finish_phone": "desert",
-      "finish_laptop": "silver",
-      "theme": "light",
-      "palette": "emerald"
-    },
-    "ig_id": "18119739512277920",
-    "permalink": "https://www.instagram.com/reel/DfoYn1TjlX0/",
-    "fb_id": "1153755757381125",
-    "fb_link": "https://www.facebook.com/reel/1153755757381125",
-    "status": "posted",
-    "repost": "ok"
-  },
-  {
-    "time": "2026-11-12T09:31+02:00",
-    "type": "story",
-    "mode": "scheduled",
-    "slot": "story@2026-11-12T09:30:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43175752164",
-    "topic": "Half your traffic arrives late.",
-    "hook": "Half your traffic arrives late.",
-    "caption": "Half your traffic arrives late. — Up to 50% of website inquiries happen after your office doors close.",
-    "status": "posted",
-    "stories": [
-      {
-        "ig_id": "17913514680589942",
-        "fb_id": "1162841289430742"
-      }
-    ]
-  },
-  {
-    "time": "2026-11-12T10:01+02:00",
-    "type": "reel",
-    "mode": "scheduled",
-    "slot": "reel@2026-11-12T10:00:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43179477845",
-    "topic": "customer support questions an AI can handle for you",
-    "pillar": "customer support questions an AI can handle for you",
-    "hook": "Tired of answering the *same questions* daily?",
-    "caption": "You shouldn't be paying yourself or your team to type \"pricing starts at...\" twelve times every afternoon.\n\nMost routine support inquiries fall into predictable buckets: standard pricing, turnaround times, and delivery updates. When you connect an AI assistant trained on your business data, it resolves up to 80% of these tickets instantly on your website without human intervention.\n\nYour team only steps in when a high-value customer needs custom guidance or personal attention. Everything else runs quietly in the background.\n\nComment DEMO and we'll send you a free demo in DM.\n\nHow many repetitive questions hit your inbox this morning?\n\n#customersupport #businessautomation #workflowautomation #smallbusinessowner #n8n",
-    "hook_type": "pain",
-    "hook_options": [
-      {
-        "text": "Tired of answering the *same questions* daily?",
-        "type": "pain"
-      },
-      {
-        "text": "80% of support questions are *identical*.",
-        "type": "number"
-      },
-      {
-        "text": "Your inbox should not be *copy-paste*.",
-        "type": "bold_claim"
-      }
-    ],
-    "style": "liquid_glass",
-    "plan": {
-      "style": "liquid_glass",
-      "theme": "light",
-      "palette": "cobalt"
-    },
-    "ig_id": "18115637627605999",
-    "permalink": "https://www.instagram.com/reel/DfolOKhkvSB/",
-    "fb_id": "3753226224844741",
-    "fb_link": "https://www.facebook.com/reel/3753226224844741",
-    "status": "posted",
-    "repost": "ok"
-  },
-  {
-    "time": "2026-11-12T10:31+02:00",
-    "type": "reel",
-    "mode": "scheduled",
-    "slot": "reel@2026-11-12T10:30:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43183495286",
-    "topic": "myths vs facts about AI chatbots for small businesses",
-    "pillar": "myths vs facts about AI chatbots for small businesses",
-    "hook": "AI assistants are *too complex* to set up.",
-    "caption": "Most business owners think AI assistants require a dedicated tech team and months of frustrating setup. That is an expensive myth.\n\nModern automated workflows connect directly to your existing website content in minutes. They read your actual pages, learn your exact offers, and reply accurately to visitors around the clock.\n\nSkip the guesswork and let smart systems handle the repetitive questions while you focus on closing deals.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#automation #businessgrowth #nocode #smallbiz #efficiency",
-    "hook_type": "myth",
-    "hook_options": [
-      {
-        "text": "Are *chatbots* just expensive toys?",
-        "type": "question"
-      },
-      {
-        "text": "AI assistants are *too complex* to set up.",
-        "type": "myth"
-      },
-      {
-        "text": "Bots *destroy* your customer trust.",
-        "type": "bold_claim"
-      }
-    ],
-    "style": "cinematic",
-    "voice": "en-US-AvaMultilingualNeural",
-    "plan": {
-      "hook": "macro_pull",
-      "problem": "screen_push",
-      "solution": "side_track",
-      "result": "low_hero",
-      "cta": "phone_spin",
-      "bg": "bokeh",
-      "type": "typewriter",
-      "transition": "flash",
-      "finish_phone": "blue",
-      "finish_laptop": "silver",
-      "theme": "light",
-      "palette": "coral"
-    },
-    "ig_id": "18146423287612901",
-    "permalink": "https://www.instagram.com/reel/Dfop8KgADR6/",
-    "fb_id": "1400786472134916",
-    "fb_link": "https://www.facebook.com/reel/1400786472134916",
-    "status": "posted",
-    "repost": "ok"
-  },
-  {
-    "time": "2026-11-12T13:01+02:00",
-    "type": "carousel",
-    "mode": "scheduled",
-    "slot": "carousel@2026-11-12T13:00:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43205354807",
-    "topic": "customer support questions an AI can handle for you",
-    "pillar": "customer support questions an AI can handle for you",
-    "hook": "Stop answering the *same* questions daily.",
-    "caption": "Your team spends valuable hours repeating the exact same answers every single week. Most website inquiries are routine questions about pricing, hours, or availability that do not require human brainpower.\n\nAutomating these repetitive tasks frees up your schedule for high-value work that actually grows your business. Set up a smart assistant that handles the noise instantly.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessautomation #customerservice #smallbiz #productivity #velosyntech",
-    "ig_id": "18228157789337990",
-    "permalink": "https://www.instagram.com/p/Dfo6Ak_jRu_/",
-    "fb_id": "1491182390739007_122100563829546258",
-    "fb_link": "https://www.facebook.com/1491182390739007_122100563829546258",
-    "status": "posted",
-    "repost": "ok"
-  },
-  {
-    "time": "2026-11-12T15:31+02:00",
-    "type": "story",
-    "mode": "scheduled",
-    "slot": "story@2026-11-12T15:30:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43227940526",
-    "topic": "Half of all buyers",
-    "hook": "Half of all buyers",
-    "caption": "Half of all buyers — Half of all buyers message businesses when the office is closed. Are you missing them?",
-    "status": "posted",
-    "stories": [
-      {
-        "ig_id": "18094391237203098",
-        "fb_id": "1842250667097080"
-      }
-    ]
-  },
-  {
-    "time": "2026-11-12T16:01+02:00",
-    "type": "reel",
-    "mode": "scheduled",
-    "slot": "reel@2026-11-12T16:00:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43232793586",
-    "status": "error",
-    "error": "LLMError: text generation failed: Gemini gemini-flash-lite-latest: HTTP 503 This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-    "retry": "se reîncearcă automat (încercarea 1/3)"
-  },
-  {
-    "time": "2026-11-12T16:55+02:00",
-    "type": "reel",
-    "mode": "scheduled",
-    "slot": "reel@2026-11-12T16:00:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43242197691",
-    "status": "error",
-    "error": "LLMError: text generation failed: Gemini gemini-flash-lite-latest: HTTP 503 This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-    "retry": "se reîncearcă automat (încercarea 2/3)"
-  },
-  {
-    "time": "2026-11-12T17:45+02:00",
-    "type": "reel",
-    "mode": "scheduled",
-    "slot": "reel@2026-11-12T16:00:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43251207759",
-    "status": "error",
-    "error": "InstagramError: HTTP 400: {'debug_info': {'retriable': False, 'type': 'ProcessingFailedError', 'message': 'Request processing failed'}}"
-  },
-  {
-    "time": "2026-11-12T18:30+02:00",
-    "type": "reel",
-    "mode": "now",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43259213255",
-    "status": "error",
-    "error": "LLMError: text generation failed: Gemini gemini-flash-lite-latest: HTTP 503 This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
-  },
-  {
-    "time": "2026-11-12T18:33+02:00",
-    "type": "reel",
-    "mode": "now",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43259787787",
-    "status": "error",
-    "error": "LLMError: text generation failed: Gemini gemini-3.8-flash: HTTP 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/g"
-  },
-  {
-    "time": "2026-11-12T18:40+02:00",
-    "type": "reel",
-    "mode": "now",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43261068083",
-    "status": "error",
-    "error": "InstagramError: HTTP 400: {'debug_info': {'retriable': False, 'type': 'ProcessingFailedError', 'message': 'Request processing failed'}}"
-  },
-  {
-    "time": "2026-11-12T18:54+02:00",
-    "type": "reel",
-    "mode": "now",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43263441125",
-    "topic": "simple n8n automations that save hours every week",
-    "pillar": "simple n8n automations that save hours every week",
-    "hook": "Clara spent hours replying to messages every single week.",
-    "caption": "Every hour spent answering routine questions is an hour taken away from serving clients or growing your business.\n\nWhen potential clients reach out after hours, slow responses mean lost revenue. Automating FAQ responses and appointment bookings keeps your schedule full around the clock without extra staff.\n\nSimple workflows built on n8n handle the busywork so your team can focus on what actually drives profit.\n\nComment DEMO and we'll send you a free demo in DM.\n\nHow many hours does your team spend on repetitive messages each week?\n\n#businessautomation #n8n #salonowner #aiassistant #leadgeneration",
-    "hook_type": "pain",
-    "hook_options": [
-      {
-        "text": "Clara spent hours replying to messages every single week.",
-        "type": "pain"
-      },
-      {
-        "text": "How this salon saved 15 hours of admin work.",
-        "type": "number"
-      },
-      {
-        "text": "Stop losing haircut bookings after doors close at night.",
-        "type": "bold_claim"
-      }
-    ],
-    "style": "story",
-    "plan": {
-      "style": "story",
-      "theme": "light",
-      "palette": "cobalt",
-      "business": "salon"
-    },
-    "ig_id": "18074963666766792",
-    "permalink": "https://www.instagram.com/reel/Dfpi1y3k9vJ/",
-    "fb_error": "InstagramError: HTTP 500: {'debug_info': {'retriable': False, 'type': 'ProcessingFailedError', 'message': '{\"success\":false,\"error\":{\"message\":\"unknown error\"}}'}}",
-    "status": "posted",
-    "repost": "ok"
-  },
-  {
-    "time": "2026-11-12T19:04+02:00",
-    "type": "carousel",
-    "mode": "scheduled",
-    "slot": "carousel@2026-11-12T19:00:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43265428809",
-    "topic": "turning website visitors into leads and booked demos",
-    "pillar": "turning website visitors into leads and booked demos",
-    "hook": "Turn silent visitors into *booked demos*",
-    "caption": "Traditional contact forms are where hot leads go cold. When interested buyers have to wait hours for a simple reply, they move on to a competitor who responds faster.\n\nConverting site traffic into booked meetings shouldn't require endless back-and-forth emails. An automated assistant answers questions, qualifies prospects, and places meetings straight onto your calendar 24/7.\n\nComment DEMO and we'll send you a free demo in DM. How many potential clients left your site this week because booking a call took too many steps?\n\n#leadgeneration #businessautomation #salesfunnel #aiagents #b2bgrowth",
-    "ig_id": "18154200001547184",
-    "permalink": "https://www.instagram.com/p/DfpjeBrERCn/",
-    "fb_id": "1491182390739007_122100780933546258",
-    "fb_link": "https://www.facebook.com/1491182390739007_122100780933546258",
-    "status": "posted",
-    "repost": "ok"
-  },
-  {
-    "time": "2026-11-12T19:31+02:00",
-    "type": "story",
-    "mode": "scheduled",
-    "slot": "story@2026-11-12T19:30:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43270158818",
-    "topic": "Most website buyers visit late",
-    "hook": "Most website buyers visit late",
-    "caption": "Most website buyers visit late — Half your online traffic arrives after office hours when your team has already gone home.",
-    "status": "posted",
-    "stories": [
-      {
-        "ig_id": "17990266946882832",
-        "fb_id": "1575827211065122"
-      }
-    ]
-  },
-  {
-    "time": "2026-11-12T20:01+02:00",
-    "type": "reel",
-    "mode": "scheduled",
-    "slot": "reel@2026-11-12T20:00:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43275358373",
-    "topic": "turning website visitors into leads and booked demos",
-    "pillar": "turning website visitors into leads and booked demos",
-    "hook": "Nico lost dozens of table bookings every single night.",
-    "caption": "Most website visitors leave if they do not get an immediate answer. When interested buyers land on your site during peak hours or late at night, a delayed reply costs you paying customers.\n\nStop letting warm leads go cold. An automated website assistant responds instantly, answers routine questions, and books appointments 24/7 directly into your schedule.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessautomation #leadgeneration #aiagency #n8n #customerengagement",
-    "hook_type": "pain",
-    "hook_options": [
-      {
-        "text": "Nico lost dozens of table bookings every single night.",
-        "type": "pain"
-      },
-      {
-        "text": "Is your website turning away hungry customers after hours?",
-        "type": "question"
-      },
-      {
-        "text": "How one restaurant booked 30 more tables every week.",
-        "type": "number"
-      }
-    ],
-    "style": "story",
-    "voice": "en-US-AndrewMultilingualNeural",
-    "plan": {
-      "style": "story",
-      "theme": "light",
-      "palette": "cobalt",
-      "business": "restaurant"
-    },
-    "ig_id": "17980281342130630",
-    "permalink": "https://www.instagram.com/reel/DfprEUKFW7H/",
-    "fb_id": "1791542822064080",
-    "fb_link": "https://www.facebook.com/reel/1791542822064080",
-    "status": "posted",
-    "repost": "ok"
-  },
-  {
-    "time": "2026-11-13T08:01+02:00",
-    "type": "reel",
-    "mode": "scheduled",
-    "slot": "reel@2026-11-13T08:00:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43375720833",
-    "topic": "losing customers because nobody replies fast enough",
-    "pillar": "losing customers because nobody replies fast enough",
-    "hook": "Every missed message is money walking away.",
-    "caption": "When potential buyers reach out, they expect a reply in seconds, not hours. If your inbox sits full while you are busy running your business, interested shoppers simply go elsewhere.\n\nAutomating your instant replies ensures every question gets answered the moment it arrives. No more missed opportunities after hours.\n\nComment DEMO and we will send you a free demo in DM.\n\n#velosyntech #businessautomation #n8n #localbusiness #aiassistant",
-    "hook_type": "pain",
-    "hook_options": [
-      {
-        "text": "Every missed message is money walking away.",
-        "type": "pain"
-      },
-      {
-        "text": "Why do buyers leave before you even reply?",
-        "type": "question"
-      },
-      {
-        "text": "Slow replies cost Luka dozens of sales.",
-        "type": "bold_claim"
-      }
-    ],
-    "style": "story",
-    "voice": "en-US-EmmaMultilingualNeural",
-    "plan": {
-      "style": "story",
-      "theme": "light",
-      "palette": "coral",
-      "business": "store"
-    },
-    "ig_id": "18183958852437132",
-    "permalink": "https://www.instagram.com/reel/Dfq9i4OirTr/",
-    "fb_id": "2081758532475041",
-    "fb_link": "https://www.facebook.com/reel/2081758532475041",
-    "status": "posted",
-    "repost": "ok"
-  },
-  {
-    "time": "2026-11-13T09:31+02:00",
-    "type": "story",
-    "mode": "scheduled",
-    "slot": "story@2026-11-13T09:30:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43386235106",
-    "topic": "Most buyers shop at night",
-    "hook": "Most buyers shop at night",
-    "caption": "Most buyers shop at night — Up to half of all website inquiries arrive outside normal business hours when nobody is online to reply.",
-    "status": "posted",
-    "stories": [
-      {
-        "ig_id": "18122295613954790",
-        "fb_id": "1886466615843528"
-      }
-    ]
-  },
-  {
-    "time": "2026-11-13T10:01+02:00",
-    "type": "reel",
-    "mode": "scheduled",
-    "slot": "reel@2026-11-13T10:00:00+02:00",
-    "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43389875125",
-    "topic": "answering customers in any language automatically",
-    "pillar": "answering customers in any language automatically",
-    "hook": "Language barriers kill *global sales*.",
-    "caption": "Your business is global, but your chat window might be holding you back. When a potential buyer visits from another country, a language gap usually means a lost sale.\n\nYou do not need a multilingual customer service team to expand your market. A smart automated assistant handles translation behind the scenes in seconds.\n\nOpen your doors to the world and stop leaving money on the table.\n\nComment DEMO and we'll send you a free demo in DM.\n\ncontact@velosyntech.com | velosyntech.com\n\n#GlobalBusiness #AIAutomation #SmallBizTips #Multilingual #BusinessGrowth",
-    "hook_type": "bold_claim",
-    "hook_options": [
-      {
-        "text": "Language barriers kill *global sales*.",
-        "type": "bold_claim"
-      },
-      {
-        "text": "Can your website speak *every language*?",
-        "type": "question"
-      },
-      {
-        "text": "Three ways to *translate* instantly.",
-        "type": "number"
-      }
-    ],
-    "style": "cinematic",
-    "voice": "en-US-AndrewMultilingualNeural",
-    "plan": {
-      "hook": "lid_open",
-      "problem": "orbit_left",
-      "solution": "orbit_right",
-      "result": "low_hero",
-      "cta": "duo_cta",
-      "bg": "grid",
-      "type": "typewriter",
-      "transition": "glitch",
-      "finish_phone": "black",
-      "finish_laptop": "silver",
-      "theme": "light",
-      "palette": "cobalt"
-    },
-    "ig_id": "18204099262391837",
-    "permalink": "https://www.instagram.com/reel/DfrLh6_DT2l/",
-    "fb_id": "1486428286884337",
-    "fb_link": "https://www.facebook.com/reel/1486428286884337",
-    "status": "posted",
-    "repost": "ok"
-  }
+  "status": "test",
+  "previews": [
+   "https://du2pm6als1feycap.public.blob.vercel-storage.com/previews/reel-20261113-083042-PaVj0p0wqp1xYzEGpZpQ4L3xuNx0cB.mp4",
+   "https://du2pm6als1feycap.public.blob.vercel-storage.com/previews/repost-reel-20261113-083042-hqvvTTnDPWBZiM6UAUVVieikhWlSPW.jpg"
+  ]
+ }
 ]

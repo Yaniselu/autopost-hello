@@ -292,5 +292,26 @@
   "hour": "08:01",
   "time": "2026-11-13T08:01+02:00",
   "permalink": "https://www.instagram.com/reel/Dfq9i4OirTr/"
+ },
+ "18204099262391837": {
+  "fetched": "2026-11-13T08:30:42.212806+00:00",
+  "metrics": {
+   "views": 33,
+   "reach": 0,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 88.16,
+  "type": "reel",
+  "style": "cinematic",
+  "pillar": "answering customers in any language automatically",
+  "hook_type": "bold_claim",
+  "hook": "Language barriers kill *global sales*.",
+  "hour": "10:01",
+  "time": "2026-11-13T10:01+02:00",
+  "permalink": "https://www.instagram.com/reel/DfrLh6_DT2l/"
  }
 }

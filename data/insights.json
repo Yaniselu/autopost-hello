@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-13T08:01+00:00",
- "posts_measured": 14,
+ "updated": "2026-11-13T08:30+00:00",
+ "posts_measured": 15,
  "basic_only": false,
  "by_type": {
   "reel": {
-   "avg": 155.2,
-   "n": 10
+   "avg": 149.1,
+   "n": 11
   },
   "carousel": {
    "avg": 149.7,
@@ -14,8 +14,8 @@
  },
  "by_style": {
   "cinematic": {
-   "avg": 147.8,
-   "n": 4
+   "avg": 135.9,
+   "n": 5
   },
   "liquid_glass": {
    "avg": 183.8,
@@ -40,8 +40,8 @@
    "n": 4
   },
   "answering customers in any language automatically": {
-   "avg": 202.8,
-   "n": 1
+   "avg": 145.5,
+   "n": 2
   },
   "simple n8n automations that save hours every week": {
    "avg": 147.3,
@@ -66,8 +66,8 @@
    "n": 1
   },
   "bold_claim": {
-   "avg": 131.8,
-   "n": 1
+   "avg": 110.0,
+   "n": 2
   },
   "myth": {
    "avg": 132.1,
@@ -104,8 +104,8 @@
    "n": 2
   },
   "10:01": {
-   "avg": 164.7,
-   "n": 1
+   "avg": 126.4,
+   "n": 2
   },
   "10:31": {
    "avg": 132.1,
@@ -208,6 +208,7 @@
  ],
  "recommended_hours": [
   "08:01",
-  "20:01"
+  "20:01",
+  "10:01"
  ]
 }
