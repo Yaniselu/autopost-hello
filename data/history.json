@@ -1285,5 +1285,44 @@
     "fb_id": "1175631081654897"
    }
   ]
+ },
+ {
+  "time": "2026-11-14T16:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-14T16:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43602600796",
+  "topic": "losing customers because nobody replies fast enough",
+  "pillar": "losing customers because nobody replies fast enough",
+  "hook": "Your *slow replies* cost real money.",
+  "caption": "When a potential client visits your website with a question, they want an answer right now. Making them wait for an email reply usually sends them straight to your competitor.\n\nFixing this does not require hiring a massive support team or spending your evenings glued to your phone. Simple automated assistants can handle those instant questions and book meetings directly into your calendar.\n\nStop letting delayed responses hurt your growth. What is the average time it takes your business to reply to a new website lead?\n\n#businessgrowth #automation #leadgeneration #smallbiz #velosyntech",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "Your *slow replies* cost real money.",
+    "type": "pain"
+   },
+   {
+    "text": "Why do buyers *leave* your site?",
+    "type": "question"
+   },
+   {
+    "text": "Speed wins every *single* deal.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "liquid_glass",
+  "voice": "en-US-EmmaMultilingualNeural",
+  "plan": {
+   "style": "liquid_glass",
+   "theme": "light",
+   "palette": "coral"
+  },
+  "ig_id": "18149375674580645",
+  "permalink": "https://www.instagram.com/reel/DfuX-18mT6F/",
+  "fb_id": "2224243294824888",
+  "fb_link": "https://www.facebook.com/reel/2224243294824888",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
