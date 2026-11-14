@@ -1152,5 +1152,53 @@
     "fb_id": "1534313878757450"
    }
   ]
+ },
+ {
+  "time": "2026-11-14T10:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-14T10:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43573732606",
+  "topic": "answering customers in any language automatically",
+  "pillar": "answering customers in any language automatically",
+  "hook": "Language barriers kill *deals* instantly.",
+  "caption": "Expanding your business globally shouldn't require hiring a multilingual support team.\n\nWhen international buyers visit your website, they expect answers in their own language. If they don't get them, they buy from your competitor instead.\n\nOur custom AI assistant handles conversations in any language automatically, keeping your business open to the entire world 24/7.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#GlobalBusiness #AIAutomation #BusinessGrowth #WebDevelopment #SmallBusiness",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "Your next customer doesn't speak *English*.",
+    "type": "bold_claim"
+   },
+   {
+    "text": "Are you missing *global* sales today?",
+    "type": "question"
+   },
+   {
+    "text": "Language barriers kill *deals* instantly.",
+    "type": "pain"
+   }
+  ],
+  "style": "cinematic",
+  "voice": "en-US-AndrewMultilingualNeural",
+  "plan": {
+   "hook": "drop_spin",
+   "problem": "high_angle",
+   "solution": "orbit_right",
+   "result": "duo_front",
+   "cta": "phone_spin",
+   "bg": "bokeh",
+   "type": "kinetic",
+   "transition": "zoom",
+   "finish_phone": "black",
+   "finish_laptop": "spaceblack",
+   "theme": "light",
+   "palette": "emerald"
+  },
+  "ig_id": "18186120418434014",
+  "permalink": "https://www.instagram.com/reel/Dftv5_ECBoi/",
+  "fb_id": "1536734944958891",
+  "fb_link": "https://www.facebook.com/reel/1536734944958891",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
