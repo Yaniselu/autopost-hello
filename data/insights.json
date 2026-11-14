@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-14T08:31+00:00",
- "posts_measured": 22,
+ "updated": "2026-11-14T11:01+00:00",
+ "posts_measured": 23,
  "basic_only": false,
  "by_type": {
   "reel": {
-   "avg": 143.7,
-   "n": 16
+   "avg": 142.2,
+   "n": 17
   },
   "carousel": {
    "avg": 148.3,
@@ -22,14 +22,14 @@
    "n": 3
   },
   "story": {
-   "avg": 137.1,
-   "n": 6
+   "avg": 134.5,
+   "n": 7
   }
  },
  "by_pillar": {
   "an AI assistant answering website visitors 24/7 (before vs after)": {
-   "avg": 190.5,
-   "n": 1
+   "avg": 154.7,
+   "n": 2
   },
   "losing customers because nobody replies fast enough": {
    "avg": 148.5,
@@ -58,8 +58,8 @@
  },
  "by_hook_type": {
   "pain": {
-   "avg": 137.4,
-   "n": 9
+   "avg": 135.6,
+   "n": 10
   },
   "question": {
    "avg": 202.9,
@@ -116,8 +116,8 @@
    "n": 3
   },
   "10:31": {
-   "avg": 134.0,
-   "n": 1
+   "avg": 126.5,
+   "n": 2
   },
   "13:01": {
    "avg": 148.2,
@@ -310,6 +310,7 @@
   "08:01",
   "20:01",
   "10:01",
-  "13:01"
+  "13:01",
+  "10:31"
  ]
 }

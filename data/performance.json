@@ -460,5 +460,26 @@
   "hour": "10:01",
   "time": "2026-11-14T10:01+02:00",
   "permalink": "https://www.instagram.com/reel/Dftv5_ECBoi/"
+ },
+ "17975030019171917": {
+  "fetched": "2026-11-14T11:01:24.088568+00:00",
+  "metrics": {
+   "views": 111,
+   "reach": 35,
+   "likes": 1,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 1
+  },
+  "score": 118.96,
+  "type": "reel",
+  "style": "story",
+  "pillar": "an AI assistant answering website visitors 24/7 (before vs after)",
+  "hook_type": "pain",
+  "hook": "Most website chat tools waste customer time instead of capturing leads.",
+  "hour": "10:31",
+  "time": "2026-11-14T10:31+02:00",
+  "permalink": "https://www.instagram.com/reel/Dftz8h4jNzY/"
  }
 }
