@@ -523,5 +523,26 @@
   "hour": "16:01",
   "time": "2026-11-14T16:01+02:00",
   "permalink": "https://www.instagram.com/reel/DfuX-18mT6F/"
+ },
+ "18149324989570465": {
+  "fetched": "2026-11-14T17:31:05.711211+00:00",
+  "metrics": {
+   "views": 106,
+   "reach": 20,
+   "likes": 1,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 1
+  },
+  "score": 117.82,
+  "type": "carousel",
+  "style": null,
+  "pillar": "customer support questions an AI can handle for you",
+  "hook_type": null,
+  "hook": "Stop answering *repetitive* support questions",
+  "hour": "19:01",
+  "time": "2026-11-14T19:01+02:00",
+  "permalink": "https://www.instagram.com/p/Dfusm8uCXkO/"
  }
 }
