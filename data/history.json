@@ -1324,5 +1324,22 @@
   "fb_link": "https://www.facebook.com/reel/2224243294824888",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-14T19:01+02:00",
+  "type": "carousel",
+  "mode": "scheduled",
+  "slot": "carousel@2026-11-14T19:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43618716369",
+  "topic": "customer support questions an AI can handle for you",
+  "pillar": "customer support questions an AI can handle for you",
+  "hook": "Stop answering *repetitive* support questions",
+  "caption": "Your support inbox is full of the exact same questions every single day. Answering them manually wastes hours you could spend growing your business. \n\nOur custom AI assistants handle routine inquiries instantly, so your team focuses only on high-value conversations. \n\nWhich question do you hate typing out the most? \n\nComment DEMO and we'll send you a free demo in DM.\n\n#BusinessAutomation #CustomerSupport #Productivity #SmallBusiness #Velosyntech",
+  "ig_id": "18149324989570465",
+  "permalink": "https://www.instagram.com/p/Dfusm8uCXkO/",
+  "fb_id": "1491182390739007_122102378271546258",
+  "fb_link": "https://www.facebook.com/1491182390739007_122102378271546258",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
