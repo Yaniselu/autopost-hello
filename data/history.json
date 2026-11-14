@@ -1358,5 +1358,56 @@
     "fb_id": "1721977606311027"
    }
   ]
+ },
+ {
+  "time": "2026-11-14T20:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-14T20:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43624177705",
+  "topic": "answering customers in any language automatically",
+  "pillar": "answering customers in any language automatically",
+  "hook": "What if your website could speak every language to buyers instantly?",
+  "caption": "International customers arrive on your website around the clock, but language barriers often stop them from buying.\n\nWaiting hours for translation leaves money on the table. An automated AI assistant replies instantly in any language, turning casual browsers into confirmed buyers.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#velosyntech #businessautomation #n8n #aimarketing #growth",
+  "hook_type": "curiosity",
+  "hook_options": [
+   {
+    "text": "What if your website could speak every language to buyers instantly?",
+    "type": "curiosity"
+   },
+   {
+    "text": "Are language barriers costing your business international sales every single day?",
+    "type": "pain"
+   },
+   {
+    "text": "Global buyers leave immediately if your website doesn't speak their language.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-BrianMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "emerald",
+   "business": "store",
+   "story_type": "flash_forward",
+   "sets": [
+    "office",
+    "shop",
+    "stage",
+    "warehouse"
+   ],
+   "names": [
+    "Arthur",
+    "Mira"
+   ]
+  },
+  "ig_id": "18147289729601105",
+  "permalink": "https://www.instagram.com/reel/Dfu0vUkDWUB/",
+  "fb_id": "1481622368362287",
+  "fb_link": "https://www.facebook.com/reel/1481622368362287",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
