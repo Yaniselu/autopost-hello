@@ -1,142 +1,146 @@
 {
- "updated": "2026-11-13T18:01+00:00",
- "posts_measured": 19,
+ "updated": "2026-11-14T06:01+00:00",
+ "posts_measured": 20,
  "basic_only": false,
  "by_type": {
   "reel": {
-   "avg": 145.7,
-   "n": 13
+   "avg": 150.3,
+   "n": 14
   },
   "carousel": {
-   "avg": 140.5,
+   "avg": 148.3,
    "n": 6
   }
  },
  "by_style": {
   "cinematic": {
-   "avg": 136.9,
+   "avg": 145.0,
    "n": 5
   },
   "liquid_glass": {
-   "avg": 159.9,
+   "avg": 164.5,
    "n": 3
   },
   "story": {
-   "avg": 134.9,
-   "n": 4
+   "avg": 139.0,
+   "n": 5
   }
  },
  "by_pillar": {
   "an AI assistant answering website visitors 24/7 (before vs after)": {
-   "avg": 190.4,
+   "avg": 190.5,
    "n": 1
   },
   "losing customers because nobody replies fast enough": {
-   "avg": 151.1,
-   "n": 3
+   "avg": 148.5,
+   "n": 4
   },
   "turning website visitors into leads and booked demos": {
-   "avg": 138.9,
+   "avg": 143.9,
    "n": 5
   },
   "answering customers in any language automatically": {
-   "avg": 148.1,
+   "avg": 166.3,
    "n": 2
   },
   "simple n8n automations that save hours every week": {
-   "avg": 138.5,
+   "avg": 142.9,
    "n": 4
   },
   "customer support questions an AI can handle for you": {
-   "avg": 139.0,
+   "avg": 150.6,
    "n": 3
   },
   "myths vs facts about AI chatbots for small businesses": {
-   "avg": 132.1,
+   "avg": 134.0,
    "n": 1
   }
  },
  "by_hook_type": {
   "pain": {
-   "avg": 143.9,
+   "avg": 148.8,
    "n": 7
   },
   "question": {
-   "avg": 202.8,
+   "avg": 202.9,
    "n": 1
   },
   "bold_claim": {
-   "avg": 112.6,
+   "avg": 131.6,
    "n": 2
   },
   "myth": {
-   "avg": 132.1,
+   "avg": 134.0,
    "n": 1
   },
   "number": {
-   "avg": 136.9,
+   "avg": 146.3,
+   "n": 1
+  },
+  "curiosity": {
+   "avg": 125.7,
    "n": 1
   }
  },
  "by_hour": {
   "21:12": {
-   "avg": 190.4,
+   "avg": 190.5,
    "n": 1
   },
   "10:13": {
-   "avg": 182.4,
+   "avg": 182.5,
    "n": 1
   },
   "13:23": {
-   "avg": 153.5,
+   "avg": 155.0,
    "n": 1
   },
   "17:16": {
-   "avg": 202.8,
+   "avg": 202.9,
    "n": 1
   },
   "19:02": {
-   "avg": 154.7,
+   "avg": 156.4,
    "n": 1
   },
   "20:01": {
-   "avg": 130.4,
-   "n": 2
+   "avg": 132.1,
+   "n": 3
   },
   "08:01": {
-   "avg": 138.2,
+   "avg": 142.5,
    "n": 2
   },
   "10:01": {
-   "avg": 129.1,
+   "avg": 148.2,
    "n": 2
   },
   "10:31": {
-   "avg": 132.1,
+   "avg": 134.0,
    "n": 1
   },
   "13:01": {
-   "avg": 143.4,
+   "avg": 148.2,
    "n": 2
   },
   "18:54": {
-   "avg": 142.2,
+   "avg": 146.2,
    "n": 1
   },
   "19:04": {
-   "avg": 143.3,
+   "avg": 147.5,
    "n": 1
   },
   "10:40": {
-   "avg": 136.9,
+   "avg": 146.3,
    "n": 1
   },
   "16:01": {
-   "avg": 112.2,
+   "avg": 123.9,
    "n": 1
   },
   "19:01": {
-   "avg": 104.7,
+   "avg": 134.4,
    "n": 1
   }
  },
@@ -219,6 +223,86 @@
     "saved": 0,
     "shares": 0,
     "total_interactions": 11
+   }
+  },
+  {
+   "hook": "Lost a sale because of *language*?",
+   "type": "reel",
+   "style": "liquid_glass",
+   "score": 202.86,
+   "permalink": "https://www.instagram.com/reel/DfmyOtliYsU/",
+   "metrics": {
+    "views": 791,
+    "reach": 539,
+    "likes": 12,
+    "comments": 4,
+    "saved": 0,
+    "shares": 2,
+    "total_interactions": 21
+   }
+  },
+  {
+   "hook": "Your website is silent when customers buy.",
+   "type": "reel",
+   "style": null,
+   "score": 190.46,
+   "permalink": "https://www.instagram.com/reel/DfiF0VNil9U/",
+   "metrics": {
+    "views": 565,
+    "reach": 366,
+    "likes": 8,
+    "comments": 2,
+    "saved": 0,
+    "shares": 3,
+    "total_interactions": 16
+   }
+  },
+  {
+   "hook": "Slow *replies* cost you paying customers.",
+   "type": "reel",
+   "style": "cinematic",
+   "score": 182.5,
+   "permalink": "https://www.instagram.com/reel/DfmDVonDBBh/",
+   "metrics": {
+    "views": 613,
+    "reach": 420,
+    "likes": 10,
+    "comments": 0,
+    "saved": 0,
+    "shares": 2,
+    "total_interactions": 15
+   }
+  },
+  {
+   "hook": "Tired of answering the *same questions* daily?",
+   "type": "reel",
+   "style": "liquid_glass",
+   "score": 166.71,
+   "permalink": "https://www.instagram.com/reel/DfolOKhkvSB/",
+   "metrics": {
+    "views": 506,
+    "reach": 367,
+    "likes": 5,
+    "comments": 0,
+    "saved": 0,
+    "shares": 1,
+    "total_interactions": 9
+   }
+  },
+  {
+   "hook": "Stop doing *manual* copy-paste work.",
+   "type": "carousel",
+   "style": null,
+   "score": 156.45,
+   "permalink": "https://www.instagram.com/p/Dfm-jw5F_Gg/",
+   "metrics": {
+    "views": 349,
+    "reach": 71,
+    "likes": 10,
+    "comments": 0,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 12
    }
   }
  ],

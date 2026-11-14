@@ -1084,5 +1084,56 @@
   "fb_link": "https://www.facebook.com/reel/1159248223209419",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-14T08:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-14T08:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43564217545",
+  "topic": "customer support questions an AI can handle for you",
+  "pillar": "customer support questions an AI can handle for you",
+  "hook": "Your team is wasting hours answering the exact same website questions.",
+  "caption": "Your inbox shouldn't be a endless loop of \"where are you located?\" or \"what are your prices?\". When team members spend hours typing the exact same responses, high-value client work falls behind.\n\nAn automated AI assistant handles repetitive inquiries—opening hours, location, pricing, and services—instantly, 24/7. Your visitors get immediate answers, and your team reclaims hours of productive time every week.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#BusinessAutomation #AIAssistant #CustomerSupport #n8n #LeadGeneration",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "Your team is wasting hours answering the exact same website questions.",
+    "type": "pain"
+   },
+   {
+    "text": "What if repetitive website questions answered themselves in five seconds?",
+    "type": "question"
+   },
+   {
+    "text": "Answering routine questions is secretly draining your daily revenue.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-BrianMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "coral",
+   "business": "cafe",
+   "story_type": "disaster",
+   "sets": [
+    "office",
+    "shop",
+    "warehouse"
+   ],
+   "names": [
+    "Felix",
+    "Nora",
+    "Liam"
+   ]
+  },
+  "ig_id": "18142732327626988",
+  "permalink": "https://www.instagram.com/reel/DftiZgZnL1u/",
+  "fb_id": "1817215496192616",
+  "fb_link": "https://www.facebook.com/reel/1817215496192616",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
