@@ -1268,5 +1268,22 @@
   "fb_link": "https://www.facebook.com/1491182390739007_122102166735546258",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-14T15:31+02:00",
+  "type": "story",
+  "mode": "scheduled",
+  "slot": "story@2026-11-14T15:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43600099002",
+  "topic": "Instant replies win deals",
+  "hook": "Instant replies win deals",
+  "caption": "Instant replies win deals — Buyers leave websites within minutes if their questions go unanswered. Speed is your biggest advantage.",
+  "status": "posted",
+  "stories": [
+   {
+    "ig_id": "17920893150495170",
+    "fb_id": "1175631081654897"
+   }
+  ]
  }
 ]
