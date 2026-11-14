@@ -439,5 +439,26 @@
   "hour": "08:01",
   "time": "2026-11-14T08:01+02:00",
   "permalink": "https://www.instagram.com/reel/DftiZgZnL1u/"
+ },
+ "18186120418434014": {
+  "fetched": "2026-11-14T08:31:10.021097+00:00",
+  "metrics": {
+   "views": 14,
+   "reach": 0,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 67.7,
+  "type": "reel",
+  "style": "cinematic",
+  "pillar": "answering customers in any language automatically",
+  "hook_type": "pain",
+  "hook": "Language barriers kill *deals* instantly.",
+  "hour": "10:01",
+  "time": "2026-11-14T10:01+02:00",
+  "permalink": "https://www.instagram.com/reel/Dftv5_ECBoi/"
  }
 }

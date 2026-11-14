@@ -1200,5 +1200,56 @@
   "fb_link": "https://www.facebook.com/reel/1536734944958891",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-14T10:31+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-14T10:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43576140441",
+  "topic": "Myth vs Reality: Website AI Assistants",
+  "pillar": "an AI assistant answering website visitors 24/7 (before vs after)",
+  "hook": "Most website chat tools waste customer time instead of capturing leads.",
+  "caption": "Most business owners think AI chat widgets are useless because traditional ones only repeat generic answers and collect dust.\n\nModern website AI assistants work completely differently. Built on custom n8n workflows, they understand your business, answer specific customer inquiries instantly in any language, and automatically schedule appointments.\n\nStop losing prospective clients to slow or unhelpful responses.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessautomation #n8n #leadgeneration #aisolutions #customerexperience",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "Think website AI chatbots drive prospective customers away?",
+    "type": "myth"
+   },
+   {
+    "text": "Most website chat tools waste customer time instead of capturing leads.",
+    "type": "pain"
+   },
+   {
+    "text": "Is your website chatbot frustrating buyers or booking paid clients?",
+    "type": "question"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-AvaMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "cobalt",
+   "business": "gym",
+   "story_type": "myth_bust",
+   "sets": [
+    "home",
+    "shop",
+    "stage"
+   ],
+   "names": [
+    "Tariq",
+    "Marcus",
+    "Nina"
+   ]
+  },
+  "ig_id": "17975030019171917",
+  "permalink": "https://www.instagram.com/reel/Dftz8h4jNzY/",
+  "fb_id": "1178629207934270",
+  "fb_link": "https://www.facebook.com/reel/1178629207934270",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
