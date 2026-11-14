@@ -1135,5 +1135,22 @@
   "fb_link": "https://www.facebook.com/reel/1817215496192616",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-14T09:31+02:00",
+  "type": "story",
+  "mode": "scheduled",
+  "slot": "story@2026-11-14T09:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43571407200",
+  "topic": "Buyers check prices after hours",
+  "hook": "Buyers check prices after hours",
+  "caption": "Buyers check prices after hours — Over thirty percent of website inquiries happen outside normal working hours when your office is completely empty.",
+  "status": "posted",
+  "stories": [
+   {
+    "ig_id": "17917690218539828",
+    "fb_id": "1534313878757450"
+   }
+  ]
  }
 ]

@@ -418,5 +418,26 @@
   "hour": "20:01",
   "time": "2026-11-13T20:01+02:00",
   "permalink": "https://www.instagram.com/reel/DfsQDQegdhy/"
+ },
+ "18142732327626988": {
+  "fetched": "2026-11-14T07:31:12.760479+00:00",
+  "metrics": {
+   "views": 156,
+   "reach": 95,
+   "likes": 1,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 1
+  },
+  "score": 127.41,
+  "type": "reel",
+  "style": "story",
+  "pillar": "customer support questions an AI can handle for you",
+  "hook_type": "pain",
+  "hook": "Your team is wasting hours answering the exact same website questions.",
+  "hour": "08:01",
+  "time": "2026-11-14T08:01+02:00",
+  "permalink": "https://www.instagram.com/reel/DftiZgZnL1u/"
  }
 }
