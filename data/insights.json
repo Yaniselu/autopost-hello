@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-15T06:01+00:00",
- "posts_measured": 27,
+ "updated": "2026-11-15T07:31+00:00",
+ "posts_measured": 28,
  "basic_only": false,
  "by_type": {
   "reel": {
-   "avg": 146.8,
-   "n": 19
+   "avg": 145.8,
+   "n": 20
   },
   "carousel": {
    "avg": 148.4,
@@ -22,8 +22,8 @@
    "n": 4
   },
   "story": {
-   "avg": 139.7,
-   "n": 8
+   "avg": 138.3,
+   "n": 9
   }
  },
  "by_pillar": {
@@ -36,8 +36,8 @@
    "n": 6
   },
   "turning website visitors into leads and booked demos": {
-   "avg": 144.4,
-   "n": 5
+   "avg": 141.5,
+   "n": 6
   },
   "answering customers in any language automatically": {
    "avg": 151.6,
@@ -58,8 +58,8 @@
  },
  "by_hook_type": {
   "pain": {
-   "avg": 142.9,
-   "n": 11
+   "avg": 141.6,
+   "n": 12
   },
   "question": {
    "avg": 202.9,
@@ -108,8 +108,8 @@
    "n": 4
   },
   "08:01": {
-   "avg": 142.4,
-   "n": 3
+   "avg": 138.5,
+   "n": 4
   },
   "10:01": {
    "avg": 141.6,
