@@ -628,5 +628,26 @@
   "hour": "10:31",
   "time": "2026-11-15T10:31+02:00",
   "permalink": "https://www.instagram.com/reel/DfwYBroCHxP/"
+ },
+ "18151361572483341": {
+  "fetched": "2026-11-15T13:31:04.674472+00:00",
+  "metrics": {
+   "views": 209,
+   "reach": 50,
+   "likes": 1,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 3
+  },
+  "score": 134.68,
+  "type": "carousel",
+  "style": null,
+  "pillar": "an AI assistant answering website visitors 24/7 (before vs after)",
+  "hook_type": null,
+  "hook": "Your website *before* vs *after* AI",
+  "hour": "13:01",
+  "time": "2026-11-15T13:01+02:00",
+  "permalink": "https://www.instagram.com/p/DfwoRXODZWD/"
  }
 }

@@ -1594,5 +1594,22 @@
   "fb_link": "https://www.facebook.com/1491182390739007_122103044355546258",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-15T15:31+02:00",
+  "type": "story",
+  "mode": "scheduled",
+  "slot": "story@2026-11-15T15:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43719347221",
+  "topic": "Secret shop your own website",
+  "hook": "Secret shop your own website",
+  "caption": "Secret shop your own website — Message your business from a private browser window. Notice how long you wait for a real answer.",
+  "status": "posted",
+  "stories": [
+   {
+    "ig_id": "18114153629619054",
+    "fb_id": "1658519762325424"
+   }
+  ]
  }
 ]
