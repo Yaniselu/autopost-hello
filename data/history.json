@@ -1477,5 +1477,53 @@
     "fb_id": "2145635089650570"
    }
   ]
+ },
+ {
+  "time": "2026-11-15T10:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-15T10:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43692480975",
+  "topic": "customer support questions an AI can handle for you",
+  "pillar": "customer support questions an AI can handle for you",
+  "hook": "Stop *wasting hours* answering the same questions.",
+  "caption": "Stop wasting hours every single day answering the exact same website questions over and over again.\n\nWhen potential buyers visit your site, they want quick answers about pricing, availability, and services. If you take hours to reply, they leave and find a competitor who responds instantly.\n\nAn AI assistant trained on your business answers routine questions 24/7 in any language, qualifies interested leads, and books demos directly into your calendar without extra effort.\n\nComment DEMO and we'll send you a free demo in DM. 🤖\n\nWhat is the most repetitive question your customers ask you every week?\n\n#aiassistant #businessautomation #leadgeneration #n8n #customersupport",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "Stop *wasting hours* answering the same questions.",
+    "type": "pain"
+   },
+   {
+    "text": "Why answer *repetitive questions* yourself?",
+    "type": "question"
+   },
+   {
+    "text": "AI handles *80%* of customer support.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "cinematic",
+  "voice": "en-US-EmmaMultilingualNeural",
+  "plan": {
+   "hook": "macro_pull",
+   "problem": "screen_push",
+   "solution": "side_track",
+   "result": "low_hero",
+   "cta": "duo_cta",
+   "bg": "bokeh",
+   "type": "typewriter",
+   "transition": "flash",
+   "finish_phone": "black",
+   "finish_laptop": "silver",
+   "theme": "light",
+   "palette": "cobalt"
+  },
+  "ig_id": "18107648567634305",
+  "permalink": "https://www.instagram.com/reel/DfwVHttGQ1F/",
+  "fb_id": "1482457193823826",
+  "fb_link": "https://www.facebook.com/reel/1482457193823826",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
