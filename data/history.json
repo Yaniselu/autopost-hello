@@ -1611,5 +1611,44 @@
     "fb_id": "1658519762325424"
    }
   ]
+ },
+ {
+  "time": "2026-11-15T16:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-15T16:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43721981970",
+  "topic": "answering customers in any language automatically",
+  "pillar": "answering customers in any language automatically",
+  "hook": "What if your *website* spoke *French* right now?",
+  "caption": "Expanding into international markets should not require hiring a massive multilingual support team. When someone lands on your page from another country, they want details in their own language immediately.\n\nOur custom AI assistants detect the visitor language instantly and reply with zero delay. No awkward translation tools, just smooth conversations that build trust and drive sales.\n\nHow many international visitors left your site today without buying?\n\nComment DEMO and we will send you a free demo in DM.\n\n#globalbusiness #aiassistant #websitetips #businessgrowth #automation",
+  "hook_type": "curiosity",
+  "hook_options": [
+   {
+    "text": "What if your *website* spoke *French* right now?",
+    "type": "curiosity"
+   },
+   {
+    "text": "Every *foreign visitor* leaves without a *word*.",
+    "type": "pain"
+   },
+   {
+    "text": "Most *businesses* ignore half their *market*.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "liquid_glass",
+  "voice": "en-US-AndrewMultilingualNeural",
+  "plan": {
+   "style": "liquid_glass",
+   "theme": "light",
+   "palette": "tangerine"
+  },
+  "ig_id": "18104033240379399",
+  "permalink": "https://www.instagram.com/reel/Dfw89_gDXCu/",
+  "fb_id": "1684497093197318",
+  "fb_link": "https://www.facebook.com/reel/1684497093197318",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
