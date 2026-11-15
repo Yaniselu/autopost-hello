@@ -1667,5 +1667,22 @@
   "fb_link": "https://www.facebook.com/1491182390739007_122103353727546258",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-15T19:31+02:00",
+  "type": "story",
+  "mode": "scheduled",
+  "slot": "story@2026-11-15T19:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43741479104",
+  "topic": "Unread messages equal lost revenue",
+  "hook": "Unread messages equal lost revenue",
+  "caption": "Unread messages equal lost revenue — Over half of online shoppers abandon a purchase if they have to wait more than five minutes for help.",
+  "status": "posted",
+  "stories": [
+   {
+    "ig_id": "18133208830692709",
+    "fb_id": "1477892074264973"
+   }
+  ]
  }
 ]
