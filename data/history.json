@@ -1525,5 +1525,57 @@
   "fb_link": "https://www.facebook.com/reel/1482457193823826",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-15T10:31+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-15T10:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43694819658",
+  "topic": "customer support questions an AI can handle for you",
+  "pillar": "customer support questions an AI can handle for you",
+  "hook": "What if answering website inquiries took seconds instead of hours?",
+  "caption": "Thirty years ago, getting a question answered meant sitting on hold or waiting days for someone to pull a paper file. Today, website visitors still face the modern version of that delay: waiting hours for an email reply.\n\nMost incoming questions are completely predictable: pricing details, package breakdowns, service locations, and booking availability. Answering these manually drains your focus and wastes valuable selling time.\n\nA custom AI assistant built on n8n handles those repetitive questions instantly, in any language, 24/7. It qualifies visitors right away and routes ready-to-buy leads directly into booked appointments.\n\nComment DEMO and we'll send you a free demo in DM.\n\nHow many hours a week does your team spend answering the same five questions?\n\n#businessautomation #customerexperience #n8n #leadgeneration #aiassistant",
+  "hook_type": "curiosity",
+  "hook_options": [
+   {
+    "text": "What if answering website inquiries took seconds instead of hours?",
+    "type": "curiosity"
+   },
+   {
+    "text": "Repetitive support questions are quietly draining hours from your workweek.",
+    "type": "pain"
+   },
+   {
+    "text": "Your website can answer eighty percent of support questions automatically.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-BrianMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "violet",
+   "business": "agency",
+   "story_type": "time_travel",
+   "sets": [
+    "home",
+    "office",
+    "shop",
+    "stage",
+    "street"
+   ],
+   "names": [
+    "Silas",
+    "Darcy"
+   ]
+  },
+  "ig_id": "18122985077066368",
+  "permalink": "https://www.instagram.com/reel/DfwYBroCHxP/",
+  "fb_id": "2128858981324017",
+  "fb_link": "https://www.facebook.com/reel/2128858981324017",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
