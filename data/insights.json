@@ -1,84 +1,84 @@
 {
- "updated": "2026-11-15T17:31+00:00",
+ "updated": "2026-11-15T18:01+00:00",
  "posts_measured": 33,
  "basic_only": false,
  "by_type": {
   "reel": {
-   "avg": 141.6,
+   "avg": 142.5,
    "n": 23
   },
   "carousel": {
-   "avg": 142.4,
+   "avg": 142.9,
    "n": 10
   }
  },
  "by_style": {
   "cinematic": {
-   "avg": 134.0,
+   "avg": 134.5,
    "n": 7
   },
   "liquid_glass": {
-   "avg": 149.0,
+   "avg": 150.8,
    "n": 5
   },
   "story": {
-   "avg": 138.3,
+   "avg": 139.2,
    "n": 10
   }
  },
  "by_pillar": {
   "an AI assistant answering website visitors 24/7 (before vs after)": {
-   "avg": 151.6,
+   "avg": 151.7,
    "n": 3
   },
   "losing customers because nobody replies fast enough": {
-   "avg": 139.6,
+   "avg": 141.0,
    "n": 7
   },
   "turning website visitors into leads and booked demos": {
-   "avg": 141.5,
+   "avg": 141.8,
    "n": 6
   },
   "answering customers in any language automatically": {
-   "avg": 145.0,
+   "avg": 146.3,
    "n": 5
   },
   "simple n8n automations that save hours every week": {
-   "avg": 144.0,
+   "avg": 144.6,
    "n": 4
   },
   "customer support questions an AI can handle for you": {
-   "avg": 137.9,
+   "avg": 138.6,
    "n": 7
   },
   "myths vs facts about AI chatbots for small businesses": {
-   "avg": 134.2,
+   "avg": 134.3,
    "n": 1
   }
  },
  "by_hook_type": {
   "pain": {
-   "avg": 137.2,
+   "avg": 138.3,
    "n": 13
   },
   "question": {
-   "avg": 202.9,
+   "avg": 203.0,
    "n": 1
   },
   "bold_claim": {
-   "avg": 133.6,
+   "avg": 134.1,
    "n": 2
   },
   "myth": {
-   "avg": 134.2,
+   "avg": 134.3,
    "n": 1
   },
   "number": {
-   "avg": 147.1,
+   "avg": 147.2,
    "n": 1
   },
   "curiosity": {
-   "avg": 133.1,
+   "avg": 134.5,
    "n": 4
   }
  },
@@ -88,7 +88,7 @@
    "n": 1
   },
   "10:13": {
-   "avg": 182.5,
+   "avg": 182.6,
    "n": 1
   },
   "13:23": {
@@ -96,35 +96,35 @@
    "n": 1
   },
   "17:16": {
-   "avg": 202.9,
+   "avg": 203.0,
    "n": 1
   },
   "19:02": {
-   "avg": 156.9,
+   "avg": 157.1,
    "n": 1
   },
   "20:01": {
-   "avg": 136.6,
+   "avg": 138.4,
    "n": 4
   },
   "08:01": {
-   "avg": 138.5,
+   "avg": 138.8,
    "n": 4
   },
   "10:01": {
-   "avg": 127.2,
+   "avg": 128.0,
    "n": 4
   },
   "10:31": {
-   "avg": 134.3,
+   "avg": 134.5,
    "n": 3
   },
   "13:01": {
-   "avg": 144.6,
+   "avg": 144.8,
    "n": 4
   },
   "18:54": {
-   "avg": 146.6,
+   "avg": 146.7,
    "n": 1
   },
   "19:04": {
@@ -132,15 +132,15 @@
    "n": 1
   },
   "10:40": {
-   "avg": 147.1,
+   "avg": 147.2,
    "n": 1
   },
   "16:01": {
-   "avg": 125.2,
+   "avg": 128.1,
    "n": 3
   },
   "19:01": {
-   "avg": 128.3,
+   "avg": 129.6,
    "n": 3
   }
  },
@@ -346,6 +346,70 @@
    "metrics": {
     "views": 355,
     "reach": 73,
+    "likes": 10,
+    "comments": 0,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 12
+   }
+  },
+  {
+   "hook": "Lost a sale because of *language*?",
+   "type": "reel",
+   "style": "liquid_glass",
+   "score": 202.99,
+   "permalink": "https://www.instagram.com/reel/DfmyOtliYsU/",
+   "metrics": {
+    "views": 795,
+    "reach": 542,
+    "likes": 12,
+    "comments": 4,
+    "saved": 0,
+    "shares": 2,
+    "total_interactions": 21
+   }
+  },
+  {
+   "hook": "Slow *replies* cost you paying customers.",
+   "type": "reel",
+   "style": "cinematic",
+   "score": 182.58,
+   "permalink": "https://www.instagram.com/reel/DfmDVonDBBh/",
+   "metrics": {
+    "views": 615,
+    "reach": 420,
+    "likes": 10,
+    "comments": 0,
+    "saved": 0,
+    "shares": 2,
+    "total_interactions": 15
+   }
+  },
+  {
+   "hook": "Tired of answering the *same questions* daily?",
+   "type": "reel",
+   "style": "liquid_glass",
+   "score": 166.91,
+   "permalink": "https://www.instagram.com/reel/DfolOKhkvSB/",
+   "metrics": {
+    "views": 510,
+    "reach": 368,
+    "likes": 5,
+    "comments": 0,
+    "saved": 0,
+    "shares": 1,
+    "total_interactions": 9
+   }
+  },
+  {
+   "hook": "Stop doing *manual* copy-paste work.",
+   "type": "carousel",
+   "style": null,
+   "score": 157.08,
+   "permalink": "https://www.instagram.com/p/Dfm-jw5F_Gg/",
+   "metrics": {
+    "views": 358,
+    "reach": 74,
     "likes": 10,
     "comments": 0,
     "saved": 0,

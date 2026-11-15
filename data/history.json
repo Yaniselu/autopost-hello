@@ -1684,5 +1684,56 @@
     "fb_id": "1477892074264973"
    }
   ]
+ },
+ {
+  "time": "2026-11-15T20:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-15T20:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43744277930",
+  "topic": "simple n8n automations that save hours every week",
+  "pillar": "simple n8n automations that save hours every week",
+  "hook": "Why do customers vanish when your website takes hours to reply?",
+  "caption": "Manual follow-ups and delayed website replies waste valuable time for both you and your customers. When inquiries sit unread, interested buyers simply move on to a competitor who responds instantly.\n\nAutomating your routine chat responses and booking flows keeps your business moving forward 24/7 without extra manual effort. Build a smarter website experience that works around the clock.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#BusinessAutomation #WebDevelopment #CustomerService #SmallBusiness #Productivity",
+  "hook_type": "question",
+  "hook_options": [
+   {
+    "text": "Why do customers vanish when your website takes hours to reply?",
+    "type": "question"
+   },
+   {
+    "text": "Manual replies are silently killing your conversion rate every single day.",
+    "type": "bold_claim"
+   },
+   {
+    "text": "Waiting hours for a response is costing you paying customers.",
+    "type": "pain"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-BrianMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "emerald",
+   "business": "clinic",
+   "story_type": "customer_pov",
+   "sets": [
+    "home",
+    "shop",
+    "stage",
+    "street"
+   ],
+   "names": [
+    "Zoe",
+    "Leo"
+   ]
+  },
+  "ig_id": "18136772644795951",
+  "permalink": "https://www.instagram.com/reel/DfxZYeZpajT/",
+  "fb_id": "1161447446327027",
+  "fb_link": "https://www.facebook.com/reel/1161447446327027",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
