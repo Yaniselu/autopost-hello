@@ -1650,5 +1650,22 @@
   "fb_link": "https://www.facebook.com/reel/1684497093197318",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-15T19:01+02:00",
+  "type": "carousel",
+  "mode": "scheduled",
+  "slot": "carousel@2026-11-15T19:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43738650615",
+  "topic": "losing customers because nobody replies fast enough",
+  "pillar": "losing customers because nobody replies fast enough",
+  "hook": "Slow replies are *killing* your sales",
+  "caption": "Every minute a potential customer waits for an answer on your website is a minute they spend looking at your competitors. When someone reaches out, their intent to buy is at its absolute peak.\n\nRelying on manual replies means losing hot leads during off-hours, weekends, or busy workdays. Automating immediate answers ensures no lead slips away.\n\nComment DEMO and we'll send you a free demo in DM to show you how it works on your site.\n\nHow fast does your business currently reply to website inquiries?\n\n#leadgeneration #businessautomation #websiteconversion #aiassistants #smbtips",
+  "ig_id": "18003123735009069",
+  "permalink": "https://www.instagram.com/p/DfxR2zfl2jm/",
+  "fb_id": "1491182390739007_122103353727546258",
+  "fb_link": "https://www.facebook.com/1491182390739007_122103353727546258",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
