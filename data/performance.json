@@ -607,5 +607,26 @@
   "hour": "10:01",
   "time": "2026-11-15T10:01+02:00",
   "permalink": "https://www.instagram.com/reel/DfwVHttGQ1F/"
+ },
+ "18122985077066368": {
+  "fetched": "2026-11-15T11:01:21.140034+00:00",
+  "metrics": {
+   "views": 212,
+   "reach": 136,
+   "likes": 0,
+   "comments": 0,
+   "saved": 1,
+   "shares": 0,
+   "total_interactions": 1
+  },
+  "score": 139.03,
+  "type": "reel",
+  "style": "story",
+  "pillar": "customer support questions an AI can handle for you",
+  "hook_type": "curiosity",
+  "hook": "What if answering website inquiries took seconds instead of hours?",
+  "hour": "10:31",
+  "time": "2026-11-15T10:31+02:00",
+  "permalink": "https://www.instagram.com/reel/DfwYBroCHxP/"
  }
 }

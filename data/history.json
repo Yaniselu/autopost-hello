@@ -1577,5 +1577,22 @@
   "fb_link": "https://www.facebook.com/reel/2128858981324017",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-15T13:01+02:00",
+  "type": "carousel",
+  "mode": "scheduled",
+  "slot": "carousel@2026-11-15T13:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43706805040",
+  "topic": "an AI assistant answering website visitors 24/7 (before vs after)",
+  "pillar": "an AI assistant answering website visitors 24/7 (before vs after)",
+  "hook": "Your website *before* vs *after* AI",
+  "caption": "A static website waits for people to fill out forms and wait hours for a reply. Most visitors simply leave instead.\n\nWhen an AI assistant handles conversations 24/7, every visitor gets clear guidance instantly in their own language—turning casual clicks into booked appointments.\n\nComment DEMO and we'll send you a free demo in DM. You can also explore velosyntech.com or reach out directly at contact@velosyntech.com.\n\nHow many inquiries did your website miss this week?\n\n#businessautomation #customeraiassistant #leadgeneration #smallbusinesstips #websiteconversion",
+  "ig_id": "18151361572483341",
+  "permalink": "https://www.instagram.com/p/DfwoRXODZWD/",
+  "fb_id": "1491182390739007_122103044355546258",
+  "fb_link": "https://www.facebook.com/1491182390739007_122103044355546258",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
