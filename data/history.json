@@ -1935,5 +1935,44 @@
     "fb_id": "2638060516619706"
    }
   ]
+ },
+ {
+  "time": "2026-11-16T16:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-16T16:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43881336464",
+  "topic": "answering customers in any language automatically",
+  "pillar": "answering customers in any language automatically",
+  "hook": "Losing *global clients* to language barriers?",
+  "caption": "Losing global clients to language barriers?\n\nInternational traffic lands on your website around the clock. When a buyer asks a question in Spanish, German, or French and gets silence, they head straight to a competitor.\n\nAn automated AI assistant instantly detects the visitor's native language, answers their questions accurately 24/7, and collects their contact details to book a demo on your calendar.\n\nComment DEMO and we'll send you a free demo in DM. What foreign languages do your website visitors speak most?\n\n#businessautomation #leadgeneration #websitesales #aiassistants #n8n",
+  "hook_type": "question",
+  "hook_options": [
+   {
+    "text": "Losing *global clients* to language barriers?",
+    "type": "question"
+   },
+   {
+    "text": "Foreign buyers *leave* without an instant reply.",
+    "type": "pain"
+   },
+   {
+    "text": "Sell to *anyone* without hiring translators.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "liquid_glass",
+  "voice": "en-US-AndrewMultilingualNeural",
+  "plan": {
+   "style": "liquid_glass",
+   "theme": "light",
+   "palette": "tangerine"
+  },
+  "ig_id": "18192296824416983",
+  "permalink": "https://www.instagram.com/reel/DfzibEXiZ8Y/",
+  "fb_id": "1449465537384070",
+  "fb_link": "https://www.facebook.com/reel/1449465537384070",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
