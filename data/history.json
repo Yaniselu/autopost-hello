@@ -1918,5 +1918,22 @@
   "fb_link": "https://www.facebook.com/1491182390739007_122103973893546258",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-16T15:31+02:00",
+  "type": "story",
+  "mode": "scheduled",
+  "slot": "story@2026-11-16T15:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43876426704",
+  "topic": "Most website visitors never return.",
+  "hook": "Most website visitors never return.",
+  "caption": "Most website visitors never return. — If they wait over five minutes for an answer, they close the tab and buy elsewhere.",
+  "status": "posted",
+  "stories": [
+   {
+    "ig_id": "17881066467566406",
+    "fb_id": "2638060516619706"
+   }
+  ]
  }
 ]

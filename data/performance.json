@@ -775,5 +775,26 @@
   "hour": "10:31",
   "time": "2026-11-16T10:31+02:00",
   "permalink": "https://www.instagram.com/reel/Dfy9Dypma1s/"
+ },
+ "17963952404998679": {
+  "fetched": "2026-11-16T13:31:16.843429+00:00",
+  "metrics": {
+   "views": 176,
+   "reach": 39,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 129.4,
+  "type": "carousel",
+  "style": null,
+  "pillar": "customer support questions an AI can handle for you",
+  "hook_type": null,
+  "hook": "Stop repeating yourself to website visitors.",
+  "hour": "13:01",
+  "time": "2026-11-16T13:01+02:00",
+  "permalink": "https://www.instagram.com/p/DfzNC5zE7rA/"
  }
 }
