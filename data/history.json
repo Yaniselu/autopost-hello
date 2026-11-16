@@ -1802,5 +1802,53 @@
     "fb_id": "1824615838787008"
    }
   ]
+ },
+ {
+  "time": "2026-11-16T10:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-16T10:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43827877669",
+  "topic": "losing customers because nobody replies fast enough",
+  "pillar": "losing customers because nobody replies fast enough",
+  "hook": "Why do buyers leave *instantly*?",
+  "caption": "Most business owners check their analytics and wonder why traffic does not turn into revenue. The gap is rarely your product; it is the time it takes to reply.\n\nWhen someone visits your website with a question, they want clarity right now. If they hit a wall or wait hours for an email, they simply buy from the next tab open on their screen.\n\nFixing this does not require hiring more staff or staying glued to your phone. Smart automation handles the initial conversation instantly.\n\nHow many inquiries sat in your inbox overnight?\n\n#businessgrowth #leadgeneration #salestips #smallbiz #automation",
+  "hook_type": "question",
+  "hook_options": [
+   {
+    "text": "Why do buyers leave *instantly*?",
+    "type": "question"
+   },
+   {
+    "text": "Waiting hours *kills* your sales.",
+    "type": "bold_claim"
+   },
+   {
+    "text": "Your *slow* reply hands them over.",
+    "type": "pain"
+   }
+  ],
+  "style": "cinematic",
+  "voice": "en-US-AndrewMultilingualNeural",
+  "plan": {
+   "hook": "drop_spin",
+   "problem": "high_angle",
+   "solution": "side_track",
+   "result": "low_hero",
+   "cta": "phone_spin",
+   "bg": "spot",
+   "type": "kinetic",
+   "transition": "whip",
+   "finish_phone": "black",
+   "finish_laptop": "silver",
+   "theme": "light",
+   "palette": "tangerine"
+  },
+  "ig_id": "18073375157757905",
+  "permalink": "https://www.instagram.com/reel/Dfy51G3DFvD/",
+  "fb_id": "2224016345181147",
+  "fb_link": "https://www.facebook.com/reel/2224016345181147",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
