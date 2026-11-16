@@ -567,17 +567,17 @@
   "permalink": "https://www.instagram.com/reel/Dfu0vUkDWUB/"
  },
  "17957781924334893": {
-  "fetched": "2026-11-15T07:31:10.777244+00:00",
+  "fetched": "2026-11-16T06:01:14.812570+00:00",
   "metrics": {
-   "views": 157,
-   "reach": 115,
-   "likes": 0,
+   "views": 619,
+   "reach": 498,
+   "likes": 1,
    "comments": 0,
-   "saved": 0,
+   "saved": 1,
    "shares": 0,
-   "total_interactions": 0
+   "total_interactions": 3
   },
-  "score": 126.56,
+  "score": 166.74,
   "type": "reel",
   "style": "story",
   "pillar": "turning website visitors into leads and booked demos",
@@ -588,17 +588,17 @@
   "permalink": "https://www.instagram.com/reel/DfwG15EGVYj/"
  },
  "18107648567634305": {
-  "fetched": "2026-11-15T08:31:39.495225+00:00",
+  "fetched": "2026-11-16T06:01:14.812570+00:00",
   "metrics": {
-   "views": 28,
-   "reach": 0,
-   "likes": 0,
+   "views": 164,
+   "reach": 75,
+   "likes": 2,
    "comments": 0,
    "saved": 0,
    "shares": 0,
-   "total_interactions": 0
+   "total_interactions": 3
   },
-  "score": 84.18,
+  "score": 129.65,
   "type": "reel",
   "style": "cinematic",
   "pillar": "customer support questions an AI can handle for you",
@@ -609,17 +609,17 @@
   "permalink": "https://www.instagram.com/reel/DfwVHttGQ1F/"
  },
  "18122985077066368": {
-  "fetched": "2026-11-15T11:01:21.140034+00:00",
+  "fetched": "2026-11-16T06:01:14.812570+00:00",
   "metrics": {
-   "views": 212,
-   "reach": 136,
+   "views": 268,
+   "reach": 160,
    "likes": 0,
    "comments": 0,
    "saved": 1,
    "shares": 0,
-   "total_interactions": 1
+   "total_interactions": 2
   },
-  "score": 139.03,
+  "score": 144.87,
   "type": "reel",
   "style": "story",
   "pillar": "customer support questions an AI can handle for you",
@@ -630,17 +630,17 @@
   "permalink": "https://www.instagram.com/reel/DfwYBroCHxP/"
  },
  "18151361572483341": {
-  "fetched": "2026-11-15T13:31:04.674472+00:00",
+  "fetched": "2026-11-16T06:01:14.812570+00:00",
   "metrics": {
-   "views": 209,
-   "reach": 50,
+   "views": 268,
+   "reach": 56,
    "likes": 1,
    "comments": 0,
    "saved": 0,
    "shares": 0,
    "total_interactions": 3
   },
-  "score": 134.68,
+  "score": 140.87,
   "type": "carousel",
   "style": null,
   "pillar": "an AI assistant answering website visitors 24/7 (before vs after)",
@@ -651,17 +651,17 @@
   "permalink": "https://www.instagram.com/p/DfwoRXODZWD/"
  },
  "18104033240379399": {
-  "fetched": "2026-11-15T17:01:30.655148+00:00",
+  "fetched": "2026-11-16T06:01:14.812570+00:00",
   "metrics": {
-   "views": 114,
-   "reach": 47,
-   "likes": 0,
+   "views": 163,
+   "reach": 74,
+   "likes": 1,
    "comments": 0,
    "saved": 0,
    "shares": 0,
-   "total_interactions": 0
+   "total_interactions": 1
   },
-  "score": 118.62,
+  "score": 128.5,
   "type": "reel",
   "style": "liquid_glass",
   "pillar": "answering customers in any language automatically",
@@ -672,17 +672,17 @@
   "permalink": "https://www.instagram.com/reel/Dfw89_gDXCu/"
  },
  "18003123735009069": {
-  "fetched": "2026-11-15T17:31:12.775094+00:00",
+  "fetched": "2026-11-16T06:01:14.812570+00:00",
   "metrics": {
-   "views": 56,
-   "reach": 3,
-   "likes": 1,
+   "views": 259,
+   "reach": 55,
+   "likes": 3,
    "comments": 0,
    "saved": 0,
    "shares": 0,
-   "total_interactions": 1
+   "total_interactions": 5
   },
-  "score": 102.08,
+  "score": 142.02,
   "type": "carousel",
   "style": null,
   "pillar": "losing customers because nobody replies fast enough",
@@ -691,5 +691,26 @@
   "hour": "19:01",
   "time": "2026-11-15T19:01+02:00",
   "permalink": "https://www.instagram.com/p/DfxR2zfl2jm/"
+ },
+ "18136772644795951": {
+  "fetched": "2026-11-16T06:01:14.812570+00:00",
+  "metrics": {
+   "views": 275,
+   "reach": 183,
+   "likes": 7,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 9
+  },
+  "score": 147.51,
+  "type": "reel",
+  "style": "story",
+  "pillar": "simple n8n automations that save hours every week",
+  "hook_type": "question",
+  "hook": "Why do customers vanish when your website takes hours to reply?",
+  "hour": "20:01",
+  "time": "2026-11-15T20:01+02:00",
+  "permalink": "https://www.instagram.com/reel/DfxZYeZpajT/"
  }
 }

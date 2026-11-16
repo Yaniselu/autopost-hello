@@ -1735,5 +1735,55 @@
   "fb_link": "https://www.facebook.com/reel/1161447446327027",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-16T08:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-16T08:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43813894767",
+  "topic": "answering customers in any language automatically",
+  "pillar": "answering customers in any language automatically",
+  "hook": "Lost a sale because you didn't speak their language?",
+  "caption": "When international visitors land on your website, waiting hours for a translated reply means losing them to a competitor who speaks their language.\n\nVelosyntech builds smart AI assistants that talk to your customers in any language instantly, around the clock, directly on your website.\n\nStop letting language gaps slow down your growth. Comment DEMO and we'll send you a free demo in DM.\n\n#velosyntech #aichatbot #businessautomation #n8n #smallbiz",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "What happens when foreign customers try to buy from you?",
+    "type": "question"
+   },
+   {
+    "text": "Language barriers shouldn't stop your online sales.",
+    "type": "bold_claim"
+   },
+   {
+    "text": "Lost a sale because you didn't speak their language?",
+    "type": "pain"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-EmmaMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "tangerine",
+   "business": "bakery",
+   "story_type": "disaster",
+   "sets": [
+    "office",
+    "shop",
+    "warehouse"
+   ],
+   "names": [
+    "Felix",
+    "Gloria"
+   ]
+  },
+  "ig_id": "18120147616812074",
+  "permalink": "https://www.instagram.com/reel/DfyrlXvE7wq/",
+  "fb_id": "1660604949063062",
+  "fb_link": "https://www.facebook.com/reel/1660604949063062",
+  "status": "posted",
+  "repost": "ok"
  }
 ]

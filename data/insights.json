@@ -1,54 +1,54 @@
 {
- "updated": "2026-11-15T18:01+00:00",
- "posts_measured": 33,
+ "updated": "2026-11-16T06:01+00:00",
+ "posts_measured": 34,
  "basic_only": false,
  "by_type": {
   "reel": {
-   "avg": 142.5,
-   "n": 23
+   "avg": 147.0,
+   "n": 24
   },
   "carousel": {
-   "avg": 142.9,
+   "avg": 147.5,
    "n": 10
   }
  },
  "by_style": {
   "cinematic": {
-   "avg": 134.5,
+   "avg": 141.0,
    "n": 7
   },
   "liquid_glass": {
-   "avg": 150.8,
+   "avg": 152.8,
    "n": 5
   },
   "story": {
-   "avg": 139.2,
-   "n": 10
+   "avg": 144.2,
+   "n": 11
   }
  },
  "by_pillar": {
   "an AI assistant answering website visitors 24/7 (before vs after)": {
-   "avg": 151.7,
+   "avg": 153.8,
    "n": 3
   },
   "losing customers because nobody replies fast enough": {
-   "avg": 141.0,
+   "avg": 146.7,
    "n": 7
   },
   "turning website visitors into leads and booked demos": {
-   "avg": 141.8,
+   "avg": 148.5,
    "n": 6
   },
   "answering customers in any language automatically": {
-   "avg": 146.3,
+   "avg": 148.3,
    "n": 5
   },
   "simple n8n automations that save hours every week": {
-   "avg": 144.6,
-   "n": 4
+   "avg": 145.1,
+   "n": 5
   },
   "customer support questions an AI can handle for you": {
-   "avg": 138.6,
+   "avg": 145.9,
    "n": 7
   },
   "myths vs facts about AI chatbots for small businesses": {
@@ -58,12 +58,12 @@
  },
  "by_hook_type": {
   "pain": {
-   "avg": 138.3,
+   "avg": 144.8,
    "n": 13
   },
   "question": {
-   "avg": 203.0,
-   "n": 1
+   "avg": 175.2,
+   "n": 2
   },
   "bold_claim": {
    "avg": 134.1,
@@ -78,7 +78,7 @@
    "n": 1
   },
   "curiosity": {
-   "avg": 134.5,
+   "avg": 138.4,
    "n": 4
   }
  },
@@ -104,23 +104,23 @@
    "n": 1
   },
   "20:01": {
-   "avg": 138.4,
-   "n": 4
+   "avg": 140.2,
+   "n": 5
   },
   "08:01": {
-   "avg": 138.8,
+   "avg": 148.9,
    "n": 4
   },
   "10:01": {
-   "avg": 128.0,
+   "avg": 139.4,
    "n": 4
   },
   "10:31": {
-   "avg": 134.5,
+   "avg": 136.4,
    "n": 3
   },
   "13:01": {
-   "avg": 144.8,
+   "avg": 146.3,
    "n": 4
   },
   "18:54": {
@@ -136,11 +136,11 @@
    "n": 1
   },
   "16:01": {
-   "avg": 128.1,
+   "avg": 131.4,
    "n": 3
   },
   "19:01": {
-   "avg": 129.6,
+   "avg": 142.9,
    "n": 3
   }
  },
@@ -415,6 +415,22 @@
     "saved": 0,
     "shares": 0,
     "total_interactions": 12
+   }
+  },
+  {
+   "hook": "Most website visitors leave if they do not get an immediate answer.",
+   "type": "reel",
+   "style": "story",
+   "score": 166.74,
+   "permalink": "https://www.instagram.com/reel/DfwG15EGVYj/",
+   "metrics": {
+    "views": 619,
+    "reach": 498,
+    "likes": 1,
+    "comments": 0,
+    "saved": 1,
+    "shares": 0,
+    "total_interactions": 3
    }
   }
  ],
