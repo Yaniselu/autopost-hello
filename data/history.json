@@ -2081,5 +2081,57 @@
   "fb_link": "https://www.facebook.com/reel/2644668939328632",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-16T20:55+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-16T20:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43933852724",
+  "topic": "simple n8n automations that save hours every week",
+  "pillar": "simple n8n automations that save hours every week",
+  "hook": "Still spending hours every week manually replying to website messages?",
+  "caption": "Many business owners assume that automating customer inquiries requires hiring expensive developers or building complex systems.\n\nThat is a complete myth. Visual automation engines like n8n make it simple to connect your website with intelligent workflows. You can capture leads, answer questions, and schedule meetings automatically without writing a single line of code.\n\nBy handing repetitive website chat and form responses to an automated assistant, you reclaim hours of valuable time every single week while delivering instant service around the clock.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#n8n #businessautomation #aiassistant #leadgeneration #productivityhacks",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "Thinking automation requires a tech team is a total myth.",
+    "type": "myth"
+   },
+   {
+    "text": "You do not need developers to automate your business website.",
+    "type": "bold_claim"
+   },
+   {
+    "text": "Still spending hours every week manually replying to website messages?",
+    "type": "pain"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-EmmaMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "emerald",
+   "business": "salon",
+   "story_type": "myth_bust",
+   "sets": [
+    "home",
+    "office",
+    "shop",
+    "stage"
+   ],
+   "names": [
+    "Maya",
+    "Sam",
+    "Chloe"
+   ]
+  },
+  "ig_id": "18121807907092414",
+  "permalink": "https://www.instagram.com/reel/Df0EgmeFX6x/",
+  "fb_id": "3413952812125727",
+  "fb_link": "https://www.facebook.com/reel/3413952812125727",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
