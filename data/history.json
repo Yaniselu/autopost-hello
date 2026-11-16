@@ -1974,5 +1974,22 @@
   "fb_link": "https://www.facebook.com/reel/1449465537384070",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-16T19:02+02:00",
+  "type": "carousel",
+  "mode": "scheduled",
+  "slot": "carousel@2026-11-16T19:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43913753815",
+  "topic": "turning website visitors into leads and booked demos",
+  "pillar": "turning website visitors into leads and booked demos",
+  "hook": "Turn passive site visitors into *booked demos*",
+  "caption": "Most website traffic goes to waste because visitors cannot get fast answers when their interest is highest. Expecting them to fill out a static form and wait hours costs you deals.\n\nReplacing contact forms with an instant AI assistant lets you capture lead intent immediately. You answer questions, qualify leads, and put booked demos straight onto your calendar. 📈\n\nComment DEMO and we will send you a free demo in DM.\n\nIs your website booking meetings for you while you sleep?\n\n#leadgeneration #salesautomation #aiassistant #n8n #leadcapture",
+  "ig_id": "18101389553386422",
+  "permalink": "https://www.instagram.com/p/Dfz2yH4kztM/",
+  "fb_id": "1491182390739007_122104251405546258",
+  "fb_link": "https://www.facebook.com/1491182390739007_122104251405546258",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
