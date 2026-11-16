@@ -1850,5 +1850,56 @@
   "fb_link": "https://www.facebook.com/reel/2224016345181147",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-16T10:31+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-16T10:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43831774142",
+  "topic": "turning website visitors into leads and booked demos",
+  "pillar": "turning website visitors into leads and booked demos",
+  "hook": "Most website visitors leave if they do not get an immediate answer.",
+  "caption": "Traffic means nothing if every visitor leaves before talking to you. While you sleep, potential clients look for answers elsewhere.\n\nVelosyntech builds custom AI assistants that answer instantly, capture leads, and book demos around the clock.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#Velosyntech #LeadGen #BusinessGrowth #AIAutomation #SmallBusiness",
+  "hook_type": "question",
+  "hook_options": [
+   {
+    "text": "Most website visitors leave if they do not get an immediate answer.",
+    "type": "question"
+   },
+   {
+    "text": "Your website gets traffic daily, but visitors vanish before you know.",
+    "type": "pain"
+   },
+   {
+    "text": "Stop letting site visitors leave without booking your services.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-BrianMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "emerald",
+   "business": "store",
+   "story_type": "rivals",
+   "sets": [
+    "park",
+    "shop",
+    "stage",
+    "street"
+   ],
+   "names": [
+    "Oscar",
+    "Hugo"
+   ]
+  },
+  "ig_id": "18137328547657566",
+  "permalink": "https://www.instagram.com/reel/Dfy9Dypma1s/",
+  "fb_id": "3237294499802288",
+  "fb_link": "https://www.facebook.com/reel/3237294499802288",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
