@@ -1991,5 +1991,15 @@
   "fb_link": "https://www.facebook.com/1491182390739007_122104251405546258",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-16T19:31+02:00",
+  "type": "story",
+  "mode": "scheduled",
+  "slot": "story@2026-11-16T19:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43919097249",
+  "status": "error",
+  "error": "InstagramError: HTTP 400: {'message': 'The requested resource does not exist', 'code': 24, 'type': 'OAuthException', 'error_subcode': 2207006, 'is_transient': False, 'error_user_msg': 'The media with ID 18,099,710,522,442,245 cannot be found.', 'error_user_title': 'Media not found', 'fbtrace_id': 'Aymc6RFcSnhAyIBQVbfM2Hr'}",
+  "retry": "se reîncearcă automat (încercarea 1/3)"
  }
 ]
