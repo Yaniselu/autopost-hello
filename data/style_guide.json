@@ -1,39 +1,54 @@
 {
- "time": "2026-11-13T06:03:24.859747+00:00",
+ "time": "2026-11-16T07:36:32.975642+00:00",
  "media_count": 30,
  "guide": {
-  "what_they_sell": "Custom AI assistants and automated workflows built on n8n that respond to website customers 24/7 in any language.",
-  "audience": "Small-to-medium business owners, local businesses, and entrepreneurs losing leads due to slow website response times.",
-  "language": "English (with occasional Romanian posts for local events like Craiova Hackathon)",
-  "tone": "Direct, practical, results-driven, urgent, and professional.",
+  "what_they_sell": "Velosyntech builds custom AI assistants and automated workflows on n8n that respond to website visitors 24/7 in any language to capture leads and book demos instantly.",
+  "audience": "Small-to-medium business owners, agency founders, and local business operators losing potential clients due to slow website response times and manual follow-ups.",
+  "language": "English",
+  "tone": "Direct, authoritative, urgent, professional, and results-driven.",
   "recurring_topics": [
    "Slow website response times losing leads",
    "The cost of manual data entry and busywork",
    "24/7 AI availability and multilingual support",
    "Behind-the-scenes event coverage (hackathons)",
-   "Debunking the myth that AI requires complex tech teams"
+   "Debunking the myth that AI requires complex tech teams",
+   "Speed-to-lead and the cost of delayed email or form responses",
+   "Multilingual support without expanding teams",
+   "Automating repetitive customer inquiries",
+   "Turning website traffic into booked demos and high-value meetings"
   ],
   "best_performing_patterns": [
    "Event coverage and community engagement (e.g., Craiova Hackathon posts)",
    "Relatable pain-point hooks addressing lost leads at night or after hours",
-   "Short, punchy Reels with strong visual context or behind-the-scenes footage"
+   "Short, punchy Reels with strong visual context or behind-the-scenes footage",
+   "Directly addressing the pain of losing leads to competitors due to slow response times",
+   "Focusing on the gap between visitor intent and delayed manual follow-ups",
+   "Reels with high engagement feature bold text highlights on core phrases and clean mockups of dashboards or phones"
   ],
   "hook_examples": [
    "Most website visitors leave if they do not get an immediate answer.",
    "Your website gets traffic every single day, but most visitors vanish before you even know they were there.",
-   "La 02:47, un client îți vizitează site-ul și întreabă ceva."
+   "La 02:47, un client îți vizitează site-ul și întreabă ceva.",
+   "Stop letting site visitors leave without booking.",
+   "Turn silent visitors into booked demos.",
+   "Waiting hours to reply to a website inquiry is the fastest way to hand money directly to your competitors."
   ],
-  "cta_style": "Simple and direct, often including contact email (contact@velosyntech.com), website (velosyntech.com), and relevant event tags (@craiovahackathon).",
-  "visual_notes": "Clean corporate-to-startup style featuring event footage, human faces speaking to camera, text overlays with high-contrast text, minimalist backgrounds, and subtle branding.",
+  "cta_style": "Clear, frictionless prompt encouraging action such as swiping or requesting a demo.",
+  "visual_notes": "Sleek dark and neutral gradients, clean device mockups (laptops and smartphones displaying UI), dark header pill with the VELOSYNTECH logo, and bold typography with subtle background color highlights on key words.",
   "do": [
    "Focus heavily on the pain of delayed responses and lost revenue",
    "Keep text overlays clear and easy to read on mobile",
-   "Include direct contact information and website in captions"
+   "Include direct contact information and website in captions",
+   "Lead with the high cost of slow website response times",
+   "Emphasize instant automation and 24/7 availability",
+   "Keep copy focused on revenue loss and captured intent"
   ],
   "dont": [
    "Use overly technical jargon without explaining the business benefit",
    "Make captions overly fluffy or conversational without a core problem-solution dynamic",
-   "Ignore local tech events and networking opportunities"
+   "Ignore local tech events and networking opportunities",
+   "Write passive or lengthy introductions",
+   "Ignore the frustration of manual follow-ups"
   ]
  }
 }
