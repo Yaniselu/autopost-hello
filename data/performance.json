@@ -754,5 +754,26 @@
   "hour": "10:01",
   "time": "2026-11-16T10:01+02:00",
   "permalink": "https://www.instagram.com/reel/Dfy51G3DFvD/"
+ },
+ "18137328547657566": {
+  "fetched": "2026-11-16T11:02:02.498872+00:00",
+  "metrics": {
+   "views": 222,
+   "reach": 163,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 135.18,
+  "type": "reel",
+  "style": "story",
+  "pillar": "turning website visitors into leads and booked demos",
+  "hook_type": "question",
+  "hook": "Most website visitors leave if they do not get an immediate answer.",
+  "hour": "10:31",
+  "time": "2026-11-16T10:31+02:00",
+  "permalink": "https://www.instagram.com/reel/Dfy9Dypma1s/"
  }
 }

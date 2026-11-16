@@ -1901,5 +1901,22 @@
   "fb_link": "https://www.facebook.com/reel/3237294499802288",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-16T13:01+02:00",
+  "type": "carousel",
+  "mode": "scheduled",
+  "slot": "carousel@2026-11-16T13:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/43853913775",
+  "topic": "customer support questions an AI can handle for you",
+  "pillar": "customer support questions an AI can handle for you",
+  "hook": "Stop repeating yourself to website visitors.",
+  "caption": "Your team wastes hours every week typing the exact same answers into chat boxes and contact forms. Most of those inquiries follow predictable patterns that do not require human brainpower to solve.\n\nBy letting a custom AI handle these routine questions, you free up your schedule for high-value work while giving customers the instant answers they expect.\n\nWhat is the most repetitive question your business gets every single day?\n\nComment DEMO and we'll send you a free demo in DM.\n\n#BusinessAutomation #CustomerSupport #SmallBusiness #AIForBusiness #Velosyntech",
+  "ig_id": "17963952404998679",
+  "permalink": "https://www.instagram.com/p/DfzNC5zE7rA/",
+  "fb_id": "1491182390739007_122103973893546258",
+  "fb_link": "https://www.facebook.com/1491182390739007_122103973893546258",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
