@@ -2200,5 +2200,53 @@
     "fb_id": "1066810633097686"
    }
   ]
+ },
+ {
+  "time": "2026-11-17T10:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-17T10:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44043117803",
+  "topic": "turning website visitors into leads and booked demos",
+  "pillar": "turning website visitors into leads and booked demos",
+  "hook": "Why do your website *visitors leave*?",
+  "caption": "Why do most website visitors browse and leave without taking action?\n\nWhen a prospective client lands on your site with a question, waiting hours for an email reply usually means they move on to a competitor. High buying intent fades in minutes, not days.\n\nAn automated AI assistant bridges that gap on your website 24/7. It engages visitors immediately, resolves hesitation around pricing or availability, and schedules qualified demos right into your calendar.\n\nHow many warm leads is your static contact form missing right now?\n\nComment DEMO and we'll send you a free demo in DM.\n\n#leadgeneration #automation #salesfunnel #smallbusinessgrowth #aiassistant",
+  "hook_type": "question",
+  "hook_options": [
+   {
+    "text": "Why do your website *visitors leave*?",
+    "type": "question"
+   },
+   {
+    "text": "Your website traffic is *leaving empty-handed*.",
+    "type": "pain"
+   },
+   {
+    "text": "Turn silent visitors into *booked demos* instantly.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "cinematic",
+  "voice": "en-US-EmmaMultilingualNeural",
+  "plan": {
+   "hook": "macro_pull",
+   "problem": "screen_push",
+   "solution": "phone_focus",
+   "result": "phone_result",
+   "cta": "phone_spin",
+   "bg": "spot",
+   "type": "typewriter",
+   "transition": "zoom",
+   "finish_phone": "black",
+   "finish_laptop": "spaceblack",
+   "theme": "light",
+   "palette": "coral"
+  },
+  "ig_id": "18129518287896211",
+  "permalink": "https://www.instagram.com/reel/Df1d8J-ibUu/",
+  "fb_id": "1778027306826684",
+  "fb_link": "https://www.facebook.com/reel/1778027306826684",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
