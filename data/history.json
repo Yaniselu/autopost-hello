@@ -2248,5 +2248,56 @@
   "fb_link": "https://www.facebook.com/reel/1778027306826684",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-17T10:31+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-17T10:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44047321462",
+  "topic": "an AI assistant answering website visitors 24/7 (before vs after)",
+  "pillar": "an AI assistant answering website visitors 24/7 (before vs after)",
+  "hook": "Your website visitors leave silently the moment you take hours to reply.",
+  "caption": "Most business owners spend their evenings glued to their phones, trying not to lose inquiries that trickle in after closing time.\n\nWhen visitors land on your website at night or during peak hours, they want answers right away. Waiting hours for an email response simply means they move on to the next option.\n\nVelosyntech builds custom AI assistants powered by n8n that sit directly on your website. They welcome visitors, answer questions in any language, capture qualified details, and schedule appointments without you lifting a finger.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessautomation #leadgeneration #customerservice #smallbusinesstips #n8n",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "How does this business stay fully booked without manual replies?",
+    "type": "curiosity"
+   },
+   {
+    "text": "Are you losing qualified website bookings while you sleep?",
+    "type": "pain"
+   },
+   {
+    "text": "Can an automated AI really book high-ticket clients for you?",
+    "type": "question"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-AndrewMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "tangerine",
+   "business": "cafe",
+   "story_type": "secret",
+   "sets": [
+    "home",
+    "office",
+    "shop",
+    "street"
+   ],
+   "names": [
+    "Elena",
+    "Mateo"
+   ]
+  },
+  "ig_id": "18056099876599253",
+  "permalink": "https://www.instagram.com/reel/Df1hoiqjdhT/",
+  "fb_id": "2484229471982702",
+  "fb_link": "https://www.facebook.com/reel/2484229471982702",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
