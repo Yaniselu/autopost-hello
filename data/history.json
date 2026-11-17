@@ -2133,5 +2133,55 @@
   "fb_link": "https://www.facebook.com/reel/3413952812125727",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-17T08:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-17T08:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44028054829",
+  "topic": "customer support questions an AI can handle for you",
+  "pillar": "customer support questions an AI can handle for you",
+  "hook": "Tired of answering the same website questions every single day?",
+  "caption": "Answering repetitive website questions manually drains your time and energy while potential customers wait.\n\nVelosyntech builds smart AI assistants that handle standard inquiries instantly, day or night, freeing your team for high-value work.\n\nStop spending hours on chat boxes and let automation do the heavy lifting.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#BusinessAutomation #CustomerSupport #AIForBusiness #WorkflowAutomation #Velosyntech",
+  "hook_type": "question",
+  "hook_options": [
+   {
+    "text": "Tired of answering the same website questions every single day?",
+    "type": "question"
+   },
+   {
+    "text": "Your team wastes hours typing identical replies.",
+    "type": "pain"
+   },
+   {
+    "text": "Stop letting repetitive questions slow down your business.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-AndrewMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "cobalt",
+   "business": "restaurant",
+   "story_type": "day_in_life",
+   "sets": [
+    "home",
+    "office",
+    "shop",
+    "street"
+   ],
+   "names": [
+    "Arthur"
+   ]
+  },
+  "ig_id": "18641436622022476",
+  "permalink": "https://www.instagram.com/reel/Df1Qa83E2Rr/",
+  "fb_id": "4707630182892131",
+  "fb_link": "https://www.facebook.com/reel/4707630182892131",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
