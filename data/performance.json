@@ -567,17 +567,17 @@
   "permalink": "https://www.instagram.com/reel/Dfu0vUkDWUB/"
  },
  "17957781924334893": {
-  "fetched": "2026-11-16T18:01:31.967398+00:00",
+  "fetched": "2026-11-17T07:32:03.959050+00:00",
   "metrics": {
-   "views": 630,
-   "reach": 504,
+   "views": 636,
+   "reach": 507,
    "likes": 2,
    "comments": 0,
    "saved": 1,
    "shares": 0,
    "total_interactions": 4
   },
-  "score": 168.18,
+  "score": 168.42,
   "type": "reel",
   "style": "story",
   "pillar": "turning website visitors into leads and booked demos",
@@ -588,17 +588,17 @@
   "permalink": "https://www.instagram.com/reel/DfwG15EGVYj/"
  },
  "18107648567634305": {
-  "fetched": "2026-11-16T18:01:31.967398+00:00",
+  "fetched": "2026-11-17T07:32:03.959050+00:00",
   "metrics": {
-   "views": 167,
-   "reach": 79,
+   "views": 168,
+   "reach": 80,
    "likes": 2,
    "comments": 0,
    "saved": 0,
    "shares": 0,
    "total_interactions": 3
   },
-  "score": 130.1,
+  "score": 130.25,
   "type": "reel",
   "style": "cinematic",
   "pillar": "customer support questions an AI can handle for you",
@@ -609,17 +609,17 @@
   "permalink": "https://www.instagram.com/reel/DfwVHttGQ1F/"
  },
  "18122985077066368": {
-  "fetched": "2026-11-16T18:01:31.967398+00:00",
+  "fetched": "2026-11-17T07:32:03.959050+00:00",
   "metrics": {
-   "views": 270,
-   "reach": 163,
+   "views": 272,
+   "reach": 164,
    "likes": 1,
    "comments": 0,
    "saved": 1,
    "shares": 0,
    "total_interactions": 3
   },
-  "score": 146.05,
+  "score": 146.24,
   "type": "reel",
   "style": "story",
   "pillar": "customer support questions an AI can handle for you",
@@ -630,17 +630,17 @@
   "permalink": "https://www.instagram.com/reel/DfwYBroCHxP/"
  },
  "18151361572483341": {
-  "fetched": "2026-11-16T18:01:31.967398+00:00",
+  "fetched": "2026-11-17T07:32:03.959050+00:00",
   "metrics": {
-   "views": 281,
-   "reach": 58,
+   "views": 284,
+   "reach": 59,
    "likes": 1,
    "comments": 0,
    "saved": 0,
    "shares": 0,
    "total_interactions": 3
   },
-  "score": 142.05,
+  "score": 142.31,
   "type": "carousel",
   "style": null,
   "pillar": "an AI assistant answering website visitors 24/7 (before vs after)",
@@ -651,10 +651,10 @@
   "permalink": "https://www.instagram.com/p/DfwoRXODZWD/"
  },
  "18104033240379399": {
-  "fetched": "2026-11-16T18:01:31.967398+00:00",
+  "fetched": "2026-11-17T07:32:03.959050+00:00",
   "metrics": {
    "views": 173,
-   "reach": 84,
+   "reach": 85,
    "likes": 3,
    "comments": 0,
    "saved": 0,
@@ -672,17 +672,17 @@
   "permalink": "https://www.instagram.com/reel/Dfw89_gDXCu/"
  },
  "18003123735009069": {
-  "fetched": "2026-11-16T18:01:31.967398+00:00",
+  "fetched": "2026-11-17T07:32:03.959050+00:00",
   "metrics": {
-   "views": 271,
-   "reach": 62,
+   "views": 278,
+   "reach": 63,
    "likes": 3,
    "comments": 0,
    "saved": 0,
    "shares": 0,
    "total_interactions": 5
   },
-  "score": 143.15,
+  "score": 143.78,
   "type": "carousel",
   "style": null,
   "pillar": "losing customers because nobody replies fast enough",
@@ -693,10 +693,10 @@
   "permalink": "https://www.instagram.com/p/DfxR2zfl2jm/"
  },
  "18136772644795951": {
-  "fetched": "2026-11-16T18:01:31.967398+00:00",
+  "fetched": "2026-11-17T07:32:03.959050+00:00",
   "metrics": {
    "views": 288,
-   "reach": 195,
+   "reach": 196,
    "likes": 8,
    "comments": 0,
    "saved": 0,
@@ -880,5 +880,26 @@
   "hour": "20:55",
   "time": "2026-11-16T20:55+02:00",
   "permalink": "https://www.instagram.com/reel/Df0EgmeFX6x/"
+ },
+ "18641436622022476": {
+  "fetched": "2026-11-17T07:32:03.959050+00:00",
+  "metrics": {
+   "views": 190,
+   "reach": 102,
+   "likes": 1,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 1
+  },
+  "score": 132.31,
+  "type": "reel",
+  "style": "story",
+  "pillar": "customer support questions an AI can handle for you",
+  "hook_type": "question",
+  "hook": "Tired of answering the same website questions every single day?",
+  "hour": "08:01",
+  "time": "2026-11-17T08:01+02:00",
+  "permalink": "https://www.instagram.com/reel/Df1Qa83E2Rr/"
  }
 }

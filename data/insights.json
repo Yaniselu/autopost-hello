@@ -1,14 +1,14 @@
 {
- "updated": "2026-11-17T06:01+00:00",
- "posts_measured": 42,
+ "updated": "2026-11-17T07:32+00:00",
+ "posts_measured": 43,
  "basic_only": false,
  "by_type": {
   "reel": {
-   "avg": 144.4,
-   "n": 30
+   "avg": 144.1,
+   "n": 31
   },
   "carousel": {
-   "avg": 146.4,
+   "avg": 146.5,
    "n": 12
   }
  },
@@ -22,8 +22,8 @@
    "n": 6
   },
   "story": {
-   "avg": 142.1,
-   "n": 15
+   "avg": 141.6,
+   "n": 16
   }
  },
  "by_pillar": {
@@ -48,8 +48,8 @@
    "n": 6
   },
   "customer support questions an AI can handle for you": {
-   "avg": 145.8,
-   "n": 8
+   "avg": 144.4,
+   "n": 9
   },
   "myths vs facts about AI chatbots for small businesses": {
    "avg": 134.4,
@@ -62,8 +62,8 @@
    "n": 16
   },
   "question": {
-   "avg": 149.0,
-   "n": 5
+   "avg": 146.2,
+   "n": 6
   },
   "bold_claim": {
    "avg": 134.4,
@@ -78,7 +78,7 @@
    "n": 1
   },
   "curiosity": {
-   "avg": 139.8,
+   "avg": 139.9,
    "n": 4
   }
  },
@@ -108,8 +108,8 @@
    "n": 5
   },
   "08:01": {
-   "avg": 148.2,
-   "n": 5
+   "avg": 145.6,
+   "n": 6
   },
   "10:01": {
    "avg": 137.4,
@@ -140,7 +140,7 @@
    "n": 4
   },
   "19:01": {
-   "avg": 144.2,
+   "avg": 144.4,
    "n": 3
   },
   "20:54": {
@@ -519,6 +519,22 @@
     "saved": 0,
     "shares": 2,
     "total_interactions": 15
+   }
+  },
+  {
+   "hook": "Most website visitors leave if they do not get an immediate answer.",
+   "type": "reel",
+   "style": "story",
+   "score": 168.42,
+   "permalink": "https://www.instagram.com/reel/DfwG15EGVYj/",
+   "metrics": {
+    "views": 636,
+    "reach": 507,
+    "likes": 2,
+    "comments": 0,
+    "saved": 1,
+    "shares": 0,
+    "total_interactions": 4
    }
   }
  ],
