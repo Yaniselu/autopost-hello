@@ -2299,5 +2299,22 @@
   "fb_link": "https://www.facebook.com/reel/2484229471982702",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-17T13:01+02:00",
+  "type": "carousel",
+  "mode": "scheduled",
+  "slot": "carousel@2026-11-17T13:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44070061588",
+  "topic": "answering customers in any language automatically",
+  "pillar": "answering customers in any language automatically",
+  "hook": "*Global* sales need no translators",
+  "caption": "Expanding your business globally should not require an expensive international support team or guessing what your foreign visitors need.\n\nWhen someone visits your website from another country, they expect clear answers in their native tongue. If they have to wait for a translated email, they are already shopping with your competitor.\n\nOur custom AI assistants handle every conversation natively and instantly, turning international browsers into booked clients around the clock.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#GlobalBusiness #AIAutomation #LeadGeneration #BusinessGrowth #Velosyntech",
+  "ig_id": "18157097797462561",
+  "permalink": "https://www.instagram.com/p/Df1x-m3DYec/",
+  "fb_id": "1491182390739007_122104924761546258",
+  "fb_link": "https://www.facebook.com/1491182390739007_122104924761546258",
+  "status": "posted",
+  "repost": "ok"
  }
 ]

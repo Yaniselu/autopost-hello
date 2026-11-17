@@ -922,5 +922,26 @@
   "hour": "10:01",
   "time": "2026-11-17T10:01+02:00",
   "permalink": "https://www.instagram.com/reel/Df1d8J-ibUu/"
+ },
+ "18056099876599253": {
+  "fetched": "2026-11-17T11:01:24.785061+00:00",
+  "metrics": {
+   "views": 129,
+   "reach": 64,
+   "likes": 1,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 1
+  },
+  "score": 122.69,
+  "type": "reel",
+  "style": "story",
+  "pillar": "an AI assistant answering website visitors 24/7 (before vs after)",
+  "hook_type": "pain",
+  "hook": "Your website visitors leave silently the moment you take hours to reply.",
+  "hour": "10:31",
+  "time": "2026-11-17T10:31+02:00",
+  "permalink": "https://www.instagram.com/reel/Df1hoiqjdhT/"
  }
 }
