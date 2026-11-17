@@ -943,5 +943,26 @@
   "hour": "10:31",
   "time": "2026-11-17T10:31+02:00",
   "permalink": "https://www.instagram.com/reel/Df1hoiqjdhT/"
+ },
+ "18157097797462561": {
+  "fetched": "2026-11-17T13:31:22.617055+00:00",
+  "metrics": {
+   "views": 148,
+   "reach": 37,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 125.1,
+  "type": "carousel",
+  "style": null,
+  "pillar": "answering customers in any language automatically",
+  "hook_type": null,
+  "hook": "*Global* sales need no translators",
+  "hour": "13:01",
+  "time": "2026-11-17T13:01+02:00",
+  "permalink": "https://www.instagram.com/p/Df1x-m3DYec/"
  }
 }

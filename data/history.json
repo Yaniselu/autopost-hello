@@ -2316,5 +2316,22 @@
   "fb_link": "https://www.facebook.com/1491182390739007_122104924761546258",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-17T15:31+02:00",
+  "type": "story",
+  "mode": "scheduled",
+  "slot": "story@2026-11-17T15:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44093409110",
+  "topic": "Your calendar could fill automatically.",
+  "hook": "Your calendar could fill automatically.",
+  "caption": "Your calendar could fill automatically. — Qualified leads want meetings instantly. Let a smart assistant book them directly while you sleep.",
+  "status": "posted",
+  "stories": [
+   {
+    "ig_id": "18495362314105153",
+    "fb_id": "1822409215547812"
+   }
+  ]
  }
 ]
