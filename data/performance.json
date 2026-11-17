@@ -964,5 +964,26 @@
   "hour": "13:01",
   "time": "2026-11-17T13:01+02:00",
   "permalink": "https://www.instagram.com/p/Df1x-m3DYec/"
+ },
+ "18654536623022683": {
+  "fetched": "2026-11-17T17:01:34.252270+00:00",
+  "metrics": {
+   "views": 87,
+   "reach": 41,
+   "likes": 1,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 2
+  },
+  "score": 112.93,
+  "type": "reel",
+  "style": "liquid_glass",
+  "pillar": "losing customers because nobody replies fast enough",
+  "hook_type": "pain",
+  "hook": "You *lost* a sale 5 minutes ago.",
+  "hour": "16:01",
+  "time": "2026-11-17T16:01+02:00",
+  "permalink": "https://www.instagram.com/reel/Df2HMsSDxMS/"
  }
 }
