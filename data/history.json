@@ -2389,5 +2389,22 @@
   "fb_link": "https://www.facebook.com/1491182390739007_122105201325546258",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-17T19:31+02:00",
+  "type": "story",
+  "mode": "scheduled",
+  "slot": "story@2026-11-17T19:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44137743942",
+  "topic": "Most form replies arrive late",
+  "hook": "Most form replies arrive late",
+  "caption": "Most form replies arrive late — Over half of website leads buy from the first company that replies, not the best one.",
+  "status": "posted",
+  "stories": [
+   {
+    "ig_id": "18009169703830249",
+    "fb_id": "2295156041055006"
+   }
+  ]
  }
 ]

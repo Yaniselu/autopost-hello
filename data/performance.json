@@ -985,5 +985,26 @@
   "hour": "16:01",
   "time": "2026-11-17T16:01+02:00",
   "permalink": "https://www.instagram.com/reel/Df2HMsSDxMS/"
+ },
+ "18108646897986727": {
+  "fetched": "2026-11-17T17:31:13.280141+00:00",
+  "metrics": {
+   "views": 58,
+   "reach": 9,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 101.94,
+  "type": "carousel",
+  "style": null,
+  "pillar": "answering customers in any language automatically",
+  "hook_type": null,
+  "hook": "Never lose a buyer to *language barriers*.",
+  "hour": "19:01",
+  "time": "2026-11-17T19:01+02:00",
+  "permalink": "https://www.instagram.com/p/Df2bW2NIHU5/"
  }
 }
