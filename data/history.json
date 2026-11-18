@@ -2527,5 +2527,53 @@
     "fb_id": "1137230788850380"
    }
   ]
+ },
+ {
+  "time": "2026-11-18T10:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-18T10:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44263346085",
+  "topic": "an AI assistant answering website visitors 24/7 (before vs after)",
+  "pillar": "an AI assistant answering website visitors 24/7 (before vs after)",
+  "hook": "Still *losing leads* while you sleep?",
+  "caption": "Still letting potential clients leave your website because nobody was awake to reply?\n\nMost buying decisions happen outside standard office hours. When a qualified prospect lands on your site late in the evening with a specific question, a static contact form usually means they leave and keep searching elsewhere.\n\nBy putting an intelligent n8n-powered assistant on your front page, every visitor gets clear answers instantly in their language. Instead of hitting a dead end, they get their questions resolved and a demo booked directly on your calendar.\n\nComment DEMO and we'll send you a free demo in DM. How many qualified leads could your website capture tonight if it never slept?\n\n#leadgeneration #businesstips #customerservice #workflowautomation #smallbusinessowner",
+  "hook_type": "question",
+  "hook_options": [
+   {
+    "text": "Still *losing leads* while you sleep?",
+    "type": "question"
+   },
+   {
+    "text": "Your website *goes cold* after hours.",
+    "type": "pain"
+   },
+   {
+    "text": "Never *miss an inquiry* again.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "cinematic",
+  "voice": "en-US-BrianMultilingualNeural",
+  "plan": {
+   "hook": "rise_turn",
+   "problem": "high_angle",
+   "solution": "side_track",
+   "result": "duo_front",
+   "cta": "duo_cta",
+   "bg": "grid",
+   "type": "caption",
+   "transition": "glitch",
+   "finish_phone": "blue",
+   "finish_laptop": "spaceblack",
+   "theme": "light",
+   "palette": "emerald"
+  },
+  "ig_id": "18140357770640437",
+  "permalink": "https://www.instagram.com/reel/Df4D0SuDgvZ/",
+  "fb_id": "2042513503372785",
+  "fb_link": "https://www.facebook.com/reel/2042513503372785",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
