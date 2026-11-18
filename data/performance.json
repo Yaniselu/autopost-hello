@@ -1048,5 +1048,26 @@
   "hour": "08:04",
   "time": "2026-11-18T08:04+02:00",
   "permalink": "https://www.instagram.com/reel/Df31a4RiEMa/"
+ },
+ "18140357770640437": {
+  "fetched": "2026-11-18T08:31:20.544939+00:00",
+  "metrics": {
+   "views": 8,
+   "reach": 0,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 54.93,
+  "type": "reel",
+  "style": "cinematic",
+  "pillar": "an AI assistant answering website visitors 24/7 (before vs after)",
+  "hook_type": "question",
+  "hook": "Still *losing leads* while you sleep?",
+  "hour": "10:01",
+  "time": "2026-11-18T10:01+02:00",
+  "permalink": "https://www.instagram.com/reel/Df4D0SuDgvZ/"
  }
 }

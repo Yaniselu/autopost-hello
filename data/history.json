@@ -2575,5 +2575,57 @@
   "fb_link": "https://www.facebook.com/reel/2042513503372785",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-18T10:31+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-18T10:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44267585530",
+  "topic": "turning website visitors into leads and booked demos",
+  "pillar": "turning website visitors into leads and booked demos",
+  "hook": "Your website traffic is walking away because replies take too long.",
+  "caption": "Your website gets traffic around the clock, but most visitors vanish before you even know they were there if nobody replies instantly.\n\nWhile manual follow-ups waste hours, an automated AI assistant greets visitors, answers questions in any language, and books demos straight to your calendar.\n\nStop losing leads to slow response times.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#AIAssistant #LeadGeneration #BusinessAutomation #n8n #Velosyntech",
+  "hook_type": "curiosity",
+  "hook_options": [
+   {
+    "text": "Most website visitors leave if they do not get an immediate answer.",
+    "type": "pain"
+   },
+   {
+    "text": "Your website traffic is walking away because replies take too long.",
+    "type": "curiosity"
+   },
+   {
+    "text": "Stop letting potential clients slip through the cracks at night.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-AndrewMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "cobalt",
+   "business": "clinic",
+   "story_type": "rivals",
+   "sets": [
+    "office",
+    "park",
+    "shop",
+    "stage",
+    "street"
+   ],
+   "names": [
+    "Oscar",
+    "Finn"
+   ]
+  },
+  "ig_id": "18114004901349774",
+  "permalink": "https://www.instagram.com/reel/Df4F2sjlXVN/",
+  "fb_id": "2567236877104232",
+  "fb_link": "https://www.facebook.com/reel/2567236877104232",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
