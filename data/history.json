@@ -2510,5 +2510,22 @@
   "fb_link": "https://www.facebook.com/reel/1465660042193282",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-18T09:31+02:00",
+  "type": "story",
+  "mode": "scheduled",
+  "slot": "story@2026-11-18T09:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44259413330",
+  "topic": "Your calendar could fill automatically.",
+  "hook": "Your calendar could fill automatically.",
+  "caption": "Your calendar could fill automatically. — Qualified leads book calls straight from your website while you sleep, with zero human effort.",
+  "status": "posted",
+  "stories": [
+   {
+    "ig_id": "18132733879833288",
+    "fb_id": "1137230788850380"
+   }
+  ]
  }
 ]
