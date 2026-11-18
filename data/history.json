@@ -2661,5 +2661,44 @@
     "fb_id": "1138870255393245"
    }
   ]
+ },
+ {
+  "time": "2026-11-18T16:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-18T16:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44319607826",
+  "topic": "myths vs facts about AI chatbots for small businesses",
+  "pillar": "myths vs facts about AI chatbots for small businesses",
+  "hook": "Think *AI chatbots* cost a fortune?",
+  "caption": "Many business owners skip automation because they heard it takes months or requires a full engineering team. That is simply not true anymore.\n\nModern workflow tools let you launch a 24/7 assistant on your website without writing complex code. You keep total control while routine questions stop draining your energy.\n\nWhat is holding you back from automating your site?\n\n#businessautomation #smallbiztips #productivityhacks #workflowautomation #businessgrowth",
+  "hook_type": "myth",
+  "hook_options": [
+   {
+    "text": "Think *AI chatbots* cost a fortune?",
+    "type": "myth"
+   },
+   {
+    "text": "Most AI setup *myths* are totally false.",
+    "type": "bold_claim"
+   },
+   {
+    "text": "Why do small business owners fear *automation*?",
+    "type": "question"
+   }
+  ],
+  "style": "liquid_glass",
+  "voice": "en-US-AvaMultilingualNeural",
+  "plan": {
+   "style": "liquid_glass",
+   "theme": "light",
+   "palette": "tangerine"
+  },
+  "ig_id": "18109556228347518",
+  "permalink": "https://www.instagram.com/reel/Df4r83REw9B/",
+  "fb_id": "2783301695420622",
+  "fb_link": "https://www.facebook.com/reel/2783301695420622",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
