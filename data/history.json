@@ -2734,5 +2734,55 @@
     "fb_id": "1823059288934553"
    }
   ]
+ },
+ {
+  "time": "2026-11-18T20:04+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-18T20:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44364949007",
+  "topic": "customer support questions an AI can handle for you",
+  "pillar": "customer support questions an AI can handle for you",
+  "hook": "Are repetitive customer questions eating your entire workday?",
+  "caption": "Your team should be growing the business, not copy-pasting answers to the same pricing and hours questions all day.\n\nAn AI assistant on your website can handle repetitive inquiries instantly, day and night, without human fatigue.\n\nFree up your schedule for the work that actually generates revenue.\n\nComment DEMO and we'll send you a free demo in DM. 🤖\n\n#BusinessAutomation #CustomerSupport #SmallBizTips #ArtificialIntelligence #Velosyntech",
+  "hook_type": "question",
+  "hook_options": [
+   {
+    "text": "Are repetitive customer questions eating your entire workday?",
+    "type": "question"
+   },
+   {
+    "text": "Stop letting basic questions waste hours of your team's time.",
+    "type": "bold_claim"
+   },
+   {
+    "text": "Spending hours answering the same site questions is costing you.",
+    "type": "pain"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-BrianMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "violet",
+   "business": "salon",
+   "story_type": "disaster",
+   "sets": [
+    "office",
+    "shop",
+    "stage"
+   ],
+   "names": [
+    "Jack",
+    "Mia"
+   ]
+  },
+  "ig_id": "18160943710514634",
+  "permalink": "https://www.instagram.com/reel/Df5H5JHDOyJ/",
+  "fb_id": "1521571523134141",
+  "fb_link": "https://www.facebook.com/reel/1521571523134141",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
