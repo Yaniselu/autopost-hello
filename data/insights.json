@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-18T14:01+00:00",
- "posts_measured": 53,
+ "updated": "2026-11-18T17:01+00:00",
+ "posts_measured": 54,
  "basic_only": false,
  "by_type": {
   "reel": {
-   "avg": 138.8,
-   "n": 38
+   "avg": 138.1,
+   "n": 39
   },
   "carousel": {
    "avg": 144.5,
@@ -18,8 +18,8 @@
    "n": 10
   },
   "liquid_glass": {
-   "avg": 144.9,
-   "n": 7
+   "avg": 140.7,
+   "n": 8
   },
   "story": {
    "avg": 138.6,
@@ -52,8 +52,8 @@
    "n": 9
   },
   "myths vs facts about AI chatbots for small businesses": {
-   "avg": 134.4,
-   "n": 1
+   "avg": 123.0,
+   "n": 2
   }
  },
  "by_hook_type": {
@@ -70,8 +70,8 @@
    "n": 2
   },
   "myth": {
-   "avg": 134.4,
-   "n": 1
+   "avg": 123.0,
+   "n": 2
   },
   "number": {
    "avg": 147.3,
@@ -136,8 +136,8 @@
    "n": 1
   },
   "16:01": {
-   "avg": 128.6,
-   "n": 5
+   "avg": 125.7,
+   "n": 6
   },
   "19:01": {
    "avg": 142.7,

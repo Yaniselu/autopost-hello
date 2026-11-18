@@ -2700,5 +2700,22 @@
   "fb_link": "https://www.facebook.com/reel/2783301695420622",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-18T19:01+02:00",
+  "type": "carousel",
+  "mode": "scheduled",
+  "slot": "carousel@2026-11-18T19:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44353784425",
+  "topic": "answering customers in any language automatically",
+  "pillar": "answering customers in any language automatically",
+  "hook": "Never lose *global* customers again",
+  "caption": "International customers arrive on your site expecting instant clarity. If your pages only speak one language, you are quietly turning away entire markets every single week.\n\nAdding instant multilingual support changes everything. Visitors get immediate, accurate answers in their native tongue, building instant trust and driving sales.\n\nHow many international visitors left your site today without buying? Comment DEMO and we'll send you a free demo in DM.\n\n#GlobalBusiness #MultilingualAI #BusinessAutomation #WebsiteLeads #Velosyntech",
+  "ig_id": "18100593908447754",
+  "permalink": "https://www.instagram.com/p/Df4_0rWCZny/",
+  "fb_id": "1491182390739007_122106023259546258",
+  "fb_link": "https://www.facebook.com/1491182390739007_122106023259546258",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
