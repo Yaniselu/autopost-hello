@@ -1069,5 +1069,26 @@
   "hour": "10:01",
   "time": "2026-11-18T10:01+02:00",
   "permalink": "https://www.instagram.com/reel/Df4D0SuDgvZ/"
+ },
+ "18114004901349774": {
+  "fetched": "2026-11-18T11:01:29.204908+00:00",
+  "metrics": {
+   "views": 88,
+   "reach": 39,
+   "likes": 1,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 2
+  },
+  "score": 113.22,
+  "type": "reel",
+  "style": "story",
+  "pillar": "turning website visitors into leads and booked demos",
+  "hook_type": "curiosity",
+  "hook": "Your website traffic is walking away because replies take too long.",
+  "hour": "10:31",
+  "time": "2026-11-18T10:31+02:00",
+  "permalink": "https://www.instagram.com/reel/Df4F2sjlXVN/"
  }
 }
