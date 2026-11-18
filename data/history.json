@@ -2458,5 +2458,57 @@
   "fb_link": "https://www.facebook.com/reel/1604132611402827",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-18T08:04+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-18T08:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44248190859",
+  "topic": "simple n8n automations that save hours every week",
+  "pillar": "simple n8n automations that save hours every week",
+  "hook": "Still copying website leads into spreadsheets by hand?",
+  "caption": "Manual data entry is quietly eating your workweek.\n\nWhen a customer asks a question or books a session on your website, copying details across apps manually creates friction, delays replies, and burns hours of your time.\n\nWith custom n8n automations built by Velosyntech, every lead capture, booking confirmation, and CRM record updates in seconds without you lifting a finger.\n\nHow many hours does your team lose to repetitive admin every week?\n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessautomation #n8n #leadcapture #operations #smallbusinesstips",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "Still copying website leads into spreadsheets by hand?",
+    "type": "pain"
+   },
+   {
+    "text": "Simple automations can save your business fifteen hours every week.",
+    "type": "bold_claim"
+   },
+   {
+    "text": "How one gym owner reclaimed twenty hours of his life.",
+    "type": "curiosity"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-AvaMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "cobalt",
+   "business": "gym",
+   "story_type": "flash_forward",
+   "sets": [
+    "home",
+    "office",
+    "shop",
+    "stage"
+   ],
+   "names": [
+    "Julian",
+    "Kendra",
+    "Darius"
+   ]
+  },
+  "ig_id": "18115396699886382",
+  "permalink": "https://www.instagram.com/reel/Df31a4RiEMa/",
+  "fb_id": "1465660042193282",
+  "fb_link": "https://www.facebook.com/reel/1465660042193282",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
