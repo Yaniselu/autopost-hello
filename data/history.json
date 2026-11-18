@@ -2717,5 +2717,22 @@
   "fb_link": "https://www.facebook.com/1491182390739007_122106023259546258",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-18T19:31+02:00",
+  "type": "story",
+  "mode": "scheduled",
+  "slot": "story@2026-11-18T19:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44359449248",
+  "topic": "Your website works while you sleep",
+  "hook": "Your website works while you sleep",
+  "caption": "Your website works while you sleep — Over half of website purchases happen outside normal working hours when your office is empty.",
+  "status": "posted",
+  "stories": [
+   {
+    "ig_id": "17880508347567587",
+    "fb_id": "1823059288934553"
+   }
+  ]
  }
 ]

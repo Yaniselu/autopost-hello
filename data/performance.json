@@ -1132,5 +1132,26 @@
   "hour": "16:01",
   "time": "2026-11-18T16:01+02:00",
   "permalink": "https://www.instagram.com/reel/Df4r83REw9B/"
+ },
+ "18100593908447754": {
+  "fetched": "2026-11-18T17:31:16.126834+00:00",
+  "metrics": {
+   "views": 66,
+   "reach": 12,
+   "likes": 1,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 1
+  },
+  "score": 106.12,
+  "type": "carousel",
+  "style": null,
+  "pillar": "answering customers in any language automatically",
+  "hook_type": null,
+  "hook": "Never lose *global* customers again",
+  "hour": "19:01",
+  "time": "2026-11-18T19:01+02:00",
+  "permalink": "https://www.instagram.com/p/Df4_0rWCZny/"
  }
 }
