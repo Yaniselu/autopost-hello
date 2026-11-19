@@ -3014,5 +3014,22 @@
   "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44558366758",
   "status": "error",
   "error": "LLMError: text generation failed: Gemini gemini-3.8-flash: HTTP 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/g"
+ },
+ {
+  "time": "2026-11-19T19:01+02:00",
+  "type": "carousel",
+  "mode": "scheduled",
+  "slot": "carousel@2026-11-19T19:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44572461729",
+  "topic": "answering customers in any language automatically",
+  "pillar": "answering customers in any language automatically",
+  "hook": "Turn foreign clicks into *real sales*.",
+  "caption": "International visitors land on your site every day, but language friction forces them to leave without buying.\n\nAn AI assistant on your website translates inquiries and replies in real time. You capture global leads without adding operational overhead.\n\nComment DEMO and we'll send you a free demo in DM. Ready to expand your reach without extra team costs? 🌐\n\n#AIBusiness #WebsiteAutomation #CustomerSupportAI #LeadGeneration #BusinessGrowth",
+  "ig_id": "17958666432297324",
+  "permalink": "https://www.instagram.com/p/Df7k3TXlxHI/",
+  "fb_id": "1491182390739007_122106988275546258",
+  "fb_link": "https://www.facebook.com/1491182390739007_122106988275546258",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
