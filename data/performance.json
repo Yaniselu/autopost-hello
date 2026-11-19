@@ -1258,5 +1258,26 @@
   "hour": "13:01",
   "time": "2026-11-19T13:01+02:00",
   "permalink": "https://www.instagram.com/p/Df67W0BkkCM/"
+ },
+ "17958666432297324": {
+  "fetched": "2026-11-19T17:31:21.475847+00:00",
+  "metrics": {
+   "views": 67,
+   "reach": 5,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 105.49,
+  "type": "carousel",
+  "style": null,
+  "pillar": "answering customers in any language automatically",
+  "hook_type": null,
+  "hook": "Turn foreign clicks into *real sales*.",
+  "hour": "19:01",
+  "time": "2026-11-19T19:01+02:00",
+  "permalink": "https://www.instagram.com/p/Df7k3TXlxHI/"
  }
 }
