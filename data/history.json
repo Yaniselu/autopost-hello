@@ -3058,5 +3058,56 @@
   "status": "error",
   "error": "LLMError: text generation failed: Gemini gemini-3.8-flash: HTTP 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/g",
   "retry": "se reîncearcă automat (încercarea 1/3)"
+ },
+ {
+  "time": "2026-11-19T20:55+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-19T20:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44592846211",
+  "topic": "turning website visitors into leads and booked demos",
+  "pillar": "turning website visitors into leads and booked demos",
+  "hook": "Most website visitors leave without talking to anyone.",
+  "caption": "Traffic is only half the battle if your visitors vanish before leaving an inquiry. Waiting hours to respond gives competitors the advantage.\n\nAutomate your website conversations so every visitor gets instant answers and your calendar fills up on autopilot.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#leadgeneration #businessautomation #n8n #aiassistants #growth",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "Most website visitors leave without talking to anyone.",
+    "type": "pain"
+   },
+   {
+    "text": "Are you missing high value leads while you sleep?",
+    "type": "question"
+   },
+   {
+    "text": "Turn website traffic into booked meetings automatically.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-AvaMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "cobalt",
+   "business": "agency",
+   "story_type": "day_in_life",
+   "sets": [
+    "home",
+    "park",
+    "shop",
+    "stage",
+    "street"
+   ],
+   "names": [
+    "Zoe"
+   ]
+  },
+  "ig_id": "18023633928134591",
+  "permalink": "https://www.instagram.com/reel/Df7y9w6FGFL/",
+  "fb_id": "29663900616541365",
+  "fb_link": "https://www.facebook.com/reel/29663900616541365",
+  "status": "posted",
+  "repost": "ok"
  }
 ]

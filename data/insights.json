@@ -1,14 +1,14 @@
 {
- "updated": "2026-11-19T18:01+00:00",
+ "updated": "2026-11-19T18:56+00:00",
  "posts_measured": 61,
  "basic_only": false,
  "by_type": {
   "reel": {
-   "avg": 138.9,
+   "avg": 139.0,
    "n": 43
   },
   "carousel": {
-   "avg": 142.3,
+   "avg": 142.5,
    "n": 18
   }
  },
@@ -18,11 +18,11 @@
    "n": 11
   },
   "liquid_glass": {
-   "avg": 142.0,
+   "avg": 142.2,
    "n": 8
   },
   "story": {
-   "avg": 138.6,
+   "avg": 138.7,
    "n": 23
   }
  },
@@ -32,15 +32,15 @@
    "n": 8
   },
   "losing customers because nobody replies fast enough": {
-   "avg": 141.2,
-   "n": 11
-  },
-  "turning website visitors into leads and booked demos": {
    "avg": 141.3,
    "n": 11
   },
+  "turning website visitors into leads and booked demos": {
+   "avg": 141.4,
+   "n": 11
+  },
   "answering customers in any language automatically": {
-   "avg": 140.3,
+   "avg": 140.6,
    "n": 11
   },
   "simple n8n automations that save hours every week": {
@@ -48,11 +48,11 @@
    "n": 7
   },
   "customer support questions an AI can handle for you": {
-   "avg": 139.3,
+   "avg": 139.4,
    "n": 11
   },
   "myths vs facts about AI chatbots for small businesses": {
-   "avg": 127.3,
+   "avg": 128.0,
    "n": 2
   }
  },
@@ -62,7 +62,7 @@
    "n": 21
   },
   "question": {
-   "avg": 136.7,
+   "avg": 136.8,
    "n": 10
   },
   "bold_claim": {
@@ -70,7 +70,7 @@
    "n": 2
   },
   "myth": {
-   "avg": 127.3,
+   "avg": 128.0,
    "n": 2
   },
   "number": {
@@ -78,7 +78,7 @@
    "n": 1
   },
   "curiosity": {
-   "avg": 132.5,
+   "avg": 132.6,
    "n": 6
   }
  },
@@ -116,11 +116,11 @@
    "n": 7
   },
   "10:31": {
-   "avg": 135.5,
+   "avg": 135.7,
    "n": 7
   },
   "13:01": {
-   "avg": 142.9,
+   "avg": 143.1,
    "n": 8
   },
   "18:54": {
@@ -136,11 +136,11 @@
    "n": 1
   },
   "16:01": {
-   "avg": 127.5,
+   "avg": 127.7,
    "n": 6
   },
   "19:01": {
-   "avg": 136.4,
+   "avg": 136.9,
    "n": 6
   },
   "20:54": {
@@ -152,11 +152,11 @@
    "n": 1
   },
   "08:04": {
-   "avg": 124.1,
+   "avg": 124.5,
    "n": 1
   },
   "20:04": {
-   "avg": 140.2,
+   "avg": 141.2,
    "n": 1
   },
   "10:04": {
