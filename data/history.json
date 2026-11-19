@@ -3005,5 +3005,14 @@
   "status": "error",
   "error": "LLMError: text generation failed: Gemini gemini-3.8-flash: HTTP 503 This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
   "retry": "se reîncearcă automat (încercarea 2/3)"
+ },
+ {
+  "time": "2026-11-19T17:46+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-19T16:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44558366758",
+  "status": "error",
+  "error": "LLMError: text generation failed: Gemini gemini-3.8-flash: HTTP 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/g"
  }
 ]
