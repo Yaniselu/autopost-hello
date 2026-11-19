@@ -1174,5 +1174,26 @@
   "hour": "20:04",
   "time": "2026-11-18T20:04+02:00",
   "permalink": "https://www.instagram.com/reel/Df5H5JHDOyJ/"
+ },
+ "18020863982953799": {
+  "fetched": "2026-11-19T08:05:54.949759+00:00",
+  "metrics": {
+   "views": 83,
+   "reach": 32,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 110.77,
+  "type": "reel",
+  "style": "story",
+  "pillar": "an AI assistant answering website visitors 24/7 (before vs after)",
+  "hook_type": "curiosity",
+  "hook": "Why is this little bakery always full even at midnight?",
+  "hour": "08:01",
+  "time": "2026-11-19T08:01+02:00",
+  "permalink": "https://www.instagram.com/reel/Df6Z1Hvjsp1/"
  }
 }

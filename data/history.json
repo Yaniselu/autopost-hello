@@ -2852,5 +2852,53 @@
     "fb_id": "1787624465867562"
    }
   ]
+ },
+ {
+  "time": "2026-11-19T10:04+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-19T10:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44484026385",
+  "topic": "customer support questions an AI can handle for you",
+  "pillar": "customer support questions an AI can handle for you",
+  "hook": "Are you *tired* of repeating pricing answers?",
+  "caption": "Your inbox is likely full of the exact same questions about pricing, hours, and basic setup.\n\nCopy-pasting these answers drains your energy and takes time away from growing your business.\n\nAn automated assistant can learn your business details and handle those routine chats instantly, day or night.\n\nWhich question do you typing out the most?\n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessautomation #smallbiztips #customerservice #productivityhacks #workflowautomation",
+  "hook_type": "question",
+  "hook_options": [
+   {
+    "text": "Are you *tired* of repeating pricing answers?",
+    "type": "question"
+   },
+   {
+    "text": "Stop typing the *same* reply twice.",
+    "type": "bold_claim"
+   },
+   {
+    "text": "Three questions *drain* your daily energy.",
+    "type": "number"
+   }
+  ],
+  "style": "cinematic",
+  "voice": "en-US-EmmaMultilingualNeural",
+  "plan": {
+   "hook": "lid_open",
+   "problem": "high_angle",
+   "solution": "phone_focus",
+   "result": "phone_result",
+   "cta": "duo_cta",
+   "bg": "bokeh",
+   "type": "typewriter",
+   "transition": "zoom",
+   "finish_phone": "desert",
+   "finish_laptop": "silver",
+   "theme": "light",
+   "palette": "emerald"
+  },
+  "ig_id": "18131859286934448",
+  "permalink": "https://www.instagram.com/reel/Df6ot6yCDSK/",
+  "fb_id": "1440700041025974",
+  "fb_link": "https://www.facebook.com/reel/1440700041025974",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
