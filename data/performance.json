@@ -1237,5 +1237,26 @@
   "hour": "10:31",
   "time": "2026-11-19T10:31+02:00",
   "permalink": "https://www.instagram.com/reel/Df6sEVGAkkz/"
+ },
+ "18117828242026754": {
+  "fetched": "2026-11-19T13:31:30.362680+00:00",
+  "metrics": {
+   "views": 162,
+   "reach": 33,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 127.34,
+  "type": "carousel",
+  "style": null,
+  "pillar": "losing customers because nobody replies fast enough",
+  "hook_type": null,
+  "hook": "Stop making *buyers* wait for *replies*",
+  "hour": "13:01",
+  "time": "2026-11-19T13:01+02:00",
+  "permalink": "https://www.instagram.com/p/Df67W0BkkCM/"
  }
 }
