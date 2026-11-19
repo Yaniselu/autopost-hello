@@ -2835,5 +2835,22 @@
   "fb_link": "https://www.facebook.com/reel/4778438709042915",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-19T09:32+02:00",
+  "type": "story",
+  "mode": "scheduled",
+  "slot": "story@2026-11-19T09:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44480138621",
+  "topic": "Your calendar needs no touching",
+  "hook": "Your calendar needs no touching",
+  "caption": "Your calendar needs no touching — Your digital schedule can fill itself while you focus on high-value client work.",
+  "status": "posted",
+  "stories": [
+   {
+    "ig_id": "18108040304565789",
+    "fb_id": "1787624465867562"
+   }
+  ]
  }
 ]
