@@ -2900,5 +2900,56 @@
   "fb_link": "https://www.facebook.com/reel/1440700041025974",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-19T10:31+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-19T10:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44488189516",
+  "topic": "turning website visitors into leads and booked demos",
+  "pillar": "turning website visitors into leads and booked demos",
+  "hook": "Most website visitors leave before you ever get a chance to reply.",
+  "caption": "Most business owners assume booking website leads requires a team sitting by the phone 24/7. That myth costs you valuable clients every single night.\n\nWhen prospective clients visit your website after hours, they expect instant answers. If they have to wait until tomorrow morning, they move on to a competitor.\n\nWith an n8n-powered AI assistant, your site answers inquiries in real time, qualifies prospective leads, and puts booked meetings directly onto your calendar while you sleep.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#leadgeneration #aiassistant #automation #smallbusinessowner #n8n",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "Most website visitors leave before you ever get a chance to reply.",
+    "type": "pain"
+   },
+   {
+    "text": "You do not need a massive sales team to book website leads 24/7.",
+    "type": "myth"
+   },
+   {
+    "text": "Why do 90% of website inquiries vanish without booking a demo?",
+    "type": "question"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-AndrewMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "cobalt",
+   "business": "restaurant",
+   "story_type": "myth_bust",
+   "sets": [
+    "home",
+    "shop",
+    "stage"
+   ],
+   "names": [
+    "Elena",
+    "Marcus",
+    "Chloe"
+   ]
+  },
+  "ig_id": "18098105345694750",
+  "permalink": "https://www.instagram.com/reel/Df6sEVGAkkz/",
+  "fb_id": "2641337442956780",
+  "fb_link": "https://www.facebook.com/reel/2641337442956780",
+  "status": "posted",
+  "repost": "ok"
  }
 ]

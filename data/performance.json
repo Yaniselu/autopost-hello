@@ -1195,5 +1195,26 @@
   "hour": "08:01",
   "time": "2026-11-19T08:01+02:00",
   "permalink": "https://www.instagram.com/reel/Df6Z1Hvjsp1/"
+ },
+ "18131859286934448": {
+  "fetched": "2026-11-19T08:31:20.550670+00:00",
+  "metrics": {
+   "views": 25,
+   "reach": 0,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 81.45,
+  "type": "reel",
+  "style": "cinematic",
+  "pillar": "customer support questions an AI can handle for you",
+  "hook_type": "question",
+  "hook": "Are you *tired* of repeating pricing answers?",
+  "hour": "10:04",
+  "time": "2026-11-19T10:04+02:00",
+  "permalink": "https://www.instagram.com/reel/Df6ot6yCDSK/"
  }
 }
