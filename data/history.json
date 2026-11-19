@@ -2784,5 +2784,56 @@
   "fb_link": "https://www.facebook.com/reel/1521571523134141",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-19T08:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-19T08:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44469063385",
+  "topic": "an AI assistant answering website visitors 24/7 (before vs after)",
+  "pillar": "an AI assistant answering website visitors 24/7 (before vs after)",
+  "hook": "Why is this little bakery always full even at midnight?",
+  "caption": "Most business owners lose potential customers simply because nobody is awake to answer questions late at night.\n\nVelosyntech builds smart website assistants that chat with visitors around the clock, answer in any language, and secure bookings automatically.\n\nNo missed leads, no manual delays—just effortless growth while you rest.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#velosyntech #automation #smallbusiness #aiassistant #growth",
+  "hook_type": "curiosity",
+  "hook_options": [
+   {
+    "text": "Why is this little bakery always full even at midnight?",
+    "type": "curiosity"
+   },
+   {
+    "text": "How does a website answer customers while you sleep?",
+    "type": "question"
+   },
+   {
+    "text": "Stop letting midnight visitors leave without buying anything.",
+    "type": "pain"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-AndrewMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "cobalt",
+   "business": "bakery",
+   "story_type": "secret",
+   "sets": [
+    "office",
+    "shop",
+    "stage",
+    "street"
+   ],
+   "names": [
+    "Bruno",
+    "Silvia"
+   ]
+  },
+  "ig_id": "18020863982953799",
+  "permalink": "https://www.instagram.com/reel/Df6Z1Hvjsp1/",
+  "fb_id": "4778438709042915",
+  "fb_link": "https://www.facebook.com/reel/4778438709042915",
+  "status": "posted",
+  "repost": "ok"
  }
 ]

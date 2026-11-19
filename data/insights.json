@@ -1,76 +1,76 @@
 {
- "updated": "2026-11-18T18:05+00:00",
- "posts_measured": 55,
+ "updated": "2026-11-19T06:01+00:00",
+ "posts_measured": 56,
  "basic_only": false,
  "by_type": {
   "reel": {
-   "avg": 138.2,
-   "n": 39
+   "avg": 141.2,
+   "n": 40
   },
   "carousel": {
-   "avg": 142.4,
+   "avg": 145.5,
    "n": 16
   }
  },
  "by_style": {
   "cinematic": {
-   "avg": 130.0,
+   "avg": 137.6,
    "n": 10
   },
   "liquid_glass": {
-   "avg": 140.7,
+   "avg": 142.0,
    "n": 8
   },
   "story": {
-   "avg": 138.6,
-   "n": 20
+   "avg": 140.2,
+   "n": 21
   }
  },
  "by_pillar": {
   "an AI assistant answering website visitors 24/7 (before vs after)": {
-   "avg": 132.8,
+   "avg": 144.0,
    "n": 7
   },
   "losing customers because nobody replies fast enough": {
-   "avg": 141.2,
+   "avg": 142.6,
    "n": 10
   },
   "turning website visitors into leads and booked demos": {
-   "avg": 141.1,
+   "avg": 142.0,
    "n": 10
   },
   "answering customers in any language automatically": {
-   "avg": 140.2,
+   "avg": 143.7,
    "n": 10
   },
   "simple n8n automations that save hours every week": {
-   "avg": 136.9,
+   "avg": 139.5,
    "n": 7
   },
   "customer support questions an AI can handle for you": {
-   "avg": 145.6,
-   "n": 9
+   "avg": 145.1,
+   "n": 10
   },
   "myths vs facts about AI chatbots for small businesses": {
-   "avg": 123.0,
+   "avg": 127.3,
    "n": 2
   }
  },
  "by_hook_type": {
   "pain": {
-   "avg": 139.6,
+   "avg": 140.8,
    "n": 20
   },
   "question": {
-   "avg": 133.5,
-   "n": 8
+   "avg": 142.7,
+   "n": 9
   },
   "bold_claim": {
    "avg": 135.0,
    "n": 2
   },
   "myth": {
-   "avg": 123.0,
+   "avg": 127.3,
    "n": 2
   },
   "number": {
@@ -78,7 +78,7 @@
    "n": 1
   },
   "curiosity": {
-   "avg": 134.9,
+   "avg": 136.8,
    "n": 5
   }
  },
@@ -104,23 +104,23 @@
    "n": 2
   },
   "20:01": {
-   "avg": 140.0,
+   "avg": 140.4,
    "n": 6
   },
   "08:01": {
-   "avg": 147.0,
+   "avg": 147.1,
    "n": 6
   },
   "10:01": {
-   "avg": 124.2,
+   "avg": 135.1,
    "n": 7
   },
   "10:31": {
-   "avg": 134.3,
+   "avg": 135.9,
    "n": 6
   },
   "13:01": {
-   "avg": 143.0,
+   "avg": 145.1,
    "n": 7
   },
   "18:54": {
@@ -136,23 +136,27 @@
    "n": 1
   },
   "16:01": {
-   "avg": 125.8,
+   "avg": 127.4,
    "n": 6
   },
   "19:01": {
-   "avg": 135.7,
+   "avg": 142.6,
    "n": 5
   },
   "20:54": {
-   "avg": 135.4,
+   "avg": 136.6,
    "n": 1
   },
   "20:55": {
-   "avg": 120.7,
+   "avg": 122.7,
    "n": 1
   },
   "08:04": {
-   "avg": 107.6,
+   "avg": 124.1,
+   "n": 1
+  },
+  "20:04": {
+   "avg": 140.2,
    "n": 1
   }
  },
