@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19T18:56+00:00",
+ "updated": "2026-11-20T06:01+00:00",
  "posts_measured": 61,
  "basic_only": false,
  "by_type": {
@@ -8,13 +8,13 @@
    "n": 43
   },
   "carousel": {
-   "avg": 142.5,
+   "avg": 142.6,
    "n": 18
   }
  },
  "by_style": {
   "cinematic": {
-   "avg": 132.5,
+   "avg": 132.6,
    "n": 11
   },
   "liquid_glass": {
@@ -22,17 +22,17 @@
    "n": 8
   },
   "story": {
-   "avg": 138.7,
+   "avg": 138.8,
    "n": 23
   }
  },
  "by_pillar": {
   "an AI assistant answering website visitors 24/7 (before vs after)": {
-   "avg": 139.9,
+   "avg": 140.0,
    "n": 8
   },
   "losing customers because nobody replies fast enough": {
-   "avg": 141.3,
+   "avg": 141.4,
    "n": 11
   },
   "turning website visitors into leads and booked demos": {
@@ -44,11 +44,11 @@
    "n": 11
   },
   "simple n8n automations that save hours every week": {
-   "avg": 139.6,
+   "avg": 139.7,
    "n": 7
   },
   "customer support questions an AI can handle for you": {
-   "avg": 139.4,
+   "avg": 139.5,
    "n": 11
   },
   "myths vs facts about AI chatbots for small businesses": {
@@ -58,7 +58,7 @@
  },
  "by_hook_type": {
   "pain": {
-   "avg": 140.4,
+   "avg": 140.5,
    "n": 21
   },
   "question": {
@@ -66,7 +66,7 @@
    "n": 10
   },
   "bold_claim": {
-   "avg": 135.0,
+   "avg": 135.3,
    "n": 2
   },
   "myth": {
@@ -78,7 +78,7 @@
    "n": 1
   },
   "curiosity": {
-   "avg": 132.6,
+   "avg": 132.7,
    "n": 6
   }
  },
@@ -88,7 +88,7 @@
    "n": 1
   },
   "10:13": {
-   "avg": 182.7,
+   "avg": 182.8,
    "n": 1
   },
   "13:23": {
@@ -100,11 +100,11 @@
    "n": 1
   },
   "19:02": {
-   "avg": 147.7,
+   "avg": 147.9,
    "n": 2
   },
   "20:01": {
-   "avg": 140.5,
+   "avg": 140.6,
    "n": 6
   },
   "08:01": {
@@ -627,6 +627,22 @@
     "saved": 0,
     "shares": 1,
     "total_interactions": 9
+   }
+  },
+  {
+   "hook": "Slow *replies* cost you paying customers.",
+   "type": "reel",
+   "style": "cinematic",
+   "score": 182.82,
+   "permalink": "https://www.instagram.com/reel/DfmDVonDBBh/",
+   "metrics": {
+    "views": 621,
+    "reach": 423,
+    "likes": 10,
+    "comments": 0,
+    "saved": 0,
+    "shares": 2,
+    "total_interactions": 15
    }
   }
  ],
