@@ -1405,5 +1405,26 @@
   "hour": "16:01",
   "time": "2026-11-20T16:01+02:00",
   "permalink": "https://www.instagram.com/reel/Df91MPAjDLe/"
+ },
+ "18001825662013542": {
+  "fetched": "2026-11-20T17:31:42.869130+00:00",
+  "metrics": {
+   "views": 45,
+   "reach": 11,
+   "likes": 1,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 1
+  },
+  "score": 96.72,
+  "type": "carousel",
+  "style": null,
+  "pillar": "myths vs facts about AI chatbots for small businesses",
+  "hook_type": null,
+  "hook": "5 AI Chatbot *Myths* Debunked",
+  "hour": "19:04",
+  "time": "2026-11-20T19:04+02:00",
+  "permalink": "https://www.instagram.com/p/Df-KI9xly-a/"
  }
 }

@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-20T17:04+00:00",
- "posts_measured": 67,
+ "updated": "2026-11-20T17:31+00:00",
+ "posts_measured": 68,
  "basic_only": false,
  "by_type": {
   "reel": {
@@ -8,8 +8,8 @@
    "n": 48
   },
   "carousel": {
-   "avg": 144.2,
-   "n": 19
+   "avg": 141.8,
+   "n": 20
   }
  },
  "by_style": {
@@ -52,8 +52,8 @@
    "n": 12
   },
   "myths vs facts about AI chatbots for small businesses": {
-   "avg": 128.5,
-   "n": 2
+   "avg": 117.9,
+   "n": 3
   },
   "what happens after hours when your website gets a question": {
    "avg": 114.4,
@@ -132,8 +132,8 @@
    "n": 1
   },
   "19:04": {
-   "avg": 149.1,
-   "n": 1
+   "avg": 122.9,
+   "n": 2
   },
   "10:40": {
    "avg": 147.5,
