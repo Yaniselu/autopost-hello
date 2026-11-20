@@ -3162,5 +3162,22 @@
   "fb_link": "https://www.facebook.com/reel/2319756878582569",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-20T09:31+02:00",
+  "type": "story",
+  "mode": "scheduled",
+  "slot": "story@2026-11-20T09:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44695465614",
+  "topic": "Midnight traffic is real",
+  "hook": "Midnight traffic is real",
+  "caption": "Midnight traffic is real — Up to half of your site visits happen outside normal business hours.",
+  "status": "posted",
+  "stories": [
+   {
+    "ig_id": "18402365443161798",
+    "fb_id": "1644673867204304"
+   }
+  ]
  }
 ]
