@@ -3179,5 +3179,53 @@
     "fb_id": "1644673867204304"
    }
   ]
+ },
+ {
+  "time": "2026-11-20T10:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-20T10:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44699166245",
+  "topic": "customer support questions an AI can handle for you",
+  "pillar": "customer support questions an AI can handle for you",
+  "hook": "Are *repetitive questions* draining your time?",
+  "caption": "Are repetitive questions slowing down your daily workflow?\n\nEvery business owner wastes hours copying and pasting answers about pricing, operating hours, and basic service details. While you type out the same replies, important growth tasks get pushed aside.\n\nAn AI website assistant can instantly handle those routine questions 24/7. It looks up your services, checks your calendar availability, and even speaks your customer's native language without taking a break.\n\nThis frees up your team's time and gives every site visitor immediate clarity, turning quiet browsers into booked appointments.\n\nComment DEMO and we'll send you a free demo in DM. What question do your customers ask the most?\n\n#businessautomation #aiassistant #customersupport #leadgeneration #n8n",
+  "hook_type": "question",
+  "hook_options": [
+   {
+    "text": "Are *repetitive questions* draining your time?",
+    "type": "question"
+   },
+   {
+    "text": "You can automate *80%* of support today.",
+    "type": "number"
+   },
+   {
+    "text": "Stop typing the *same reply* ten times daily.",
+    "type": "pain"
+   }
+  ],
+  "style": "cinematic",
+  "voice": "en-US-AndrewMultilingualNeural",
+  "plan": {
+   "hook": "drop_spin",
+   "problem": "orbit_left",
+   "solution": "phone_focus",
+   "result": "phone_result",
+   "cta": "duo_cta",
+   "bg": "grid",
+   "type": "kinetic",
+   "transition": "glitch",
+   "finish_phone": "desert",
+   "finish_laptop": "silver",
+   "theme": "light",
+   "palette": "coral"
+  },
+  "ig_id": "18359929765173552",
+  "permalink": "https://www.instagram.com/reel/Df9N46qjOyK/",
+  "fb_id": "1463789421986853",
+  "fb_link": "https://www.facebook.com/reel/1463789421986853",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
