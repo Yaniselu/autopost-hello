@@ -1363,5 +1363,26 @@
   "hour": "10:31",
   "time": "2026-11-20T10:31+02:00",
   "permalink": "https://www.instagram.com/reel/Df9QUpYjOSP/"
+ },
+ "17869186932679178": {
+  "fetched": "2026-11-20T13:31:56.740998+00:00",
+  "metrics": {
+   "views": 170,
+   "reach": 39,
+   "likes": 1,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 2
+  },
+  "score": 129.54,
+  "type": "carousel",
+  "style": null,
+  "pillar": "answering customers in any language automatically",
+  "hook_type": null,
+  "hook": "Stop losing *global* buyers today",
+  "hour": "13:04",
+  "time": "2026-11-20T13:04+02:00",
+  "permalink": "https://www.instagram.com/p/Df9gsKjl60v/"
  }
 }
