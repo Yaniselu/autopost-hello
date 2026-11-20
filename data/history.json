@@ -3351,5 +3351,22 @@
   "fb_link": "https://www.facebook.com/reel/1711448350501016",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-20T19:04+02:00",
+  "type": "carousel",
+  "mode": "scheduled",
+  "slot": "carousel@2026-11-20T19:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44779056668",
+  "topic": "myths vs facts about AI chatbots for small businesses",
+  "pillar": "myths vs facts about AI chatbots for small businesses",
+  "hook": "5 AI Chatbot *Myths* Debunked",
+  "caption": "Most business owners skip website AI because they picture old, frustrating chatbots. But modern AI assistants understand real conversations, capture high-value leads, and book meetings 24/7.\n\nYou do not need expensive developers or massive budgets to keep your business responsive around the clock.\n\nComment DEMO and we'll send you a free demo in DM.\n\nWhat is the main question holding you back from adding AI to your site?\n\n#businessautomation #aitools #leadgeneration #smallbusinessgrowth #n8n",
+  "ig_id": "18001825662013542",
+  "permalink": "https://www.instagram.com/p/Df-KI9xly-a/",
+  "fb_id": "1491182390739007_122108019765546258",
+  "fb_link": "https://www.facebook.com/1491182390739007_122108019765546258",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
