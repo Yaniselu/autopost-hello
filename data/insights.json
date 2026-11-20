@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T17:31+00:00",
+ "updated": "2026-11-20T18:01+00:00",
  "posts_measured": 68,
  "basic_only": false,
  "by_type": {
@@ -22,7 +22,7 @@
    "n": 9
   },
   "story": {
-   "avg": 137.7,
+   "avg": 137.8,
    "n": 26
   }
  },
@@ -48,7 +48,7 @@
    "n": 7
   },
   "customer support questions an AI can handle for you": {
-   "avg": 136.0,
+   "avg": 136.1,
    "n": 12
   },
   "myths vs facts about AI chatbots for small businesses": {
@@ -100,7 +100,7 @@
    "n": 1
   },
   "17:16": {
-   "avg": 204.4,
+   "avg": 204.5,
    "n": 1
   },
   "19:02": {
@@ -108,7 +108,7 @@
    "n": 2
   },
   "20:01": {
-   "avg": 140.6,
+   "avg": 140.7,
    "n": 6
   },
   "08:01": {
@@ -651,6 +651,22 @@
     "saved": 0,
     "shares": 2,
     "total_interactions": 15
+   }
+  },
+  {
+   "hook": "Lost a sale because of *language*?",
+   "type": "reel",
+   "style": "liquid_glass",
+   "score": 204.46,
+   "permalink": "https://www.instagram.com/reel/DfmyOtliYsU/",
+   "metrics": {
+    "views": 810,
+    "reach": 543,
+    "likes": 13,
+    "comments": 4,
+    "saved": 0,
+    "shares": 2,
+    "total_interactions": 22
    }
   }
  ],
