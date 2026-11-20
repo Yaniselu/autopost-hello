@@ -3278,5 +3278,22 @@
   "fb_link": "https://www.facebook.com/reel/2220523528844832",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-20T13:04+02:00",
+  "type": "carousel",
+  "mode": "scheduled",
+  "slot": "carousel@2026-11-20T13:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44724006503",
+  "topic": "answering customers in any language automatically",
+  "pillar": "answering customers in any language automatically",
+  "hook": "Stop losing *global* buyers today",
+  "caption": "Expanding your business globally used to require expensive translation teams and round-the-clock international staff. Today, your website can welcome buyers in their native tongue the second they land on your page. Stop letting language barriers turn away ready-to-buy customers.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessgrowth #globalsales #aiforbusiness #smallbiz #automation",
+  "ig_id": "17869186932679178",
+  "permalink": "https://www.instagram.com/p/Df9gsKjl60v/",
+  "fb_id": "1491182390739007_122107755333546258",
+  "fb_link": "https://www.facebook.com/1491182390739007_122107755333546258",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
