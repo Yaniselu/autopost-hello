@@ -1321,5 +1321,26 @@
   "hour": "08:01",
   "time": "2026-11-20T08:01+02:00",
   "permalink": "https://www.instagram.com/reel/Df8_BepjY-3/"
+ },
+ "18359929765173552": {
+  "fetched": "2026-11-20T08:31:12.026407+00:00",
+  "metrics": {
+   "views": 9,
+   "reach": 0,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 57.56,
+  "type": "reel",
+  "style": "cinematic",
+  "pillar": "customer support questions an AI can handle for you",
+  "hook_type": "question",
+  "hook": "Are *repetitive questions* draining your time?",
+  "hour": "10:01",
+  "time": "2026-11-20T10:01+02:00",
+  "permalink": "https://www.instagram.com/reel/Df9N46qjOyK/"
  }
 }
