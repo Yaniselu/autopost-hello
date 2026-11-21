@@ -1531,5 +1531,26 @@
   "hour": "13:01",
   "time": "2026-11-21T13:01+02:00",
   "permalink": "https://www.instagram.com/p/DgAFVpeDfnV/"
+ },
+ "18117688136276863": {
+  "fetched": "2026-11-21T17:01:22.286884+00:00",
+  "metrics": {
+   "views": 93,
+   "reach": 40,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 1
+  },
+  "score": 113.58,
+  "type": "reel",
+  "style": "liquid_glass",
+  "pillar": "turning website visitors into leads and booked demos",
+  "hook_type": "pain",
+  "hook": "Your website traffic is *leaving* without buying.",
+  "hour": "16:01",
+  "time": "2026-11-21T16:01+02:00",
+  "permalink": "https://www.instagram.com/reel/DgAaLwJExjS/"
  }
 }

@@ -3677,5 +3677,22 @@
   "fb_link": "https://www.facebook.com/reel/1937978723848235",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-21T19:01+02:00",
+  "type": "carousel",
+  "mode": "scheduled",
+  "slot": "carousel@2026-11-21T19:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44927665556",
+  "topic": "losing customers because nobody replies fast enough",
+  "pillar": "losing customers because nobody replies fast enough",
+  "hook": "Your *slow replies* cost money",
+  "caption": "Most businesses spend money driving traffic to their website, only to lose those potential buyers because nobody is there to answer questions instantly. Waiting hours to reply to a simple message hands paying customers straight to your competitors.\n\nAdding an instant assistant ensures every single visitor gets immediate answers and gets guided toward booking a call or making a purchase.\n\nHow long does it currently take your team to reply to a new website inquiry?\n\n#BusinessGrowth #LeadGeneration #CustomerService #SalesStrategy #SmallBusiness",
+  "ig_id": "18135623653770999",
+  "permalink": "https://www.instagram.com/p/DgAuMQtiSxV/",
+  "fb_id": "1491182390739007_122108885205546258",
+  "fb_link": "https://www.facebook.com/1491182390739007_122108885205546258",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
