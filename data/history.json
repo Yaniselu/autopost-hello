@@ -3711,5 +3711,56 @@
     "fb_id": "28863681063315004"
    }
   ]
+ },
+ {
+  "time": "2026-11-21T20:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-21T20:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44933134641",
+  "topic": "customer support questions an AI can handle for you",
+  "pillar": "customer support questions an AI can handle for you",
+  "hook": "Three mistakes gyms make with website questions.",
+  "caption": "Answering the exact same website questions every single day drains your time and energy.\n\nWhen potential customers visit your site late at night or speak another language, waiting hours for an email reply means they simply walk away to a competitor.\n\nAutomate your support with a custom AI assistant that answers instantly 24/7, handles multiple languages, and captures leads while you focus on growing your business.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#velosyntech #aichatbot #businessautomation #n8n #leadgeneration",
+  "hook_type": "number",
+  "hook_options": [
+   {
+    "text": "Three mistakes gyms make with website questions.",
+    "type": "number"
+   },
+   {
+    "text": "Stop losing website leads to slow manual replies.",
+    "type": "pain"
+   },
+   {
+    "text": "Are repetitive questions slowing down your daily workflow?",
+    "type": "question"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-AvaMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "violet",
+   "business": "gym",
+   "story_type": "countdown",
+   "sets": [
+    "home",
+    "office",
+    "shop",
+    "street"
+   ],
+   "names": [
+    "Britt",
+    "Carl"
+   ]
+  },
+  "ig_id": "17902743987610639",
+  "permalink": "https://www.instagram.com/reel/DgA2QmGldg5/",
+  "fb_id": "1156780386935912",
+  "fb_link": "https://www.facebook.com/reel/1156780386935912",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
