@@ -1510,5 +1510,26 @@
   "hour": "10:31",
   "time": "2026-11-21T10:31+02:00",
   "permalink": "https://www.instagram.com/reel/Df_04_HAWJJ/"
+ },
+ "18143953057620187": {
+  "fetched": "2026-11-21T13:31:16.050566+00:00",
+  "metrics": {
+   "views": 126,
+   "reach": 33,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 1
+  },
+  "score": 121.1,
+  "type": "carousel",
+  "style": null,
+  "pillar": "customer support questions an AI can handle for you",
+  "hook_type": null,
+  "hook": "5 questions AI *handles best* for you",
+  "hour": "13:01",
+  "time": "2026-11-21T13:01+02:00",
+  "permalink": "https://www.instagram.com/p/DgAFVpeDfnV/"
  }
 }
