@@ -1552,5 +1552,26 @@
   "hour": "16:01",
   "time": "2026-11-21T16:01+02:00",
   "permalink": "https://www.instagram.com/reel/DgAaLwJExjS/"
+ },
+ "18135623653770999": {
+  "fetched": "2026-11-21T17:31:16.311943+00:00",
+  "metrics": {
+   "views": 37,
+   "reach": 9,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 90.94,
+  "type": "carousel",
+  "style": null,
+  "pillar": "losing customers because nobody replies fast enough",
+  "hook_type": null,
+  "hook": "Your *slow replies* cost money",
+  "hour": "19:01",
+  "time": "2026-11-21T19:01+02:00",
+  "permalink": "https://www.instagram.com/p/DgAuMQtiSxV/"
  }
 }
