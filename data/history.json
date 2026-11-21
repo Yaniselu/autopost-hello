@@ -3552,5 +3552,57 @@
   "fb_link": "https://www.facebook.com/reel/1609680957084120",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-21T10:31+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-21T10:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44885205097",
+  "topic": "customer support questions an AI can handle for you",
+  "pillar": "customer support questions an AI can handle for you",
+  "hook": "Most website visitors leave if they wait too long.",
+  "caption": "Answering the exact same website questions every single day drains your time and energy.\n\nWhen visitors have to wait hours for a reply on basic pricing or hours, they simply move on to a competitor.\n\nAn AI assistant takes over these routine inquiries instantly, day and night, without adding headcount.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#AIAutomation #BusinessGrowth #CustomerSupport #WebDevelopment #Productivity",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "Are repetitive questions slowing down your daily workflow?",
+    "type": "question"
+   },
+   {
+    "text": "Stop wasting hours answering the same web chats.",
+    "type": "bold_claim"
+   },
+   {
+    "text": "Most website visitors leave if they wait too long.",
+    "type": "pain"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-BrianMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "emerald",
+   "business": "agency",
+   "story_type": "day_in_life",
+   "sets": [
+    "home",
+    "office",
+    "shop",
+    "stage",
+    "street"
+   ],
+   "names": [
+    "Finn",
+    "Nora"
+   ]
+  },
+  "ig_id": "18037371893911923",
+  "permalink": "https://www.instagram.com/reel/Df_04_HAWJJ/",
+  "fb_id": "1619725042677936",
+  "fb_link": "https://www.facebook.com/reel/1619725042677936",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
