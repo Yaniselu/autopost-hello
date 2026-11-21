@@ -3504,5 +3504,53 @@
     "fb_id": "1593274966176386"
    }
   ]
+ },
+ {
+  "time": "2026-11-21T10:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-21T10:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44882841603",
+  "topic": "answering customers in any language automatically",
+  "pillar": "answering customers in any language automatically",
+  "hook": "Lost a sale because of *language*?",
+  "caption": "International expansion used to require dedicated support teams and costly translation software. Today, your website can handle global buyers naturally from the first click.\n\nWhen a visitor asks a question in Spanish, German, or Japanese, waiting for manual translation means they shop elsewhere. Speed and clarity win every global transaction.\n\nStop letting language barriers block your revenue growth.\n\nComment DEMO and we will send you a free demo in DM.\n\n#businessgrowth #automation #leadgeneration #webtech #smallbusiness",
+  "hook_type": "question",
+  "hook_options": [
+   {
+    "text": "Lost a sale because of *language*?",
+    "type": "question"
+   },
+   {
+    "text": "Your website *speaks* only one language.",
+    "type": "bold_claim"
+   },
+   {
+    "text": "Can global buyers *read* your site?",
+    "type": "curiosity"
+   }
+  ],
+  "style": "cinematic",
+  "voice": "en-US-AvaMultilingualNeural",
+  "plan": {
+   "hook": "lid_open",
+   "problem": "orbit_left",
+   "solution": "side_track",
+   "result": "low_hero",
+   "cta": "duo_cta",
+   "bg": "bokeh",
+   "type": "typewriter",
+   "transition": "zoom",
+   "finish_phone": "desert",
+   "finish_laptop": "spaceblack",
+   "theme": "light",
+   "palette": "violet"
+  },
+  "ig_id": "18124766525472063",
+  "permalink": "https://www.instagram.com/reel/Df_xlIQHMFq/",
+  "fb_id": "1609680957084120",
+  "fb_link": "https://www.facebook.com/reel/1609680957084120",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
