@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T18:01+00:00",
+ "updated": "2026-11-21T06:02+00:00",
  "posts_measured": 68,
  "basic_only": false,
  "by_type": {
@@ -14,11 +14,11 @@
  },
  "by_style": {
   "cinematic": {
-   "avg": 129.6,
+   "avg": 129.7,
    "n": 12
   },
   "liquid_glass": {
-   "avg": 139.2,
+   "avg": 139.3,
    "n": 9
   },
   "story": {
@@ -32,7 +32,7 @@
    "n": 8
   },
   "losing customers because nobody replies fast enough": {
-   "avg": 142.2,
+   "avg": 142.3,
    "n": 11
   },
   "turning website visitors into leads and booked demos": {
@@ -40,7 +40,7 @@
    "n": 13
   },
   "answering customers in any language automatically": {
-   "avg": 141.6,
+   "avg": 141.7,
    "n": 13
   },
   "simple n8n automations that save hours every week": {
@@ -70,7 +70,7 @@
    "n": 12
   },
   "bold_claim": {
-   "avg": 135.3,
+   "avg": 135.4,
    "n": 2
   },
   "myth": {
@@ -82,7 +82,7 @@
    "n": 1
   },
   "curiosity": {
-   "avg": 134.4,
+   "avg": 134.5,
    "n": 6
   }
  },
@@ -116,7 +116,7 @@
    "n": 8
   },
   "10:01": {
-   "avg": 125.4,
+   "avg": 125.5,
    "n": 8
   },
   "10:31": {
@@ -128,7 +128,7 @@
    "n": 8
   },
   "18:54": {
-   "avg": 147.3,
+   "avg": 147.4,
    "n": 1
   },
   "19:04": {
@@ -667,6 +667,22 @@
     "saved": 0,
     "shares": 2,
     "total_interactions": 22
+   }
+  },
+  {
+   "hook": "Most website visitors leave if they do not get an immediate answer.",
+   "type": "reel",
+   "style": "story",
+   "score": 168.46,
+   "permalink": "https://www.instagram.com/reel/DfwG15EGVYj/",
+   "metrics": {
+    "views": 637,
+    "reach": 509,
+    "likes": 2,
+    "comments": 0,
+    "saved": 1,
+    "shares": 0,
+    "total_interactions": 4
    }
   }
  ],
