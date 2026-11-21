@@ -1489,5 +1489,26 @@
   "hour": "10:01",
   "time": "2026-11-21T10:01+02:00",
   "permalink": "https://www.instagram.com/reel/Df_xlIQHMFq/"
+ },
+ "18037371893911923": {
+  "fetched": "2026-11-21T11:01:31.901670+00:00",
+  "metrics": {
+   "views": 197,
+   "reach": 137,
+   "likes": 1,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 1
+  },
+  "score": 133.21,
+  "type": "reel",
+  "style": "story",
+  "pillar": "customer support questions an AI can handle for you",
+  "hook_type": "pain",
+  "hook": "Most website visitors leave if they wait too long.",
+  "hour": "10:31",
+  "time": "2026-11-21T10:31+02:00",
+  "permalink": "https://www.instagram.com/reel/Df_04_HAWJJ/"
  }
 }
