@@ -1615,5 +1615,26 @@
   "hour": "08:02",
   "time": "2026-11-22T08:02+02:00",
   "permalink": "https://www.instagram.com/reel/DgCImWmiBdP/"
+ },
+ "18053738588607979": {
+  "fetched": "2026-11-22T08:32:21.834543+00:00",
+  "metrics": {
+   "views": 14,
+   "reach": 0,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 67.7,
+  "type": "reel",
+  "style": "cinematic",
+  "pillar": "customer support questions an AI can handle for you",
+  "hook_type": "number",
+  "hook": "3 ways to *stop* wasting hours on repetitive chats.",
+  "hour": "10:01",
+  "time": "2026-11-22T10:01+02:00",
+  "permalink": "https://www.instagram.com/reel/DgCWsUJgtiy/"
  }
 }

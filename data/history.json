@@ -3880,5 +3880,56 @@
   "fb_link": "https://www.facebook.com/reel/1640820584391668",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-22T10:31+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-22T10:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45003126719",
+  "topic": "simple n8n automations that save hours every week",
+  "pillar": "simple n8n automations that save hours every week",
+  "hook": "How does one shop handle hundreds of website questions effortlessly?",
+  "caption": "Most business owners spend hours every single week typing the exact same replies to routine website inquiries.\n\nWhen you integrate a custom AI website assistant built on n8n, your website answers visitors 24/7 in any language, captures qualified leads, and books demos automatically.\n\nReclaim your time and eliminate manual repetitive tasks without missing a single customer opportunity.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessautomation #n8n #aiassistant #productivitytips #leadgeneration",
+  "hook_type": "question",
+  "hook_options": [
+   {
+    "text": "Why is this competitor calm while everyone else drowns in messages?",
+    "type": "curiosity"
+   },
+   {
+    "text": "How does one shop handle hundreds of website questions effortlessly?",
+    "type": "question"
+   },
+   {
+    "text": "The secret to saving 15 hours of manual work every week.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-EmmaMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "violet",
+   "business": "store",
+   "story_type": "secret",
+   "sets": [
+    "office",
+    "shop",
+    "stage",
+    "street"
+   ],
+   "names": [
+    "Liam",
+    "Zack"
+   ]
+  },
+  "ig_id": "18137743957790317",
+  "permalink": "https://www.instagram.com/reel/DgCZ_iDDVks/",
+  "fb_id": "1035686519548337",
+  "fb_link": "https://www.facebook.com/reel/1035686519548337",
+  "status": "posted",
+  "repost": "ok"
  }
 ]

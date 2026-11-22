@@ -1,11 +1,11 @@
 {
- "time": "2026-11-19T08:05:54.431963+00:00",
+ "time": "2026-11-22T08:32:18.327267+00:00",
  "media_count": 30,
  "guide": {
-  "what_they_sell": "Custom 24/7 multilingual AI website assistants built on n8n that automate customer support, answer inquiries instantly, and capture leads.",
-  "audience": "Small-to-medium business owners, service providers (dental, salons, local businesses), and online agencies losing leads to delayed response times or after-hours inquiries.",
+  "what_they_sell": "Custom AI website assistants built on n8n that respond to customers 24/7 in any language.",
+  "audience": "Business owners, entrepreneurs, and service providers losing leads due to slow website response times.",
   "language": "English",
-  "tone": "Direct, problem-aware, professional B2B tone emphasizing loss aversion, speed to lead, and operational efficiency.",
+  "tone": "Direct, professional, urgent, and business-focused",
   "recurring_topics": [
    "Slow website response times losing leads",
    "The cost of manual data entry and busywork",
@@ -20,7 +20,11 @@
    "Capturing leads 24/7 after hours and while the business owner sleeps",
    "Automating repetitive FAQs (pricing, hours, bookings) to free up team capacity",
    "Multilingual support breaking international language barriers",
-   "Automating workflows without expensive dev teams using n8n"
+   "Automating workflows without expensive dev teams using n8n",
+   "Slow email replies losing customers to competitors",
+   "Wasting time answering repetitive customer questions",
+   "Missing after-hours leads and bookings",
+   "Multilingual website barriers for international buyers"
   ],
   "best_performing_patterns": [
    "Event coverage and community engagement (e.g., Craiova Hackathon posts)",
@@ -33,7 +37,10 @@
    "Sleek SaaS product mockup covers combining a dark-mode laptop dashboard and smartphone",
    "3D low-poly miniature animations showing real-world business scenarios (e.g., Luxe Cut, Apex Dental, late-night customer on couch)",
    "Contrasting lavender/purple highlight boxes over trigger words in the main headline",
-   "Vibrant purple pill 'SWIPE ->' CTA buttons on carousel covers"
+   "Vibrant purple pill 'SWIPE ->' CTA buttons on carousel covers",
+   "Focus on the hidden financial cost of slow customer responses",
+   "Highlight pain points around repetitive tasks and after-hours drop-offs",
+   "Keep captions punchy and problem-aware"
   ],
   "hook_examples": [
    "Most website visitors leave if they do not get an immediate answer.",
@@ -45,10 +52,13 @@
    "Your slow replies cost you money.",
    "Slow replies are killing your sales.",
    "Manual follow-ups and delayed website replies waste valuable time for both you and your customers.",
-   "Waiting hours to respond to a website inquiry is the fastest way to hand revenue directly to your competitors."
+   "Waiting hours to respond to a website inquiry is the fastest way to hand revenue directly to your competitors.",
+   "Your slow replies cost you money",
+   "Someone sent a message at 11 PM. What happens next on your website?",
+   "Are repetitive questions slowing down your daily workflow?"
   ],
-  "cta_style": "Clear, concise direct-response prompts like 'SWIPE ->' on visuals, paired with caption CTAs directing users to request a demo or visit the website link in bio.",
-  "visual_notes": "Clean off-white/cream textured backgrounds, dark charcoal bold typography with lavender/purple highlight boxes behind key words, black header pill badge with brand logo ('VELOSYNTECH'), realistic 3D laptop and phone hardware mockups, paired with stylized 3D low-poly isometric animations for video content.",
+  "cta_style": "Direct question or invitation to automate/request a demo",
+  "visual_notes": "Clean dark and light UI mockups, purple accent highlights, professional minimalist layout with large bold typography",
   "do": [
    "Focus heavily on the pain of delayed responses and lost revenue",
    "Keep text overlays clear and easy to read on mobile",
@@ -59,7 +69,10 @@
    "Focus hooks on the immediate financial and conversion cost of delayed replies",
    "Emphasize the contrast between manual busywork and automated 24/7 capture",
    "Use clean B2B SaaS visuals with high contrast, device mockups, and subtle purple accents",
-   "Keep caption openers concise, bold, and focused on customer pain points"
+   "Keep caption openers concise, bold, and focused on customer pain points",
+   "Focus on lost revenue caused by delays",
+   "Emphasize 24/7 availability and time-saving benefits",
+   "Keep sentences short and readable"
   ],
   "dont": [
    "Use overly technical jargon without explaining the business benefit",
@@ -70,7 +83,10 @@
    "Don't get bogged down in technical AI jargon or complex n8n node architecture",
    "Don't use generic stock photography; stick to clean 3D renders or branded SaaS graphic layouts",
    "Don't sell features without directly tying them to saved hours or captured revenue",
-   "Don't use low-contrast or cluttered typography that reduces readability on mobile feeds"
+   "Don't use low-contrast or cluttered typography that reduces readability on mobile feeds",
+   "Use overly complex technical jargon without business context",
+   "Make captions overly casual or humorous",
+   "Ignore the pain of manual copy-pasting"
   ]
  }
 }
