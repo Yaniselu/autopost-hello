@@ -1678,5 +1678,26 @@
   "hour": "13:01",
   "time": "2026-11-22T13:01+02:00",
   "permalink": "https://www.instagram.com/p/DgCqcXoFA_1/"
+ },
+ "18455442823123901": {
+  "fetched": "2026-11-22T17:02:06.299294+00:00",
+  "metrics": {
+   "views": 114,
+   "reach": 52,
+   "likes": 2,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 3
+  },
+  "score": 120.62,
+  "type": "reel",
+  "style": "liquid_glass",
+  "pillar": "losing customers because nobody replies fast enough",
+  "hook_type": "question",
+  "hook": "Why do customers *leave* instantly?",
+  "hour": "16:01",
+  "time": "2026-11-22T16:01+02:00",
+  "permalink": "https://www.instagram.com/reel/DgC-YTtiAWR/"
  }
 }
