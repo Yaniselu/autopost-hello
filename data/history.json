@@ -3965,5 +3965,44 @@
     "fb_id": "3587814918063147"
    }
   ]
+ },
+ {
+  "time": "2026-11-22T16:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-22T16:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45030462581",
+  "topic": "losing customers because nobody replies fast enough",
+  "pillar": "losing customers because nobody replies fast enough",
+  "hook": "Why do customers *leave* instantly?",
+  "caption": "Your website is your best salesperson, but only if it actually talks to people.\n\nWhen a potential client has a question about your service at night or during a busy workday, they will not wait around. If nobody answers right away, they simply go to a competitor.\n\nFixing this gap does not require hiring extra staff or staying glued to your phone. An automated assistant handles the initial conversation, answers routine questions, and books meetings for you around the clock.\n\nHow many inquiries do you think slip away after hours?\n\n#businessgrowth #leadgeneration #automation #smallbusiness #salesstrategy",
+  "hook_type": "question",
+  "hook_options": [
+   {
+    "text": "Why do customers *leave* instantly?",
+    "type": "question"
+   },
+   {
+    "text": "Slow replies *destroy* your sales.",
+    "type": "bold_claim"
+   },
+   {
+    "text": "Minutes of *silence* cost deals.",
+    "type": "pain"
+   }
+  ],
+  "style": "liquid_glass",
+  "voice": "en-US-AvaMultilingualNeural",
+  "plan": {
+   "style": "liquid_glass",
+   "theme": "light",
+   "palette": "emerald"
+  },
+  "ig_id": "18455442823123901",
+  "permalink": "https://www.instagram.com/reel/DgC-YTtiAWR/",
+  "fb_id": "2218419468709384",
+  "fb_link": "https://www.facebook.com/reel/2218419468709384",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
