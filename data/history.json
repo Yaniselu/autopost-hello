@@ -3815,5 +3815,22 @@
   "fb_link": "https://www.facebook.com/reel/1172603105426363",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-22T09:31+02:00",
+  "type": "story",
+  "mode": "scheduled",
+  "slot": "story@2026-11-22T09:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44998542241",
+  "topic": "International buyers prefer native tongues",
+  "hook": "International buyers prefer native tongues",
+  "caption": "International buyers prefer native tongues — Up to seventy percent of online shoppers abandon purchases when websites lack support in their local language.",
+  "status": "posted",
+  "stories": [
+   {
+    "ig_id": "18177702229454981",
+    "fb_id": "1711866660644375"
+   }
+  ]
  }
 ]
