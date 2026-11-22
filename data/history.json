@@ -4099,5 +4099,56 @@
   "fb_link": "https://www.facebook.com/reel/1825194931857806",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-22T20:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-22T20:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45052607005",
+  "topic": "simple n8n automations that save hours every week",
+  "pillar": "simple n8n automations that save hours every week",
+  "hook": "How much time do you waste on manual data entry?",
+  "caption": "Manual data entry steals hours from your week that you should be spending on growth. When your website and tools talk to each other automatically, repetitive busywork disappears completely.\n\nBuilt on n8n automation, Velosyntech connects your customer requests and lead forms directly into your workflow without writing complex code. Save time and eliminate human error effortlessly.\n\nHow many hours do you spend copying data each week?\n\nComment DEMO and we'll send you a free demo in DM.\n\n#automation #n8n #businessgrowth #productivity #velosyntech",
+  "hook_type": "question",
+  "hook_options": [
+   {
+    "text": "How much time do you waste on manual data entry?",
+    "type": "question"
+   },
+   {
+    "text": "Stop copying data by hand and let n8n do it.",
+    "type": "bold_claim"
+   },
+   {
+    "text": "Save hours every week with simple automated workflows.",
+    "type": "curiosity"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-AndrewMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "tangerine",
+   "business": "clinic",
+   "story_type": "flash_forward",
+   "sets": [
+    "home",
+    "office",
+    "shop",
+    "stage"
+   ],
+   "names": [
+    "Oscar",
+    "Clara"
+   ]
+  },
+  "ig_id": "17999493984022301",
+  "permalink": "https://www.instagram.com/reel/DgDav0JibHu/",
+  "fb_id": "1795988438121041",
+  "fb_link": "https://www.facebook.com/reel/1795988438121041",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
