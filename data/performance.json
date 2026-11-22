@@ -1699,5 +1699,26 @@
   "hour": "16:01",
   "time": "2026-11-22T16:01+02:00",
   "permalink": "https://www.instagram.com/reel/DgC-YTtiAWR/"
+ },
+ "18455218006127544": {
+  "fetched": "2026-11-22T18:02:01.017012+00:00",
+  "metrics": {
+   "views": 6,
+   "reach": 0,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 48.65,
+  "type": "carousel",
+  "style": null,
+  "pillar": "answering customers in any language automatically",
+  "hook_type": null,
+  "hook": "Sell in *every* language today",
+  "hour": "19:56",
+  "time": "2026-11-22T19:56+02:00",
+  "permalink": "https://www.instagram.com/p/DgDZPk5Elx_/"
  }
 }

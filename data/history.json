@@ -4048,5 +4048,56 @@
   "fb_link": "https://www.facebook.com/1491182390739007_122109466053546258",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-22T20:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-22T20:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45052684500",
+  "topic": "answering customers in any language automatically",
+  "pillar": "answering customers in any language automatically",
+  "hook": "Can your website talk to global customers in their language?",
+  "caption": "Global customers visit your site around the clock, but language friction can stop a sale instantly.\n\nWaiting until morning to translate and reply means they buy from a competitor instead.\n\nVelosyntech adds an AI assistant to your website that responds in any language 24/7.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#AIChatbot #SmallBusiness #WebAutomation #LeadGeneration #BusinessGrowth",
+  "hook_type": "question",
+  "hook_options": [
+   {
+    "text": "Can your website talk to global customers in their language?",
+    "type": "question"
+   },
+   {
+    "text": "Language barriers are quietly losing you international sales every night.",
+    "type": "pain"
+   },
+   {
+    "text": "Stop letting language differences stop your website from closing deals.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-BrianMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "emerald",
+   "business": "restaurant",
+   "story_type": "myth_bust",
+   "sets": [
+    "home",
+    "office",
+    "shop",
+    "stage"
+   ],
+   "names": [
+    "Theo",
+    "Elena"
+   ]
+  },
+  "ig_id": "17879109711580807",
+  "permalink": "https://www.instagram.com/reel/DgDatYzFX4Q/",
+  "fb_id": "1825194931857806",
+  "fb_link": "https://www.facebook.com/reel/1825194931857806",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
