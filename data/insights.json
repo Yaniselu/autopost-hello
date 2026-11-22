@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T18:01+00:00",
+ "updated": "2026-11-22T06:02+00:00",
  "posts_measured": 75,
  "basic_only": false,
  "by_type": {
@@ -14,7 +14,7 @@
  },
  "by_style": {
   "cinematic": {
-   "avg": 131.1,
+   "avg": 131.2,
    "n": 13
   },
   "liquid_glass": {
@@ -22,7 +22,7 @@
    "n": 10
   },
   "story": {
-   "avg": 137.0,
+   "avg": 137.1,
    "n": 29
   }
  },
@@ -48,7 +48,7 @@
    "n": 7
   },
   "customer support questions an AI can handle for you": {
-   "avg": 140.2,
+   "avg": 140.3,
    "n": 14
   },
   "myths vs facts about AI chatbots for small businesses": {
@@ -104,11 +104,11 @@
    "n": 1
   },
   "19:02": {
-   "avg": 147.9,
+   "avg": 148.2,
    "n": 2
   },
   "20:01": {
-   "avg": 138.1,
+   "avg": 138.2,
    "n": 7
   },
   "08:01": {
@@ -124,7 +124,7 @@
    "n": 9
   },
   "13:01": {
-   "avg": 141.8,
+   "avg": 141.9,
    "n": 9
   },
   "18:54": {
@@ -140,7 +140,7 @@
    "n": 1
   },
   "16:01": {
-   "avg": 125.3,
+   "avg": 125.4,
    "n": 8
   },
   "19:01": {
@@ -683,6 +683,22 @@
     "saved": 1,
     "shares": 0,
     "total_interactions": 4
+   }
+  },
+  {
+   "hook": "Your website is silent when customers buy.",
+   "type": "reel",
+   "style": null,
+   "score": 190.64,
+   "permalink": "https://www.instagram.com/reel/DfiF0VNil9U/",
+   "metrics": {
+    "views": 569,
+    "reach": 366,
+    "likes": 8,
+    "comments": 2,
+    "saved": 0,
+    "shares": 3,
+    "total_interactions": 16
    }
   }
  ],

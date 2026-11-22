@@ -3762,5 +3762,58 @@
   "fb_link": "https://www.facebook.com/reel/1156780386935912",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-22T08:02+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-22T08:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/44991810929",
+  "topic": "an AI assistant answering website visitors 24/7 (before vs after)",
+  "pillar": "an AI assistant answering website visitors 24/7 (before vs after)",
+  "hook": "How much website revenue are slow response times stealing from you?",
+  "caption": "Technology has evolved rapidly since the nineties, yet many business websites still rely on delayed email forms and manual follow-ups.\n\nWhen a potential customer reaches out after hours, waiting until the next business day usually means losing that opportunity to a faster competitor.\n\nAutomating your website support with a custom AI assistant built on n8n guarantees every inquiry is answered instantly, in any language, 24 hours a day.\n\nAre after-hours inquiries slipping through the cracks on your website?\n\nComment DEMO and we'll send you a free demo in DM.\n\n#WebsiteAI #Automation #LeadGeneration #n8n #SmallBusinessGrowth",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "Back in 1995, answering a customer question took all day.",
+    "type": "curiosity"
+   },
+   {
+    "text": "How much website revenue are slow response times stealing from you?",
+    "type": "pain"
+   },
+   {
+    "text": "Your website visitors expect instant replies at midnight.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-EmmaMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "coral",
+   "business": "cafe",
+   "story_type": "time_travel",
+   "sets": [
+    "home",
+    "office",
+    "shop",
+    "stage",
+    "street"
+   ],
+   "names": [
+    "Victor",
+    "Elena",
+    "Mark"
+   ]
+  },
+  "ig_id": "17950461720123602",
+  "permalink": "https://www.instagram.com/reel/DgCImWmiBdP/",
+  "fb_id": "1172603105426363",
+  "fb_link": "https://www.facebook.com/reel/1172603105426363",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
