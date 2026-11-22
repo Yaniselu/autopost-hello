@@ -3832,5 +3832,53 @@
     "fb_id": "1711866660644375"
    }
   ]
+ },
+ {
+  "time": "2026-11-22T10:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-22T10:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45000788793",
+  "topic": "customer support questions an AI can handle for you",
+  "pillar": "customer support questions an AI can handle for you",
+  "hook": "3 ways to *stop* wasting hours on repetitive chats.",
+  "caption": "Your daily schedule should not be filled with answering the exact same routine questions from website visitors. When basic inquiries pile up, your team loses focus on what actually grows the business.\n\nSetting up an automated assistant lets you handle high-volume FAQs in the background. Customers get the details they need immediately, without waiting for manual replies.\n\nHow many hours does your team spend on repetitive questions each week? \n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessautomation #customersupport #smallbiz #operations #productivity",
+  "hook_type": "number",
+  "hook_options": [
+   {
+    "text": "Are you *tired* of answering basic questions?",
+    "type": "question"
+   },
+   {
+    "text": "3 ways to *stop* wasting hours on repetitive chats.",
+    "type": "number"
+   },
+   {
+    "text": "Repetitive support questions *drain* your daily energy.",
+    "type": "pain"
+   }
+  ],
+  "style": "cinematic",
+  "voice": "en-US-AvaMultilingualNeural",
+  "plan": {
+   "hook": "macro_pull",
+   "problem": "high_angle",
+   "solution": "phone_focus",
+   "result": "phone_result",
+   "cta": "duo_cta",
+   "bg": "grid",
+   "type": "caption",
+   "transition": "zoom",
+   "finish_phone": "black",
+   "finish_laptop": "silver",
+   "theme": "light",
+   "palette": "emerald"
+  },
+  "ig_id": "18053738588607979",
+  "permalink": "https://www.instagram.com/reel/DgCWsUJgtiy/",
+  "fb_id": "1640820584391668",
+  "fb_link": "https://www.facebook.com/reel/1640820584391668",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
