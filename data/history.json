@@ -3931,5 +3931,22 @@
   "fb_link": "https://www.facebook.com/reel/1035686519548337",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-22T13:01+02:00",
+  "type": "carousel",
+  "mode": "scheduled",
+  "slot": "carousel@2026-11-22T13:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45015178117",
+  "topic": "answering customers in any language automatically",
+  "pillar": "answering customers in any language automatically",
+  "hook": "Never lose buyers to *language barriers*.",
+  "caption": "When an international visitor hits your website, language friction can stop a sale before it even starts. Waiting hours for a translated email reply means they usually buy from a local competitor instead.\n\nOur custom website AI assistants detect languages instantly and reply with complete accuracy 24/7. You do not need overseas support staff or complex setups to serve global clients.\n\nComment DEMO and we will send you a free live demo directly in your DMs.\n\nIs foreign website traffic currently leaving your site without buying?\n\n#businessautomation #aiassistant #leadgeneration #smallbusinessgrowth #n8n",
+  "ig_id": "17995256475115780",
+  "permalink": "https://www.instagram.com/p/DgCqcXoFA_1/",
+  "fb_id": "1491182390739007_122109307935546258",
+  "fb_link": "https://www.facebook.com/1491182390739007_122109307935546258",
+  "status": "posted",
+  "repost": "ok"
  }
 ]

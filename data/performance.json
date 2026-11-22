@@ -1636,5 +1636,26 @@
   "hour": "10:01",
   "time": "2026-11-22T10:01+02:00",
   "permalink": "https://www.instagram.com/reel/DgCWsUJgtiy/"
+ },
+ "18137743957790317": {
+  "fetched": "2026-11-22T11:01:55.582791+00:00",
+  "metrics": {
+   "views": 105,
+   "reach": 41,
+   "likes": 2,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 2
+  },
+  "score": 118.59,
+  "type": "reel",
+  "style": "story",
+  "pillar": "simple n8n automations that save hours every week",
+  "hook_type": "question",
+  "hook": "How does one shop handle hundreds of website questions effortlessly?",
+  "hour": "10:31",
+  "time": "2026-11-22T10:31+02:00",
+  "permalink": "https://www.instagram.com/reel/DgCZ_iDDVks/"
  }
 }
