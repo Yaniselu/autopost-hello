@@ -4265,5 +4265,56 @@
   "fb_link": "https://www.facebook.com/reel/1498885188804427",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-23T10:31+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-23T10:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45139185372",
+  "topic": "turning website visitors into leads and booked demos",
+  "pillar": "turning website visitors into leads and booked demos",
+  "hook": "How did businesses capture leads back in 1995 versus today?",
+  "caption": "In 1995, prospective clients accepted delays, callbacks, and paper forms. Today, high-intent website visitors expect immediate answers and instant booking links—even at midnight.\n\nWhen a potential client hits your site after hours, a generic contact form creates friction. Most visitors leave and find a competitor who answers right away.\n\nBy adding an AI assistant built on n8n to your website, you can instantly answer questions and schedule discovery calls 24/7 without manual effort.\n\nAre you still relying on traditional contact forms to capture leads?\n\nComment DEMO and we'll send you a free demo in DM.\n\n#LeadGeneration #AIAssistant #BusinessAutomation #n8n #AgencyGrowth",
+  "hook_type": "question",
+  "hook_options": [
+   {
+    "text": "How did businesses capture leads back in 1995 versus today?",
+    "type": "question"
+   },
+   {
+    "text": "Your website visitors expect instant demo booking, not contact forms.",
+    "type": "bold_claim"
+   },
+   {
+    "text": "Waiting until morning to reply costs you valuable client meetings.",
+    "type": "pain"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-AvaMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "violet",
+   "business": "agency",
+   "story_type": "time_travel",
+   "sets": [
+    "home",
+    "office",
+    "shop",
+    "stage"
+   ],
+   "names": [
+    "Sam",
+    "Pete"
+   ]
+  },
+  "ig_id": "18111274649211911",
+  "permalink": "https://www.instagram.com/reel/DgE-ywaitAn/",
+  "fb_id": "1473602747487404",
+  "fb_link": "https://www.facebook.com/reel/1473602747487404",
+  "status": "posted",
+  "repost": "ok"
  }
 ]

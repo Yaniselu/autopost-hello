@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-23T08:01+00:00",
- "posts_measured": 85,
+ "updated": "2026-11-23T08:31+00:00",
+ "posts_measured": 86,
  "basic_only": false,
  "by_type": {
   "reel": {
-   "avg": 137.3,
-   "n": 61
+   "avg": 136.6,
+   "n": 62
   },
   "carousel": {
    "avg": 143.1,
@@ -14,8 +14,8 @@
  },
  "by_style": {
   "cinematic": {
-   "avg": 134.2,
-   "n": 14
+   "avg": 131.4,
+   "n": 15
   },
   "liquid_glass": {
    "avg": 137.5,
@@ -48,8 +48,8 @@
    "n": 10
   },
   "customer support questions an AI can handle for you": {
-   "avg": 140.0,
-   "n": 16
+   "avg": 137.3,
+   "n": 17
   },
   "myths vs facts about AI chatbots for small businesses": {
    "avg": 133.7,
@@ -62,8 +62,8 @@
  },
  "by_hook_type": {
   "pain": {
-   "avg": 137.5,
-   "n": 29
+   "avg": 136.0,
+   "n": 30
   },
   "question": {
    "avg": 136.6,
@@ -116,8 +116,8 @@
    "n": 10
   },
   "10:01": {
-   "avg": 132.3,
-   "n": 10
+   "avg": 128.7,
+   "n": 11
   },
   "10:31": {
    "avg": 136.4,
