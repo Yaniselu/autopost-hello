@@ -1680,17 +1680,17 @@
   "permalink": "https://www.instagram.com/p/DgCqcXoFA_1/"
  },
  "18455442823123901": {
-  "fetched": "2026-11-22T17:02:06.299294+00:00",
+  "fetched": "2026-11-23T08:01:50.502749+00:00",
   "metrics": {
-   "views": 114,
-   "reach": 52,
+   "views": 157,
+   "reach": 82,
    "likes": 2,
    "comments": 0,
    "saved": 0,
    "shares": 0,
    "total_interactions": 3
   },
-  "score": 120.62,
+  "score": 128.56,
   "type": "reel",
   "style": "liquid_glass",
   "pillar": "losing customers because nobody replies fast enough",
@@ -1701,17 +1701,17 @@
   "permalink": "https://www.instagram.com/reel/DgC-YTtiAWR/"
  },
  "18455218006127544": {
-  "fetched": "2026-11-22T18:01:18.990374+00:00",
+  "fetched": "2026-11-23T08:01:50.502749+00:00",
   "metrics": {
-   "views": 6,
-   "reach": 0,
+   "views": 195,
+   "reach": 37,
    "likes": 0,
    "comments": 0,
    "saved": 0,
    "shares": 0,
    "total_interactions": 0
   },
-  "score": 48.65,
+  "score": 131.95,
   "type": "carousel",
   "style": null,
   "pillar": "answering customers in any language automatically",
@@ -1720,5 +1720,68 @@
   "hour": "19:56",
   "time": "2026-11-22T19:56+02:00",
   "permalink": "https://www.instagram.com/p/DgDZPk5Elx_/"
+ },
+ "17879109711580807": {
+  "fetched": "2026-11-23T08:01:50.502749+00:00",
+  "metrics": {
+   "views": 203,
+   "reach": 137,
+   "likes": 0,
+   "comments": 0,
+   "saved": 1,
+   "shares": 0,
+   "total_interactions": 1
+  },
+  "score": 137.95,
+  "type": "reel",
+  "style": "story",
+  "pillar": "answering customers in any language automatically",
+  "hook_type": "question",
+  "hook": "Can your website talk to global customers in their language?",
+  "hour": "20:01",
+  "time": "2026-11-22T20:01+02:00",
+  "permalink": "https://www.instagram.com/reel/DgDatYzFX4Q/"
+ },
+ "17999493984022301": {
+  "fetched": "2026-11-23T08:01:50.502749+00:00",
+  "metrics": {
+   "views": 134,
+   "reach": 53,
+   "likes": 3,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 5
+  },
+  "score": 125.63,
+  "type": "reel",
+  "style": "story",
+  "pillar": "simple n8n automations that save hours every week",
+  "hook_type": "question",
+  "hook": "How much time do you waste on manual data entry?",
+  "hour": "20:01",
+  "time": "2026-11-22T20:01+02:00",
+  "permalink": "https://www.instagram.com/reel/DgDav0JibHu/"
+ },
+ "17937493866141767": {
+  "fetched": "2026-11-23T08:01:50.502749+00:00",
+  "metrics": {
+   "views": 151,
+   "reach": 88,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 125.6,
+  "type": "reel",
+  "style": "story",
+  "pillar": "simple n8n automations that save hours every week",
+  "hook_type": "question",
+  "hook": "Are repetitive tasks stealing hours from your busy week?",
+  "hour": "08:01",
+  "time": "2026-11-23T08:01+02:00",
+  "permalink": "https://www.instagram.com/reel/DgEs_gXDDRM/"
  }
 }

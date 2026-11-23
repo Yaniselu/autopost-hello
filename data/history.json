@@ -4217,5 +4217,53 @@
     "fb_id": "1708852744088303"
    }
   ]
+ },
+ {
+  "time": "2026-11-23T10:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-23T10:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45135239851",
+  "topic": "customer support questions an AI can handle for you",
+  "pillar": "customer support questions an AI can handle for you",
+  "hook": "Stop *wasting hours* typing identical website replies.",
+  "caption": "Answering \"What are your pricing options?\" for the tenth time today isn't growing your business.\n\nMost website visitors ask the exact same routine questions before buying: availability, pricing, and booking steps. When they have to wait for an email reply, they leave for a competitor who answers faster.\n\nAn automated website assistant handles these repetitive questions 24/7, turning simple curiosity into qualified leads and booked meetings while you focus on real work.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#leadgeneration #businessautomation #aiassistant #customertech #smbgrowth",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "Stop *wasting hours* typing identical website replies.",
+    "type": "pain"
+   },
+   {
+    "text": "These routine questions are *stealing your sales*.",
+    "type": "curiosity"
+   },
+   {
+    "text": "Are repetitive questions *killing your daily focus*?",
+    "type": "question"
+   }
+  ],
+  "style": "cinematic",
+  "voice": "en-US-EmmaMultilingualNeural",
+  "plan": {
+   "hook": "macro_pull",
+   "problem": "orbit_left",
+   "solution": "side_track",
+   "result": "duo_front",
+   "cta": "phone_spin",
+   "bg": "spot",
+   "type": "typewriter",
+   "transition": "glitch",
+   "finish_phone": "black",
+   "finish_laptop": "spaceblack",
+   "theme": "light",
+   "palette": "cobalt"
+  },
+  "ig_id": "18128379763933044",
+  "permalink": "https://www.instagram.com/reel/DgE66eVmRVA/",
+  "fb_id": "1498885188804427",
+  "fb_link": "https://www.facebook.com/reel/1498885188804427",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
