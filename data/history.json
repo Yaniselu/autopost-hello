@@ -4423,5 +4423,58 @@
     "fb_id": "1081371618251186"
    }
   ]
+ },
+ {
+  "time": "2026-11-23T20:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-23T20:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45233755036",
+  "topic": "turning website visitors into leads and booked demos",
+  "pillar": "turning website visitors into leads and booked demos",
+  "hook": "Is your website letting warm leads slip away every single day?",
+  "caption": "Most website visitors reach out when their interest is highest. If they face an unanswered contact form or wait hours for a reply, they quickly move on to a competitor.\n\nAnswering inquiries manually drains hours from your schedule and leaves after-hours visitors completely ignored. Speed to lead determines whether a prospect books a meeting with you or buys elsewhere.\n\nVelosyntech attaches directly to your website, answers questions 24/7 in any language, captures prospect details, and books demos automatically on n8n.\n\nHow fast does your business currently follow up with new website leads?\n\nComment DEMO and we'll send you a free demo in DM.\n\n#leadgeneration #automation #businessgrowth #n8n #aiassistant",
+  "hook_type": "question",
+  "hook_options": [
+   {
+    "text": "Is your website letting warm leads slip away every single day?",
+    "type": "question"
+   },
+   {
+    "text": "Delayed responses turn high intent website visitors into lost revenue fast.",
+    "type": "bold_claim"
+   },
+   {
+    "text": "Are website inquiries slipping away while you brew morning coffee?",
+    "type": "pain"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-AndrewMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "tangerine",
+   "business": "bakery",
+   "story_type": "day_in_life",
+   "sets": [
+    "home",
+    "park",
+    "shop",
+    "stage",
+    "street"
+   ],
+   "names": [
+    "Nina",
+    "Ben",
+    "Maya"
+   ]
+  },
+  "ig_id": "18026902244945679",
+  "permalink": "https://www.instagram.com/reel/DgGAKWGlaGK/",
+  "fb_id": "1737713467929569",
+  "fb_link": "https://www.facebook.com/reel/1737713467929569",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
