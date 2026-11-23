@@ -4150,5 +4150,55 @@
   "fb_link": "https://www.facebook.com/reel/1795988438121041",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-23T08:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-23T08:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45121297919",
+  "topic": "simple n8n automations that save hours every week",
+  "pillar": "simple n8n automations that save hours every week",
+  "hook": "Are repetitive tasks stealing hours from your busy week?",
+  "caption": "Manual busywork and repetitive customer questions drain precious time that should go toward growing your business. When a rush hits, waiting hours to reply to website messages causes you to lose paying clients.\n\nVelosyntech builds smart AI assistants on n8n that handle routine inquiries automatically 24/7. Reclaim your schedule and let automation do the heavy lifting.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#automation #businessgrowth #n8n #smallbusiness #productivity",
+  "hook_type": "question",
+  "hook_options": [
+   {
+    "text": "Are repetitive tasks stealing hours from your busy week?",
+    "type": "question"
+   },
+   {
+    "text": "Stop wasting valuable time on manual client replies.",
+    "type": "bold_claim"
+   },
+   {
+    "text": "How many hours do you waste answering the same questions?",
+    "type": "question"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-AvaMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "cobalt",
+   "business": "salon",
+   "story_type": "disaster",
+   "sets": [
+    "office",
+    "shop",
+    "stage"
+   ],
+   "names": [
+    "Jax",
+    "Mia"
+   ]
+  },
+  "ig_id": "17937493866141767",
+  "permalink": "https://www.instagram.com/reel/DgEs_gXDDRM/",
+  "fb_id": "4505885813017798",
+  "fb_link": "https://www.facebook.com/reel/4505885813017798",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
