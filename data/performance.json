@@ -1867,5 +1867,26 @@
   "hour": "16:03",
   "time": "2026-11-23T16:03+02:00",
   "permalink": "https://www.instagram.com/reel/DgFjoCqnKYC/"
+ },
+ "17959160508034850": {
+  "fetched": "2026-11-23T17:31:16.027240+00:00",
+  "metrics": {
+   "views": 76,
+   "reach": 6,
+   "likes": 1,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 2
+  },
+  "score": 109.6,
+  "type": "carousel",
+  "style": null,
+  "pillar": "losing customers because nobody replies fast enough",
+  "hook_type": null,
+  "hook": "Stop losing sales to *faster* competitors",
+  "hour": "19:01",
+  "time": "2026-11-23T19:01+02:00",
+  "permalink": "https://www.instagram.com/p/DgF38puGsvV/"
  }
 }
