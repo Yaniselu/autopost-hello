@@ -1846,5 +1846,26 @@
   "hour": "13:01",
   "time": "2026-11-23T13:01+02:00",
   "permalink": "https://www.instagram.com/p/DgFOkCtDnZC/"
+ },
+ "18136543450666454": {
+  "fetched": "2026-11-23T17:01:36.293199+00:00",
+  "metrics": {
+   "views": 67,
+   "reach": 36,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 105.49,
+  "type": "reel",
+  "style": "liquid_glass",
+  "pillar": "an AI assistant answering website visitors 24/7 (before vs after)",
+  "hook_type": "pain",
+  "hook": "Your site gets visitors while you *sleep*.",
+  "hour": "16:03",
+  "time": "2026-11-23T16:03+02:00",
+  "permalink": "https://www.instagram.com/reel/DgFjoCqnKYC/"
  }
 }
