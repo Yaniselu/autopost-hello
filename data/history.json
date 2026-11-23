@@ -4316,5 +4316,22 @@
   "fb_link": "https://www.facebook.com/reel/1473602747487404",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-23T13:01+02:00",
+  "type": "carousel",
+  "mode": "scheduled",
+  "slot": "carousel@2026-11-23T13:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45161233838",
+  "topic": "answering customers in any language automatically",
+  "pillar": "answering customers in any language automatically",
+  "hook": "Sell *globally* without hiring translators",
+  "caption": "Language friction silently kills international sales before a visitor ever reaches out to your team. When someone lands on your site from another country, expecting them to struggle through translation tools costs you money.\n\nAdding instant multilingual support changes how global visitors interact with your brand. They get precise answers in their own language within seconds, turning hesitation into confirmed bookings.\n\nHow many international visitors are leaving your site right now?\n\n#GlobalBusiness #AIAutomation #LeadGeneration #BusinessGrowth #SmallBusiness",
+  "ig_id": "18109021345992254",
+  "permalink": "https://www.instagram.com/p/DgFOkCtDnZC/",
+  "fb_id": "1491182390739007_122109793917546258",
+  "fb_link": "https://www.facebook.com/1491182390739007_122109793917546258",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
