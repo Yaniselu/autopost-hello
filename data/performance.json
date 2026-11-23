@@ -1825,5 +1825,26 @@
   "hour": "10:31",
   "time": "2026-11-23T10:31+02:00",
   "permalink": "https://www.instagram.com/reel/DgE-ywaitAn/"
+ },
+ "18109021345992254": {
+  "fetched": "2026-11-23T13:31:15.408316+00:00",
+  "metrics": {
+   "views": 159,
+   "reach": 37,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 1
+  },
+  "score": 126.88,
+  "type": "carousel",
+  "style": null,
+  "pillar": "answering customers in any language automatically",
+  "hook_type": null,
+  "hook": "Sell *globally* without hiring translators",
+  "hour": "13:01",
+  "time": "2026-11-23T13:01+02:00",
+  "permalink": "https://www.instagram.com/p/DgFOkCtDnZC/"
  }
 }
