@@ -1993,5 +1993,26 @@
   "hour": "13:01",
   "time": "2026-11-24T13:01+02:00",
   "permalink": "https://www.instagram.com/p/DgHzwNpDds-/"
+ },
+ "18134442853804627": {
+  "fetched": "2026-11-24T17:01:24.805164+00:00",
+  "metrics": {
+   "views": 61,
+   "reach": 27,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 103.18,
+  "type": "reel",
+  "style": "liquid_glass",
+  "pillar": "simple n8n automations that save hours every week",
+  "hook_type": "bold_claim",
+  "hook": "Manual data entry is *killing* your growth.",
+  "hour": "17:46",
+  "time": "2026-11-24T17:46+02:00",
+  "permalink": "https://www.instagram.com/reel/DgIURYYF2n6/"
  }
 }

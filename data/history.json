@@ -4747,5 +4747,15 @@
   "fb_link": "https://www.facebook.com/reel/1060805637020930",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-24T19:01+02:00",
+  "type": "carousel",
+  "mode": "scheduled",
+  "slot": "carousel@2026-11-24T19:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45443712605",
+  "status": "error",
+  "error": "LLMError: text generation failed: Gemini gemini-3.8-flash: HTTP 503 This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+  "retry": "se reîncearcă automat (încercarea 1/3)"
  }
 ]
