@@ -4602,5 +4602,57 @@
   "status": "error",
   "error": "LLMError: text generation failed: Gemini gemini-3.8-flash: HTTP 503 This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
   "retry": "se reîncearcă automat (încercarea 1/3)"
+ },
+ {
+  "time": "2026-11-24T11:26+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-24T10:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45365016044",
+  "topic": "simple n8n automations that save hours every week",
+  "pillar": "simple n8n automations that save hours every week",
+  "hook": "Two shop owners on the same street, but one works half the hours.",
+  "caption": "Answering the same customer questions every day isn't growing your business. It is quietly swallowing hours that should go toward real high-value work.\n\nWhen you automate routine responses with an n8n AI assistant on your website, your incoming inquiries get answered in seconds while qualified leads get booked instantly.\n\nYou save valuable time every week without adding payroll or managing complex tech setups.\n\nReady to put repetitive tasks on autopilot?\n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessautomation #n8n #aiassistant #leadgeneration #productivity",
+  "hook_type": "curiosity",
+  "hook_options": [
+   {
+    "text": "Two shop owners on the same street, but one works half the hours.",
+    "type": "curiosity"
+   },
+   {
+    "text": "Are repetitive website questions taking hours away from your weekly growth?",
+    "type": "question"
+   },
+   {
+    "text": "Simple website automations save business owners up to 15 hours weekly.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-AvaMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "violet",
+   "business": "store",
+   "story_type": "rivals",
+   "sets": [
+    "home",
+    "office",
+    "shop",
+    "street"
+   ],
+   "names": [
+    "Dan",
+    "Toby",
+    "Zoe"
+   ]
+  },
+  "ig_id": "18118201808118220",
+  "permalink": "https://www.instagram.com/reel/DgHqSnEgnrz/",
+  "fb_id": "2105345463501441",
+  "fb_link": "https://www.facebook.com/reel/2105345463501441",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
