@@ -1972,5 +1972,26 @@
   "hour": "11:26",
   "time": "2026-11-24T11:26+02:00",
   "permalink": "https://www.instagram.com/reel/DgHqSnEgnrz/"
+ },
+ "18109601744254360": {
+  "fetched": "2026-11-24T13:31:33.865988+00:00",
+  "metrics": {
+   "views": 138,
+   "reach": 33,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 123.36,
+  "type": "carousel",
+  "style": null,
+  "pillar": "customer support questions an AI can handle for you",
+  "hook_type": null,
+  "hook": "5 questions your website *should* answer instantly.",
+  "hour": "13:01",
+  "time": "2026-11-24T13:01+02:00",
+  "permalink": "https://www.instagram.com/p/DgHzwNpDds-/"
  }
 }
