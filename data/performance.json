@@ -1951,5 +1951,26 @@
   "hour": "10:01",
   "time": "2026-11-24T10:01+02:00",
   "permalink": "https://www.instagram.com/reel/DgHgG7dEQlZ/"
+ },
+ "18118201808118220": {
+  "fetched": "2026-11-24T11:01:22.930440+00:00",
+  "metrics": {
+   "views": 85,
+   "reach": 38,
+   "likes": 1,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 1
+  },
+  "score": 112.36,
+  "type": "reel",
+  "style": "story",
+  "pillar": "simple n8n automations that save hours every week",
+  "hook_type": "curiosity",
+  "hook": "Two shop owners on the same street, but one works half the hours.",
+  "hour": "11:26",
+  "time": "2026-11-24T11:26+02:00",
+  "permalink": "https://www.instagram.com/reel/DgHqSnEgnrz/"
  }
 }
