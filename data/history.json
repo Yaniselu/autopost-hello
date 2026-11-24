@@ -4708,5 +4708,44 @@
   "status": "error",
   "error": "LLMError: text generation failed: Gemini gemini-3.8-flash: HTTP 503 This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
   "retry": "se reîncearcă automat (încercarea 2/3)"
+ },
+ {
+  "time": "2026-11-24T17:46+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-24T16:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45429164663",
+  "topic": "simple n8n automations that save hours every week",
+  "pillar": "simple n8n automations that save hours every week",
+  "hook": "Manual data entry is *killing* your growth.",
+  "caption": "Manual data entry is secretly killing your growth.\n\nWhen a potential client fills out a website form, manually transferring their details into spreadsheets or calendars takes up hours that should be spent closing deals.\n\nBy connecting your website to n8n automations, incoming requests are qualified, logged, and routed to your calendar instantly without typing a single line.\n\nHow many hours do you spend on repetitive tasks every week?\n\nComment DEMO and we'll send you a free demo in DM.\n\n#automation #n8n #aiassistants #businessgrowth #leadgeneration",
+  "hook_type": "bold_claim",
+  "hook_options": [
+   {
+    "text": "Manual data entry is *killing* your growth.",
+    "type": "bold_claim"
+   },
+   {
+    "text": "Still *copy-pasting* customer info all day?",
+    "type": "pain"
+   },
+   {
+    "text": "This quiet workflow saves *10 hours* weekly.",
+    "type": "curiosity"
+   }
+  ],
+  "style": "liquid_glass",
+  "voice": "en-US-AndrewMultilingualNeural",
+  "plan": {
+   "style": "liquid_glass",
+   "theme": "light",
+   "palette": "cobalt"
+  },
+  "ig_id": "18134442853804627",
+  "permalink": "https://www.instagram.com/reel/DgIURYYF2n6/",
+  "fb_id": "1060805637020930",
+  "fb_link": "https://www.facebook.com/reel/1060805637020930",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
