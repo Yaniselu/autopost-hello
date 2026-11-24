@@ -4791,5 +4791,57 @@
   "fb_link": "https://www.facebook.com/1491182390739007_122110361115546258",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-24T20:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-24T20:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45454803813",
+  "topic": "losing customers because nobody replies fast enough",
+  "pillar": "losing customers because nobody replies fast enough",
+  "hook": "Slow website replies are quietly killing your salon bookings.",
+  "caption": "High-intent website visitors will not wait hours for a reply. When someone reaches out with a question about services or availability, their interest is highest at that exact moment.\n\nIf they face an unanswered chat or a delayed email form, they leave your website and book with a competitor who responds faster. Delayed responses quietly cost you revenue every week.\n\nVelosyntech builds custom AI website assistants powered by n8n that answer questions instantly, capture lead details, and book clients 24/7.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#leadgeneration #businessautomation #n8n #aiassistant #speedtolead",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "Slow website replies are quietly killing your *salon bookings*.",
+    "type": "pain"
+   },
+   {
+    "text": "Unanswered website messages cost you *paying clients* every single evening.",
+    "type": "bold_claim"
+   },
+   {
+    "text": "What happens when a customer messages your site *after hours*?",
+    "type": "curiosity"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-EmmaMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "cobalt",
+   "business": "salon",
+   "story_type": "disaster",
+   "sets": [
+    "home",
+    "office",
+    "shop",
+    "stage"
+   ],
+   "names": [
+    "Chloe",
+    "Ethan",
+    "Liam"
+   ]
+  },
+  "ig_id": "18102211859543969",
+  "permalink": "https://www.instagram.com/reel/DgIkcvjiDH8/",
+  "fb_id": "1794102815006413",
+  "fb_link": "https://www.facebook.com/reel/1794102815006413",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
