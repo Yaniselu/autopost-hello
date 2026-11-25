@@ -2140,5 +2140,26 @@
   "hour": "13:01",
   "time": "2026-11-25T13:01+02:00",
   "permalink": "https://www.instagram.com/p/DgKYT-Rl9i1/"
+ },
+ "18103540712540287": {
+  "fetched": "2026-11-25T17:01:40.932065+00:00",
+  "metrics": {
+   "views": 90,
+   "reach": 43,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 112.77,
+  "type": "reel",
+  "style": "liquid_glass",
+  "pillar": "losing customers because nobody replies fast enough",
+  "hook_type": "curiosity",
+  "hook": "Where do *hot leads* go at midnight?",
+  "hour": "16:01",
+  "time": "2026-11-25T16:01+02:00",
+  "permalink": "https://www.instagram.com/reel/DgKs6v3BQxf/"
  }
 }
