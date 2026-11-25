@@ -5045,5 +5045,44 @@
     "fb_id": "2164164047695787"
    }
   ]
+ },
+ {
+  "time": "2026-11-25T16:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-25T16:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45629428049",
+  "topic": "losing customers because nobody replies fast enough",
+  "pillar": "losing customers because nobody replies fast enough",
+  "hook": "Where do *hot leads* go at midnight?",
+  "caption": "Where do your website visitors go when nobody replies? Most of them leave within minutes and buy from a competitor who answered first.\n\nSpeed to lead is not just a buzzword—it is the difference between closing a sale and losing a buyer. When someone reaches out on your website, their intent is at its peak. Waiting even an hour drastically drops your chances of closing them.\n\nBy adding an AI assistant to your site, every visitor gets instant answers in any language. Qualified leads can book a demo directly into your calendar while you focus on running your business.\n\nComment DEMO and we'll send you a free demo in DM. Are you currently replying to leads manually or letting them wait?\n\n#leadgeneration #aiautomation #speedtolead #businessgrowth #n8n",
+  "hook_type": "curiosity",
+  "hook_options": [
+   {
+    "text": "Where do *hot leads* go at midnight?",
+    "type": "curiosity"
+   },
+   {
+    "text": "Slow replies are *killing your sales*.",
+    "type": "pain"
+   },
+   {
+    "text": "You lost *three buyers* this morning.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "liquid_glass",
+  "voice": "en-US-EmmaMultilingualNeural",
+  "plan": {
+   "style": "liquid_glass",
+   "theme": "light",
+   "palette": "emerald"
+  },
+  "ig_id": "18103540712540287",
+  "permalink": "https://www.instagram.com/reel/DgKs6v3BQxf/",
+  "fb_id": "1153295497615635",
+  "fb_link": "https://www.facebook.com/reel/1153295497615635",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
