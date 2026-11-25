@@ -4843,5 +4843,56 @@
   "fb_link": "https://www.facebook.com/reel/1794102815006413",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-25T08:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-25T08:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45557472356",
+  "topic": "myths vs facts about AI chatbots for small businesses",
+  "pillar": "myths vs facts about AI chatbots for small businesses",
+  "hook": "The biggest myth about business AI is holding your growth back.",
+  "caption": "Most business owners assume AI setup requires a huge team and endless tech headaches. That simply is not true anymore.\n\nVelosyntech connects right to your site to answer questions around the clock, handle multiple languages, and book meetings while you sleep.\n\nStop losing after-hours visitors to slow response times and start converting traffic on autopilot.\n\nComment DEMO and we will send you a free demo in DM.\n\n#aiassistants #businessgrowth #automation #smallbiz #leadgeneration",
+  "hook_type": "myth",
+  "hook_options": [
+   {
+    "text": "Are AI website assistants too complicated for small businesses?",
+    "type": "question"
+   },
+   {
+    "text": "The biggest myth about business AI is holding your growth back.",
+    "type": "myth"
+   },
+   {
+    "text": "Stop believing tech myths that cost your clinic paying clients.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-AvaMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "violet",
+   "business": "clinic",
+   "story_type": "myth_bust",
+   "sets": [
+    "home",
+    "office",
+    "shop",
+    "stage"
+   ],
+   "names": [
+    "Ian",
+    "Sara"
+   ]
+  },
+  "ig_id": "18205504618377771",
+  "permalink": "https://www.instagram.com/reel/DgJ2V7OKmzh/",
+  "fb_id": "904437229362650",
+  "fb_link": "https://www.facebook.com/reel/904437229362650",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
