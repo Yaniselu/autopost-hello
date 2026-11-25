@@ -4959,5 +4959,57 @@
   "fb_link": "https://www.facebook.com/reel/2605555383243640",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-25T10:31+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-25T10:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45576886400",
+  "topic": "an AI assistant answering website visitors 24/7 (before vs after)",
+  "pillar": "an AI assistant answering website visitors 24/7 (before vs after)",
+  "hook": "How do top local businesses handle leads while the owner sleeps?",
+  "caption": "Local business owners often wonder how competitors stay fully booked around the clock without adding headcount.\n\nThe secret isn't working longer hours. It is having an AI assistant that answers website visitors instantly, day or night.\n\nBuilt on reliable automation, it captures high-intent leads while you sleep.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#AIBusiness #Automation #SmallBusiness #LeadGeneration #Velosyntech",
+  "hook_type": "question",
+  "hook_options": [
+   {
+    "text": "Why is this bakery always fully booked even at midnight?",
+    "type": "curiosity"
+   },
+   {
+    "text": "Most business owners lose nighttime visitors because nobody is awake to reply.",
+    "type": "pain"
+   },
+   {
+    "text": "How do top local businesses handle leads while the owner sleeps?",
+    "type": "question"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-AvaMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "violet",
+   "business": "bakery",
+   "story_type": "secret",
+   "sets": [
+    "home",
+    "office",
+    "shop",
+    "stage",
+    "street"
+   ],
+   "names": [
+    "Arthur",
+    "Clara"
+   ]
+  },
+  "ig_id": "17917795935489495",
+  "permalink": "https://www.instagram.com/reel/DgKIWp3pdMb/",
+  "fb_id": "1118190467880814",
+  "fb_link": "https://www.facebook.com/reel/1118190467880814",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
