@@ -5028,5 +5028,22 @@
   "fb_link": "https://www.facebook.com/1491182390739007_122110678347546258",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-25T15:31+02:00",
+  "type": "story",
+  "mode": "scheduled",
+  "slot": "story@2026-11-25T15:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45624304300",
+  "topic": "Most website visitors leave instantly",
+  "hook": "Most website visitors leave instantly",
+  "caption": "Most website visitors leave instantly — If your site does not answer questions immediately, visitors close the tab and buy elsewhere.",
+  "status": "posted",
+  "stories": [
+   {
+    "ig_id": "18112448693191374",
+    "fb_id": "2164164047695787"
+   }
+  ]
  }
 ]

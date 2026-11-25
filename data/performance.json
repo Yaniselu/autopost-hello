@@ -2119,5 +2119,26 @@
   "hour": "10:31",
   "time": "2026-11-25T10:31+02:00",
   "permalink": "https://www.instagram.com/reel/DgKIWp3pdMb/"
+ },
+ "18134163277700248": {
+  "fetched": "2026-11-25T13:31:22.855260+00:00",
+  "metrics": {
+   "views": 170,
+   "reach": 40,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 128.54,
+  "type": "carousel",
+  "style": null,
+  "pillar": "simple n8n automations that save hours every week",
+  "hook_type": null,
+  "hook": "Put your weekly tasks on *autopilot*",
+  "hour": "13:01",
+  "time": "2026-11-25T13:01+02:00",
+  "permalink": "https://www.instagram.com/p/DgKYT-Rl9i1/"
  }
 }
