@@ -5118,5 +5118,15 @@
     "fb_id": "1664022535196273"
    }
   ]
+ },
+ {
+  "time": "2026-11-25T20:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-25T20:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45670702865",
+  "status": "error",
+  "error": "LLMError: text generation failed: Gemini gemini-3.8-flash: HTTP 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/g",
+  "retry": "se reîncearcă automat (încercarea 1/3)"
  }
 ]
