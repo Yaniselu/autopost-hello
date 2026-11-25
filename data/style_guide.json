@@ -1,11 +1,11 @@
 {
- "time": "2026-11-22T08:32:18.327267+00:00",
+ "time": "2026-11-25T11:02:08.816422+00:00",
  "media_count": 30,
  "guide": {
-  "what_they_sell": "Custom AI website assistants built on n8n that respond to customers 24/7 in any language.",
-  "audience": "Business owners, entrepreneurs, and service providers losing leads due to slow website response times.",
+  "what_they_sell": "Velosyntech provides custom AI website assistants built on n8n to respond to customers 24/7 in any language.",
+  "audience": "Local business owners, entrepreneurs, and service providers losing leads due to slow website response times.",
   "language": "English",
-  "tone": "Direct, professional, urgent, and business-focused",
+  "tone": "Direct, professional, pragmatic, urgent, and authoritative.",
   "recurring_topics": [
    "Slow website response times losing leads",
    "The cost of manual data entry and busywork",
@@ -24,7 +24,12 @@
    "Slow email replies losing customers to competitors",
    "Wasting time answering repetitive customer questions",
    "Missing after-hours leads and bookings",
-   "Multilingual website barriers for international buyers"
+   "Multilingual website barriers for international buyers",
+   "24/7 customer support automation",
+   "Speed to lead and lost revenue from delayed replies",
+   "Eliminating repetitive manual tasks and FAQs",
+   "International sales and language friction",
+   "n8n-powered seamless workflows"
   ],
   "best_performing_patterns": [
    "Event coverage and community engagement (e.g., Craiova Hackathon posts)",
@@ -40,7 +45,10 @@
    "Vibrant purple pill 'SWIPE ->' CTA buttons on carousel covers",
    "Focus on the hidden financial cost of slow customer responses",
    "Highlight pain points around repetitive tasks and after-hours drop-offs",
-   "Keep captions punchy and problem-aware"
+   "Keep captions punchy and problem-aware",
+   "Focus heavily on the pain point of wasted time and lost revenue from missed inquiries",
+   "Emphasize the contrast between manual delays and instant 24/7 AI responses",
+   "Keep captions punchy, scenario-driven, and focused on business growth"
   ],
   "hook_examples": [
    "Most website visitors leave if they do not get an immediate answer.",
@@ -55,10 +63,13 @@
    "Waiting hours to respond to a website inquiry is the fastest way to hand revenue directly to your competitors.",
    "Your slow replies cost you money",
    "Someone sent a message at 11 PM. What happens next on your website?",
-   "Are repetitive questions slowing down your daily workflow?"
+   "Are repetitive questions slowing down your daily workflow?",
+   "Your website gets traffic all day, but if visitors wait hours for an email reply, they simply leave.",
+   "Manual data entry steals hours from your week that you should be spending on growth.",
+   "Answering 'What are your pricing options?' for the tenth time today isn't growing your business."
   ],
-  "cta_style": "Direct question or invitation to automate/request a demo",
-  "visual_notes": "Clean dark and light UI mockups, purple accent highlights, professional minimalist layout with large bold typography",
+  "cta_style": "Subtle or direct call to request a demo or automate routine inquiries using Velosyntech.",
+  "visual_notes": "Clean, minimalist 3D isometric or cartoon-style animations representing businesses, storefronts, and offices, paired with simple muted or retro color palettes.",
   "do": [
    "Focus heavily on the pain of delayed responses and lost revenue",
    "Keep text overlays clear and easy to read on mobile",
@@ -72,7 +83,10 @@
    "Keep caption openers concise, bold, and focused on customer pain points",
    "Focus on lost revenue caused by delays",
    "Emphasize 24/7 availability and time-saving benefits",
-   "Keep sentences short and readable"
+   "Keep sentences short and readable",
+   "Highlight real business frustrations around slow communication and repetitive questions",
+   "Emphasize speed to lead and 24/7 availability",
+   "Keep sentences clear, punchy, and benefit-driven"
   ],
   "dont": [
    "Use overly technical jargon without explaining the business benefit",
@@ -86,7 +100,10 @@
    "Don't use low-contrast or cluttered typography that reduces readability on mobile feeds",
    "Use overly complex technical jargon without business context",
    "Make captions overly casual or humorous",
-   "Ignore the pain of manual copy-pasting"
+   "Ignore the pain of manual copy-pasting",
+   "Use overly complex technical jargon without explaining the business value",
+   "Write vague or generic hooks",
+   "Ignore the core pain points of time waste and lost leads"
   ]
  }
 }

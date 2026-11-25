@@ -2098,5 +2098,26 @@
   "hour": "10:01",
   "time": "2026-11-25T10:01+02:00",
   "permalink": "https://www.instagram.com/reel/DgKEwVBs9a9/"
+ },
+ "17917795935489495": {
+  "fetched": "2026-11-25T11:02:09.271975+00:00",
+  "metrics": {
+   "views": 91,
+   "reach": 44,
+   "likes": 1,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 1
+  },
+  "score": 114.04,
+  "type": "reel",
+  "style": "story",
+  "pillar": "an AI assistant answering website visitors 24/7 (before vs after)",
+  "hook_type": "question",
+  "hook": "How do top local businesses handle leads while the owner sleeps?",
+  "hour": "10:31",
+  "time": "2026-11-25T10:31+02:00",
+  "permalink": "https://www.instagram.com/reel/DgKIWp3pdMb/"
  }
 }
