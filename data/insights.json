@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-25T17:01+00:00",
- "posts_measured": 103,
+ "updated": "2026-11-25T17:31+00:00",
+ "posts_measured": 104,
  "basic_only": false,
  "by_type": {
   "reel": {
@@ -8,8 +8,8 @@
    "n": 74
   },
   "carousel": {
-   "avg": 141.8,
-   "n": 29
+   "avg": 140.7,
+   "n": 30
   }
  },
  "by_style": {
@@ -40,8 +40,8 @@
    "n": 17
   },
   "answering customers in any language automatically": {
-   "avg": 141.1,
-   "n": 18
+   "avg": 139.4,
+   "n": 19
   },
   "simple n8n automations that save hours every week": {
    "avg": 135.7,
@@ -144,8 +144,8 @@
    "n": 10
   },
   "19:01": {
-   "avg": 141.6,
-   "n": 8
+   "avg": 138.0,
+   "n": 9
   },
   "20:54": {
    "avg": 137.1,

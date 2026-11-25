@@ -5101,5 +5101,22 @@
   "fb_link": "https://www.facebook.com/1491182390739007_122110792497546258",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-25T19:31+02:00",
+  "type": "story",
+  "mode": "scheduled",
+  "slot": "story@2026-11-25T19:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45665498237",
+  "topic": "Most website leads vanish instantly",
+  "hook": "Most website leads vanish instantly",
+  "caption": "Most website leads vanish instantly — Over half of online shoppers leave a site if they do not get an immediate answer.",
+  "status": "posted",
+  "stories": [
+   {
+    "ig_id": "18109893907977137",
+    "fb_id": "1664022535196273"
+   }
+  ]
  }
 ]

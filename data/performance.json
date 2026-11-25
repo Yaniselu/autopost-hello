@@ -2161,5 +2161,26 @@
   "hour": "16:01",
   "time": "2026-11-25T16:01+02:00",
   "permalink": "https://www.instagram.com/reel/DgKs6v3BQxf/"
+ },
+ "18154757401556441": {
+  "fetched": "2026-11-25T17:31:12.582238+00:00",
+  "metrics": {
+   "views": 80,
+   "reach": 13,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 109.86,
+  "type": "carousel",
+  "style": null,
+  "pillar": "answering customers in any language automatically",
+  "hook_type": null,
+  "hook": "Losing customers to *language barriers*?",
+  "hour": "19:01",
+  "time": "2026-11-25T19:01+02:00",
+  "permalink": "https://www.instagram.com/p/DgLBmO6mmsL/"
  }
 }
