@@ -5128,5 +5128,58 @@
   "status": "error",
   "error": "LLMError: text generation failed: Gemini gemini-3.8-flash: HTTP 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/g",
   "retry": "se reîncearcă automat (încercarea 1/3)"
+ },
+ {
+  "time": "2026-11-25T20:55+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-25T20:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45679998858",
+  "topic": "turning website visitors into leads and booked demos",
+  "pillar": "turning website visitors into leads and booked demos",
+  "hook": "Are website visitors leaving your site without booking a demo?",
+  "caption": "Most website visitors reach out when their buying intent is highest. If they hit a passive contact form or wait hours for an email reply, they move on to a competitor.\n\nHere are 3 common mistakes killing your conversions:\n1. Relying on slow contact forms.\n2. Going dark after business hours.\n3. Wasting time with manual scheduling emails.\n\nWith an n8n-powered AI website assistant, your website answers customer inquiries, qualifies leads, and books demos 24/7 automatically in any language.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#leadgeneration #aiassistant #automation #n8n #businessgrowth",
+  "hook_type": "question",
+  "hook_options": [
+   {
+    "text": "Are website visitors leaving your site without booking a demo?",
+    "type": "question"
+   },
+   {
+    "text": "Three website mistakes are quietly killing your lead conversion.",
+    "type": "bold_claim"
+   },
+   {
+    "text": "Most website leads leave in seconds when nobody replies.",
+    "type": "pain"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-AvaMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "emerald",
+   "business": "restaurant",
+   "story_type": "countdown",
+   "sets": [
+    "home",
+    "office",
+    "shop",
+    "stage"
+   ],
+   "names": [
+    "Nico",
+    "Maya",
+    "Sam",
+    "Elena"
+   ]
+  },
+  "ig_id": "18235203604332954",
+  "permalink": "https://www.instagram.com/reel/DgLPz-dxobk/",
+  "fb_id": "28785223261159580",
+  "fb_link": "https://www.facebook.com/reel/28785223261159580",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
