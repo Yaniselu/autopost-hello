@@ -4911,5 +4911,53 @@
     "fb_id": "1873018137058102"
    }
   ]
+ },
+ {
+  "time": "2026-11-25T10:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-25T10:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45572603523",
+  "topic": "customer support questions an AI can handle for you",
+  "pillar": "customer support questions an AI can handle for you",
+  "hook": "Stop answering the *same* questions daily.",
+  "caption": "Your team's time is too valuable to spend answering the exact same customer questions on repeat every single day. Most repetitive inquiries about hours, basic troubleshooting, and pricing can be handled instantly without human effort.\n\nWhen you remove this daily friction, your team can focus on high-value tasks that actually grow the business.\n\nHow many hours does your team lose to repetitive support questions each week?\n\nComment DEMO and we'll send you a free demo in DM.\n\n#BusinessAutomation #CustomerSupport #Productivity #SmallBusiness #WorkflowAutomation",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "Stop answering the *same* questions daily.",
+    "type": "pain"
+   },
+   {
+    "text": "Your *support* team is buried in repetitive tasks.",
+    "type": "bold_claim"
+   },
+   {
+    "text": "Tired of answering *pricing* questions all day?",
+    "type": "question"
+   }
+  ],
+  "style": "cinematic",
+  "voice": "en-US-EmmaMultilingualNeural",
+  "plan": {
+   "hook": "lid_open",
+   "problem": "orbit_left",
+   "solution": "side_track",
+   "result": "duo_front",
+   "cta": "duo_cta",
+   "bg": "grid",
+   "type": "typewriter",
+   "transition": "flash",
+   "finish_phone": "blue",
+   "finish_laptop": "silver",
+   "theme": "light",
+   "palette": "emerald"
+  },
+  "ig_id": "18193560397414891",
+  "permalink": "https://www.instagram.com/reel/DgKEwVBs9a9/",
+  "fb_id": "2605555383243640",
+  "fb_link": "https://www.facebook.com/reel/2605555383243640",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
