@@ -5411,5 +5411,44 @@
   "status": "error",
   "error": "LLMError: text generation failed: Gemini gemini-3.8-flash: HTTP 503 This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
   "retry": "se reîncearcă automat (încercarea 2/3)"
+ },
+ {
+  "time": "2026-11-26T17:46+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-26T16:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45852217890",
+  "topic": "losing customers because nobody replies fast enough",
+  "pillar": "losing customers because nobody replies fast enough",
+  "hook": "3 ways *slow replies* kill sales",
+  "caption": "Speed is everything when someone is ready to buy from your business online. If they have to wait for an email response, they will likely check your competitor instead.\n\nFixing this gap doesn't mean hiring a massive support team or staring at your phone all weekend. Smart automation bridges the distance between a visitor landing on your page and getting the exact answers they need.\n\nHow fast is your current team able to respond to new website inquiries?\n\n#businessautomation #leadgeneration #smallbiztips #customerservice #growthstrategy",
+  "hook_type": "number",
+  "hook_options": [
+   {
+    "text": "3 ways *slow replies* kill sales",
+    "type": "number"
+   },
+   {
+    "text": "Why do *buyers* leave so fast?",
+    "type": "question"
+   },
+   {
+    "text": "Waiting for *replies* destroys revenue",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "liquid_glass",
+  "voice": "en-US-EmmaMultilingualNeural",
+  "plan": {
+   "style": "liquid_glass",
+   "theme": "light",
+   "palette": "coral"
+  },
+  "ig_id": "18128752225929186",
+  "permalink": "https://www.instagram.com/reel/DgNdkcaKLJR/",
+  "fb_id": "1719470922844034",
+  "fb_link": "https://www.facebook.com/reel/1719470922844034",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
