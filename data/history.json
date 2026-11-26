@@ -5181,5 +5181,56 @@
   "fb_link": "https://www.facebook.com/reel/28785223261159580",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-26T08:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-26T08:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45765266265",
+  "topic": "turning website visitors into leads and booked demos",
+  "pillar": "turning website visitors into leads and booked demos",
+  "hook": "Why do some gyms book clients while you sleep?",
+  "caption": "Website visitors leave in seconds if they do not get instant answers. While manual replies take hours, automated AI assistants engage prospects the exact moment they arrive.\n\nStop letting slow response times hand paying customers over to your competitors. Let your site capture leads around the clock without extra staff.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#velosyntech #leadgeneration #businessautomation #aimarketing #growthhacks",
+  "hook_type": "question",
+  "hook_options": [
+   {
+    "text": "Why do some gyms book clients while you sleep?",
+    "type": "question"
+   },
+   {
+    "text": "Slow website replies are costing you valuable paying customers.",
+    "type": "pain"
+   },
+   {
+    "text": "Turn your idle website traffic into booked demos automatically.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-EmmaMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "coral",
+   "business": "gym",
+   "story_type": "rivals",
+   "sets": [
+    "office",
+    "park",
+    "shop",
+    "stage"
+   ],
+   "names": [
+    "Oscar",
+    "Finn"
+   ]
+  },
+  "ig_id": "17962185789254263",
+  "permalink": "https://www.instagram.com/reel/DgMbmKtNHAB/",
+  "fb_id": "1154629097216129",
+  "fb_link": "https://www.facebook.com/reel/1154629097216129",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
