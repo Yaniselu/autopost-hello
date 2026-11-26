@@ -5484,5 +5484,55 @@
     "fb_id": "1178342607861582"
    }
   ]
+ },
+ {
+  "time": "2026-11-26T20:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-26T20:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45872450978",
+  "topic": "losing customers because nobody replies fast enough",
+  "pillar": "losing customers because nobody replies fast enough",
+  "hook": "Slow replies are quietly draining your monthly revenue.",
+  "caption": "When potential clients visit your website, they expect answers right away. If your team takes hours to reply, those high-intent visitors simply move on to a competitor.\n\nAutomating your instant replies ensures every question is answered immediately, day or night, without adding extra manual overhead to your daily routine.\n\nStop letting delayed responses cost you valuable deals. Comment DEMO and we'll send you a free demo in DM.\n\n#velosyntech #businessautomation #aichatbot #leadgeneration #n8n",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "Why do website visitors leave before you reply?",
+    "type": "question"
+   },
+   {
+    "text": "Slow replies are quietly draining your monthly revenue.",
+    "type": "pain"
+   },
+   {
+    "text": "Most leads vanish if you do not answer in minutes.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-BrianMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "coral",
+   "business": "agency",
+   "story_type": "day_in_life",
+   "sets": [
+    "home",
+    "shop",
+    "stage",
+    "street"
+   ],
+   "names": [
+    "Tom"
+   ]
+  },
+  "ig_id": "18581474905072969",
+  "permalink": "https://www.instagram.com/reel/DgNt1NBTrY-/",
+  "fb_id": "1095648450196460",
+  "fb_link": "https://www.facebook.com/reel/1095648450196460",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
