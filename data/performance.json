@@ -2224,5 +2224,26 @@
   "hour": "08:01",
   "time": "2026-11-26T08:01+02:00",
   "permalink": "https://www.instagram.com/reel/DgMbmKtNHAB/"
+ },
+ "18033833042689019": {
+  "fetched": "2026-11-26T08:31:24.122741+00:00",
+  "metrics": {
+   "views": 34,
+   "reach": 7,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 88.88,
+  "type": "reel",
+  "style": "cinematic",
+  "pillar": "simple n8n automations that save hours every week",
+  "hook_type": "pain",
+  "hook": "Stop *wasting* your weekends on paperwork.",
+  "hour": "10:01",
+  "time": "2026-11-26T10:01+02:00",
+  "permalink": "https://www.instagram.com/reel/DgMpDvJCbDC/"
  }
 }
