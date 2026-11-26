@@ -2245,5 +2245,26 @@
   "hour": "10:01",
   "time": "2026-11-26T10:01+02:00",
   "permalink": "https://www.instagram.com/reel/DgMpDvJCbDC/"
+ },
+ "18156850390542341": {
+  "fetched": "2026-11-26T11:01:35.392731+00:00",
+  "metrics": {
+   "views": 124,
+   "reach": 82,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 120.71,
+  "type": "reel",
+  "style": "story",
+  "pillar": "answering customers in any language automatically",
+  "hook_type": "question",
+  "hook": "Lost a sale because of language?",
+  "hour": "10:55",
+  "time": "2026-11-26T10:55+02:00",
+  "permalink": "https://www.instagram.com/reel/DgMvJHQy8l7/"
  }
 }
