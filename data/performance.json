@@ -2308,5 +2308,26 @@
   "hour": "17:46",
   "time": "2026-11-26T17:46+02:00",
   "permalink": "https://www.instagram.com/reel/DgNdkcaKLJR/"
+ },
+ "18110471999311148": {
+  "fetched": "2026-11-26T17:31:17.114609+00:00",
+  "metrics": {
+   "views": 60,
+   "reach": 9,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 102.77,
+  "type": "carousel",
+  "style": null,
+  "pillar": "answering customers in any language automatically",
+  "hook_type": null,
+  "hook": "Sell *globally* without hiring translators",
+  "hour": "19:01",
+  "time": "2026-11-26T19:01+02:00",
+  "permalink": "https://www.instagram.com/p/DgNmWeiDvxt/"
  }
 }
