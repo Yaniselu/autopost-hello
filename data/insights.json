@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T06:01+00:00",
+ "updated": "2026-11-26T07:31+00:00",
  "posts_measured": 104,
  "basic_only": false,
  "by_type": {
@@ -28,7 +28,7 @@
  },
  "by_pillar": {
   "an AI assistant answering website visitors 24/7 (before vs after)": {
-   "avg": 134.3,
+   "avg": 134.4,
    "n": 12
   },
   "losing customers because nobody replies fast enough": {
@@ -48,7 +48,7 @@
    "n": 13
   },
   "customer support questions an AI can handle for you": {
-   "avg": 135.7,
+   "avg": 135.8,
    "n": 19
   },
   "myths vs facts about AI chatbots for small businesses": {
@@ -62,7 +62,7 @@
  },
  "by_hook_type": {
   "pain": {
-   "avg": 134.0,
+   "avg": 134.1,
    "n": 34
   },
   "question": {
@@ -120,11 +120,11 @@
    "n": 13
   },
   "10:31": {
-   "avg": 133.9,
+   "avg": 134.0,
    "n": 12
   },
   "13:01": {
-   "avg": 140.4,
+   "avg": 140.5,
    "n": 13
   },
   "18:54": {
@@ -144,7 +144,7 @@
    "n": 10
   },
   "19:01": {
-   "avg": 138.3,
+   "avg": 138.4,
    "n": 9
   },
   "20:54": {
