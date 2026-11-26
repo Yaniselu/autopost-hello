@@ -5450,5 +5450,22 @@
   "fb_link": "https://www.facebook.com/reel/1719470922844034",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-26T19:01+02:00",
+  "type": "carousel",
+  "mode": "scheduled",
+  "slot": "carousel@2026-11-26T19:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45863957682",
+  "topic": "answering customers in any language automatically",
+  "pillar": "answering customers in any language automatically",
+  "hook": "Sell *globally* without hiring translators",
+  "caption": "Expanding into international markets usually requires hiring expensive local support teams and dealing with massive scheduling headaches. Your website gets global traffic, but language barriers stop foreign buyers from completing their purchases.\n\nVelosyntech builds smart website assistants that chat fluently in any language. They translate questions instantly, give accurate details, and capture your international leads 24/7.\n\nReady to scale your reach without adding headcount? Comment DEMO and we'll send you a free demo in DM.\n\n#GlobalBusiness #Multilingual #LeadGeneration #BusinessGrowth #Automation",
+  "ig_id": "18110471999311148",
+  "permalink": "https://www.instagram.com/p/DgNmWeiDvxt/",
+  "fb_id": "1491182390739007_122111245737546258",
+  "fb_link": "https://www.facebook.com/1491182390739007_122111245737546258",
+  "status": "posted",
+  "repost": "ok"
  }
 ]

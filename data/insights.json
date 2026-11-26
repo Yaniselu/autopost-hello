@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-26T15:46+00:00",
- "posts_measured": 109,
+ "updated": "2026-11-26T17:01+00:00",
+ "posts_measured": 110,
  "basic_only": false,
  "by_type": {
   "reel": {
-   "avg": 133.6,
-   "n": 78
+   "avg": 133.4,
+   "n": 79
   },
   "carousel": {
    "avg": 141.8,
@@ -18,8 +18,8 @@
    "n": 18
   },
   "liquid_glass": {
-   "avg": 133.6,
-   "n": 14
+   "avg": 132.1,
+   "n": 15
   },
   "story": {
    "avg": 134.2,
@@ -32,8 +32,8 @@
    "n": 12
   },
   "losing customers because nobody replies fast enough": {
-   "avg": 137.0,
-   "n": 19
+   "avg": 135.7,
+   "n": 20
   },
   "turning website visitors into leads and booked demos": {
    "avg": 134.1,
@@ -78,8 +78,8 @@
    "n": 3
   },
   "number": {
-   "avg": 134.2,
-   "n": 3
+   "avg": 128.7,
+   "n": 4
   },
   "curiosity": {
    "avg": 132.6,
@@ -188,8 +188,8 @@
    "n": 1
   },
   "17:46": {
-   "avg": 121.7,
-   "n": 1
+   "avg": 117.0,
+   "n": 2
   },
   "19:55": {
    "avg": 140.3,
