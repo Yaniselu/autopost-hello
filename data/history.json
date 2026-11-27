@@ -5734,5 +5734,44 @@
     "fb_id": "2236128540657741"
    }
   ]
+ },
+ {
+  "time": "2026-11-27T16:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-27T16:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/46012044725",
+  "topic": "an AI assistant answering website visitors 24/7 (before vs after)",
+  "pillar": "an AI assistant answering website visitors 24/7 (before vs after)",
+  "hook": "Ever missed a *sale* while sleeping?",
+  "caption": "Leaving website visitors waiting for a response is the easiest way to hand paying customers straight to your competitors.\n\nWhen people visit your business online, they want answers right now. If your pages stay silent after hours, those high intent visitors simply walk away and never come back.\n\nFixing this does not require hiring extra staff or spending your evenings glued to a chat screen. A smart setup handles the conversation instantly and secures the booking while you sleep.\n\nHow many inquiries do you think you miss after closing time?\n\n#businessgrowth #automation #leadgeneration #smallbiz #efficiency",
+  "hook_type": "question",
+  "hook_options": [
+   {
+    "text": "Ever missed a *sale* while sleeping?",
+    "type": "question"
+   },
+   {
+    "text": "Your website is silent after *hours*.",
+    "type": "pain"
+   },
+   {
+    "text": "*Dead* air on your site kills *deals*.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "liquid_glass",
+  "voice": "en-US-AvaMultilingualNeural",
+  "plan": {
+   "style": "liquid_glass",
+   "theme": "light",
+   "palette": "tangerine"
+  },
+  "ig_id": "17993017245080769",
+  "permalink": "https://www.instagram.com/reel/DgP2gcchDWy/",
+  "fb_id": "2113448236042975",
+  "fb_link": "https://www.facebook.com/reel/2113448236042975",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
