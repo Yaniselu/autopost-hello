@@ -5700,5 +5700,22 @@
   "fb_link": "https://www.facebook.com/reel/2626279537887132",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-27T13:01+02:00",
+  "type": "carousel",
+  "mode": "scheduled",
+  "slot": "carousel@2026-11-27T13:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/45986877145",
+  "topic": "turning website visitors into leads and booked demos",
+  "pillar": "turning website visitors into leads and booked demos",
+  "hook": "Turn website *visitors* into paying *clients*",
+  "caption": "Most people who visit your website have high intent, but they leave if they have to wait for an answer. By the time your team checks morning emails, that potential client has already moved on to a competitor who replied faster.\n\nAdding an intelligent assistant changes this completely. It greets every visitor, answers their specific questions on the spot, and secures the calendar booking so you never miss another high-value opportunity.\n\nHow many potential clients are leaving your site right now without talking to anyone? Comment DEMO and we'll send you a free demo in DM.\n\n#leadgeneration #businessgrowth #salesautomation #websitetips #velosyntech",
+  "ig_id": "18105734117664702",
+  "permalink": "https://www.instagram.com/p/DgPhyBHEUIu/",
+  "fb_id": "1491182390739007_122111532249546258",
+  "fb_link": "https://www.facebook.com/1491182390739007_122111532249546258",
+  "status": "posted",
+  "repost": "ok"
  }
 ]

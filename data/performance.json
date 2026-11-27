@@ -2392,5 +2392,26 @@
   "hour": "10:01",
   "time": "2026-11-27T10:01+02:00",
   "permalink": "https://www.instagram.com/reel/DgPOToyhLKI/"
+ },
+ "18102305738690878": {
+  "fetched": "2026-11-27T11:01:39.147637+00:00",
+  "metrics": {
+   "views": 119,
+   "reach": 44,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 119.69,
+  "type": "reel",
+  "style": "story",
+  "pillar": "losing customers because nobody replies fast enough",
+  "hook_type": "pain",
+  "hook": "Lost a sale because you replied too late?",
+  "hour": "10:31",
+  "time": "2026-11-27T10:31+02:00",
+  "permalink": "https://www.instagram.com/reel/DgPRnqbNKpV/"
  }
 }
