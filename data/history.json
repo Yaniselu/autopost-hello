@@ -5773,5 +5773,22 @@
   "fb_link": "https://www.facebook.com/reel/2113448236042975",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-27T19:01+02:00",
+  "type": "carousel",
+  "mode": "scheduled",
+  "slot": "carousel@2026-11-27T19:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/46038343769",
+  "topic": "simple n8n automations that save hours every week",
+  "pillar": "simple n8n automations that save hours every week",
+  "hook": "Stop moving data by *hand*",
+  "caption": "Busywork is quietly eating away at the hours you should be spending on actual business growth. Every time you move data by hand or handle routine admin, you lose focus on high-value clients.\n\nSmart visual automations connect your website, forms, and calendar behind the scenes so everything runs smoothly on autopilot. Stop wasting time on tasks a computer can do in seconds.\n\nWhat is the most repetitive task on your to-do list this week?\n\n#businessautomation #savetime #operations #smallbiz #workflow",
+  "ig_id": "17904614601608149",
+  "permalink": "https://www.instagram.com/p/DgQK6VpFDHB/",
+  "fb_id": "1491182390739007_122111655087546258",
+  "fb_link": "https://www.facebook.com/1491182390739007_122111655087546258",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
