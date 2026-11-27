@@ -5800,5 +5800,56 @@
   "status": "error",
   "error": "InstagramError: HTTP 400: {'message': 'The requested resource does not exist', 'code': 24, 'type': 'OAuthException', 'error_subcode': 2207006, 'is_transient': False, 'error_user_msg': 'The media with ID 18,101,621,903,442,245 cannot be found.', 'error_user_title': 'Media not found', 'fbtrace_id': 'AYwiDvGDVMT8DTgdotajDxg'}",
   "retry": "se reîncearcă automat (încercarea 1/3)"
+ },
+ {
+  "time": "2026-11-27T20:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-27T20:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/46046192541",
+  "topic": "simple n8n automations that save hours every week",
+  "pillar": "simple n8n automations that save hours every week",
+  "hook": "Three mistakes that quietly drain hours from your week.",
+  "caption": "Busywork and repetitive tasks drain valuable hours every single week. When you spend your day copying data or answering the exact same questions, your real growth suffers.\n\nSetting up simple automations takes the weight off your team and runs quietly in the background. Stop losing time to manual steps.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#automation #business #productivity #workflow #efficiency",
+  "hook_type": "number",
+  "hook_options": [
+   {
+    "text": "Three mistakes that quietly drain hours from your week.",
+    "type": "number"
+   },
+   {
+    "text": "Are you wasting hours on tasks a simple automation can handle?",
+    "type": "question"
+   },
+   {
+    "text": "Manual busywork is costing your business hours of wasted time.",
+    "type": "pain"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-EmmaMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "coral",
+   "business": "gym",
+   "story_type": "countdown",
+   "sets": [
+    "office",
+    "shop",
+    "stage",
+    "warehouse"
+   ],
+   "names": [
+    "Jax",
+    "Mia"
+   ]
+  },
+  "ig_id": "18420407890083214",
+  "permalink": "https://www.instagram.com/reel/DgQSPZ9JYO0/",
+  "fb_id": "1820250215860047",
+  "fb_link": "https://www.facebook.com/reel/1820250215860047",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
