@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T06:01+00:00",
+ "updated": "2026-11-27T07:32+00:00",
  "posts_measured": 111,
  "basic_only": false,
  "by_type": {
@@ -14,11 +14,11 @@
  },
  "by_style": {
   "cinematic": {
-   "avg": 129.3,
+   "avg": 129.4,
    "n": 18
   },
   "liquid_glass": {
-   "avg": 132.2,
+   "avg": 132.3,
    "n": 15
   },
   "story": {
@@ -32,7 +32,7 @@
    "n": 12
   },
   "losing customers because nobody replies fast enough": {
-   "avg": 135.8,
+   "avg": 135.9,
    "n": 20
   },
   "turning website visitors into leads and booked demos": {
@@ -48,7 +48,7 @@
    "n": 14
   },
   "customer support questions an AI can handle for you": {
-   "avg": 137.5,
+   "avg": 137.6,
    "n": 19
   },
   "myths vs facts about AI chatbots for small businesses": {
@@ -66,7 +66,7 @@
    "n": 35
   },
   "question": {
-   "avg": 132.9,
+   "avg": 133.0,
    "n": 25
   },
   "bold_claim": {
@@ -82,7 +82,7 @@
    "n": 4
   },
   "curiosity": {
-   "avg": 132.7,
+   "avg": 132.8,
    "n": 8
   }
  },
@@ -116,7 +116,7 @@
    "n": 13
   },
   "10:01": {
-   "avg": 126.5,
+   "avg": 126.6,
    "n": 14
   },
   "10:31": {
@@ -140,7 +140,7 @@
    "n": 1
   },
   "16:01": {
-   "avg": 126.3,
+   "avg": 126.4,
    "n": 10
   },
   "19:01": {
@@ -176,7 +176,7 @@
    "n": 1
   },
   "19:56": {
-   "avg": 137.4,
+   "avg": 137.6,
    "n": 1
   },
   "16:03": {
@@ -743,6 +743,22 @@
     "saved": 0,
     "shares": 2,
     "total_interactions": 22
+   }
+  },
+  {
+   "hook": "Most website visitors leave if they do not get an immediate answer.",
+   "type": "reel",
+   "style": "story",
+   "score": 168.5,
+   "permalink": "https://www.instagram.com/reel/DfwG15EGVYj/",
+   "metrics": {
+    "views": 638,
+    "reach": 511,
+    "likes": 2,
+    "comments": 0,
+    "saved": 1,
+    "shares": 0,
+    "total_interactions": 4
    }
   }
  ],
