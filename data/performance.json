@@ -2455,5 +2455,26 @@
   "hour": "16:01",
   "time": "2026-11-27T16:01+02:00",
   "permalink": "https://www.instagram.com/reel/DgP2gcchDWy/"
+ },
+ "17904614601608149": {
+  "fetched": "2026-11-27T17:31:14.719782+00:00",
+  "metrics": {
+   "views": 76,
+   "reach": 6,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 108.6,
+  "type": "carousel",
+  "style": null,
+  "pillar": "simple n8n automations that save hours every week",
+  "hook_type": null,
+  "hook": "Stop moving data by *hand*",
+  "hour": "19:01",
+  "time": "2026-11-27T19:01+02:00",
+  "permalink": "https://www.instagram.com/p/DgQK6VpFDHB/"
  }
 }

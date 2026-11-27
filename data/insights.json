@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-27T17:01+00:00",
- "posts_measured": 117,
+ "updated": "2026-11-27T17:31+00:00",
+ "posts_measured": 118,
  "basic_only": false,
  "by_type": {
   "reel": {
@@ -8,8 +8,8 @@
    "n": 84
   },
   "carousel": {
-   "avg": 141.7,
-   "n": 33
+   "avg": 140.7,
+   "n": 34
   }
  },
  "by_style": {
@@ -44,8 +44,8 @@
    "n": 21
   },
   "simple n8n automations that save hours every week": {
-   "avg": 135.1,
-   "n": 14
+   "avg": 133.4,
+   "n": 15
   },
   "customer support questions an AI can handle for you": {
    "avg": 134.7,
@@ -144,8 +144,8 @@
    "n": 11
   },
   "19:01": {
-   "avg": 140.5,
-   "n": 10
+   "avg": 137.6,
+   "n": 11
   },
   "20:54": {
    "avg": 137.2,
