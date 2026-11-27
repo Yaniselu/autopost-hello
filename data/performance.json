@@ -2413,5 +2413,26 @@
   "hour": "10:31",
   "time": "2026-11-27T10:31+02:00",
   "permalink": "https://www.instagram.com/reel/DgPRnqbNKpV/"
+ },
+ "18105734117664702": {
+  "fetched": "2026-11-27T13:31:16.584590+00:00",
+  "metrics": {
+   "views": 209,
+   "reach": 40,
+   "likes": 2,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 3
+  },
+  "score": 135.68,
+  "type": "carousel",
+  "style": null,
+  "pillar": "turning website visitors into leads and booked demos",
+  "hook_type": null,
+  "hook": "Turn website *visitors* into paying *clients*",
+  "hour": "13:01",
+  "time": "2026-11-27T13:01+02:00",
+  "permalink": "https://www.instagram.com/p/DgPhyBHEUIu/"
  }
 }

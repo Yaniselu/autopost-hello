@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-27T11:01+00:00",
- "posts_measured": 115,
+ "updated": "2026-11-27T13:31+00:00",
+ "posts_measured": 116,
  "basic_only": false,
  "by_type": {
   "reel": {
@@ -8,8 +8,8 @@
    "n": 83
   },
   "carousel": {
-   "avg": 141.9,
-   "n": 32
+   "avg": 141.7,
+   "n": 33
   }
  },
  "by_style": {
@@ -37,7 +37,7 @@
   },
   "turning website visitors into leads and booked demos": {
    "avg": 134.9,
-   "n": 19
+   "n": 20
   },
   "answering customers in any language automatically": {
    "avg": 140.4,
@@ -124,8 +124,8 @@
    "n": 13
   },
   "13:01": {
-   "avg": 140.7,
-   "n": 14
+   "avg": 140.4,
+   "n": 15
   },
   "18:54": {
    "avg": 147.5,
