@@ -5868,5 +5868,57 @@
     "fb_id": "1758635339025236"
    }
   ]
+ },
+ {
+  "time": "2026-11-28T08:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-28T08:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/46114626049",
+  "topic": "customer support questions an AI can handle for you",
+  "pillar": "customer support questions an AI can handle for you",
+  "hook": "Your website is losing sales on basic questions right now.",
+  "caption": "When potential clients visit your website online, they usually ask the exact same basic questions. What are your prices? Are you open tomorrow? How do I book an appointment?\n\nIf they have to wait hours for an email reply or callback, they bounce to a competitor who responds immediately. Manually answering routine FAQs drains your workday and costs you sales while you sleep.\n\nVelosyntech builds AI website assistants that answer pricing inquiries, explain services, and book appointments 24/7 in any language automatically.\n\nReady to turn routine questions into instant bookings?\n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessautomation #aiassistant #leadgeneration #customerservice #n8n",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "What happens when clients message your website late at night?",
+    "type": "question"
+   },
+   {
+    "text": "Your website is losing sales on basic questions right now.",
+    "type": "pain"
+   },
+   {
+    "text": "Answering the same customer questions every day costs thousands.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-AndrewMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "tangerine",
+   "business": "salon",
+   "story_type": "customer_pov",
+   "sets": [
+    "home",
+    "shop",
+    "stage",
+    "street"
+   ],
+   "names": [
+    "Noah",
+    "Sam",
+    "Maya"
+   ]
+  },
+  "ig_id": "18162360646576834",
+  "permalink": "https://www.instagram.com/reel/DgRmVM9O7p5/",
+  "fb_id": "1095998986830445",
+  "fb_link": "https://www.facebook.com/reel/1095998986830445",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
