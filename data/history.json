@@ -5985,5 +5985,53 @@
   "fb_link": "https://www.facebook.com/reel/1445264640598283",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-28T10:11+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-28T10:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/46124421657",
+  "topic": "losing customers because nobody replies fast enough",
+  "pillar": "losing customers because nobody replies fast enough",
+  "hook": "Why do buyers leave *instantly*?",
+  "caption": "The hardest part of online business isn't getting people to your website. It is what happens the second they arrive.\n\nIf someone asks a question and your team takes hours to reply, they are already gone. They didn't just leave, they went straight to your competitor who answered them instantly.\n\nFixing this speed gap changes everything for your daily revenue.\n\nHow fast does your current team reply to website visitors?\n\n#smallbusiness #leadgeneration #salestips #businessgrowth #automation",
+  "hook_type": "question",
+  "hook_options": [
+   {
+    "text": "Why do buyers leave *instantly*?",
+    "type": "question"
+   },
+   {
+    "text": "Slow replies hand sales to *rivals*.",
+    "type": "bold_claim"
+   },
+   {
+    "text": "3 hours to reply means zero *sales*.",
+    "type": "number"
+   }
+  ],
+  "style": "cinematic",
+  "voice": "en-US-EmmaMultilingualNeural",
+  "plan": {
+   "hook": "drop_spin",
+   "problem": "orbit_left",
+   "solution": "orbit_right",
+   "result": "low_hero",
+   "cta": "duo_cta",
+   "bg": "spot",
+   "type": "typewriter",
+   "transition": "glitch",
+   "finish_phone": "desert",
+   "finish_laptop": "spaceblack",
+   "theme": "light",
+   "palette": "coral"
+  },
+  "ig_id": "17919372564516324",
+  "permalink": "https://www.instagram.com/reel/DgRz38Ihrk4/",
+  "fb_id": "3662029207285249",
+  "fb_link": "https://www.facebook.com/reel/3662029207285249",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
