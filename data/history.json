@@ -5920,5 +5920,22 @@
   "fb_link": "https://www.facebook.com/reel/1095998986830445",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-28T09:31+02:00",
+  "type": "story",
+  "mode": "scheduled",
+  "slot": "story@2026-11-28T09:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/46121516610",
+  "topic": "Instant replies win business",
+  "hook": "Instant replies win business",
+  "caption": "Instant replies win business — Visitors buy from the first company that answers, not the best one.",
+  "status": "posted",
+  "stories": [
+   {
+    "ig_id": "18138655987673613",
+    "fb_id": "29540844595509574"
+   }
+  ]
  }
 ]
