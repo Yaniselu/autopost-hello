@@ -5937,5 +5937,53 @@
     "fb_id": "29540844595509574"
    }
   ]
+ },
+ {
+  "time": "2026-11-28T10:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-28T10:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/46123787231",
+  "topic": "turning website visitors into leads and booked demos",
+  "pillar": "turning website visitors into leads and booked demos",
+  "hook": "Are you *ignoring* your best website leads?",
+  "caption": "Most business owners focus entirely on getting more website traffic, completely ignoring what happens after people arrive.\n\nWhen someone visits your page and has a question, waiting hours for a reply means they are already looking at your competitor instead. Fixing this gap doesn't require hiring extra staff or spending your evenings glued to a screen.\n\nBy engaging visitors the moment they land and offering them a direct path to your calendar, you turn invisible traffic into predictable revenue.\n\nHow many potential clients do you think leave your website every week without a trace?\n\n#LeadGeneration #BusinessGrowth #Automation #SmallBusiness #SalesStrategy",
+  "hook_type": "question",
+  "hook_options": [
+   {
+    "text": "Are you *ignoring* your best website leads?",
+    "type": "question"
+   },
+   {
+    "text": "Your website gets traffic but *zero* booked meetings.",
+    "type": "pain"
+   },
+   {
+    "text": "Stop letting hot *leads* leave your site empty-handed.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "cinematic",
+  "voice": "en-US-EmmaMultilingualNeural",
+  "plan": {
+   "hook": "drop_spin",
+   "problem": "high_angle",
+   "solution": "orbit_right",
+   "result": "low_hero",
+   "cta": "phone_spin",
+   "bg": "bokeh",
+   "type": "caption",
+   "transition": "zoom",
+   "finish_phone": "black",
+   "finish_laptop": "spaceblack",
+   "theme": "light",
+   "palette": "tangerine"
+  },
+  "ig_id": "18118875701152521",
+  "permalink": "https://www.instagram.com/reel/DgRyuFthUw4/",
+  "fb_id": "1445264640598283",
+  "fb_link": "https://www.facebook.com/reel/1445264640598283",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
