@@ -2518,5 +2518,47 @@
   "hour": "08:01",
   "time": "2026-11-28T08:01+02:00",
   "permalink": "https://www.instagram.com/reel/DgRmVM9O7p5/"
+ },
+ "18118875701152521": {
+  "fetched": "2026-11-28T08:31:18.722937+00:00",
+  "metrics": {
+   "views": 19,
+   "reach": 6,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 74.89,
+  "type": "reel",
+  "style": "cinematic",
+  "pillar": "turning website visitors into leads and booked demos",
+  "hook_type": "question",
+  "hook": "Are you *ignoring* your best website leads?",
+  "hour": "10:01",
+  "time": "2026-11-28T10:01+02:00",
+  "permalink": "https://www.instagram.com/reel/DgRyuFthUw4/"
+ },
+ "17919372564516324": {
+  "fetched": "2026-11-28T08:31:18.722937+00:00",
+  "metrics": {
+   "views": 11,
+   "reach": 0,
+   "likes": 0,
+   "comments": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0
+  },
+  "score": 62.12,
+  "type": "reel",
+  "style": "cinematic",
+  "pillar": "losing customers because nobody replies fast enough",
+  "hook_type": "question",
+  "hook": "Why do buyers leave *instantly*?",
+  "hour": "10:11",
+  "time": "2026-11-28T10:11+02:00",
+  "permalink": "https://www.instagram.com/reel/DgRz38Ihrk4/"
  }
 }

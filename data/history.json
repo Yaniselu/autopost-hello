@@ -6033,5 +6033,55 @@
   "fb_link": "https://www.facebook.com/reel/3662029207285249",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-28T10:31+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-28T10:30:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/46126140379",
+  "topic": "customer support questions an AI can handle for you",
+  "pillar": "customer support questions an AI can handle for you",
+  "hook": "Stop answering the same website questions every single day.",
+  "caption": "Answering basic questions eats up hours that should go toward growing your business.\n\nWhen visitors arrive with standard pricing or service inquiries, they expect instant answers. If your team types every reply manually, momentum dies.\n\nConnecting an AI assistant handles those repetitive FAQs instantly, freeing you up for high value work.\n\nComment DEMO and we'll send you a free demo in DM.\n\n#velosyntech #aiassistant #n8n #businessautomation #leadgeneration",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "Stop answering the same website questions every single day.",
+    "type": "pain"
+   },
+   {
+    "text": "How much time do you waste on repetitive client chats?",
+    "type": "question"
+   },
+   {
+    "text": "Your website can answer routine customer questions automatically.",
+    "type": "bold_claim"
+   }
+  ],
+  "style": "story",
+  "voice": "en-US-AndrewMultilingualNeural",
+  "plan": {
+   "style": "story",
+   "theme": "light",
+   "palette": "cobalt",
+   "business": "agency",
+   "story_type": "rivals",
+   "sets": [
+    "office",
+    "park",
+    "shop"
+   ],
+   "names": [
+    "Carl",
+    "Dan"
+   ]
+  },
+  "ig_id": "18139924318639083",
+  "permalink": "https://www.instagram.com/reel/DgR2gZlx02f/",
+  "fb_id": "2680674265785951",
+  "fb_link": "https://www.facebook.com/reel/2680674265785951",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
