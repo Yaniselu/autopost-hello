@@ -6083,5 +6083,22 @@
   "fb_link": "https://www.facebook.com/reel/2680674265785951",
   "status": "posted",
   "repost": "ok"
+ },
+ {
+  "time": "2026-11-28T13:01+02:00",
+  "type": "carousel",
+  "mode": "scheduled",
+  "slot": "carousel@2026-11-28T13:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/46137818889",
+  "topic": "simple n8n automations that save hours every week",
+  "pillar": "simple n8n automations that save hours every week",
+  "hook": "Stop doing *manual* copy-pasting",
+  "caption": "Administrative busywork drains valuable hours that should be spent on growing your business and serving clients directly. Setting up reliable background workflows takes the weight off your shoulders without needing a dedicated tech team.\n\nReclaim your schedule by letting smart automations handle the repetitive tasks in the background.\n\nHow many hours do you waste on manual data entry every week?\n\n#businessautomation #savetime #productivityhacks #workflowautomation #scaleup",
+  "ig_id": "17878692915593055",
+  "permalink": "https://www.instagram.com/p/DgSGddNjS9m/",
+  "fb_id": "1491182390739007_122111946033546258",
+  "fb_link": "https://www.facebook.com/1491182390739007_122111946033546258",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
