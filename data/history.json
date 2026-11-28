@@ -6117,5 +6117,44 @@
     "fb_id": "1449229260660708"
    }
   ]
+ },
+ {
+  "time": "2026-11-28T16:01+02:00",
+  "type": "reel",
+  "mode": "scheduled",
+  "slot": "reel@2026-11-28T16:00:00+02:00",
+  "run_url": "https://github.com/Yaniselu/autopost-hello/actions/runs/46152433310",
+  "topic": "losing customers because nobody replies fast enough",
+  "pillar": "losing customers because nobody replies fast enough",
+  "hook": "Every *delayed* reply loses a client.",
+  "caption": "Your website gets traffic, but how many visitors leave because nobody replies fast enough? Waiting even ten minutes can send a hot prospect straight to your competition.\n\nFixing this does not require hiring extra staff or staying glued to your phone 24/7. Simple automated workflows can greet visitors, answer common questions, and lock in bookings around the clock.\n\nStop letting delayed replies drain your revenue. How many leads do you think slip away after hours? 📉\n\nComment DEMO and we'll send you a free demo in DM.\n\n#businessgrowth #leadgeneration #salesautomation #smallbiz #velosyntech",
+  "hook_type": "pain",
+  "hook_options": [
+   {
+    "text": "Are you *ignoring* ready buyers?",
+    "type": "question"
+   },
+   {
+    "text": "Silence is *costing* you sales.",
+    "type": "bold_claim"
+   },
+   {
+    "text": "Every *delayed* reply loses a client.",
+    "type": "pain"
+   }
+  ],
+  "style": "liquid_glass",
+  "voice": "en-US-AvaMultilingualNeural",
+  "plan": {
+   "style": "liquid_glass",
+   "theme": "light",
+   "palette": "tangerine"
+  },
+  "ig_id": "18150112585605531",
+  "permalink": "https://www.instagram.com/reel/DgSbKujhUyq/",
+  "fb_id": "1167687418939770",
+  "fb_link": "https://www.facebook.com/reel/1167687418939770",
+  "status": "posted",
+  "repost": "ok"
  }
 ]
